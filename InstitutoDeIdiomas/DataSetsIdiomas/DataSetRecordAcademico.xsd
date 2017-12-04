@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRecordAcademico" targetNamespace="http://tempuri.org/DataSetRecordAcademico.xsd" xmlns:mstns="http://tempuri.org/DataSetRecordAcademico.xsd" xmlns="http://tempuri.org/DataSetRecordAcademico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRecordAcademico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetRecordAcademico" msprop:Generator_UserDSName="DataSetRecordAcademico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="listening" msprop:Generator_ColumnVarNameInTable="columnlistening" msprop:Generator_ColumnPropNameInRow="listening" msprop:Generator_ColumnPropNameInTable="listeningColumn" msprop:Generator_UserColumnName="listening" type="xs:string" minOccurs="0" />
+              <xs:element name="speaking" msprop:Generator_ColumnVarNameInTable="columnspeaking" msprop:Generator_ColumnPropNameInRow="speaking" msprop:Generator_ColumnPropNameInTable="speakingColumn" msprop:Generator_UserColumnName="speaking" type="xs:string" minOccurs="0" />
+              <xs:element name="reading" msprop:Generator_ColumnVarNameInTable="columnreading" msprop:Generator_ColumnPropNameInRow="reading" msprop:Generator_ColumnPropNameInTable="readingColumn" msprop:Generator_UserColumnName="reading" type="xs:string" minOccurs="0" />
+              <xs:element name="writing" msprop:Generator_ColumnVarNameInTable="columnwriting" msprop:Generator_ColumnPropNameInRow="writing" msprop:Generator_ColumnPropNameInTable="writingColumn" msprop:Generator_UserColumnName="writing" type="xs:string" minOccurs="0" />
+              <xs:element name="useofenglish" msprop:Generator_ColumnVarNameInTable="columnuseofenglish" msprop:Generator_ColumnPropNameInRow="useofenglish" msprop:Generator_ColumnPropNameInTable="useofenglishColumn" msprop:Generator_UserColumnName="useofenglish" type="xs:string" minOccurs="0" />
+              <xs:element name="nivel" msprop:Generator_ColumnVarNameInTable="columnnivel" msprop:Generator_ColumnPropNameInRow="nivel" msprop:Generator_ColumnPropNameInTable="nivelColumn" msprop:Generator_UserColumnName="nivel" type="xs:string" minOccurs="0" />
+              <xs:element name="ciclo" msprop:Generator_ColumnVarNameInTable="columnciclo" msprop:Generator_ColumnPropNameInRow="ciclo" msprop:Generator_ColumnPropNameInTable="cicloColumn" msprop:Generator_UserColumnName="ciclo" type="xs:string" minOccurs="0" />
+              <xs:element name="promedio" msprop:Generator_ColumnVarNameInTable="columnpromedio" msprop:Generator_ColumnPropNameInRow="promedio" msprop:Generator_ColumnPropNameInTable="promedioColumn" msprop:Generator_UserColumnName="promedio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
