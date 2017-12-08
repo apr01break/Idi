@@ -58,6 +58,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnCambiarFechas = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnBorrarAlumno = new System.Windows.Forms.Button();
+            this.btnEliminarGrupo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumnoGrupo)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +69,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(776, 70);
+            this.label11.Location = new System.Drawing.Point(766, 97);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(13, 13);
             this.label11.TabIndex = 45;
@@ -73,7 +77,7 @@
             // 
             // txtHorario2
             // 
-            this.txtHorario2.Location = new System.Drawing.Point(790, 67);
+            this.txtHorario2.Location = new System.Drawing.Point(780, 94);
             this.txtHorario2.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario2.Name = "txtHorario2";
             this.txtHorario2.ReadOnly = true;
@@ -128,7 +132,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Enabled = false;
-            this.btnAgregar.Location = new System.Drawing.Point(796, 216);
+            this.btnAgregar.Location = new System.Drawing.Point(802, 218);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(94, 64);
@@ -166,12 +170,15 @@
             // dataGridViewAlumno
             // 
             this.dataGridViewAlumno.AllowUserToAddRows = false;
+            this.dataGridViewAlumno.AllowUserToDeleteRows = false;
+            this.dataGridViewAlumno.AllowUserToResizeRows = false;
             this.dataGridViewAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAlumno.Enabled = false;
-            this.dataGridViewAlumno.Location = new System.Drawing.Point(464, 296);
+            this.dataGridViewAlumno.Location = new System.Drawing.Point(470, 304);
             this.dataGridViewAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewAlumno.Name = "dataGridViewAlumno";
             this.dataGridViewAlumno.ReadOnly = true;
+            this.dataGridViewAlumno.RowHeadersVisible = false;
             this.dataGridViewAlumno.RowTemplate.Height = 24;
             this.dataGridViewAlumno.Size = new System.Drawing.Size(426, 211);
             this.dataGridViewAlumno.TabIndex = 36;
@@ -181,7 +188,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(602, 176);
+            this.label5.Location = new System.Drawing.Point(602, 178);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 13);
@@ -190,7 +197,7 @@
             // 
             // txtHorario
             // 
-            this.txtHorario.Location = new System.Drawing.Point(721, 67);
+            this.txtHorario.Location = new System.Drawing.Point(711, 94);
             this.txtHorario.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.ReadOnly = true;
@@ -199,7 +206,7 @@
             // 
             // txtCiclo
             // 
-            this.txtCiclo.Location = new System.Drawing.Point(721, 42);
+            this.txtCiclo.Location = new System.Drawing.Point(713, 67);
             this.txtCiclo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCiclo.Name = "txtCiclo";
             this.txtCiclo.ReadOnly = true;
@@ -212,12 +219,12 @@
             this.txtNivel.Margin = new System.Windows.Forms.Padding(2);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.ReadOnly = true;
-            this.txtNivel.Size = new System.Drawing.Size(122, 20);
+            this.txtNivel.Size = new System.Drawing.Size(107, 20);
             this.txtNivel.TabIndex = 32;
             // 
             // txtIdioma
             // 
-            this.txtIdioma.Location = new System.Drawing.Point(528, 42);
+            this.txtIdioma.Location = new System.Drawing.Point(713, 42);
             this.txtIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdioma.Name = "txtIdioma";
             this.txtIdioma.ReadOnly = true;
@@ -237,7 +244,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(679, 45);
+            this.label6.Location = new System.Drawing.Point(662, 70);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
@@ -247,7 +254,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(662, 70);
+            this.label4.Location = new System.Drawing.Point(652, 97);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
@@ -257,7 +264,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(463, 45);
+            this.label3.Location = new System.Drawing.Point(655, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
@@ -267,15 +274,18 @@
             // dataGridViewAlumnoGrupo
             // 
             this.dataGridViewAlumnoGrupo.AllowUserToAddRows = false;
+            this.dataGridViewAlumnoGrupo.AllowUserToDeleteRows = false;
+            this.dataGridViewAlumnoGrupo.AllowUserToResizeRows = false;
             this.dataGridViewAlumnoGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAlumnoGrupo.Location = new System.Drawing.Point(29, 42);
             this.dataGridViewAlumnoGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewAlumnoGrupo.Name = "dataGridViewAlumnoGrupo";
             this.dataGridViewAlumnoGrupo.ReadOnly = true;
+            this.dataGridViewAlumnoGrupo.RowHeadersVisible = false;
             this.dataGridViewAlumnoGrupo.RowTemplate.Height = 24;
-            this.dataGridViewAlumnoGrupo.Size = new System.Drawing.Size(396, 407);
+            this.dataGridViewAlumnoGrupo.Size = new System.Drawing.Size(396, 411);
             this.dataGridViewAlumnoGrupo.TabIndex = 25;
-            this.dataGridViewAlumnoGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlumnoGrupo_CellContentClick);
+            this.dataGridViewAlumnoGrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlumnoGrupo_CellClick);
             // 
             // label1
             // 
@@ -289,9 +299,9 @@
             // 
             // btnRelacionAlumnos
             // 
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(29, 465);
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(161, 465);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
-            this.btnRelacionAlumnos.Size = new System.Drawing.Size(396, 42);
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(264, 42);
             this.btnRelacionAlumnos.TabIndex = 47;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
             this.btnRelacionAlumnos.UseVisualStyleBackColor = true;
@@ -326,7 +336,7 @@
             // 
             // txtFeFin
             // 
-            this.txtFeFin.Location = new System.Drawing.Point(668, 145);
+            this.txtFeFin.Location = new System.Drawing.Point(658, 145);
             this.txtFeFin.Name = "txtFeFin";
             this.txtFeFin.ReadOnly = true;
             this.txtFeFin.Size = new System.Drawing.Size(73, 20);
@@ -344,7 +354,7 @@
             // 
             // btnCambiarFechas
             // 
-            this.btnCambiarFechas.Location = new System.Drawing.Point(768, 144);
+            this.btnCambiarFechas.Location = new System.Drawing.Point(746, 144);
             this.btnCambiarFechas.Name = "btnCambiarFechas";
             this.btnCambiarFechas.Size = new System.Drawing.Size(105, 23);
             this.btnCambiarFechas.TabIndex = 55;
@@ -355,18 +365,62 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(629, 148);
+            this.label14.Location = new System.Drawing.Point(619, 148);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 13);
             this.label14.TabIndex = 56;
             this.label14.Text = "FIN";
             // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(528, 42);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ReadOnly = true;
+            this.txtNumero.Size = new System.Drawing.Size(107, 20);
+            this.txtNumero.TabIndex = 58;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(463, 45);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 57;
+            this.label13.Text = "NUMERO";
+            // 
+            // btnBorrarAlumno
+            // 
+            this.btnBorrarAlumno.Enabled = false;
+            this.btnBorrarAlumno.Location = new System.Drawing.Point(29, 465);
+            this.btnBorrarAlumno.Name = "btnBorrarAlumno";
+            this.btnBorrarAlumno.Size = new System.Drawing.Size(126, 42);
+            this.btnBorrarAlumno.TabIndex = 59;
+            this.btnBorrarAlumno.Text = "BORRAR ALUMNO";
+            this.btnBorrarAlumno.UseVisualStyleBackColor = true;
+            this.btnBorrarAlumno.Click += new System.EventHandler(this.btnBorrarAlumno_Click);
+            // 
+            // btnEliminarGrupo
+            // 
+            this.btnEliminarGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGrupo.Image")));
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(855, 53);
+            this.btnEliminarGrupo.Name = "btnEliminarGrupo";
+            this.btnEliminarGrupo.Size = new System.Drawing.Size(41, 53);
+            this.btnEliminarGrupo.TabIndex = 60;
+            this.btnEliminarGrupo.UseVisualStyleBackColor = true;
+            this.btnEliminarGrupo.Click += new System.EventHandler(this.btnEliminarGrupo_Click);
+            // 
             // frmAsignarAlumnosToGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 526);
+            this.Controls.Add(this.btnEliminarGrupo);
+            this.Controls.Add(this.btnBorrarAlumno);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnCambiarFechas);
             this.Controls.Add(this.label12);
@@ -439,5 +493,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnCambiarFechas;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnBorrarAlumno;
+        private System.Windows.Forms.Button btnEliminarGrupo;
     }
 }

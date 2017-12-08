@@ -14,8 +14,8 @@ namespace InstitutoDeIdiomas.ReportForms
     public partial class frmRptRelacionAlumnos : Form
     {
         DataTable dt;
-        string idioma, nivel, ciclo, docente, salon, horaInicio, horaFin;
-        public frmRptRelacionAlumnos(DataTable dt, string idioma, string nivel, string ciclo, string docente, string salon, string horaInicio, string horaFin)
+        string idioma, nivel, ciclo, docente, salon, horaInicio, horaFin, numero;
+        public frmRptRelacionAlumnos(DataTable dt, string idioma, string nivel, string ciclo, string docente, string salon, string horaInicio, string horaFin, string numero)
         {
             InitializeComponent();
             this.dt = dt;
@@ -26,6 +26,7 @@ namespace InstitutoDeIdiomas.ReportForms
             this.salon = salon;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
+            this.numero = numero;
         }
 
         private void frmRptRelacionAlumnos_Load(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pDocente",docente),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalon",salon),
                 new Microsoft.Reporting.WinForms.ReportParameter("pHoraInicio",horaInicio),
-                new Microsoft.Reporting.WinForms.ReportParameter("pHoraFin",horaFin)
+                new Microsoft.Reporting.WinForms.ReportParameter("pHoraFin",horaFin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero)
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);

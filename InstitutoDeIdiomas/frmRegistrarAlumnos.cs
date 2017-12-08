@@ -1501,7 +1501,8 @@ namespace InstitutoDeIdiomas
                     {
                         cmd.Connection.Close();
                     }
-                } catch (Exception ex) { }
+                } catch (Exception ex) {
+                }
             }
             return ok;
         }

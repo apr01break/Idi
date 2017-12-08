@@ -116,6 +116,7 @@ namespace InstitutoDeIdiomas
                 anho = Convert.ToDateTime(row2[7]).ToString("yyyy");
                 mes = Convert.ToDateTime(row2[7]).ToString("MMMMM").ToUpper();
                 txtDocente.Text = row2[8].ToString();
+                txtNumero.Text = row2[10].ToString();
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
@@ -740,7 +741,7 @@ namespace InstitutoDeIdiomas
                 dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
             }
             using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumno, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
-                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text))
+                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text,txtNumero.Text))
             {
                 frm.ShowDialog();
             }

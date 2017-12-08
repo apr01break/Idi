@@ -61,6 +61,8 @@ namespace InstitutoDeIdiomas
             this.label8 = new System.Windows.Forms.Label();
             this.txtDocente = new System.Windows.Forms.TextBox();
             this.btnRelacionAlumnos = new System.Windows.Forms.Button();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
@@ -74,7 +76,7 @@ namespace InstitutoDeIdiomas
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(335, 66);
+            this.label11.Location = new System.Drawing.Point(335, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(13, 13);
             this.label11.TabIndex = 58;
@@ -82,7 +84,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtHorario2
             // 
-            this.txtHorario2.Location = new System.Drawing.Point(349, 63);
+            this.txtHorario2.Location = new System.Drawing.Point(349, 87);
             this.txtHorario2.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario2.Name = "txtHorario2";
             this.txtHorario2.ReadOnly = true;
@@ -91,7 +93,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtSalon
             // 
-            this.txtSalon.Location = new System.Drawing.Point(78, 90);
+            this.txtSalon.Location = new System.Drawing.Point(78, 114);
             this.txtSalon.Margin = new System.Windows.Forms.Padding(2);
             this.txtSalon.Name = "txtSalon";
             this.txtSalon.ReadOnly = true;
@@ -101,7 +103,7 @@ namespace InstitutoDeIdiomas
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 93);
+            this.label10.Location = new System.Drawing.Point(22, 117);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 13);
@@ -110,7 +112,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtHorario
             // 
-            this.txtHorario.Location = new System.Drawing.Point(280, 63);
+            this.txtHorario.Location = new System.Drawing.Point(280, 87);
             this.txtHorario.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.ReadOnly = true;
@@ -119,7 +121,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtCiclo
             // 
-            this.txtCiclo.Location = new System.Drawing.Point(280, 38);
+            this.txtCiclo.Location = new System.Drawing.Point(280, 62);
             this.txtCiclo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCiclo.Name = "txtCiclo";
             this.txtCiclo.ReadOnly = true;
@@ -128,7 +130,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtNivel
             // 
-            this.txtNivel.Location = new System.Drawing.Point(78, 63);
+            this.txtNivel.Location = new System.Drawing.Point(78, 87);
             this.txtNivel.Margin = new System.Windows.Forms.Padding(2);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.ReadOnly = true;
@@ -137,7 +139,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtIdioma
             // 
-            this.txtIdioma.Location = new System.Drawing.Point(78, 38);
+            this.txtIdioma.Location = new System.Drawing.Point(78, 62);
             this.txtIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdioma.Name = "txtIdioma";
             this.txtIdioma.ReadOnly = true;
@@ -147,7 +149,7 @@ namespace InstitutoDeIdiomas
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 66);
+            this.label7.Location = new System.Drawing.Point(22, 90);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
@@ -157,7 +159,7 @@ namespace InstitutoDeIdiomas
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(238, 41);
+            this.label6.Location = new System.Drawing.Point(238, 65);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
@@ -167,7 +169,7 @@ namespace InstitutoDeIdiomas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 66);
+            this.label4.Location = new System.Drawing.Point(221, 90);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
@@ -177,7 +179,7 @@ namespace InstitutoDeIdiomas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 41);
+            this.label3.Location = new System.Drawing.Point(22, 65);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
@@ -198,7 +200,7 @@ namespace InstitutoDeIdiomas
             // 
             this.dgvwNotas.AllowUserToAddRows = false;
             this.dgvwNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwNotas.Location = new System.Drawing.Point(24, 207);
+            this.dgvwNotas.Location = new System.Drawing.Point(12, 232);
             this.dgvwNotas.Name = "dgvwNotas";
             this.dgvwNotas.ReadOnly = true;
             this.dgvwNotas.Size = new System.Drawing.Size(794, 392);
@@ -214,7 +216,7 @@ namespace InstitutoDeIdiomas
             "SPEAKING",
             "USE OF ENGLISH",
             "RESULTADOS HASTA AHORA"});
-            this.cmbTipoNota.Location = new System.Drawing.Point(241, 121);
+            this.cmbTipoNota.Location = new System.Drawing.Point(241, 145);
             this.cmbTipoNota.Name = "cmbTipoNota";
             this.cmbTipoNota.Size = new System.Drawing.Size(229, 21);
             this.cmbTipoNota.TabIndex = 61;
@@ -225,7 +227,7 @@ namespace InstitutoDeIdiomas
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(275, 160);
+            this.label1.Location = new System.Drawing.Point(158, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 29);
             this.label1.TabIndex = 62;
@@ -236,7 +238,7 @@ namespace InstitutoDeIdiomas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 124);
+            this.label5.Location = new System.Drawing.Point(24, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 13);
             this.label5.TabIndex = 63;
@@ -245,7 +247,7 @@ namespace InstitutoDeIdiomas
             // dgvwBase
             // 
             this.dgvwBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwBase.Location = new System.Drawing.Point(778, 565);
+            this.dgvwBase.Location = new System.Drawing.Point(743, 540);
             this.dgvwBase.Name = "dgvwBase";
             this.dgvwBase.Size = new System.Drawing.Size(40, 34);
             this.dgvwBase.TabIndex = 64;
@@ -254,7 +256,7 @@ namespace InstitutoDeIdiomas
             // dgvwListening
             // 
             this.dgvwListening.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwListening.Location = new System.Drawing.Point(779, 571);
+            this.dgvwListening.Location = new System.Drawing.Point(767, 559);
             this.dgvwListening.Name = "dgvwListening";
             this.dgvwListening.Size = new System.Drawing.Size(39, 28);
             this.dgvwListening.TabIndex = 65;
@@ -262,7 +264,7 @@ namespace InstitutoDeIdiomas
             // dgvwReading
             // 
             this.dgvwReading.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwReading.Location = new System.Drawing.Point(778, 571);
+            this.dgvwReading.Location = new System.Drawing.Point(767, 560);
             this.dgvwReading.Name = "dgvwReading";
             this.dgvwReading.Size = new System.Drawing.Size(39, 28);
             this.dgvwReading.TabIndex = 66;
@@ -270,7 +272,7 @@ namespace InstitutoDeIdiomas
             // dgvwSpeaking
             // 
             this.dgvwSpeaking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwSpeaking.Location = new System.Drawing.Point(773, 571);
+            this.dgvwSpeaking.Location = new System.Drawing.Point(762, 560);
             this.dgvwSpeaking.Name = "dgvwSpeaking";
             this.dgvwSpeaking.Size = new System.Drawing.Size(44, 28);
             this.dgvwSpeaking.TabIndex = 67;
@@ -278,7 +280,7 @@ namespace InstitutoDeIdiomas
             // dgvwWriting
             // 
             this.dgvwWriting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwWriting.Location = new System.Drawing.Point(776, 570);
+            this.dgvwWriting.Location = new System.Drawing.Point(765, 559);
             this.dgvwWriting.Name = "dgvwWriting";
             this.dgvwWriting.Size = new System.Drawing.Size(41, 29);
             this.dgvwWriting.TabIndex = 68;
@@ -286,7 +288,7 @@ namespace InstitutoDeIdiomas
             // dgvwUseOfEnglish
             // 
             this.dgvwUseOfEnglish.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwUseOfEnglish.Location = new System.Drawing.Point(779, 570);
+            this.dgvwUseOfEnglish.Location = new System.Drawing.Point(767, 560);
             this.dgvwUseOfEnglish.Name = "dgvwUseOfEnglish";
             this.dgvwUseOfEnglish.Size = new System.Drawing.Size(39, 28);
             this.dgvwUseOfEnglish.TabIndex = 69;
@@ -314,7 +316,7 @@ namespace InstitutoDeIdiomas
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(221, 93);
+            this.label8.Location = new System.Drawing.Point(221, 117);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
@@ -323,7 +325,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtDocente
             // 
-            this.txtDocente.Location = new System.Drawing.Point(280, 90);
+            this.txtDocente.Location = new System.Drawing.Point(280, 114);
             this.txtDocente.Margin = new System.Windows.Forms.Padding(2);
             this.txtDocente.Name = "txtDocente";
             this.txtDocente.ReadOnly = true;
@@ -340,11 +342,32 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumnos.UseVisualStyleBackColor = true;
             this.btnRelacionAlumnos.Click += new System.EventHandler(this.btnRelacionAlumnos_Click);
             // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(78, 35);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ReadOnly = true;
+            this.txtNumero.Size = new System.Drawing.Size(122, 20);
+            this.txtNumero.TabIndex = 77;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 38);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 76;
+            this.label9.Text = "NUMERO";
+            // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 611);
+            this.ClientSize = new System.Drawing.Size(822, 636);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRelacionAlumnos);
             this.Controls.Add(this.txtDocente);
             this.Controls.Add(this.label8);
@@ -421,5 +444,7 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.TextBox txtDocente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRelacionAlumnos;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label9;
     }
 }

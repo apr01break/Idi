@@ -18,6 +18,7 @@ namespace InstitutoDeIdiomas
         public static SqlConnection _SqlConnection = new SqlConnection();
         String codigoGrupo, codigoAlumno;
         int id;
+        int idAlumnoGrupo;
         DataTable dtListaAlumnos = new DataTable();
         public frmAsignarAlumnosToGroup(int id)
         {
@@ -44,6 +45,7 @@ namespace InstitutoDeIdiomas
                 dtListaAlumnos = dt.Copy();
                 dataGridViewAlumnoGrupo.DataSource = dt;
                 dataGridViewAlumnoGrupo.Columns["NOMBRE"].Width =250;
+                dataGridViewAlumnoGrupo.Columns["idAlumnoGrupo"].Visible = false;
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
@@ -89,6 +91,7 @@ namespace InstitutoDeIdiomas
                 txtFeInicio.Text = row2[7].ToString();
                 txtDocente.Text = row2[8].ToString();
                 txtFeFin.Text = row2[9].ToString();
+                txtNumero.Text = row2[10].ToString();
                 codigoGrupo = row2["idGrupo"].ToString();
 
                 if (cmd.Connection.State == ConnectionState.Open)
@@ -239,28 +242,109 @@ namespace InstitutoDeIdiomas
 
         private void btnRelacionAlumnos_Click(object sender, EventArgs e)
         {
-            dtListaAlumnos.Columns[0].ColumnName = "codigo";
-            dtListaAlumnos.Columns[1].ColumnName = "nombre";
-            dtListaAlumnos.Columns.Add("numero");
-            for (int i = 0; i < dtListaAlumnos.Rows.Count; i++)
+            try
             {
-                dtListaAlumnos.Rows[i]["numero"] = i + 1 + "";
+                dtListaAlumnos.Columns[0].ColumnName = "codigo";
+                dtListaAlumnos.Columns[1].ColumnName = "nombre";
+                dtListaAlumnos.Columns.Add("numero");
+                for (int i = 0; i < dtListaAlumnos.Rows.Count; i++)
+                {
+                    dtListaAlumnos.Rows[i]["numero"] = i + 1 + "";
+                }
+                using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumnos, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
+                    txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text, txtNumero.Text))
+                {
+                    frm.ShowDialog();
+                }
             }
-            using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumnos, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
-                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text))
+            catch (Exception)
             {
-                frm.ShowDialog();
+
+                throw;
             }
-        }
-
-        private void dataGridViewAlumnoGrupo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            
         }
 
         private void btnCambiarFechas_Click(object sender, EventArgs e)
         {
             new frmCambiarFechas(this,txtFeInicio.Text,txtFeFin.Text, id).Show();
+        }
+
+        private void dataGridViewAlumnoGrupo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewAlumnoGrupo.RowCount)
+            {
+                try
+                {
+                    DataGridViewRow row = dataGridViewAlumnoGrupo.Rows[e.RowIndex];
+                    idAlumnoGrupo = (int)row.Cells["idAlumnoGrupo"].Value;
+                    btnBorrarAlumno.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnBorrarAlumno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("eliminar_alumno_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                cargarAlumnoGrupo(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        private void btnEliminarGrupo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewAlumnoGrupo.RowCount == 0)
+                {
+                    if (MessageBox.Show("EL GRUPO SERÁ ELIMINADO POR COMPLETO \n NOTA:Si este grupo ya tiene notas no se eliminara \n ¿DESEAS CONTINUAR?", "ADVERTENCIA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        SqlCommand cmd = new SqlCommand("eliminar_grupo", _SqlConnection);
+                        if (cmd.Connection.State == ConnectionState.Closed)
+                        {
+                            cmd.Connection.Open();
+                        }
+                        cmd.Parameters.Add(new SqlParameter("@idGrupo", id));
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                        if (cmd.Connection.State == ConnectionState.Open)
+                        {
+                            cmd.Connection.Close();
+                        }
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Si desea eliminar el grupo, elimine todos los alumnos pertenecientes");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void txtBuscarApellido_KeyUp(object sender, KeyEventArgs e)
