@@ -639,6 +639,11 @@ namespace InstitutoDeIdiomas
             cargarAlumnoTabla();
             cargarResultados();
             corregirNota();
+            if (dgvwNotas.ColumnCount != 7)
+            {
+                MessageBox.Show("Es necesario tener notas de todos los criterios");
+                return;
+            }
             DataTable dt = new DataTable();
             //int x = 1;
             //for (int i = 0; i < dgvwNotas.RowCount; i++)

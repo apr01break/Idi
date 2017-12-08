@@ -86,6 +86,7 @@ namespace InstitutoDeIdiomas
                     }
                 }
                 dgvwGrupo.Columns["idGrupo"].Visible = false;
+
                 
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
@@ -100,7 +101,7 @@ namespace InstitutoDeIdiomas
 
         private void dgvwGrupo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvwGrupo.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvwGrupo.RowCount)
             {
                 try
                 {

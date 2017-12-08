@@ -62,6 +62,8 @@
             this.btnFinUseOfEnglish = new System.Windows.Forms.Button();
             this.btnFinSpeaking = new System.Windows.Forms.Button();
             this.dtpFechaClase = new System.Windows.Forms.DateTimePicker();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORESREGAUX)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 46);
+            this.label1.Location = new System.Drawing.Point(276, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
@@ -90,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 68);
+            this.label3.Location = new System.Drawing.Point(276, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
@@ -100,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 91);
+            this.label4.Location = new System.Drawing.Point(276, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
@@ -110,7 +112,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 45);
+            this.label5.Location = new System.Drawing.Point(559, 46);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
@@ -120,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(292, 91);
+            this.label6.Location = new System.Drawing.Point(559, 98);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
@@ -129,7 +131,7 @@
             // 
             // txtIdioma
             // 
-            this.txtIdioma.Location = new System.Drawing.Point(116, 41);
+            this.txtIdioma.Location = new System.Drawing.Point(383, 42);
             this.txtIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdioma.Name = "txtIdioma";
             this.txtIdioma.ReadOnly = true;
@@ -138,7 +140,7 @@
             // 
             // txtNivel
             // 
-            this.txtNivel.Location = new System.Drawing.Point(116, 64);
+            this.txtNivel.Location = new System.Drawing.Point(383, 68);
             this.txtNivel.Margin = new System.Windows.Forms.Padding(2);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.ReadOnly = true;
@@ -147,7 +149,7 @@
             // 
             // txtInicioCurso
             // 
-            this.txtInicioCurso.Location = new System.Drawing.Point(116, 87);
+            this.txtInicioCurso.Location = new System.Drawing.Point(383, 94);
             this.txtInicioCurso.Margin = new System.Windows.Forms.Padding(2);
             this.txtInicioCurso.Name = "txtInicioCurso";
             this.txtInicioCurso.ReadOnly = true;
@@ -156,7 +158,7 @@
             // 
             // txtSalon
             // 
-            this.txtSalon.Location = new System.Drawing.Point(362, 65);
+            this.txtSalon.Location = new System.Drawing.Point(629, 69);
             this.txtSalon.Margin = new System.Windows.Forms.Padding(2);
             this.txtSalon.Name = "txtSalon";
             this.txtSalon.ReadOnly = true;
@@ -165,7 +167,7 @@
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(362, 88);
+            this.txtHoraInicio.Location = new System.Drawing.Point(629, 95);
             this.txtHoraInicio.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.ReadOnly = true;
@@ -175,7 +177,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(17, 119);
+            this.panel1.Location = new System.Drawing.Point(17, 123);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 10);
@@ -207,12 +209,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(564, 41);
+            this.label9.Location = new System.Drawing.Point(31, 70);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 20);
+            this.label9.Size = new System.Drawing.Size(154, 18);
             this.label9.TabIndex = 16;
             this.label9.Text = "FECHA DE CLASE ";
             // 
@@ -296,7 +298,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(437, 91);
+            this.label12.Location = new System.Drawing.Point(704, 98);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(13, 13);
             this.label12.TabIndex = 24;
@@ -304,7 +306,7 @@
             // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(455, 88);
+            this.txtHoraFinal.Location = new System.Drawing.Point(722, 95);
             this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.ReadOnly = true;
@@ -313,7 +315,7 @@
             // 
             // txtCiclo
             // 
-            this.txtCiclo.Location = new System.Drawing.Point(362, 41);
+            this.txtCiclo.Location = new System.Drawing.Point(629, 42);
             this.txtCiclo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCiclo.Name = "txtCiclo";
             this.txtCiclo.ReadOnly = true;
@@ -323,7 +325,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(291, 69);
+            this.label7.Location = new System.Drawing.Point(558, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 27;
@@ -392,16 +394,37 @@
             // dtpFechaClase
             // 
             this.dtpFechaClase.CalendarTitleBackColor = System.Drawing.Color.Red;
-            this.dtpFechaClase.Location = new System.Drawing.Point(568, 69);
+            this.dtpFechaClase.Location = new System.Drawing.Point(33, 93);
             this.dtpFechaClase.Name = "dtpFechaClase";
             this.dtpFechaClase.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaClase.TabIndex = 33;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(113, 42);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ReadOnly = true;
+            this.txtNumero.Size = new System.Drawing.Size(144, 20);
+            this.txtNumero.TabIndex = 35;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 47);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "NUMERO";
             // 
             // frmRegistroAuxiliar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 634);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpFechaClase);
             this.Controls.Add(this.btnFinUseOfEnglish);
             this.Controls.Add(this.btnFinListening);
@@ -440,6 +463,7 @@
             this.Name = "frmRegistroAuxiliar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO AUXILIAR";
+            this.Load += new System.EventHandler(this.frmRegistroAuxiliar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORESREGAUX)).EndInit();
             this.ResumeLayout(false);
@@ -481,5 +505,7 @@
         private System.Windows.Forms.Button btnFinReading;
         private System.Windows.Forms.Button btnFinSpeaking;
         private System.Windows.Forms.DateTimePicker dtpFechaClase;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label10;
     }
 }

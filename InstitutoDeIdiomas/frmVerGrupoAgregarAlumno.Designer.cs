@@ -39,7 +39,7 @@
             // btnAgregarAlumno
             // 
             this.btnAgregarAlumno.Enabled = false;
-            this.btnAgregarAlumno.Location = new System.Drawing.Point(782, 312);
+            this.btnAgregarAlumno.Location = new System.Drawing.Point(806, 312);
             this.btnAgregarAlumno.Name = "btnAgregarAlumno";
             this.btnAgregarAlumno.Size = new System.Drawing.Size(75, 59);
             this.btnAgregarAlumno.TabIndex = 7;
@@ -59,19 +59,22 @@
             // 
             // dataGridViewGrupo
             // 
+            this.dataGridViewGrupo.AllowUserToAddRows = false;
+            this.dataGridViewGrupo.AllowUserToResizeRows = false;
             this.dataGridViewGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGrupo.Location = new System.Drawing.Point(11, 33);
             this.dataGridViewGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewGrupo.Name = "dataGridViewGrupo";
+            this.dataGridViewGrupo.ReadOnly = true;
             this.dataGridViewGrupo.RowTemplate.Height = 24;
-            this.dataGridViewGrupo.Size = new System.Drawing.Size(760, 466);
+            this.dataGridViewGrupo.Size = new System.Drawing.Size(786, 466);
             this.dataGridViewGrupo.TabIndex = 5;
             this.dataGridViewGrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupo_CellClick);
             // 
             // btnVerNotas
             // 
             this.btnVerNotas.Enabled = false;
-            this.btnVerNotas.Location = new System.Drawing.Point(782, 126);
+            this.btnVerNotas.Location = new System.Drawing.Point(806, 126);
             this.btnVerNotas.Name = "btnVerNotas";
             this.btnVerNotas.Size = new System.Drawing.Size(75, 59);
             this.btnVerNotas.TabIndex = 8;
@@ -84,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 510);
+            this.ClientSize = new System.Drawing.Size(896, 510);
             this.Controls.Add(this.btnVerNotas);
             this.Controls.Add(this.btnAgregarAlumno);
             this.Controls.Add(this.label1);

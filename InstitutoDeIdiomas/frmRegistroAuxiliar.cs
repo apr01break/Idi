@@ -63,7 +63,7 @@ namespace InstitutoDeIdiomas
                 txtHoraInicio.Text = row2[5].ToString();
                 txtHoraFinal.Text = row2[6].ToString();
                 txtInicioCurso.Text = row2[7].ToString();
-                
+                txtNumero.Text = row2[10].ToString();
 
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
@@ -569,6 +569,11 @@ namespace InstitutoDeIdiomas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void frmRegistroAuxiliar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

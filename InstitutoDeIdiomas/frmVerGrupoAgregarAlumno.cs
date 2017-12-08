@@ -99,7 +99,7 @@ namespace InstitutoDeIdiomas
 
         private void dataGridViewGrupo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewGrupo.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewGrupo.RowCount)
             {
                 try
                 {

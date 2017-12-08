@@ -199,6 +199,7 @@ namespace InstitutoDeIdiomas
             // dgvwNotas
             // 
             this.dgvwNotas.AllowUserToAddRows = false;
+            this.dgvwNotas.AllowUserToResizeRows = false;
             this.dgvwNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvwNotas.Location = new System.Drawing.Point(12, 232);
             this.dgvwNotas.Name = "dgvwNotas";
@@ -208,6 +209,7 @@ namespace InstitutoDeIdiomas
             // 
             // cmbTipoNota
             // 
+            this.cmbTipoNota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoNota.FormattingEnabled = true;
             this.cmbTipoNota.Items.AddRange(new object[] {
             "LISTENING",
@@ -309,7 +311,7 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
             this.btnRelacionAlumno.Size = new System.Drawing.Size(196, 44);
             this.btnRelacionAlumno.TabIndex = 71;
-            this.btnRelacionAlumno.Text = "ACTA RELACION DE ALUMNOS";
+            this.btnRelacionAlumno.Text = "ACTA FINAL NOTAS";
             this.btnRelacionAlumno.UseVisualStyleBackColor = true;
             this.btnRelacionAlumno.Click += new System.EventHandler(this.btnRelacionAlumno_Click);
             // 

@@ -333,6 +333,9 @@
     <EmbeddedResource Include="frmRegistroAuxiliar.resx">
       <DependentUpon>frmRegistroAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarGrupo.es.resx">
+      <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarGrupo.resx">
       <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
     </EmbeddedResource>
