@@ -29,7 +29,9 @@ namespace InstitutoDeIdiomas
         private Label label5;
         private Label label6;
         private Label label7;
+        private Button btnBorrarPago;
         private TextBox TXT_SEARCH;
+        String idpago;
       
         public frmConsultarDeudores()
         {
@@ -60,6 +62,7 @@ namespace InstitutoDeIdiomas
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnBorrarPago = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNOAPAGAR)).BeginInit();
@@ -118,6 +121,7 @@ namespace InstitutoDeIdiomas
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -127,6 +131,7 @@ namespace InstitutoDeIdiomas
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(525, 333);
             this.dataGridView2.TabIndex = 6;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // FOTOALUMNOAPAGAR
             // 
@@ -193,10 +198,22 @@ namespace InstitutoDeIdiomas
             this.label7.Text = "dnipe";
             this.label7.Visible = false;
             // 
+            // btnBorrarPago
+            // 
+            this.btnBorrarPago.Enabled = false;
+            this.btnBorrarPago.Location = new System.Drawing.Point(943, 28);
+            this.btnBorrarPago.Name = "btnBorrarPago";
+            this.btnBorrarPago.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrarPago.TabIndex = 15;
+            this.btnBorrarPago.Text = "Borrar pago";
+            this.btnBorrarPago.UseVisualStyleBackColor = true;
+            this.btnBorrarPago.Click += new System.EventHandler(this.btnBorrarPago_Click);
+            // 
             // frmConsultarDeudores
             // 
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1030, 478);
+            this.Controls.Add(this.btnBorrarPago);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -294,6 +311,7 @@ namespace InstitutoDeIdiomas
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnBorrarPago.Enabled = false;
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount - 1)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
@@ -354,7 +372,8 @@ namespace InstitutoDeIdiomas
                 SqlDataAdapter da = new SqlDataAdapter(comando);
                 da.Fill(dt);
                 dataGridView2.DataSource = dt;
-                dataGridView2.Columns[0].Width = 210;
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[1].Width = 210;
                 if (comando.Connection.State == ConnectionState.Open)
                 {
                     comando.Connection.Close();
@@ -400,10 +419,16 @@ namespace InstitutoDeIdiomas
                 DataTable dtResumen = new DataTable();
                 dtResumen.Columns.Add("Wan");
                 dtResumen.Columns.Add("MontoTotal");
-                
+                dtCloned.Columns.Add("Fecha");
                 for (int i = 0; i < dtCloned.Rows.Count; i++)
                 {
-                    dtCloned.Rows[i][2] = Convert.ToDateTime(dtCloned.Rows[i][2]).ToString("dd/MM/yyyy");
+                    
+                    if (dtCloned.Rows[i][3] != System.DBNull.Value)
+                    {
+                        string fech = Convert.ToDateTime(dtCloned.Rows[i][3]).ToString("dd/MM/yyyy");
+                        dtCloned.Rows[i][5] = fech;
+                    }
+                    
                     bool xd=false;
                     for(int j=0; j<dtResumen.Rows.Count; j++)
                     {
@@ -416,19 +441,35 @@ namespace InstitutoDeIdiomas
                     if (xd == false)
                     {
                         DataRow dr = dtResumen.NewRow();
-                        dr[0] = dtCloned.Rows[i][0].ToString();
-                        dr[1] = Convert.ToDecimal(dtCloned.Rows[i][1]);
+                        dr[0] = dtCloned.Rows[i][1].ToString();
+                        dr[1] = Convert.ToDecimal(dtCloned.Rows[i][2]);
                         dtResumen.Rows.Add(dr);
                     }
                 }
-                using (frmRptListaDePagos frm = new frmRptListaDePagos(dtCloned, dtalumno,dtResumen))
+                dtCloned.Columns.RemoveAt(3);
+                using (frmRptListaDePagos frm = new frmRptListaDePagos(dtCloned, dtalumno, dtResumen))
                 {
                     frm.ShowDialog();
                 }
             }
             else {
-                MessageBox.Show("Porfavor asegurate de buscar un alumno primero");
+                MessageBox.Show("Selecciona un alumno");
             }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnBorrarPago.Enabled = true;
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount)
+            {
+                DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+                idpago = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnBorrarPago_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
