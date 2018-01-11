@@ -157,7 +157,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>RAZON</Value>
+                                  <Value>RAZÓN</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -310,7 +310,7 @@
             <Top>11.67788cm</Top>
             <Left>0.8771cm</Left>
             <Height>1.2cm</Height>
-            <Width>9.73276cm</Width>
+            <Width>9.73277cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -346,7 +346,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>RAZON</Value>
+                                  <Value>Razón</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -381,7 +381,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>RECIBO</Value>
+                                  <Value>N° Recibo</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -416,7 +416,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>MONTO</Value>
+                                  <Value>Fecha de recibo</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -451,7 +451,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>FECHA</Value>
+                                  <Value>Monto</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -554,7 +554,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Monto.Value</Value>
+                                  <Value>=Fields!Fecha.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -587,7 +587,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Fecha.Value</Value>
+                                  <Value>=Fields!Monto.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

@@ -254,7 +254,7 @@ namespace InstitutoDeIdiomas
                         {
                             PAGAR_MATRICULA();
                         }
-                        GUARDAR_OTROS_PAGOS();
+                        GUARDAR_OTROS_PAGOS2();
 
                     }
                     catch (Exception ex)
@@ -477,6 +477,39 @@ namespace InstitutoDeIdiomas
                 }
             }
         }
+        private void GUARDAR_OTROS_PAGOS2()
+        {
+            foreach (DataGridViewRow r in GRIDVIEWTIPOSPAGOS.Rows)
+            {
+                DataGridViewCheckBoxCell ck = r.Cells["SELECCIONAR"] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(ck.Value))
+                {
+                    int idpago = Convert.ToInt32(r.Cells[0].Value.ToString());
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("crear_detalle_pago2", _SqlConnection);
+                        if (cmd.Connection.State == ConnectionState.Closed)
+                        {
+                            cmd.Connection.Open();
+                        }
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@idtipo", idpago));
+
+                        cmd.ExecuteNonQuery();
+                        if (cmd.Connection.State == ConnectionState.Open)
+                        {
+                            cmd.Connection.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+                }
+            }
+        }
         private void LIMPIAR_DATOS()
         {
             TXTMONTO.Text = "0";
@@ -485,6 +518,10 @@ namespace InstitutoDeIdiomas
             dgvwSaldo.DataSource = null;
             dgvwSaldo.Columns.Clear();
             dgvwSaldo.Rows.Clear();
+            GRIDVIEWTIPOSPAGOS.DataSource = null;
+            GRIDVIEWTIPOSPAGOS.Columns.Clear();
+            GRIDVIEWTIPOSPAGOS.Rows.Clear();
+            TXTMONTORECIBO.Text = "";
 
         }
         private bool VALIDAR_MATRICULA()
@@ -704,6 +741,7 @@ namespace InstitutoDeIdiomas
                     {
                         comando.Connection.Close();
                     }
+                    LBLTIPOALUMN_TextChanged(null,null);
                 }
                 catch (Exception ex)
                 {
