@@ -92,11 +92,13 @@ namespace InstitutoDeIdiomas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(657, 150);
             this.dataGridView1.TabIndex = 2;
@@ -114,11 +116,13 @@ namespace InstitutoDeIdiomas
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(15, 291);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(831, 122);
             this.dataGridView2.TabIndex = 4;
@@ -287,7 +291,7 @@ namespace InstitutoDeIdiomas
         }
         private void GridViewNombres_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 String dni = row.Cells[3].Value.ToString();               
@@ -352,7 +356,7 @@ namespace InstitutoDeIdiomas
         }
         private void GridViewMatriculas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView2.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView2.RowCount)
             {
                 limpiarError();
                 DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];

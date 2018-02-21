@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,11 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmActualizarAlumno : Form
+    public partial class frmActualizarAlumno : MaterialForm
     {
-        private TextBox TXTALUSEARCH;
-        private Label label2;
-        private DataGridView GVALUMNOS;
-        private Button BTNACTUALIZAR;
-        private Label LBLIDPERSONA;
-        private Label label1;
         MsSqlConnection configurarConexion = new MsSqlConnection();
+        private Panel panel1;
+        private MaterialRaisedButton BTNGUARDAR;
         private TextBox TXTEDAD;
         private Label label12;
         private Label label11;
@@ -43,7 +40,11 @@ namespace InstitutoDeIdiomas
         private TextBox TXTMATERNO;
         private Label label3;
         private TextBox TXTPATERNO;
-        private Button BTNGUARDAR;
+        private Label LBLIDPERSONA;
+        private Button BTNACTUALIZAR;
+        private DataGridView GVALUMNOS;
+        private Label label2;
+        private TextBox TXTALUSEARCH;
         public static SqlConnection _SqlConnection = new SqlConnection();
         public frmActualizarAlumno()
         {
@@ -56,12 +57,8 @@ namespace InstitutoDeIdiomas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarAlumno));
-            this.TXTALUSEARCH = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.GVALUMNOS = new System.Windows.Forms.DataGridView();
-            this.BTNACTUALIZAR = new System.Windows.Forms.Button();
-            this.LBLIDPERSONA = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BTNGUARDAR = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TXTEDAD = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,180 +81,178 @@ namespace InstitutoDeIdiomas
             this.TXTMATERNO = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TXTPATERNO = new System.Windows.Forms.TextBox();
-            this.BTNGUARDAR = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.GVALUMNOS)).BeginInit();
+            this.LBLIDPERSONA = new System.Windows.Forms.Label();
+            this.BTNACTUALIZAR = new System.Windows.Forms.Button();
+            this.GVALUMNOS = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TXTALUSEARCH = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALUMNOIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GVALUMNOS)).BeginInit();
             this.SuspendLayout();
             // 
-            // TXTALUSEARCH
+            // panel1
             // 
-            this.TXTALUSEARCH.Location = new System.Drawing.Point(13, 58);
-            this.TXTALUSEARCH.Margin = new System.Windows.Forms.Padding(2);
-            this.TXTALUSEARCH.Name = "TXTALUSEARCH";
-            this.TXTALUSEARCH.Size = new System.Drawing.Size(293, 20);
-            this.TXTALUSEARCH.TabIndex = 0;
-            this.TXTALUSEARCH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXTALUSEARCH_KeyUp);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.BTNGUARDAR);
+            this.panel1.Controls.Add(this.TXTEDAD);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.TXTTELEFONO);
+            this.panel1.Controls.Add(this.TXTCELULAR);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.TXTCORREO);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.DTNACIMIENTO);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.BTNFOTO);
+            this.panel1.Controls.Add(this.CBSEXO);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.TXTDNI);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.TXTNOMBRE);
+            this.panel1.Controls.Add(this.ALUMNOIMAGE);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.TXTMATERNO);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.TXTPATERNO);
+            this.panel1.Controls.Add(this.LBLIDPERSONA);
+            this.panel1.Controls.Add(this.BTNACTUALIZAR);
+            this.panel1.Controls.Add(this.GVALUMNOS);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.TXTALUSEARCH);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(953, 406);
+            this.panel1.TabIndex = 71;
             // 
-            // label1
+            // BTNGUARDAR
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(538, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "BIENVENIDO AL MODULO DE ACTUALIZACION DE DATOS DEL ALUMNO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 43);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ingresa nombres del alumno a buscar";
-            // 
-            // GVALUMNOS
-            // 
-            this.GVALUMNOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GVALUMNOS.Location = new System.Drawing.Point(12, 82);
-            this.GVALUMNOS.Margin = new System.Windows.Forms.Padding(2);
-            this.GVALUMNOS.Name = "GVALUMNOS";
-            this.GVALUMNOS.RowTemplate.Height = 24;
-            this.GVALUMNOS.Size = new System.Drawing.Size(400, 336);
-            this.GVALUMNOS.TabIndex = 3;
-            this.GVALUMNOS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVALUMNOS_CellClick);
-            // 
-            // BTNACTUALIZAR
-            // 
-            this.BTNACTUALIZAR.Location = new System.Drawing.Point(687, 387);
-            this.BTNACTUALIZAR.Margin = new System.Windows.Forms.Padding(2);
-            this.BTNACTUALIZAR.Name = "BTNACTUALIZAR";
-            this.BTNACTUALIZAR.Size = new System.Drawing.Size(122, 31);
-            this.BTNACTUALIZAR.TabIndex = 26;
-            this.BTNACTUALIZAR.Text = "ACTUALIZAR";
-            this.BTNACTUALIZAR.UseVisualStyleBackColor = true;
-            this.BTNACTUALIZAR.Click += new System.EventHandler(this.BTNACTUALIZAR_Click);
-            // 
-            // LBLIDPERSONA
-            // 
-            this.LBLIDPERSONA.AutoSize = true;
-            this.LBLIDPERSONA.Location = new System.Drawing.Point(435, 403);
-            this.LBLIDPERSONA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LBLIDPERSONA.Name = "LBLIDPERSONA";
-            this.LBLIDPERSONA.Size = new System.Drawing.Size(42, 13);
-            this.LBLIDPERSONA.TabIndex = 27;
-            this.LBLIDPERSONA.Text = "XXXXX";
+            this.BTNGUARDAR.Depth = 0;
+            this.BTNGUARDAR.Location = new System.Drawing.Point(811, 334);
+            this.BTNGUARDAR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNGUARDAR.Name = "BTNGUARDAR";
+            this.BTNGUARDAR.Primary = true;
+            this.BTNGUARDAR.Size = new System.Drawing.Size(123, 37);
+            this.BTNGUARDAR.TabIndex = 100;
+            this.BTNGUARDAR.Text = "GUARDAR";
+            this.BTNGUARDAR.UseVisualStyleBackColor = true;
+            this.BTNGUARDAR.Click += new System.EventHandler(this.BTNGUARDAR_Click);
             // 
             // TXTEDAD
             // 
             this.TXTEDAD.Enabled = false;
-            this.TXTEDAD.Location = new System.Drawing.Point(563, 230);
+            this.TXTEDAD.Location = new System.Drawing.Point(561, 199);
             this.TXTEDAD.Margin = new System.Windows.Forms.Padding(2);
             this.TXTEDAD.Name = "TXTEDAD";
             this.TXTEDAD.ReadOnly = true;
             this.TXTEDAD.Size = new System.Drawing.Size(138, 20);
-            this.TXTEDAD.TabIndex = 69;
+            this.TXTEDAD.TabIndex = 97;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(523, 228);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(521, 202);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 13);
-            this.label12.TabIndex = 68;
+            this.label12.TabIndex = 96;
             this.label12.Text = "EDAD";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(733, 304);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(731, 273);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 13);
-            this.label11.TabIndex = 67;
+            this.label11.TabIndex = 95;
             this.label11.Text = "TELEFONO";
             // 
             // TXTTELEFONO
             // 
-            this.TXTTELEFONO.Location = new System.Drawing.Point(800, 304);
+            this.TXTTELEFONO.Location = new System.Drawing.Point(798, 273);
             this.TXTTELEFONO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTTELEFONO.Name = "TXTTELEFONO";
             this.TXTTELEFONO.ReadOnly = true;
             this.TXTTELEFONO.Size = new System.Drawing.Size(138, 20);
-            this.TXTTELEFONO.TabIndex = 66;
+            this.TXTTELEFONO.TabIndex = 94;
             // 
             // TXTCELULAR
             // 
-            this.TXTCELULAR.Location = new System.Drawing.Point(561, 304);
+            this.TXTCELULAR.Location = new System.Drawing.Point(559, 273);
             this.TXTCELULAR.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCELULAR.Name = "TXTCELULAR";
             this.TXTCELULAR.ReadOnly = true;
             this.TXTCELULAR.Size = new System.Drawing.Size(138, 20);
-            this.TXTCELULAR.TabIndex = 65;
+            this.TXTCELULAR.TabIndex = 93;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(505, 304);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(503, 277);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 64;
+            this.label10.TabIndex = 92;
             this.label10.Text = "CELULAR";
             // 
             // TXTCORREO
             // 
-            this.TXTCORREO.Location = new System.Drawing.Point(562, 281);
+            this.TXTCORREO.Location = new System.Drawing.Point(560, 250);
             this.TXTCORREO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCORREO.Name = "TXTCORREO";
             this.TXTCORREO.ReadOnly = true;
             this.TXTCORREO.Size = new System.Drawing.Size(376, 20);
-            this.TXTCORREO.TabIndex = 63;
+            this.TXTCORREO.TabIndex = 91;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(429, 284);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(427, 254);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 13);
-            this.label9.TabIndex = 62;
+            this.label9.TabIndex = 90;
             this.label9.Text = "CORREO ELECTRONICO";
             // 
             // DTNACIMIENTO
             // 
             this.DTNACIMIENTO.Enabled = false;
             this.DTNACIMIENTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTNACIMIENTO.Location = new System.Drawing.Point(563, 207);
+            this.DTNACIMIENTO.Location = new System.Drawing.Point(561, 176);
             this.DTNACIMIENTO.Margin = new System.Windows.Forms.Padding(2);
             this.DTNACIMIENTO.Name = "DTNACIMIENTO";
             this.DTNACIMIENTO.ShowUpDown = true;
             this.DTNACIMIENTO.Size = new System.Drawing.Size(248, 20);
-            this.DTNACIMIENTO.TabIndex = 61;
+            this.DTNACIMIENTO.TabIndex = 89;
             this.DTNACIMIENTO.ValueChanged += new System.EventHandler(this.DTNACIMIENTO_ValueChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(434, 207);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(430, 179);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(130, 13);
-            this.label8.TabIndex = 60;
+            this.label8.TabIndex = 88;
             this.label8.Text = "FECHA DE NACIMIENTO";
             // 
             // BTNFOTO
             // 
             this.BTNFOTO.Enabled = false;
-            this.BTNFOTO.Location = new System.Drawing.Point(813, 247);
+            this.BTNFOTO.Location = new System.Drawing.Point(811, 216);
             this.BTNFOTO.Margin = new System.Windows.Forms.Padding(2);
             this.BTNFOTO.Name = "BTNFOTO";
             this.BTNFOTO.Size = new System.Drawing.Size(124, 29);
-            this.BTNFOTO.TabIndex = 59;
+            this.BTNFOTO.TabIndex = 87;
             this.BTNFOTO.Text = "CAMBIAR FOTO";
             this.BTNFOTO.UseVisualStyleBackColor = true;
             this.BTNFOTO.Click += new System.EventHandler(this.BTNFOTO_Click);
@@ -270,164 +265,191 @@ namespace InstitutoDeIdiomas
             this.CBSEXO.Items.AddRange(new object[] {
             "MASCULINO",
             "FEMENINO"});
-            this.CBSEXO.Location = new System.Drawing.Point(563, 183);
+            this.CBSEXO.Location = new System.Drawing.Point(561, 152);
             this.CBSEXO.Margin = new System.Windows.Forms.Padding(2);
             this.CBSEXO.Name = "CBSEXO";
             this.CBSEXO.Size = new System.Drawing.Size(248, 21);
-            this.CBSEXO.TabIndex = 58;
+            this.CBSEXO.TabIndex = 86;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(523, 183);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(521, 156);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 57;
+            this.label7.TabIndex = 85;
             this.label7.Text = "SEXO";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(525, 160);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(523, 133);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 56;
+            this.label6.TabIndex = 84;
             this.label6.Text = "D.N.I.";
             // 
             // TXTDNI
             // 
-            this.TXTDNI.Location = new System.Drawing.Point(562, 160);
+            this.TXTDNI.Location = new System.Drawing.Point(560, 129);
             this.TXTDNI.Margin = new System.Windows.Forms.Padding(2);
             this.TXTDNI.Name = "TXTDNI";
             this.TXTDNI.ReadOnly = true;
             this.TXTDNI.Size = new System.Drawing.Size(248, 20);
-            this.TXTDNI.TabIndex = 55;
+            this.TXTDNI.TabIndex = 83;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(500, 137);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(498, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 54;
+            this.label5.TabIndex = 82;
             this.label5.Text = "NOMBRES";
             // 
             // TXTNOMBRE
             // 
-            this.TXTNOMBRE.Location = new System.Drawing.Point(562, 137);
+            this.TXTNOMBRE.Location = new System.Drawing.Point(560, 106);
             this.TXTNOMBRE.Margin = new System.Windows.Forms.Padding(2);
             this.TXTNOMBRE.Name = "TXTNOMBRE";
             this.TXTNOMBRE.ReadOnly = true;
             this.TXTNOMBRE.Size = new System.Drawing.Size(248, 20);
-            this.TXTNOMBRE.TabIndex = 53;
+            this.TXTNOMBRE.TabIndex = 81;
             // 
             // ALUMNOIMAGE
             // 
-            this.ALUMNOIMAGE.Location = new System.Drawing.Point(813, 91);
+            this.ALUMNOIMAGE.Location = new System.Drawing.Point(811, 60);
             this.ALUMNOIMAGE.Margin = new System.Windows.Forms.Padding(2);
             this.ALUMNOIMAGE.Name = "ALUMNOIMAGE";
             this.ALUMNOIMAGE.Size = new System.Drawing.Size(124, 151);
-            this.ALUMNOIMAGE.TabIndex = 52;
+            this.ALUMNOIMAGE.TabIndex = 80;
             this.ALUMNOIMAGE.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 115);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(443, 87);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 51;
+            this.label4.TabIndex = 79;
             this.label4.Text = "APELLIDO MATERNO";
             // 
             // TXTMATERNO
             // 
-            this.TXTMATERNO.Location = new System.Drawing.Point(561, 114);
+            this.TXTMATERNO.Location = new System.Drawing.Point(559, 83);
             this.TXTMATERNO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTMATERNO.Name = "TXTMATERNO";
             this.TXTMATERNO.ReadOnly = true;
             this.TXTMATERNO.Size = new System.Drawing.Size(248, 20);
-            this.TXTMATERNO.TabIndex = 50;
+            this.TXTMATERNO.TabIndex = 78;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 93);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(444, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 49;
+            this.label3.TabIndex = 77;
             this.label3.Text = "APELLIDO PATERNO";
             // 
             // TXTPATERNO
             // 
-            this.TXTPATERNO.Location = new System.Drawing.Point(561, 91);
+            this.TXTPATERNO.Location = new System.Drawing.Point(559, 60);
             this.TXTPATERNO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTPATERNO.Name = "TXTPATERNO";
             this.TXTPATERNO.ReadOnly = true;
             this.TXTPATERNO.Size = new System.Drawing.Size(248, 20);
-            this.TXTPATERNO.TabIndex = 48;
+            this.TXTPATERNO.TabIndex = 76;
             // 
-            // BTNGUARDAR
+            // LBLIDPERSONA
             // 
-            this.BTNGUARDAR.Enabled = false;
-            this.BTNGUARDAR.Location = new System.Drawing.Point(815, 387);
-            this.BTNGUARDAR.Margin = new System.Windows.Forms.Padding(2);
-            this.BTNGUARDAR.Name = "BTNGUARDAR";
-            this.BTNGUARDAR.Size = new System.Drawing.Size(122, 31);
-            this.BTNGUARDAR.TabIndex = 70;
-            this.BTNGUARDAR.Text = "GUARDAR";
-            this.BTNGUARDAR.UseVisualStyleBackColor = true;
-            this.BTNGUARDAR.Click += new System.EventHandler(this.BTNGUARDAR_Click);
+            this.LBLIDPERSONA.AutoSize = true;
+            this.LBLIDPERSONA.ForeColor = System.Drawing.Color.White;
+            this.LBLIDPERSONA.Location = new System.Drawing.Point(433, 372);
+            this.LBLIDPERSONA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LBLIDPERSONA.Name = "LBLIDPERSONA";
+            this.LBLIDPERSONA.Size = new System.Drawing.Size(42, 13);
+            this.LBLIDPERSONA.TabIndex = 75;
+            this.LBLIDPERSONA.Text = "XXXXX";
+            // 
+            // BTNACTUALIZAR
+            // 
+            this.BTNACTUALIZAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BTNACTUALIZAR.FlatAppearance.BorderSize = 0;
+            this.BTNACTUALIZAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNACTUALIZAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNACTUALIZAR.ForeColor = System.Drawing.Color.White;
+            this.BTNACTUALIZAR.Location = new System.Drawing.Point(672, 334);
+            this.BTNACTUALIZAR.Margin = new System.Windows.Forms.Padding(2);
+            this.BTNACTUALIZAR.Name = "BTNACTUALIZAR";
+            this.BTNACTUALIZAR.Size = new System.Drawing.Size(123, 37);
+            this.BTNACTUALIZAR.TabIndex = 74;
+            this.BTNACTUALIZAR.Text = "ACTUALIZAR";
+            this.BTNACTUALIZAR.UseVisualStyleBackColor = false;
+            this.BTNACTUALIZAR.Click += new System.EventHandler(this.BTNACTUALIZAR_Click);
+            // 
+            // GVALUMNOS
+            // 
+            this.GVALUMNOS.AllowUserToAddRows = false;
+            this.GVALUMNOS.AllowUserToDeleteRows = false;
+            this.GVALUMNOS.AllowUserToResizeRows = false;
+            this.GVALUMNOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GVALUMNOS.Location = new System.Drawing.Point(10, 57);
+            this.GVALUMNOS.Margin = new System.Windows.Forms.Padding(2);
+            this.GVALUMNOS.Name = "GVALUMNOS";
+            this.GVALUMNOS.ReadOnly = true;
+            this.GVALUMNOS.RowTemplate.Height = 24;
+            this.GVALUMNOS.Size = new System.Drawing.Size(400, 336);
+            this.GVALUMNOS.TabIndex = 73;
+            this.GVALUMNOS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVALUMNOS_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(11, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Ingresa el nombre del alumno a buscar";
+            // 
+            // TXTALUSEARCH
+            // 
+            this.TXTALUSEARCH.Location = new System.Drawing.Point(11, 32);
+            this.TXTALUSEARCH.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTALUSEARCH.Name = "TXTALUSEARCH";
+            this.TXTALUSEARCH.Size = new System.Drawing.Size(293, 20);
+            this.TXTALUSEARCH.TabIndex = 71;
+            this.TXTALUSEARCH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXTALUSEARCH_KeyUp);
             // 
             // frmActualizarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 434);
-            this.Controls.Add(this.BTNGUARDAR);
-            this.Controls.Add(this.TXTEDAD);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.TXTTELEFONO);
-            this.Controls.Add(this.TXTCELULAR);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.TXTCORREO);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.DTNACIMIENTO);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.BTNFOTO);
-            this.Controls.Add(this.CBSEXO);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.TXTDNI);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.TXTNOMBRE);
-            this.Controls.Add(this.ALUMNOIMAGE);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.TXTMATERNO);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.TXTPATERNO);
-            this.Controls.Add(this.LBLIDPERSONA);
-            this.Controls.Add(this.BTNACTUALIZAR);
-            this.Controls.Add(this.GVALUMNOS);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTALUSEARCH);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.ClientSize = new System.Drawing.Size(953, 469);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmActualizarAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTUALIZAR ALUMNO";
-            ((System.ComponentModel.ISupportInitialize)(this.GVALUMNOS)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALUMNOIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GVALUMNOS)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -462,7 +484,7 @@ namespace InstitutoDeIdiomas
 
         private void GVALUMNOS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < GVALUMNOS.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < GVALUMNOS.RowCount )
             {
                 DataGridViewRow row = this.GVALUMNOS.Rows[e.RowIndex];
                 String dni = row.Cells[3].Value.ToString();               
@@ -608,5 +630,6 @@ namespace InstitutoDeIdiomas
                 DTNACIMIENTO.Value = DateTime.Today;
             }
         }
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmCrearPago : Form
+    public partial class frmCrearPago : MaterialForm
     {
         String idcodigo;
         MsSqlConnection configurarConexion = new MsSqlConnection();
@@ -25,7 +26,6 @@ namespace InstitutoDeIdiomas
             idcodigo = codigo;
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
             FOTOALUMNOAPAGAR.SizeMode = PictureBoxSizeMode.StretchImage;
-            LBLUSUENCARGADODEPAGO.Text = idcodigo;
             GRIDVIEWCONSALUPAGO.RowHeadersVisible = false;
             GRIDVIEWTIPOSPAGOS.RowHeadersVisible = false;
             this.GRIDVIEWTIPOSPAGOS.AlternatingRowsDefaultCellStyle.BackColor =
@@ -280,6 +280,7 @@ namespace InstitutoDeIdiomas
                     }
                     MessageBox.Show("PAGO REALIZADO CON EXITO");
                     LIMPIAR_DATOS();
+                    limpiarRadioButtons();
                 }
             }
             else
@@ -362,6 +363,7 @@ namespace InstitutoDeIdiomas
                             guardarSaldo();
                             MessageBox.Show("PAGO REALIZADO CON EXITO");
                             LIMPIAR_DATOS();
+                            limpiarRadioButtons();
                         }
 
                     }
@@ -397,6 +399,7 @@ namespace InstitutoDeIdiomas
                                 guardarSaldo();
                                 MessageBox.Show("PAGO REALIZADO CON EXITO");
                                 LIMPIAR_DATOS();
+                                limpiarRadioButtons();
                             }
                             catch (Exception ex)
                             {
@@ -418,6 +421,40 @@ namespace InstitutoDeIdiomas
             string idio = rbidi.Text.ToString();
             string niv = rbniv.Text.ToString();
             string cic = NUMCICLO.Value.ToString();
+            int monto = 20;
+            if (rbTupa2018.Checked == true)
+            {
+                if (LBLTIPOALUMN.Text == "FAUSTINIANO")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = 100;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = 110;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = 120;
+                    }
+                }
+                else if (LBLTIPOALUMN.Text == "PARTICULAR")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = 120;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = 130;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = 140;
+                    }
+                }
+            }
             try
             {
                 SqlCommand cmd = new SqlCommand("crear_detalle_matricula", _SqlConnection);
@@ -431,6 +468,7 @@ namespace InstitutoDeIdiomas
                 cmd.Parameters.Add(new SqlParameter("@modalidad", mod));
                 cmd.Parameters.Add(new SqlParameter("@ciclo", cic));
                 cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
+                cmd.Parameters.Add(new SqlParameter("@monto", monto));
                 cmd.Parameters.Add(new SqlParameter("@numero_recibo", TXTNUMERORECIBO.Text.Trim().ToString()));
                 cmd.ExecuteNonQuery();
                 if (cmd.Connection.State == ConnectionState.Open)
@@ -622,8 +660,7 @@ namespace InstitutoDeIdiomas
                 GRIDVIEWCONSALUPAGO.Columns[0].Width = 150;
                 GRIDVIEWCONSALUPAGO.Columns[1].Width = 150;
                 GRIDVIEWCONSALUPAGO.Columns[4].Width = 200;
-                this.GRIDVIEWCONSALUPAGO.AlternatingRowsDefaultCellStyle.BackColor =
-    Color.Beige;
+                this.GRIDVIEWCONSALUPAGO.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             }
             catch (Exception ex)
             {
@@ -849,16 +886,16 @@ namespace InstitutoDeIdiomas
         //EVENTOS DEL CHECBOX PARA PAGAR LA MTRICULA
         private void CBPAGARMATRICULA_CheckedChanged(object sender, EventArgs e)
         {
-            CALCULAR_MONTO_A_PAGAR();
             if (CBPAGARMATRICULA.CheckState == CheckState.Checked)
             {
-                PANELMATRICULA.Enabled = true;
-
+                gbMat.Enabled = true;
             }
             else
             {
                 LIMPIAR_ERRORES();
-                PANELMATRICULA.Enabled = false;
+                gbMat.Enabled = false;
+                rbMatriculaNormal.Checked = false;
+                rbTupa2018.Checked= false;
             }
         }
         private void TXTMONTO_TextChanged(object sender, EventArgs e)
@@ -912,9 +949,42 @@ namespace InstitutoDeIdiomas
                     monto = monto + cantidad;
                 }
             }
-            if (CBPAGARMATRICULA.CheckState == CheckState.Checked)
+            if (rbMatriculaNormal.Checked == true)
             {
                 monto = monto + 20;
+            }
+            if (rbTupa2018.Checked == true)
+            {
+                if (LBLTIPOALUMN.Text == "FAUSTINIANO")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = monto + 100;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = monto + 110;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = monto + 120;
+                    }
+                }
+                else if (LBLTIPOALUMN.Text == "PARTICULAR")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = monto + 120;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = monto + 130;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = monto + 140;
+                    }
+                }
             }
             TXTMONTO.Text = "" + monto;
         }
@@ -929,7 +999,6 @@ namespace InstitutoDeIdiomas
             {
                 dgvwSaldo.Enabled = false;
             }
-
         }
 
         private void GRIDVIEWTIPOSPAGOS_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -968,6 +1037,95 @@ namespace InstitutoDeIdiomas
                 else if (LBLTIPOALUMN.Text == "PARTICULAR")
                     LBLTIPOALUMN.Text = "FAUSTINIANO";
             }
+            CALCULAR_MONTO_A_PAGAR();
+        }
+
+        private void GBIDIOMA_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbMatriculaNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
+            if (rbMatriculaNormal.Checked == true)
+            {
+                PANELMATRICULA.Enabled = true;
+                resetRb();
+            }
+            else
+            {
+                LIMPIAR_ERRORES();
+                resetRb();
+                PANELMATRICULA.Enabled = false;
+            }
+            RBMATREGULAR.Text = "MATRICULA REGULAR (2016-2017)";
+        }
+
+        private void rbTupa2018_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
+            if (rbTupa2018.Checked == true)
+            {
+                PANELMATRICULA.Enabled = true;
+                resetRb();
+            }
+            else
+            {
+                LIMPIAR_ERRORES();
+                resetRb();
+                PANELMATRICULA.Enabled = false;
+            }
+            RBMATREGULAR.Text = "MATRICULA REGULAR";
+        }
+        private void resetRb()
+        {
+            RBMATREGULAR.Checked = false;
+            RBMATUBICACION.Checked = false;
+            RBINGLES.Checked = false;
+            RBFRANCES.Checked = false;
+            RBALEMAN.Checked = false;
+            RBPORTUGUES.Checked = false;
+            RBOTRO.Checked = false;
+            RBCHINO.Checked = false;
+            RBQUECHUA.Checked = false;
+            RBITALIANO.Checked = false;
+            RBBASICO.Checked = false;
+            RBINTERMEDIO.Checked = false;
+            RBAVANZADO.Checked = false;
+        }
+        private void limpiarRadioButtons()
+        {
+            rbTupa2018.Checked = false;
+            rbMatriculaNormal.Checked = false;
+            RBMATREGULAR.Checked = false;
+            RBMATUBICACION.Checked = false;
+            RBINGLES.Checked = false;
+            RBFRANCES.Checked = false;
+            RBALEMAN.Checked = false;
+            RBPORTUGUES.Checked = false;
+            RBOTRO.Checked = false;
+            RBCHINO.Checked = false;
+            RBQUECHUA.Checked = false;
+            RBITALIANO.Checked = false;
+            RBBASICO.Checked = false;
+            RBINTERMEDIO.Checked = false;
+            RBAVANZADO.Checked = false;
+        }
+
+        private void RBBASICO_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
+        }
+
+        private void RBINTERMEDIO_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
+        }
+
+        private void RBAVANZADO_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
         }
     }
 }

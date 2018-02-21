@@ -1,4 +1,5 @@
 ﻿using InstitutoDeIdiomas.ReportForms;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmRecordAcademico : Form
+    public partial class frmRecordAcademico : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();

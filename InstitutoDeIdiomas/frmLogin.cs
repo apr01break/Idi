@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
@@ -20,6 +21,10 @@ namespace InstitutoDeIdiomas
         {
             InitializeComponent();
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
+            MaterialSkin.MaterialSkinManager SkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            SkinManager.AddFormToManage(this);
+            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            SkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Red500, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
       
         private void BTNREGISTRAR_Click(object sender, EventArgs e)
@@ -138,7 +143,20 @@ namespace InstitutoDeIdiomas
             if (e.KeyCode == Keys.Enter)
             {
                 login();
-                this.Hide();
+            }
+        }
+
+        private void BTNLOGIN_Click_1(object sender, EventArgs e)
+        {
+            login();
+            
+        }
+
+        private void TXTPASSWORD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
             }
         }
     }

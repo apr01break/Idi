@@ -30,98 +30,103 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.TXTUSUARIO = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TXTPASSWORD = new System.Windows.Forms.TextBox();
-            this.BTNLOGIN = new System.Windows.Forms.Button();
             this.ERROREMPTYTXTLOGIN = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BTNLOGIN = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.TXTPASSWORD = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.TXTUSUARIO = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ERROREMPTYTXTLOGIN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TXTUSUARIO
-            // 
-            this.TXTUSUARIO.Location = new System.Drawing.Point(33, 44);
-            this.TXTUSUARIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TXTUSUARIO.Name = "TXTUSUARIO";
-            this.TXTUSUARIO.Size = new System.Drawing.Size(271, 22);
-            this.TXTUSUARIO.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "USUARIO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CONTRASEÑA";
-            // 
-            // TXTPASSWORD
-            // 
-            this.TXTPASSWORD.Location = new System.Drawing.Point(33, 122);
-            this.TXTPASSWORD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TXTPASSWORD.Name = "TXTPASSWORD";
-            this.TXTPASSWORD.Size = new System.Drawing.Size(271, 22);
-            this.TXTPASSWORD.TabIndex = 3;
-            this.TXTPASSWORD.UseSystemPasswordChar = true;
-            // 
-            // BTNLOGIN
-            // 
-            this.BTNLOGIN.Location = new System.Drawing.Point(371, 80);
-            this.BTNLOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BTNLOGIN.Name = "BTNLOGIN";
-            this.BTNLOGIN.Size = new System.Drawing.Size(132, 38);
-            this.BTNLOGIN.TabIndex = 4;
-            this.BTNLOGIN.Text = "INICIAR SESIÓN";
-            this.BTNLOGIN.UseVisualStyleBackColor = true;
-            this.BTNLOGIN.Click += new System.EventHandler(this.BTNLOGIN_Click);
             // 
             // ERROREMPTYTXTLOGIN
             // 
             this.ERROREMPTYTXTLOGIN.ContainerControl = this;
             // 
+            // BTNLOGIN
+            // 
+            this.BTNLOGIN.BackColor = System.Drawing.Color.Maroon;
+            this.BTNLOGIN.Depth = 0;
+            this.BTNLOGIN.ForeColor = System.Drawing.Color.LightCoral;
+            this.BTNLOGIN.Location = new System.Drawing.Point(86, 335);
+            this.BTNLOGIN.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNLOGIN.Name = "BTNLOGIN";
+            this.BTNLOGIN.Primary = true;
+            this.BTNLOGIN.Size = new System.Drawing.Size(127, 31);
+            this.BTNLOGIN.TabIndex = 13;
+            this.BTNLOGIN.Text = "ACEPTAR";
+            this.BTNLOGIN.UseVisualStyleBackColor = false;
+            this.BTNLOGIN.Click += new System.EventHandler(this.BTNLOGIN_Click_1);
+            // 
+            // TXTPASSWORD
+            // 
+            this.TXTPASSWORD.Depth = 0;
+            this.TXTPASSWORD.Hint = "Contraseña";
+            this.TXTPASSWORD.Location = new System.Drawing.Point(26, 290);
+            this.TXTPASSWORD.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TXTPASSWORD.Name = "TXTPASSWORD";
+            this.TXTPASSWORD.PasswordChar = '\0';
+            this.TXTPASSWORD.SelectedText = "";
+            this.TXTPASSWORD.SelectionLength = 0;
+            this.TXTPASSWORD.SelectionStart = 0;
+            this.TXTPASSWORD.Size = new System.Drawing.Size(247, 23);
+            this.TXTPASSWORD.TabIndex = 12;
+            this.TXTPASSWORD.UseSystemPasswordChar = true;
+            this.TXTPASSWORD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTPASSWORD_KeyDown);
+            // 
+            // TXTUSUARIO
+            // 
+            this.TXTUSUARIO.Depth = 0;
+            this.TXTUSUARIO.Hint = "Usuario";
+            this.TXTUSUARIO.Location = new System.Drawing.Point(26, 247);
+            this.TXTUSUARIO.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TXTUSUARIO.Name = "TXTUSUARIO";
+            this.TXTUSUARIO.PasswordChar = '\0';
+            this.TXTUSUARIO.SelectedText = "";
+            this.TXTUSUARIO.SelectionLength = 0;
+            this.TXTUSUARIO.SelectionStart = 0;
+            this.TXTUSUARIO.Size = new System.Drawing.Size(247, 23);
+            this.TXTUSUARIO.TabIndex = 11;
+            this.TXTUSUARIO.UseSystemPasswordChar = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InstitutoDeIdiomas.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(75, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 178);
+            this.ClientSize = new System.Drawing.Size(301, 388);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BTNLOGIN);
             this.Controls.Add(this.TXTPASSWORD);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.TXTUSUARIO);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIAR SESIÓN";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ERROREMPTYTXTLOGIN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TXTUSUARIO;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TXTPASSWORD;
-        private System.Windows.Forms.Button BTNLOGIN;
         private System.Windows.Forms.ErrorProvider ERROREMPTYTXTLOGIN;
+        private MaterialSkin.Controls.MaterialRaisedButton BTNLOGIN;
+        private MaterialSkin.Controls.MaterialSingleLineTextField TXTPASSWORD;
+        private MaterialSkin.Controls.MaterialSingleLineTextField TXTUSUARIO;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

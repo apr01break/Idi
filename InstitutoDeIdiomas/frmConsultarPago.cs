@@ -1,4 +1,5 @@
-﻿    using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmConsultarPago : Form
+    public partial class frmConsultarPago : MaterialForm
     {
         public static SqlConnection _SqlConnection = new SqlConnection();
         MsSqlConnection configurarConexion = new MsSqlConnection();
@@ -84,7 +85,7 @@ namespace InstitutoDeIdiomas
         //Params Row from Grid
         //Returns Imagen en Bytes
         private void GRIDVIEWALUMNNOM_CellClick(object sender, DataGridViewCellEventArgs e) {
-            if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWALUMNNOM.RowCount - 1) {
+            if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWALUMNNOM.RowCount) {
                 DataGridViewRow row = this.GRIDVIEWALUMNNOM.Rows[e.RowIndex];
                 String dni = row.Cells[3].Value.ToString();
                 try {
@@ -203,7 +204,7 @@ namespace InstitutoDeIdiomas
         }
         private void GRIDVIEWPAGOSCONS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWPAGOSCONS.RowCount - 1) {
+            if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWPAGOSCONS.RowCount) {
                 DataGridViewRow row = this.GRIDVIEWPAGOSCONS.Rows[e.RowIndex];
                 String numrecibo = row.Cells[0].Value.ToString();
                 int idtrabajador = Convert.ToInt32(row.Cells[2].Value.ToString());

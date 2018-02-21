@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">LAPTOP-HTJ0B4NC</Value>
+      <Value Profile="(Default)">LAPTOP-7SS0QCS2\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="DB" Type="System.String" Scope="User">
       <Value Profile="(Default)">CentroDeIdiomas</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
-      <Value Profile="(Default)">gari</Value>
+      <Value Profile="(Default)">sa</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
       <Value Profile="(Default)">gari</Value>
