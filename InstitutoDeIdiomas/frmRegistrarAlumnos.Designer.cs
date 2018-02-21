@@ -70,8 +70,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.RBALUFAUSTINIANO = new System.Windows.Forms.RadioButton();
             this.RBALUPARTICULAR = new System.Windows.Forms.RadioButton();
-            this.BTNGUARDARALU = new System.Windows.Forms.Button();
             this.PANELFAUSTINO = new System.Windows.Forms.Panel();
+            this.CBCICLO = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.CBESCUELAALU = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.CBFACULTADALU = new System.Windows.Forms.ComboBox();
@@ -85,20 +86,21 @@
             this.RBCOLEGIOALU = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
             this.ERRORCAMPOSVACIOS = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label21 = new System.Windows.Forms.Label();
-            this.CBCICLO = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.BTNGUARDARALU = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNO)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.PANELFAUSTINO.SuspendLayout();
             this.PANELPARTICULAR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORCAMPOSVACIOS)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 38);
+            this.label2.Location = new System.Drawing.Point(21, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
@@ -108,7 +110,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 66);
+            this.label6.Location = new System.Drawing.Point(21, 54);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
@@ -118,7 +120,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 95);
+            this.label12.Location = new System.Drawing.Point(21, 83);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 13);
@@ -128,7 +130,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 124);
+            this.label8.Location = new System.Drawing.Point(21, 112);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
@@ -138,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 152);
+            this.label3.Location = new System.Drawing.Point(21, 140);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 13);
@@ -148,7 +150,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 208);
+            this.label9.Location = new System.Drawing.Point(21, 197);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 13);
@@ -158,7 +160,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 178);
+            this.label4.Location = new System.Drawing.Point(21, 167);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 13);
@@ -168,7 +170,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 234);
+            this.label18.Location = new System.Drawing.Point(21, 222);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(147, 13);
@@ -178,7 +180,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 263);
+            this.label15.Location = new System.Drawing.Point(21, 251);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(141, 13);
@@ -188,7 +190,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(322, 38);
+            this.label7.Location = new System.Drawing.Point(333, 26);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 13);
@@ -198,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(322, 152);
+            this.label5.Location = new System.Drawing.Point(334, 140);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
@@ -208,7 +210,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(254, 208);
+            this.label11.Location = new System.Drawing.Point(266, 197);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 13);
@@ -218,7 +220,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(500, 208);
+            this.label13.Location = new System.Drawing.Point(512, 198);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 13);
@@ -228,7 +230,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(293, 235);
+            this.label14.Location = new System.Drawing.Point(305, 223);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 13);
@@ -238,7 +240,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(532, 262);
+            this.label16.Location = new System.Drawing.Point(544, 250);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(64, 13);
@@ -248,7 +250,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(358, 262);
+            this.label17.Location = new System.Drawing.Point(370, 250);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(56, 13);
@@ -257,8 +259,8 @@
             // 
             // FOTOALUMNO
             // 
-            this.FOTOALUMNO.Location = new System.Drawing.Point(597, 23);
-            this.FOTOALUMNO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FOTOALUMNO.Location = new System.Drawing.Point(609, 22);
+            this.FOTOALUMNO.Margin = new System.Windows.Forms.Padding(2);
             this.FOTOALUMNO.Name = "FOTOALUMNO";
             this.FOTOALUMNO.Size = new System.Drawing.Size(117, 129);
             this.FOTOALUMNO.TabIndex = 61;
@@ -267,8 +269,8 @@
             // TXTPATERNOALU
             // 
             this.TXTPATERNOALU.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTPATERNOALU.Location = new System.Drawing.Point(123, 38);
-            this.TXTPATERNOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTPATERNOALU.Location = new System.Drawing.Point(135, 26);
+            this.TXTPATERNOALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTPATERNOALU.Name = "TXTPATERNOALU";
             this.TXTPATERNOALU.Size = new System.Drawing.Size(174, 20);
             this.TXTPATERNOALU.TabIndex = 1;
@@ -277,8 +279,8 @@
             // TXTNOMBRESALU
             // 
             this.TXTNOMBRESALU.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTNOMBRESALU.Location = new System.Drawing.Point(123, 63);
-            this.TXTNOMBRESALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTNOMBRESALU.Location = new System.Drawing.Point(135, 51);
+            this.TXTNOMBRESALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTNOMBRESALU.Name = "TXTNOMBRESALU";
             this.TXTNOMBRESALU.Size = new System.Drawing.Size(442, 20);
             this.TXTNOMBRESALU.TabIndex = 3;
@@ -286,8 +288,8 @@
             // 
             // TXTDNIALU
             // 
-            this.TXTDNIALU.Location = new System.Drawing.Point(123, 90);
-            this.TXTDNIALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTDNIALU.Location = new System.Drawing.Point(135, 78);
+            this.TXTDNIALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTDNIALU.Name = "TXTDNIALU";
             this.TXTDNIALU.Size = new System.Drawing.Size(127, 20);
             this.TXTDNIALU.TabIndex = 4;
@@ -295,8 +297,8 @@
             // 
             // TXTCORREOALU
             // 
-            this.TXTCORREOALU.Location = new System.Drawing.Point(141, 176);
-            this.TXTCORREOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTCORREOALU.Location = new System.Drawing.Point(153, 164);
+            this.TXTCORREOALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCORREOALU.Name = "TXTCORREOALU";
             this.TXTCORREOALU.Size = new System.Drawing.Size(424, 20);
             this.TXTCORREOALU.TabIndex = 8;
@@ -304,8 +306,8 @@
             // TXTPROCEDENCIAALU
             // 
             this.TXTPROCEDENCIAALU.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTPROCEDENCIAALU.Location = new System.Drawing.Point(157, 230);
-            this.TXTPROCEDENCIAALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTPROCEDENCIAALU.Location = new System.Drawing.Point(169, 218);
+            this.TXTPROCEDENCIAALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTPROCEDENCIAALU.Name = "TXTPROCEDENCIAALU";
             this.TXTPROCEDENCIAALU.Size = new System.Drawing.Size(132, 20);
             this.TXTPROCEDENCIAALU.TabIndex = 12;
@@ -314,8 +316,8 @@
             // TXTMATERNOALU
             // 
             this.TXTMATERNOALU.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTMATERNOALU.Location = new System.Drawing.Point(437, 34);
-            this.TXTMATERNOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTMATERNOALU.Location = new System.Drawing.Point(449, 22);
+            this.TXTMATERNOALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTMATERNOALU.Name = "TXTMATERNOALU";
             this.TXTMATERNOALU.Size = new System.Drawing.Size(128, 20);
             this.TXTMATERNOALU.TabIndex = 2;
@@ -323,8 +325,8 @@
             // 
             // BTNFOTOALU
             // 
-            this.BTNFOTOALU.Location = new System.Drawing.Point(597, 167);
-            this.BTNFOTOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNFOTOALU.Location = new System.Drawing.Point(609, 157);
+            this.BTNFOTOALU.Margin = new System.Windows.Forms.Padding(2);
             this.BTNFOTOALU.Name = "BTNFOTOALU";
             this.BTNFOTOALU.Size = new System.Drawing.Size(117, 25);
             this.BTNFOTOALU.TabIndex = 68;
@@ -335,8 +337,8 @@
             // TXTEDADALU
             // 
             this.TXTEDADALU.Enabled = false;
-            this.TXTEDADALU.Location = new System.Drawing.Point(361, 150);
-            this.TXTEDADALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTEDADALU.Location = new System.Drawing.Point(373, 138);
+            this.TXTEDADALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTEDADALU.Name = "TXTEDADALU";
             this.TXTEDADALU.Size = new System.Drawing.Size(146, 20);
             this.TXTEDADALU.TabIndex = 7;
@@ -346,8 +348,8 @@
             // 
             this.panel1.Controls.Add(this.RBFEMENINOALU);
             this.panel1.Controls.Add(this.RBMASCULINOALU);
-            this.panel1.Location = new System.Drawing.Point(123, 113);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(135, 101);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 32);
             this.panel1.TabIndex = 70;
@@ -356,7 +358,7 @@
             // 
             this.RBFEMENINOALU.AutoSize = true;
             this.RBFEMENINOALU.Location = new System.Drawing.Point(170, 7);
-            this.RBFEMENINOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBFEMENINOALU.Margin = new System.Windows.Forms.Padding(2);
             this.RBFEMENINOALU.Name = "RBFEMENINOALU";
             this.RBFEMENINOALU.Size = new System.Drawing.Size(81, 17);
             this.RBFEMENINOALU.TabIndex = 1;
@@ -368,7 +370,7 @@
             // 
             this.RBMASCULINOALU.AutoSize = true;
             this.RBMASCULINOALU.Location = new System.Drawing.Point(2, 7);
-            this.RBMASCULINOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBMASCULINOALU.Margin = new System.Windows.Forms.Padding(2);
             this.RBMASCULINOALU.Name = "RBMASCULINOALU";
             this.RBMASCULINOALU.Size = new System.Drawing.Size(88, 17);
             this.RBMASCULINOALU.TabIndex = 5;
@@ -380,8 +382,8 @@
             // 
             this.CBDEPARTAMENTOSALU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBDEPARTAMENTOSALU.FormattingEnabled = true;
-            this.CBDEPARTAMENTOSALU.Location = new System.Drawing.Point(106, 205);
-            this.CBDEPARTAMENTOSALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBDEPARTAMENTOSALU.Location = new System.Drawing.Point(118, 193);
+            this.CBDEPARTAMENTOSALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBDEPARTAMENTOSALU.Name = "CBDEPARTAMENTOSALU";
             this.CBDEPARTAMENTOSALU.Size = new System.Drawing.Size(137, 21);
             this.CBDEPARTAMENTOSALU.TabIndex = 9;
@@ -390,8 +392,8 @@
             // TIMEPICKERNACIMIENTOALU
             // 
             this.TIMEPICKERNACIMIENTOALU.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TIMEPICKERNACIMIENTOALU.Location = new System.Drawing.Point(146, 149);
-            this.TIMEPICKERNACIMIENTOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TIMEPICKERNACIMIENTOALU.Location = new System.Drawing.Point(158, 137);
+            this.TIMEPICKERNACIMIENTOALU.Margin = new System.Windows.Forms.Padding(2);
             this.TIMEPICKERNACIMIENTOALU.Name = "TIMEPICKERNACIMIENTOALU";
             this.TIMEPICKERNACIMIENTOALU.Size = new System.Drawing.Size(151, 20);
             this.TIMEPICKERNACIMIENTOALU.TabIndex = 6;
@@ -400,8 +402,8 @@
             // TXTDIRECCIONALU
             // 
             this.TXTDIRECCIONALU.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTDIRECCIONALU.Location = new System.Drawing.Point(361, 232);
-            this.TXTDIRECCIONALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTDIRECCIONALU.Location = new System.Drawing.Point(373, 220);
+            this.TXTDIRECCIONALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTDIRECCIONALU.Name = "TXTDIRECCIONALU";
             this.TXTDIRECCIONALU.Size = new System.Drawing.Size(355, 20);
             this.TXTDIRECCIONALU.TabIndex = 13;
@@ -420,16 +422,16 @@
             "DOCTORADO",
             "LICENCIADO",
             "MAGISTER"});
-            this.CBINSTRUCCIONALU.Location = new System.Drawing.Point(157, 259);
-            this.CBINSTRUCCIONALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBINSTRUCCIONALU.Location = new System.Drawing.Point(169, 247);
+            this.CBINSTRUCCIONALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBINSTRUCCIONALU.Name = "CBINSTRUCCIONALU";
             this.CBINSTRUCCIONALU.Size = new System.Drawing.Size(182, 21);
             this.CBINSTRUCCIONALU.TabIndex = 14;
             // 
             // TXTCELUALU
             // 
-            this.TXTCELUALU.Location = new System.Drawing.Point(421, 259);
-            this.TXTCELUALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTCELUALU.Location = new System.Drawing.Point(433, 247);
+            this.TXTCELUALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCELUALU.Name = "TXTCELUALU";
             this.TXTCELUALU.Size = new System.Drawing.Size(98, 20);
             this.TXTCELUALU.TabIndex = 15;
@@ -439,8 +441,8 @@
             // 
             this.CBPROVINCIAALU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBPROVINCIAALU.FormattingEnabled = true;
-            this.CBPROVINCIAALU.Location = new System.Drawing.Point(324, 206);
-            this.CBPROVINCIAALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBPROVINCIAALU.Location = new System.Drawing.Point(336, 194);
+            this.CBPROVINCIAALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBPROVINCIAALU.Name = "CBPROVINCIAALU";
             this.CBPROVINCIAALU.Size = new System.Drawing.Size(161, 21);
             this.CBPROVINCIAALU.TabIndex = 10;
@@ -450,16 +452,16 @@
             // 
             this.CBDISTRITOALU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBDISTRITOALU.FormattingEnabled = true;
-            this.CBDISTRITOALU.Location = new System.Drawing.Point(566, 206);
-            this.CBDISTRITOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBDISTRITOALU.Location = new System.Drawing.Point(578, 194);
+            this.CBDISTRITOALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBDISTRITOALU.Name = "CBDISTRITOALU";
             this.CBDISTRITOALU.Size = new System.Drawing.Size(150, 21);
             this.CBDISTRITOALU.TabIndex = 11;
             // 
             // TXTTLFALU
             // 
-            this.TXTTLFALU.Location = new System.Drawing.Point(609, 259);
-            this.TXTTLFALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TXTTLFALU.Location = new System.Drawing.Point(621, 247);
+            this.TXTTLFALU.Margin = new System.Windows.Forms.Padding(2);
             this.TXTTLFALU.Name = "TXTTLFALU";
             this.TXTTLFALU.Size = new System.Drawing.Size(106, 20);
             this.TXTTLFALU.TabIndex = 16;
@@ -468,7 +470,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 297);
+            this.label1.Location = new System.Drawing.Point(22, 285);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
@@ -479,8 +481,8 @@
             // 
             this.panel2.Controls.Add(this.RBALUFAUSTINIANO);
             this.panel2.Controls.Add(this.RBALUPARTICULAR);
-            this.panel2.Location = new System.Drawing.Point(123, 287);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(135, 275);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(244, 28);
             this.panel2.TabIndex = 82;
@@ -489,7 +491,7 @@
             // 
             this.RBALUFAUSTINIANO.AutoSize = true;
             this.RBALUFAUSTINIANO.Location = new System.Drawing.Point(133, 6);
-            this.RBALUFAUSTINIANO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBALUFAUSTINIANO.Margin = new System.Windows.Forms.Padding(2);
             this.RBALUFAUSTINIANO.Name = "RBALUFAUSTINIANO";
             this.RBALUFAUSTINIANO.Size = new System.Drawing.Size(97, 17);
             this.RBALUFAUSTINIANO.TabIndex = 1;
@@ -502,7 +504,7 @@
             // 
             this.RBALUPARTICULAR.AutoSize = true;
             this.RBALUPARTICULAR.Location = new System.Drawing.Point(2, 6);
-            this.RBALUPARTICULAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBALUPARTICULAR.Margin = new System.Windows.Forms.Padding(2);
             this.RBALUPARTICULAR.Name = "RBALUPARTICULAR";
             this.RBALUPARTICULAR.Size = new System.Drawing.Size(93, 17);
             this.RBALUPARTICULAR.TabIndex = 17;
@@ -510,17 +512,6 @@
             this.RBALUPARTICULAR.Text = "PARTICULAR";
             this.RBALUPARTICULAR.UseVisualStyleBackColor = true;
             this.RBALUPARTICULAR.CheckedChanged += new System.EventHandler(this.RBALUPARTICULAR_CheckedChanged);
-            // 
-            // BTNGUARDARALU
-            // 
-            this.BTNGUARDARALU.Location = new System.Drawing.Point(584, 426);
-            this.BTNGUARDARALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BTNGUARDARALU.Name = "BTNGUARDARALU";
-            this.BTNGUARDARALU.Size = new System.Drawing.Size(130, 30);
-            this.BTNGUARDARALU.TabIndex = 83;
-            this.BTNGUARDARALU.Text = "GUARDAR ALUMNO";
-            this.BTNGUARDARALU.UseVisualStyleBackColor = true;
-            this.BTNGUARDARALU.Click += new System.EventHandler(this.BTNGUARDARALU_Click);
             // 
             // PANELFAUSTINO
             // 
@@ -530,19 +521,39 @@
             this.PANELFAUSTINO.Controls.Add(this.label19);
             this.PANELFAUSTINO.Controls.Add(this.CBFACULTADALU);
             this.PANELFAUSTINO.Controls.Add(this.label10);
-            this.PANELFAUSTINO.Location = new System.Drawing.Point(12, 320);
-            this.PANELFAUSTINO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PANELFAUSTINO.Location = new System.Drawing.Point(24, 308);
+            this.PANELFAUSTINO.Margin = new System.Windows.Forms.Padding(2);
             this.PANELFAUSTINO.Name = "PANELFAUSTINO";
             this.PANELFAUSTINO.Size = new System.Drawing.Size(630, 82);
             this.PANELFAUSTINO.TabIndex = 84;
             this.PANELFAUSTINO.Visible = false;
+            // 
+            // CBCICLO
+            // 
+            this.CBCICLO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBCICLO.FormattingEnabled = true;
+            this.CBCICLO.Location = new System.Drawing.Point(538, 49);
+            this.CBCICLO.Margin = new System.Windows.Forms.Padding(2);
+            this.CBCICLO.Name = "CBCICLO";
+            this.CBCICLO.Size = new System.Drawing.Size(61, 21);
+            this.CBCICLO.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(489, 53);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "CICLO";
             // 
             // CBESCUELAALU
             // 
             this.CBESCUELAALU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBESCUELAALU.FormattingEnabled = true;
             this.CBESCUELAALU.Location = new System.Drawing.Point(78, 49);
-            this.CBESCUELAALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBESCUELAALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBESCUELAALU.Name = "CBESCUELAALU";
             this.CBESCUELAALU.Size = new System.Drawing.Size(395, 21);
             this.CBESCUELAALU.TabIndex = 3;
@@ -562,7 +573,7 @@
             this.CBFACULTADALU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBFACULTADALU.FormattingEnabled = true;
             this.CBFACULTADALU.Location = new System.Drawing.Point(78, 9);
-            this.CBFACULTADALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBFACULTADALU.Margin = new System.Windows.Forms.Padding(2);
             this.CBFACULTADALU.Name = "CBFACULTADALU";
             this.CBFACULTADALU.Size = new System.Drawing.Size(521, 21);
             this.CBFACULTADALU.TabIndex = 1;
@@ -587,8 +598,8 @@
             this.PANELPARTICULAR.Controls.Add(this.RBUNIVERSIDADALU);
             this.PANELPARTICULAR.Controls.Add(this.RBCOLEGIOALU);
             this.PANELPARTICULAR.Controls.Add(this.label20);
-            this.PANELPARTICULAR.Location = new System.Drawing.Point(11, 320);
-            this.PANELPARTICULAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PANELPARTICULAR.Location = new System.Drawing.Point(23, 308);
+            this.PANELPARTICULAR.Margin = new System.Windows.Forms.Padding(2);
             this.PANELPARTICULAR.Name = "PANELPARTICULAR";
             this.PANELPARTICULAR.Size = new System.Drawing.Size(637, 82);
             this.PANELPARTICULAR.TabIndex = 85;
@@ -597,7 +608,7 @@
             // BTNAGREGARCENTROESTUDIO
             // 
             this.BTNAGREGARCENTROESTUDIO.Location = new System.Drawing.Point(312, 47);
-            this.BTNAGREGARCENTROESTUDIO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNAGREGARCENTROESTUDIO.Margin = new System.Windows.Forms.Padding(2);
             this.BTNAGREGARCENTROESTUDIO.Name = "BTNAGREGARCENTROESTUDIO";
             this.BTNAGREGARCENTROESTUDIO.Size = new System.Drawing.Size(82, 22);
             this.BTNAGREGARCENTROESTUDIO.TabIndex = 6;
@@ -611,7 +622,7 @@
             this.CBCENTRODEESTUDIOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCENTRODEESTUDIOS.FormattingEnabled = true;
             this.CBCENTRODEESTUDIOS.Location = new System.Drawing.Point(109, 49);
-            this.CBCENTRODEESTUDIOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBCENTRODEESTUDIOS.Margin = new System.Windows.Forms.Padding(2);
             this.CBCENTRODEESTUDIOS.Name = "CBCENTRODEESTUDIOS";
             this.CBCENTRODEESTUDIOS.Size = new System.Drawing.Size(180, 21);
             this.CBCENTRODEESTUDIOS.TabIndex = 19;
@@ -632,7 +643,7 @@
             // 
             this.RBNINGUNOALU.AutoSize = true;
             this.RBNINGUNOALU.Location = new System.Drawing.Point(324, 26);
-            this.RBNINGUNOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBNINGUNOALU.Margin = new System.Windows.Forms.Padding(2);
             this.RBNINGUNOALU.Name = "RBNINGUNOALU";
             this.RBNINGUNOALU.Size = new System.Drawing.Size(76, 17);
             this.RBNINGUNOALU.TabIndex = 3;
@@ -645,7 +656,7 @@
             // 
             this.RBUNIVERSIDADALU.AutoSize = true;
             this.RBUNIVERSIDADALU.Location = new System.Drawing.Point(146, 26);
-            this.RBUNIVERSIDADALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBUNIVERSIDADALU.Margin = new System.Windows.Forms.Padding(2);
             this.RBUNIVERSIDADALU.Name = "RBUNIVERSIDADALU";
             this.RBUNIVERSIDADALU.Size = new System.Drawing.Size(99, 17);
             this.RBUNIVERSIDADALU.TabIndex = 2;
@@ -658,7 +669,7 @@
             // 
             this.RBCOLEGIOALU.AutoSize = true;
             this.RBCOLEGIOALU.Location = new System.Drawing.Point(2, 26);
-            this.RBCOLEGIOALU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBCOLEGIOALU.Margin = new System.Windows.Forms.Padding(2);
             this.RBCOLEGIOALU.Name = "RBCOLEGIOALU";
             this.RBCOLEGIOALU.Size = new System.Drawing.Size(72, 17);
             this.RBCOLEGIOALU.TabIndex = 18;
@@ -682,73 +693,75 @@
             // 
             this.ERRORCAMPOSVACIOS.ContainerControl = this;
             // 
-            // label21
+            // panel3
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(489, 53);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(38, 13);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "CICLO";
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.BTNGUARDARALU);
+            this.panel3.Controls.Add(this.PANELPARTICULAR);
+            this.panel3.Controls.Add(this.TIMEPICKERNACIMIENTOALU);
+            this.panel3.Controls.Add(this.PANELFAUSTINO);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.TXTTLFALU);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.CBDISTRITOALU);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.CBPROVINCIAALU);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.TXTCELUALU);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.CBINSTRUCCIONALU);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.TXTDIRECCIONALU);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.CBDEPARTAMENTOSALU);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.TXTEDADALU);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.BTNFOTOALU);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.TXTMATERNOALU);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.TXTPROCEDENCIAALU);
+            this.panel3.Controls.Add(this.FOTOALUMNO);
+            this.panel3.Controls.Add(this.TXTCORREOALU);
+            this.panel3.Controls.Add(this.TXTPATERNOALU);
+            this.panel3.Controls.Add(this.TXTDNIALU);
+            this.panel3.Controls.Add(this.TXTNOMBRESALU);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(753, 444);
+            this.panel3.TabIndex = 86;
             // 
-            // CBCICLO
+            // BTNGUARDARALU
             // 
-            this.CBCICLO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCICLO.FormattingEnabled = true;
-            this.CBCICLO.Location = new System.Drawing.Point(538, 49);
-            this.CBCICLO.Margin = new System.Windows.Forms.Padding(2);
-            this.CBCICLO.Name = "CBCICLO";
-            this.CBCICLO.Size = new System.Drawing.Size(61, 21);
-            this.CBCICLO.TabIndex = 5;
+            this.BTNGUARDARALU.Depth = 0;
+            this.BTNGUARDARALU.Location = new System.Drawing.Point(578, 394);
+            this.BTNGUARDARALU.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNGUARDARALU.Name = "BTNGUARDARALU";
+            this.BTNGUARDARALU.Primary = true;
+            this.BTNGUARDARALU.Size = new System.Drawing.Size(150, 33);
+            this.BTNGUARDARALU.TabIndex = 86;
+            this.BTNGUARDARALU.Text = "GUARDAR ALUMNO";
+            this.BTNGUARDARALU.UseVisualStyleBackColor = true;
+            this.BTNGUARDARALU.Click += new System.EventHandler(this.BTNGUARDARALU_Click);
             // 
             // frmRegistrarAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 466);
-            this.Controls.Add(this.PANELPARTICULAR);
-            this.Controls.Add(this.PANELFAUSTINO);
-            this.Controls.Add(this.BTNGUARDARALU);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTTLFALU);
-            this.Controls.Add(this.CBDISTRITOALU);
-            this.Controls.Add(this.CBPROVINCIAALU);
-            this.Controls.Add(this.TXTCELUALU);
-            this.Controls.Add(this.CBINSTRUCCIONALU);
-            this.Controls.Add(this.TXTDIRECCIONALU);
-            this.Controls.Add(this.TIMEPICKERNACIMIENTOALU);
-            this.Controls.Add(this.CBDEPARTAMENTOSALU);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TXTEDADALU);
-            this.Controls.Add(this.BTNFOTOALU);
-            this.Controls.Add(this.TXTMATERNOALU);
-            this.Controls.Add(this.TXTPROCEDENCIAALU);
-            this.Controls.Add(this.TXTCORREOALU);
-            this.Controls.Add(this.TXTDNIALU);
-            this.Controls.Add(this.TXTNOMBRESALU);
-            this.Controls.Add(this.TXTPATERNOALU);
-            this.Controls.Add(this.FOTOALUMNO);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.ClientSize = new System.Drawing.Size(753, 507);
+            this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmRegistrarAlumnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -763,8 +776,9 @@
             this.PANELPARTICULAR.ResumeLayout(false);
             this.PANELPARTICULAR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORCAMPOSVACIOS)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -810,7 +824,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton RBALUFAUSTINIANO;
         private System.Windows.Forms.RadioButton RBALUPARTICULAR;
-        private System.Windows.Forms.Button BTNGUARDARALU;
         private System.Windows.Forms.Panel PANELFAUSTINO;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox CBESCUELAALU;
@@ -827,5 +840,7 @@
         private System.Windows.Forms.ErrorProvider ERRORCAMPOSVACIOS;
         private System.Windows.Forms.ComboBox CBCICLO;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel3;
+        private MaterialSkin.Controls.MaterialRaisedButton BTNGUARDARALU;
     }
 }

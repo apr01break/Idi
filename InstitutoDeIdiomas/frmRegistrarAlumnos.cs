@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmRegistrarAlumnos : Form
+    public partial class frmRegistrarAlumnos : MaterialForm
     {
         string[] departamentos = { "AMAZONAS", "ANCASH",
                 "APURIMAC", "AREQUIPA", "AYACUCHO", "CAJAMARCA",

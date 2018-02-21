@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmAgregarSaldo : Form
+    public partial class frmAgregarSaldo : MaterialForm
     {
         public static SqlConnection _SqlConnection = new SqlConnection();
         MsSqlConnection configurarConexion = new MsSqlConnection();
@@ -22,6 +23,10 @@ namespace InstitutoDeIdiomas
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
             this.codTrabajador = codTrabajador;
             this.codAlumno = codAlumno;
+            MaterialSkin.MaterialSkinManager SkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            SkinManager.AddFormToManage(this);
+            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            SkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Red500, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
         public void guardarPago()
         {

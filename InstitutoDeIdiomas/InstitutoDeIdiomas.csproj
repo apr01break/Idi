@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -80,7 +83,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BotonCircular.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="ControlAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlAlumno.Designer.cs">
+      <DependentUpon>ControlAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSetsIdiomas\DataSetActa.cs">
       <DependentUpon>DataSetActa.xsd</DependentUpon>
     </Compile>
@@ -147,6 +159,12 @@
     </Compile>
     <Compile Include="frmConsultarPago.Designer.cs">
       <DependentUpon>frmConsultarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCorregirPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCorregirPago.Designer.cs">
+      <DependentUpon>frmCorregirPago.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCrearGrupo.cs">
       <SubType>Form</SubType>
@@ -276,6 +294,9 @@
       <DependentUpon>frmRptReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="ControlAlumno.resx">
+      <DependentUpon>ControlAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarAlumno.resx">
       <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarPago.resx">
       <DependentUpon>frmConsultarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCorregirPago.resx">
+      <DependentUpon>frmCorregirPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearGrupo.resx">
       <DependentUpon>frmCrearGrupo.cs</DependentUpon>
@@ -462,6 +486,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.jpg" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\idi.png" />
+    <None Include="Resources\graduate-student-avatar %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -29,59 +29,76 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
-            this.TXTBIENBUSER = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TXTCODUSER = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aLUMNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.REGISTRARMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.CONSULTARMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ACTUALIZAROPTIONMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.rECORDACADEMICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pAGOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.REGISTRARPAGOMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.cONSULTARToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.GENERALCONSMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.DEUDORESCONSMENU = new System.Windows.Forms.ToolStripMenuItem();
-            this.gRUPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearGrupo = new System.Windows.Forms.ToolStripMenuItem();
-            this.verGrupo = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarAlumnosAGrupo = new System.Windows.Forms.ToolStripMenuItem();
-            this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cREARToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FICHAMATRICULATOOL = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUser = new System.Windows.Forms.RichTextBox();
+            this.sidePanel = new System.Windows.Forms.Panel();
+            this.btnAlumnos = new System.Windows.Forms.Button();
+            this.btnPagos = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnGrupos = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelAlumno = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Consultar = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRecordAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConsultarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnActualizarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRegistrarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.panelPago = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnCorregirPago = new InstitutoDeIdiomas.BotonCircular();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnConsultaGeneralPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRegistrarPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConsultaEspecificaPago = new InstitutoDeIdiomas.BotonCircular();
+            this.panelGrupos = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnAsignarAlumnosGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnCrearGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnGruposEmpezados = new InstitutoDeIdiomas.BotonCircular();
+            this.panelReportes = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnFichaMatricula = new InstitutoDeIdiomas.BotonCircular();
+            this.panelUsuario = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.txtMain = new System.Windows.Forms.RichTextBox();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelAlumno.SuspendLayout();
+            this.panelPago.SuspendLayout();
+            this.panelGrupos.SuspendLayout();
+            this.panelReportes.SuspendLayout();
+            this.panelUsuario.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TXTBIENBUSER
-            // 
-            this.TXTBIENBUSER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TXTBIENBUSER.AutoSize = true;
-            this.TXTBIENBUSER.Location = new System.Drawing.Point(124, 498);
-            this.TXTBIENBUSER.Name = "TXTBIENBUSER";
-            this.TXTBIENBUSER.Size = new System.Drawing.Size(56, 13);
-            this.TXTBIENBUSER.TabIndex = 0;
-            this.TXTBIENBUSER.Text = "USUARIO";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 498);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bienvenid@";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(881, 498);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.label3.Location = new System.Drawing.Point(789, 482);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Codigo";
             // 
@@ -89,212 +106,700 @@
             // 
             this.TXTCODUSER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TXTCODUSER.AutoSize = true;
-            this.TXTCODUSER.Location = new System.Drawing.Point(939, 498);
+            this.TXTCODUSER.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTCODUSER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.TXTCODUSER.Location = new System.Drawing.Point(843, 482);
             this.TXTCODUSER.Name = "TXTCODUSER";
-            this.TXTCODUSER.Size = new System.Drawing.Size(35, 13);
+            this.TXTCODUSER.Size = new System.Drawing.Size(45, 16);
             this.TXTCODUSER.TabIndex = 3;
             this.TXTCODUSER.Text = "label4";
             // 
-            // menuStrip1
+            // panel2
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aLUMNOSToolStripMenuItem,
-            this.pAGOSToolStripMenuItem,
-            this.gRUPOSToolStripMenuItem,
-            this.uSUARIOSToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(997, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.txtUser);
+            this.panel2.Controls.Add(this.sidePanel);
+            this.panel2.Controls.Add(this.btnAlumnos);
+            this.panel2.Controls.Add(this.btnPagos);
+            this.panel2.Controls.Add(this.btnReportes);
+            this.panel2.Controls.Add(this.btnGrupos);
+            this.panel2.Controls.Add(this.btnUsuarios);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 511);
+            this.panel2.TabIndex = 15;
             // 
-            // aLUMNOSToolStripMenuItem
+            // pictureBox2
             // 
-            this.aLUMNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.REGISTRARMENU,
-            this.CONSULTARMENU,
-            this.ACTUALIZAROPTIONMENU,
-            this.rECORDACADEMICOToolStripMenuItem});
-            this.aLUMNOSToolStripMenuItem.Name = "aLUMNOSToolStripMenuItem";
-            this.aLUMNOSToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.aLUMNOSToolStripMenuItem.Text = "ALUMNOS";
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(58, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(76, 71);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
-            // REGISTRARMENU
+            // txtUser
             // 
-            this.REGISTRARMENU.Name = "REGISTRARMENU";
-            this.REGISTRARMENU.Size = new System.Drawing.Size(191, 22);
-            this.REGISTRARMENU.Text = "REGISTRAR";
-            this.REGISTRARMENU.Click += new System.EventHandler(this.REGISTRARMENU_Click);
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.ForeColor = System.Drawing.Color.White;
+            this.txtUser.Location = new System.Drawing.Point(22, 105);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
+            this.txtUser.Size = new System.Drawing.Size(151, 41);
+            this.txtUser.TabIndex = 19;
+            this.txtUser.Text = "USUARIO";
             // 
-            // CONSULTARMENU
+            // sidePanel
             // 
-            this.CONSULTARMENU.Name = "CONSULTARMENU";
-            this.CONSULTARMENU.Size = new System.Drawing.Size(191, 22);
-            this.CONSULTARMENU.Text = "CONSULTAR";
-            this.CONSULTARMENU.Click += new System.EventHandler(this.CONSULTARMENU_Click);
+            this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.sidePanel.Location = new System.Drawing.Point(0, 150);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(10, 63);
+            this.sidePanel.TabIndex = 18;
             // 
-            // ACTUALIZAROPTIONMENU
+            // btnAlumnos
             // 
-            this.ACTUALIZAROPTIONMENU.Name = "ACTUALIZAROPTIONMENU";
-            this.ACTUALIZAROPTIONMENU.Size = new System.Drawing.Size(191, 22);
-            this.ACTUALIZAROPTIONMENU.Text = "ACTUALIZAR";
-            this.ACTUALIZAROPTIONMENU.Click += new System.EventHandler(this.ACTUALIZAROPTIONMENU_Click);
+            this.btnAlumnos.FlatAppearance.BorderSize = 0;
+            this.btnAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlumnos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlumnos.ForeColor = System.Drawing.Color.White;
+            this.btnAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnAlumnos.Image")));
+            this.btnAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlumnos.Location = new System.Drawing.Point(10, 150);
+            this.btnAlumnos.Name = "btnAlumnos";
+            this.btnAlumnos.Size = new System.Drawing.Size(190, 63);
+            this.btnAlumnos.TabIndex = 5;
+            this.btnAlumnos.Text = "    Alumnos";
+            this.btnAlumnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlumnos.UseVisualStyleBackColor = true;
+            this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
             // 
-            // rECORDACADEMICOToolStripMenuItem
+            // btnPagos
             // 
-            this.rECORDACADEMICOToolStripMenuItem.Name = "rECORDACADEMICOToolStripMenuItem";
-            this.rECORDACADEMICOToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.rECORDACADEMICOToolStripMenuItem.Text = "RECORD ACADEMICO";
-            this.rECORDACADEMICOToolStripMenuItem.Click += new System.EventHandler(this.rECORDACADEMICOToolStripMenuItem_Click);
+            this.btnPagos.FlatAppearance.BorderSize = 0;
+            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.ForeColor = System.Drawing.Color.White;
+            this.btnPagos.Image = ((System.Drawing.Image)(resources.GetObject("btnPagos.Image")));
+            this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagos.Location = new System.Drawing.Point(10, 217);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(190, 63);
+            this.btnPagos.TabIndex = 6;
+            this.btnPagos.Text = "    Pagos";
+            this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPagos.UseVisualStyleBackColor = true;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
-            // pAGOSToolStripMenuItem
+            // btnReportes
             // 
-            this.pAGOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.REGISTRARPAGOMENU,
-            this.cONSULTARToolStripMenuItem2});
-            this.pAGOSToolStripMenuItem.Name = "pAGOSToolStripMenuItem";
-            this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.pAGOSToolStripMenuItem.Text = "PAGOS";
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(10, 418);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(190, 63);
+            this.btnReportes.TabIndex = 9;
+            this.btnReportes.Text = "    Reportes";
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // REGISTRARPAGOMENU
+            // btnGrupos
             // 
-            this.REGISTRARPAGOMENU.Name = "REGISTRARPAGOMENU";
-            this.REGISTRARPAGOMENU.Size = new System.Drawing.Size(152, 22);
-            this.REGISTRARPAGOMENU.Text = "REGISTRAR";
-            this.REGISTRARPAGOMENU.Click += new System.EventHandler(this.REGISTRARPAGOMENU_Click);
+            this.btnGrupos.FlatAppearance.BorderSize = 0;
+            this.btnGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrupos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrupos.ForeColor = System.Drawing.Color.White;
+            this.btnGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupos.Image")));
+            this.btnGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrupos.Location = new System.Drawing.Point(10, 284);
+            this.btnGrupos.Name = "btnGrupos";
+            this.btnGrupos.Size = new System.Drawing.Size(190, 63);
+            this.btnGrupos.TabIndex = 7;
+            this.btnGrupos.Text = "    Grupos";
+            this.btnGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGrupos.UseVisualStyleBackColor = true;
+            this.btnGrupos.Click += new System.EventHandler(this.btnGrupos_Click);
             // 
-            // cONSULTARToolStripMenuItem2
+            // btnUsuarios
             // 
-            this.cONSULTARToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GENERALCONSMENU,
-            this.DEUDORESCONSMENU});
-            this.cONSULTARToolStripMenuItem2.Name = "cONSULTARToolStripMenuItem2";
-            this.cONSULTARToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.cONSULTARToolStripMenuItem2.Text = "CONSULTAR";
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(10, 351);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(190, 63);
+            this.btnUsuarios.TabIndex = 8;
+            this.btnUsuarios.Text = "    Usuarios";
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // GENERALCONSMENU
+            // panel3
             // 
-            this.GENERALCONSMENU.Name = "GENERALCONSMENU";
-            this.GENERALCONSMENU.Size = new System.Drawing.Size(152, 22);
-            this.GENERALCONSMENU.Text = "ESPECIFICO";
-            this.GENERALCONSMENU.Click += new System.EventHandler(this.GENERALCONSMENU_Click);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(200, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(696, 10);
+            this.panel3.TabIndex = 16;
             // 
-            // DEUDORESCONSMENU
+            // panel4
             // 
-            this.DEUDORESCONSMENU.Name = "DEUDORESCONSMENU";
-            this.DEUDORESCONSMENU.Size = new System.Drawing.Size(152, 22);
-            this.DEUDORESCONSMENU.Text = "GENERAL";
-            this.DEUDORESCONSMENU.Click += new System.EventHandler(this.DEUDORESCONSMENU_Click);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Location = new System.Drawing.Point(243, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(223, 93);
+            this.panel4.TabIndex = 17;
             // 
-            // gRUPOSToolStripMenuItem
+            // label5
             // 
-            this.gRUPOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearGrupo,
-            this.verGrupo,
-            this.agregarAlumnosAGrupo});
-            this.gRUPOSToolStripMenuItem.Name = "gRUPOSToolStripMenuItem";
-            this.gRUPOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.gRUPOSToolStripMenuItem.Text = "GRUPOS";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(121, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 19);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Idiomas";
             // 
-            // crearGrupo
+            // label1
             // 
-            this.crearGrupo.Name = "crearGrupo";
-            this.crearGrupo.Size = new System.Drawing.Size(239, 22);
-            this.crearGrupo.Text = "CREAR NUEVO GRUPO";
-            this.crearGrupo.Click += new System.EventHandler(this.crearGrupo_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(112, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Instituto de";
             // 
-            // verGrupo
+            // pictureBox1
             // 
-            this.verGrupo.Name = "verGrupo";
-            this.verGrupo.Size = new System.Drawing.Size(239, 22);
-            this.verGrupo.Text = "GRUPOS EMPEZADOS";
-            this.verGrupo.Click += new System.EventHandler(this.verGrupo_Click);
+            this.pictureBox1.Image = global::InstitutoDeIdiomas.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // agregarAlumnosAGrupo
+            // panelAlumno
             // 
-            this.agregarAlumnosAGrupo.Name = "agregarAlumnosAGrupo";
-            this.agregarAlumnosAGrupo.Size = new System.Drawing.Size(239, 22);
-            this.agregarAlumnosAGrupo.Text = "AGREGAR ALUMNOS A GRUPO";
-            this.agregarAlumnosAGrupo.Click += new System.EventHandler(this.agregarAlumnosAGrupo_Click);
+            this.panelAlumno.BackColor = System.Drawing.Color.Transparent;
+            this.panelAlumno.Controls.Add(this.label2);
+            this.panelAlumno.Controls.Add(this.label4);
+            this.panelAlumno.Controls.Add(this.Consultar);
+            this.panelAlumno.Controls.Add(this.label6);
+            this.panelAlumno.Controls.Add(this.btnRecordAlumno);
+            this.panelAlumno.Controls.Add(this.btnConsultarAlumno);
+            this.panelAlumno.Controls.Add(this.btnActualizarAlumno);
+            this.panelAlumno.Controls.Add(this.btnRegistrarAlumno);
+            this.panelAlumno.Location = new System.Drawing.Point(206, 149);
+            this.panelAlumno.Name = "panelAlumno";
+            this.panelAlumno.Size = new System.Drawing.Size(685, 312);
+            this.panelAlumno.TabIndex = 18;
+            this.panelAlumno.Visible = false;
             // 
-            // uSUARIOSToolStripMenuItem
+            // label2
             // 
-            this.uSUARIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cREARToolStripMenuItem1});
-            this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(444, 285);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Actualizar";
             // 
-            // cREARToolStripMenuItem1
+            // label4
             // 
-            this.cREARToolStripMenuItem1.Name = "cREARToolStripMenuItem1";
-            this.cREARToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.cREARToolStripMenuItem1.Text = "CREAR";
-            this.cREARToolStripMenuItem1.Click += new System.EventHandler(this.cREARToolStripMenuItem1_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(413, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Record Académico";
             // 
-            // rEPORTESToolStripMenuItem
+            // Consultar
             // 
-            this.rEPORTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FICHAMATRICULATOOL});
-            this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
-            this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.rEPORTESToolStripMenuItem.Text = "REPORTES";
+            this.Consultar.AutoSize = true;
+            this.Consultar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Consultar.Location = new System.Drawing.Point(183, 285);
+            this.Consultar.Name = "Consultar";
+            this.Consultar.Size = new System.Drawing.Size(70, 17);
+            this.Consultar.TabIndex = 17;
+            this.Consultar.Text = "Consultar";
             // 
-            // FICHAMATRICULATOOL
+            // label6
             // 
-            this.FICHAMATRICULATOOL.Name = "FICHAMATRICULATOOL";
-            this.FICHAMATRICULATOOL.Size = new System.Drawing.Size(193, 22);
-            this.FICHAMATRICULATOOL.Text = "FICHA DE MATRICULA";
-            this.FICHAMATRICULATOOL.Click += new System.EventHandler(this.FICHAMATRICULATOOL_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(186, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Registrar";
+            // 
+            // btnRecordAlumno
+            // 
+            this.btnRecordAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRecordAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRecordAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordAlumno.ForeColor = System.Drawing.Color.Red;
+            this.btnRecordAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRecordAlumno.Image")));
+            this.btnRecordAlumno.Location = new System.Drawing.Point(435, 44);
+            this.btnRecordAlumno.Name = "btnRecordAlumno";
+            this.btnRecordAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnRecordAlumno.TabIndex = 15;
+            this.btnRecordAlumno.UseVisualStyleBackColor = false;
+            this.btnRecordAlumno.Click += new System.EventHandler(this.btnRecord_Click);
+            // 
+            // btnConsultarAlumno
+            // 
+            this.btnConsultarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConsultarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnConsultarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarAlumno.Image")));
+            this.btnConsultarAlumno.Location = new System.Drawing.Point(171, 189);
+            this.btnConsultarAlumno.Name = "btnConsultarAlumno";
+            this.btnConsultarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultarAlumno.TabIndex = 14;
+            this.btnConsultarAlumno.UseVisualStyleBackColor = false;
+            this.btnConsultarAlumno.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnActualizarAlumno
+            // 
+            this.btnActualizarAlumno.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnActualizarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnActualizarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarAlumno.Image")));
+            this.btnActualizarAlumno.Location = new System.Drawing.Point(435, 189);
+            this.btnActualizarAlumno.Name = "btnActualizarAlumno";
+            this.btnActualizarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnActualizarAlumno.TabIndex = 13;
+            this.btnActualizarAlumno.UseVisualStyleBackColor = false;
+            this.btnActualizarAlumno.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnRegistrarAlumno
+            // 
+            this.btnRegistrarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAlumno.Image")));
+            this.btnRegistrarAlumno.Location = new System.Drawing.Point(171, 44);
+            this.btnRegistrarAlumno.Name = "btnRegistrarAlumno";
+            this.btnRegistrarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnRegistrarAlumno.TabIndex = 12;
+            this.btnRegistrarAlumno.UseVisualStyleBackColor = false;
+            this.btnRegistrarAlumno.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // panelPago
+            // 
+            this.panelPago.BackColor = System.Drawing.Color.Transparent;
+            this.panelPago.Controls.Add(this.label14);
+            this.panelPago.Controls.Add(this.btnCorregirPago);
+            this.panelPago.Controls.Add(this.label9);
+            this.panelPago.Controls.Add(this.label10);
+            this.panelPago.Controls.Add(this.label11);
+            this.panelPago.Controls.Add(this.btnConsultaGeneralPago);
+            this.panelPago.Controls.Add(this.btnRegistrarPago);
+            this.panelPago.Controls.Add(this.btnConsultaEspecificaPago);
+            this.panelPago.Location = new System.Drawing.Point(206, 149);
+            this.panelPago.Name = "panelPago";
+            this.panelPago.Size = new System.Drawing.Size(685, 312);
+            this.panelPago.TabIndex = 19;
+            this.panelPago.Visible = false;
+            this.panelPago.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPago_Paint);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(434, 285);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 17);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Corregir Pago";
+            // 
+            // btnCorregirPago
+            // 
+            this.btnCorregirPago.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnCorregirPago.FlatAppearance.BorderSize = 0;
+            this.btnCorregirPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorregirPago.Image = ((System.Drawing.Image)(resources.GetObject("btnCorregirPago.Image")));
+            this.btnCorregirPago.Location = new System.Drawing.Point(435, 189);
+            this.btnCorregirPago.Name = "btnCorregirPago";
+            this.btnCorregirPago.Size = new System.Drawing.Size(90, 90);
+            this.btnCorregirPago.TabIndex = 44;
+            this.btnCorregirPago.UseVisualStyleBackColor = false;
+            this.btnCorregirPago.Click += new System.EventHandler(this.btnCorregirPago_Click_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(417, 140);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 17);
+            this.label9.TabIndex = 43;
+            this.label9.Text = "Consulta Específica";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(158, 285);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(121, 17);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Consulta General";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(186, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 17);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Registrar";
+            // 
+            // btnConsultaGeneralPago
+            // 
+            this.btnConsultaGeneralPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConsultaGeneralPago.FlatAppearance.BorderSize = 0;
+            this.btnConsultaGeneralPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaGeneralPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaGeneralPago.Image")));
+            this.btnConsultaGeneralPago.Location = new System.Drawing.Point(171, 189);
+            this.btnConsultaGeneralPago.Name = "btnConsultaGeneralPago";
+            this.btnConsultaGeneralPago.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultaGeneralPago.TabIndex = 40;
+            this.btnConsultaGeneralPago.UseVisualStyleBackColor = false;
+            this.btnConsultaGeneralPago.Click += new System.EventHandler(this.btnConsultaGeneralPago_Click_1);
+            // 
+            // btnRegistrarPago
+            // 
+            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarPago.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPago.Image")));
+            this.btnRegistrarPago.Location = new System.Drawing.Point(171, 44);
+            this.btnRegistrarPago.Name = "btnRegistrarPago";
+            this.btnRegistrarPago.Size = new System.Drawing.Size(90, 90);
+            this.btnRegistrarPago.TabIndex = 39;
+            this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
+            // 
+            // btnConsultaEspecificaPago
+            // 
+            this.btnConsultaEspecificaPago.BackColor = System.Drawing.Color.Teal;
+            this.btnConsultaEspecificaPago.FlatAppearance.BorderSize = 0;
+            this.btnConsultaEspecificaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaEspecificaPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaEspecificaPago.Image")));
+            this.btnConsultaEspecificaPago.Location = new System.Drawing.Point(435, 44);
+            this.btnConsultaEspecificaPago.Name = "btnConsultaEspecificaPago";
+            this.btnConsultaEspecificaPago.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultaEspecificaPago.TabIndex = 38;
+            this.btnConsultaEspecificaPago.UseVisualStyleBackColor = false;
+            this.btnConsultaEspecificaPago.Click += new System.EventHandler(this.btnConsultaEspecificaPago_Click_1);
+            // 
+            // panelGrupos
+            // 
+            this.panelGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.panelGrupos.Controls.Add(this.label7);
+            this.panelGrupos.Controls.Add(this.label8);
+            this.panelGrupos.Controls.Add(this.label12);
+            this.panelGrupos.Controls.Add(this.btnAsignarAlumnosGrupo);
+            this.panelGrupos.Controls.Add(this.btnCrearGrupo);
+            this.panelGrupos.Controls.Add(this.btnGruposEmpezados);
+            this.panelGrupos.Location = new System.Drawing.Point(206, 149);
+            this.panelGrupos.Name = "panelGrupos";
+            this.panelGrupos.Size = new System.Drawing.Size(685, 312);
+            this.panelGrupos.TabIndex = 42;
+            this.panelGrupos.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(413, 140);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 17);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Grupos Empezados";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(133, 285);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(170, 17);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Asignar alumnos a grupo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(195, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 17);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Crear";
+            // 
+            // btnAsignarAlumnosGrupo
+            // 
+            this.btnAsignarAlumnosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAsignarAlumnosGrupo.FlatAppearance.BorderSize = 0;
+            this.btnAsignarAlumnosGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarAlumnosGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarAlumnosGrupo.Image")));
+            this.btnAsignarAlumnosGrupo.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarAlumnosGrupo.Name = "btnAsignarAlumnosGrupo";
+            this.btnAsignarAlumnosGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarAlumnosGrupo.TabIndex = 35;
+            this.btnAsignarAlumnosGrupo.UseVisualStyleBackColor = false;
+            this.btnAsignarAlumnosGrupo.Click += new System.EventHandler(this.btnAsignarAlumnosGrupo_Click_1);
+            // 
+            // btnCrearGrupo
+            // 
+            this.btnCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCrearGrupo.FlatAppearance.BorderSize = 0;
+            this.btnCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupo.Image")));
+            this.btnCrearGrupo.Location = new System.Drawing.Point(171, 44);
+            this.btnCrearGrupo.Name = "btnCrearGrupo";
+            this.btnCrearGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnCrearGrupo.TabIndex = 34;
+            this.btnCrearGrupo.UseVisualStyleBackColor = false;
+            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click_1);
+            // 
+            // btnGruposEmpezados
+            // 
+            this.btnGruposEmpezados.BackColor = System.Drawing.Color.Teal;
+            this.btnGruposEmpezados.FlatAppearance.BorderSize = 0;
+            this.btnGruposEmpezados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposEmpezados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposEmpezados.Image")));
+            this.btnGruposEmpezados.Location = new System.Drawing.Point(435, 44);
+            this.btnGruposEmpezados.Name = "btnGruposEmpezados";
+            this.btnGruposEmpezados.Size = new System.Drawing.Size(90, 90);
+            this.btnGruposEmpezados.TabIndex = 33;
+            this.btnGruposEmpezados.UseVisualStyleBackColor = false;
+            this.btnGruposEmpezados.Click += new System.EventHandler(this.btnGruposEmpezados_Click_1);
+            // 
+            // panelReportes
+            // 
+            this.panelReportes.BackColor = System.Drawing.Color.Transparent;
+            this.panelReportes.Controls.Add(this.label15);
+            this.panelReportes.Controls.Add(this.btnFichaMatricula);
+            this.panelReportes.Location = new System.Drawing.Point(206, 149);
+            this.panelReportes.Name = "panelReportes";
+            this.panelReportes.Size = new System.Drawing.Size(685, 312);
+            this.panelReportes.TabIndex = 39;
+            this.panelReportes.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(153, 140);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(129, 17);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Ficha de matrícula";
+            // 
+            // btnFichaMatricula
+            // 
+            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
+            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFichaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMatricula.Image")));
+            this.btnFichaMatricula.Location = new System.Drawing.Point(171, 44);
+            this.btnFichaMatricula.Name = "btnFichaMatricula";
+            this.btnFichaMatricula.Size = new System.Drawing.Size(90, 90);
+            this.btnFichaMatricula.TabIndex = 39;
+            this.btnFichaMatricula.UseVisualStyleBackColor = false;
+            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
+            // 
+            // panelUsuario
+            // 
+            this.panelUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.panelUsuario.Controls.Add(this.label13);
+            this.panelUsuario.Controls.Add(this.btnNuevoUsuario);
+            this.panelUsuario.Location = new System.Drawing.Point(206, 149);
+            this.panelUsuario.Name = "panelUsuario";
+            this.panelUsuario.Size = new System.Drawing.Size(685, 312);
+            this.panelUsuario.TabIndex = 43;
+            this.panelUsuario.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(168, 140);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(101, 17);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Nuevo usuario";
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnNuevoUsuario.TabIndex = 40;
+            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(767, 39);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimizar.TabIndex = 44;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(825, 39);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrar.TabIndex = 45;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // txtMain
+            // 
+            this.txtMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMain.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.txtMain.Location = new System.Drawing.Point(209, 135);
+            this.txtMain.Name = "txtMain";
+            this.txtMain.ReadOnly = true;
+            this.txtMain.Size = new System.Drawing.Size(682, 37);
+            this.txtMain.TabIndex = 47;
+            this.txtMain.Text = "ALUMNOS";
             // 
             // frmMainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(997, 524);
+            this.ClientSize = new System.Drawing.Size(896, 511);
+            this.Controls.Add(this.txtMain);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panelReportes);
+            this.Controls.Add(this.panelGrupos);
+            this.Controls.Add(this.panelPago);
+            this.Controls.Add(this.panelAlumno);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.TXTCODUSER);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TXTBIENBUSER);
-            this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelAlumno.ResumeLayout(false);
+            this.panelAlumno.PerformLayout();
+            this.panelPago.ResumeLayout(false);
+            this.panelPago.PerformLayout();
+            this.panelGrupos.ResumeLayout(false);
+            this.panelGrupos.PerformLayout();
+            this.panelReportes.ResumeLayout(false);
+            this.panelReportes.PerformLayout();
+            this.panelUsuario.ResumeLayout(false);
+            this.panelUsuario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Label TXTBIENBUSER;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TXTCODUSER;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aLUMNOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem REGISTRARMENU;
-        private System.Windows.Forms.ToolStripMenuItem CONSULTARMENU;
-        private System.Windows.Forms.ToolStripMenuItem pAGOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem REGISTRARPAGOMENU;
-        private System.Windows.Forms.ToolStripMenuItem cONSULTARToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem GENERALCONSMENU;
-        private System.Windows.Forms.ToolStripMenuItem DEUDORESCONSMENU;
-        private System.Windows.Forms.ToolStripMenuItem gRUPOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearGrupo;
-        private System.Windows.Forms.ToolStripMenuItem verGrupo;
-        private System.Windows.Forms.ToolStripMenuItem agregarAlumnosAGrupo;
-        private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cREARToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem FICHAMATRICULATOOL;
-        private System.Windows.Forms.ToolStripMenuItem ACTUALIZAROPTIONMENU;
-        private System.Windows.Forms.ToolStripMenuItem rECORDACADEMICOToolStripMenuItem;
+        private System.Windows.Forms.Button btnAlumnos;
+        private System.Windows.Forms.Button btnPagos;
+        private System.Windows.Forms.Button btnGrupos;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox txtUser;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelAlumno;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Consultar;
+        private System.Windows.Forms.Label label6;
+        private BotonCircular btnRecordAlumno;
+        private BotonCircular btnConsultarAlumno;
+        private BotonCircular btnActualizarAlumno;
+        private BotonCircular btnRegistrarAlumno;
+        private System.Windows.Forms.Panel panelPago;
+        private System.Windows.Forms.Label label14;
+        private BotonCircular btnCorregirPago;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private BotonCircular btnConsultaGeneralPago;
+        private BotonCircular btnRegistrarPago;
+        private BotonCircular btnConsultaEspecificaPago;
+        private System.Windows.Forms.Panel panelGrupos;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private BotonCircular btnAsignarAlumnosGrupo;
+        private BotonCircular btnCrearGrupo;
+        private BotonCircular btnGruposEmpezados;
+        private System.Windows.Forms.Panel panelReportes;
+        private System.Windows.Forms.Label label15;
+        private BotonCircular btnFichaMatricula;
+        private System.Windows.Forms.Panel panelUsuario;
+        private BotonCircular btnNuevoUsuario;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.RichTextBox txtMain;
     }
 }
