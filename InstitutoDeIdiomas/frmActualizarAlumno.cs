@@ -470,6 +470,7 @@ namespace InstitutoDeIdiomas
 
 
                 GVALUMNOS.DataSource = dt;
+                GVALUMNOS.Columns[0].Width = 205;
             }
             catch (Exception ex)
             {
@@ -487,7 +488,7 @@ namespace InstitutoDeIdiomas
             if (e.RowIndex >= 0 && e.RowIndex < GVALUMNOS.RowCount )
             {
                 DataGridViewRow row = this.GVALUMNOS.Rows[e.RowIndex];
-                String dni = row.Cells[3].Value.ToString();               
+                String dni = row.Cells[1].Value.ToString();               
                 try {
                     DataTable dt = new DataTable();
                     SqlCommand comando = new SqlCommand("buscarPersona", _SqlConnection);

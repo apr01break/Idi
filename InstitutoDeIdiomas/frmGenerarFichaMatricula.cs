@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InstitutoDeIdiomas.ReportForms;
 using System.IO;
+using MaterialSkin.Controls;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmGenerarFichaMatricula : Form
+    public partial class frmGenerarFichaMatricula : MaterialForm
     {
         private Label label1;
         private DataGridView dataGridView1;
-        private Button BTNGENERAR;
         private DataGridView dataGridView2;
         private Label label2;
         private Label label3;
@@ -33,6 +33,8 @@ namespace InstitutoDeIdiomas
         private TextBox TXTOBSERVACION;
         private ErrorProvider errorProvider1;
         private IContainer components;
+        private Panel panel1;
+        private MaterialRaisedButton BTNGENERAR;
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public frmGenerarFichaMatricula()
         {
@@ -54,12 +56,10 @@ namespace InstitutoDeIdiomas
             this.TXTBUSCALUMN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BTNGENERAR = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,15 +67,19 @@ namespace InstitutoDeIdiomas
             this.label9 = new System.Windows.Forms.Label();
             this.TXTOBSERVACION = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BTNGENERAR = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TXTBUSCALUMN
             // 
-            this.TXTBUSCALUMN.Location = new System.Drawing.Point(12, 49);
+            this.TXTBUSCALUMN.Location = new System.Drawing.Point(8, 38);
             this.TXTBUSCALUMN.Name = "TXTBUSCALUMN";
             this.TXTBUSCALUMN.Size = new System.Drawing.Size(543, 20);
             this.TXTBUSCALUMN.TabIndex = 0;
@@ -84,7 +88,7 @@ namespace InstitutoDeIdiomas
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Location = new System.Drawing.Point(8, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 1;
@@ -96,7 +100,7 @@ namespace InstitutoDeIdiomas
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -104,23 +108,13 @@ namespace InstitutoDeIdiomas
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewNombres_CellClick);
             // 
-            // BTNGENERAR
-            // 
-            this.BTNGENERAR.Location = new System.Drawing.Point(580, 610);
-            this.BTNGENERAR.Name = "BTNGENERAR";
-            this.BTNGENERAR.Size = new System.Drawing.Size(266, 34);
-            this.BTNGENERAR.TabIndex = 3;
-            this.BTNGENERAR.Text = "GENERAR FICHA DE MATRICULA";
-            this.BTNGENERAR.UseVisualStyleBackColor = true;
-            this.BTNGENERAR.Click += new System.EventHandler(this.BTNGENERAR_Click);
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 291);
+            this.dataGridView2.Location = new System.Drawing.Point(11, 280);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -131,7 +125,7 @@ namespace InstitutoDeIdiomas
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 271);
+            this.label2.Location = new System.Drawing.Point(8, 260);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(237, 13);
             this.label2.TabIndex = 5;
@@ -140,7 +134,7 @@ namespace InstitutoDeIdiomas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(498, 586);
+            this.label3.Location = new System.Drawing.Point(290, 559);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 13);
             this.label3.TabIndex = 6;
@@ -149,24 +143,16 @@ namespace InstitutoDeIdiomas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(673, 586);
+            this.label4.Location = new System.Drawing.Point(445, 559);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "XXXXXXX";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(675, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 191);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 586);
+            this.label5.Location = new System.Drawing.Point(8, 558);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 9;
@@ -175,7 +161,7 @@ namespace InstitutoDeIdiomas
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(103, 585);
+            this.label6.Location = new System.Drawing.Point(91, 559);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 10;
@@ -184,7 +170,7 @@ namespace InstitutoDeIdiomas
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(763, 242);
+            this.label7.Location = new System.Drawing.Point(759, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 11;
@@ -193,7 +179,7 @@ namespace InstitutoDeIdiomas
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(675, 242);
+            this.label8.Location = new System.Drawing.Point(671, 231);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 12;
@@ -202,7 +188,7 @@ namespace InstitutoDeIdiomas
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 426);
+            this.label9.Location = new System.Drawing.Point(11, 415);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(547, 13);
             this.label9.TabIndex = 14;
@@ -213,7 +199,7 @@ namespace InstitutoDeIdiomas
             // 
             this.TXTOBSERVACION.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTOBSERVACION.Enabled = false;
-            this.TXTOBSERVACION.Location = new System.Drawing.Point(15, 446);
+            this.TXTOBSERVACION.Location = new System.Drawing.Point(11, 435);
             this.TXTOBSERVACION.Multiline = true;
             this.TXTOBSERVACION.Name = "TXTOBSERVACION";
             this.TXTOBSERVACION.Size = new System.Drawing.Size(831, 98);
@@ -224,35 +210,68 @@ namespace InstitutoDeIdiomas
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(671, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(171, 191);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BTNGENERAR);
+            this.panel1.Controls.Add(this.TXTOBSERVACION);
+            this.panel1.Controls.Add(this.TXTBUSCALUMN);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(874, 609);
+            this.panel1.TabIndex = 16;
+            // 
+            // BTNGENERAR
+            // 
+            this.BTNGENERAR.Depth = 0;
+            this.BTNGENERAR.Location = new System.Drawing.Point(588, 560);
+            this.BTNGENERAR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNGENERAR.Name = "BTNGENERAR";
+            this.BTNGENERAR.Primary = true;
+            this.BTNGENERAR.Size = new System.Drawing.Size(233, 33);
+            this.BTNGENERAR.TabIndex = 16;
+            this.BTNGENERAR.Text = "GENERAR FICHA DE MATRICULA";
+            this.BTNGENERAR.UseVisualStyleBackColor = true;
+            this.BTNGENERAR.Click += new System.EventHandler(this.BTNGENERAR_Click);
+            // 
             // frmGenerarFichaMatricula
             // 
             this.ClientSize = new System.Drawing.Size(874, 673);
-            this.Controls.Add(this.TXTOBSERVACION);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.BTNGENERAR);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTBUSCALUMN);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmGenerarFichaMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GENERAR FICHA DE MATRICULA";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -274,10 +293,8 @@ namespace InstitutoDeIdiomas
 
 
                dataGridView1.DataSource = dt;
-                dataGridView1.Columns[0].Width = 140;
-                dataGridView1.Columns[1].Width = 140;
+                dataGridView1.Columns[0].Width = 300;
                 dataGridView1.Columns[2].Width = 150;
-                dataGridView1.Columns[4].Width = 105;
             }
             catch (Exception ex)
             {
@@ -294,7 +311,7 @@ namespace InstitutoDeIdiomas
             if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                String dni = row.Cells[3].Value.ToString();               
+                String dni = row.Cells["DNI"].Value.ToString();               
                 try
                 {
                     DataTable dt = new DataTable();
@@ -343,7 +360,12 @@ namespace InstitutoDeIdiomas
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView2.DataSource = dt;
-                dataGridView2.Columns[4].Width = 150;
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns["idioma"].Width = 85;
+                dataGridView2.Columns[3].Width = 85;
+                dataGridView2.Columns["ciclo"].Width = 65;
+                dataGridView2.Columns[4].Width = 195;
+                dataGridView2.Columns[5].Width = 180;
             }
             catch (Exception ex)
             {
@@ -365,7 +387,7 @@ namespace InstitutoDeIdiomas
                 TXTOBSERVACION.Enabled = true;
             }
         }
-        string dni, nom, ape, sex, eda, grad, tlf, cel, fotooo, email, naci, dep, dire, dist, prov,observaciones;
+        string dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov,observaciones;
 
         private void TXTOBSERVACION_KeyUp(object sender, KeyEventArgs e)
         {

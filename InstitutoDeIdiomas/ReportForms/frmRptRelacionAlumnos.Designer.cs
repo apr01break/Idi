@@ -33,24 +33,24 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "InstitutoDeIdiomas.Reportes.rptListaAlumnos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 64);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(611, 410);
+            this.reportViewer1.Size = new System.Drawing.Size(724, 552);
             this.reportViewer1.TabIndex = 1;
             // 
             // frmRptRelacionAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 410);
+            this.ClientSize = new System.Drawing.Size(724, 616);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmRptRelacionAlumnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRptRelacionAlumnos";
+            this.Text = "REPORTE DE RELACION DE ALUMNOS";
             this.Load += new System.EventHandler(this.frmRptRelacionAlumnos_Load);
             this.ResumeLayout(false);
 

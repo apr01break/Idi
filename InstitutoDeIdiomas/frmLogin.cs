@@ -25,6 +25,7 @@ namespace InstitutoDeIdiomas
             SkinManager.AddFormToManage(this);
             SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
             SkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Red500, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            
         }
       
         private void BTNREGISTRAR_Click(object sender, EventArgs e)
@@ -53,25 +54,33 @@ namespace InstitutoDeIdiomas
                     if (dt.Rows.Count == 1)
                     {
                         this.Hide();
+                        String tipoTrabajador = dt.Rows[0][3].ToString(); ;
                         if (dt.Rows[0][3].ToString() == "ADMINISTRADOR")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
-                            new frmMainMenu(id, nombre).Show();
+                            new frmMainMenu(id, nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
                         if (dt.Rows[0][3].ToString() == "SECRETARIO")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
-                            new frmMainMenu(id, nombre).Show();
+                            new frmMainMenu(id, nombre, tipoTrabajador).Show();
+                            this.Hide();
+                        }
+                        if (dt.Rows[0][3].ToString() == "SECRETARIA PRINCIPAL")
+                        {
+                            String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
+                            String id = dt.Rows[0][4].ToString();
+                            new frmMainMenu(id, nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
                         if (dt.Rows[0][3].ToString() == "PROFESOR")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
-                            new frmMainMenuDocentes(id).Show();
+                            new frmMainMenuDocentes(id,nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
                     }
@@ -158,6 +167,11 @@ namespace InstitutoDeIdiomas
             {
                 login();
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

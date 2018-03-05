@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +12,20 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmSeleccionarGrupo : Form
+    public partial class frmSeleccionarGrupo : MaterialForm
     {
         int idGrupo;
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
-        public frmSeleccionarGrupo(String idtrabajador)
+        public frmSeleccionarGrupo(String idtrabajador, int opcion)
         {
             InitializeComponent();
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
             cargarGrupos(idtrabajador);
             cargarNombre(idtrabajador);
+            if (opcion == 0) btnRegistroAuxiliar.Visible = true;
+            else if (opcion == 1) btnRegistrarNotas.Visible = true;
+            else if (opcion == 2) btnRegistrarAsistencias.Visible = true;
             
         }
 
@@ -103,11 +107,14 @@ namespace InstitutoDeIdiomas
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvwGrupo.RowCount)
             {
+                btnRegistrarNotas.Enabled = true;
+                btnRegistroAuxiliar.Enabled = true;
+                btnRegistrarAsistencias.Enabled = true;
                 try
                 {
                     DataGridViewRow row = dgvwGrupo.Rows[e.RowIndex];
                     idGrupo = (int)row.Cells["idGrupo"].Value;
-                    button1.Enabled = true;
+                    btnRegistroAuxiliar.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -123,5 +130,18 @@ namespace InstitutoDeIdiomas
             registroAuxiliar.Show();
         }
 
+        private void btnRegistrarNotas_Click(object sender, EventArgs e)
+        {
+            frmRegistrarNotas frmRegistrarNotas = new frmRegistrarNotas(idGrupo);
+            this.Close();
+            frmRegistrarNotas.Show();
+        }
+
+        private void btnRegistrarAsistencias_Click(object sender, EventArgs e)
+        {
+            frmRegistrarAsistencia frmRegistrarAsistencia = new frmRegistrarAsistencia(idGrupo);
+            this.Close();
+            frmRegistrarAsistencia.Show();
+        }
     }
 }

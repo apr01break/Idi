@@ -313,11 +313,16 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        private void frmRecordAcademico_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvwLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvwLista.RowCount - 1)
+                if (e.RowIndex >= 0 && e.RowIndex < dgvwLista.RowCount )
                 {
                     btnGenerarRecord.Enabled = false;
                     DataGridViewRow row = this.dgvwLista.Rows[e.RowIndex];

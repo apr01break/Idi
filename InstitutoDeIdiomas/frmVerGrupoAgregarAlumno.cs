@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmVerGrupoAgregarAlumno : Form
+    public partial class frmVerGrupoAgregarAlumno : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
@@ -114,7 +115,5 @@ namespace InstitutoDeIdiomas
                 }
             }
         }
-
-        
     }
 }

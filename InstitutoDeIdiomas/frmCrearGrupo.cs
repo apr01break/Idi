@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace InstitutoDeIdiomas
 {
@@ -30,6 +31,15 @@ namespace InstitutoDeIdiomas
             dtmHoraFinal.Format = DateTimePickerFormat.Custom;
             dtmHoraInicio.CustomFormat = "HH:mm" ;
             dtmHoraFinal.CustomFormat = "HH:mm";
+            listarNumeros();
+        }
+        public void listarNumeros()
+        {
+            for (int i = 1; i < 33; i++)
+            {
+                cbNumero.Items.Add(i.ToString().PadLeft(3, '0'));
+            }
+            
         }
 
         public void listaIdioma()
@@ -237,44 +247,51 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupo_Click(object sender, EventArgs e)
         {
-            try
+            if (cbNumero.Text.Trim() == "" || cbMes.Text == "" || cbAno.Text == "") 
             {
-
-                int idioma = (int)((DataRowView)cmbIdioma.SelectedItem)["idIdioma"];
-                int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
-                int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
-                int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
-                
-                SqlCommand cmd = new SqlCommand("insert_grupo", _SqlConnection);
-                if (cmd.Connection.State == ConnectionState.Closed)
-                {
-                    cmd.Connection.Open();
-                }
-                cmd.Parameters.Add(new SqlParameter("@idtrabajador", profesor));
-                cmd.Parameters.Add(new SqlParameter("@horaInicio", dtmHoraInicio.Value));
-                cmd.Parameters.Add(new SqlParameter("@horaFinal", dtmHoraFinal.Value));
-                cmd.Parameters.Add(new SqlParameter("@fechaInicio", dtFechaInicio.Value));
-                cmd.Parameters.Add(new SqlParameter("@fechaFinal", dtFechaFinal.Value));
-                cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
-                cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
-                cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
-                cmd.Parameters.Add(new SqlParameter("@numero", txtNumero.Text));
-                cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
-
-                GuardarDias();
-                if (cmd.Connection.State == ConnectionState.Open)
-                {
-                    cmd.Connection.Close();
-                }
-                MessageBox.Show("GRUPO CREADO SATISFACTORIAMENTE");
-                this.Dispose();
-                this.Close();
+                MessageBox.Show("Elige un número de grupo");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+
+                    int idioma = (int)((DataRowView)cmbIdioma.SelectedItem)["idIdioma"];
+                    int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
+                    int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
+                    int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
+
+                    SqlCommand cmd = new SqlCommand("insert_grupo", _SqlConnection);
+                    if (cmd.Connection.State == ConnectionState.Closed)
+                    {
+                        cmd.Connection.Open();
+                    }
+                    cmd.Parameters.Add(new SqlParameter("@idtrabajador", profesor));
+                    cmd.Parameters.Add(new SqlParameter("@horaInicio", dtmHoraInicio.Value));
+                    cmd.Parameters.Add(new SqlParameter("@horaFinal", dtmHoraFinal.Value));
+                    cmd.Parameters.Add(new SqlParameter("@fechaInicio", dtFechaInicio.Value));
+                    cmd.Parameters.Add(new SqlParameter("@fechaFinal", dtFechaFinal.Value));
+                    cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
+                    cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
+                    cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
+                    cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text+"-"+cbMes+"-"+cbAno));
+                    cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+
+                    GuardarDias();
+                    if (cmd.Connection.State == ConnectionState.Open)
+                    {
+                        cmd.Connection.Close();
+                    }
+                    MessageBox.Show("GRUPO CREADO SATISFACTORIAMENTE");
+                    this.Dispose();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -283,42 +300,13 @@ namespace InstitutoDeIdiomas
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        
+        private void txtNumero_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

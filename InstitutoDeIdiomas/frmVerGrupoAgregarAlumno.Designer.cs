@@ -29,55 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerGrupoAgregarAlumno));
-            this.btnAgregarAlumno = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewGrupo = new System.Windows.Forms.DataGridView();
-            this.btnVerNotas = new System.Windows.Forms.Button();
+            this.btnAgregarAlumno = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnVerNotas = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAgregarAlumno
-            // 
-            this.btnAgregarAlumno.Enabled = false;
-            this.btnAgregarAlumno.Location = new System.Drawing.Point(806, 312);
-            this.btnAgregarAlumno.Name = "btnAgregarAlumno";
-            this.btnAgregarAlumno.Size = new System.Drawing.Size(75, 59);
-            this.btnAgregarAlumno.TabIndex = 7;
-            this.btnAgregarAlumno.Text = "AGREGAR ALUMNOS";
-            this.btnAgregarAlumno.UseVisualStyleBackColor = true;
-            this.btnAgregarAlumno.Visible = false;
-            this.btnAgregarAlumno.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(308, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "SELECCIONE EL GRUPO";
             // 
             // dataGridViewGrupo
             // 
             this.dataGridViewGrupo.AllowUserToAddRows = false;
             this.dataGridViewGrupo.AllowUserToResizeRows = false;
             this.dataGridViewGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGrupo.Location = new System.Drawing.Point(11, 33);
+            this.dataGridViewGrupo.Location = new System.Drawing.Point(11, 77);
             this.dataGridViewGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewGrupo.Name = "dataGridViewGrupo";
             this.dataGridViewGrupo.ReadOnly = true;
+            this.dataGridViewGrupo.RowHeadersVisible = false;
             this.dataGridViewGrupo.RowTemplate.Height = 24;
-            this.dataGridViewGrupo.Size = new System.Drawing.Size(786, 466);
+            this.dataGridViewGrupo.Size = new System.Drawing.Size(803, 421);
             this.dataGridViewGrupo.TabIndex = 5;
             this.dataGridViewGrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupo_CellClick);
             // 
+            // btnAgregarAlumno
+            // 
+            this.btnAgregarAlumno.Depth = 0;
+            this.btnAgregarAlumno.Enabled = false;
+            this.btnAgregarAlumno.Location = new System.Drawing.Point(366, 509);
+            this.btnAgregarAlumno.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAgregarAlumno.Name = "btnAgregarAlumno";
+            this.btnAgregarAlumno.Primary = true;
+            this.btnAgregarAlumno.Size = new System.Drawing.Size(153, 32);
+            this.btnAgregarAlumno.TabIndex = 9;
+            this.btnAgregarAlumno.Text = "AGREGAR ALUMNOS";
+            this.btnAgregarAlumno.UseVisualStyleBackColor = true;
+            this.btnAgregarAlumno.Visible = false;
+            this.btnAgregarAlumno.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
+            // 
             // btnVerNotas
             // 
+            this.btnVerNotas.Depth = 0;
             this.btnVerNotas.Enabled = false;
-            this.btnVerNotas.Location = new System.Drawing.Point(806, 126);
+            this.btnVerNotas.Location = new System.Drawing.Point(366, 509);
+            this.btnVerNotas.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVerNotas.Name = "btnVerNotas";
-            this.btnVerNotas.Size = new System.Drawing.Size(75, 59);
-            this.btnVerNotas.TabIndex = 8;
+            this.btnVerNotas.Primary = true;
+            this.btnVerNotas.Size = new System.Drawing.Size(153, 32);
+            this.btnVerNotas.TabIndex = 10;
             this.btnVerNotas.Text = "VER GRUPO";
             this.btnVerNotas.UseVisualStyleBackColor = true;
             this.btnVerNotas.Visible = false;
@@ -87,26 +84,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 510);
+            this.ClientSize = new System.Drawing.Size(824, 553);
+            this.Controls.Add(this.dataGridViewGrupo);
             this.Controls.Add(this.btnVerNotas);
             this.Controls.Add(this.btnAgregarAlumno);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewGrupo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmVerGrupoAgregarAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SELECCIONAR GRUPOS";
+            this.Text = "SELECCIONAR GRUPO";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAgregarAlumno;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewGrupo;
-        private System.Windows.Forms.Button btnVerNotas;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAgregarAlumno;
+        private MaterialSkin.Controls.MaterialRaisedButton btnVerNotas;
     }
 }
