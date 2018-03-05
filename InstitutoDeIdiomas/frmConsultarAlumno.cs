@@ -55,6 +55,7 @@ namespace InstitutoDeIdiomas
 
 
                 dataGridViewApellido.DataSource = dt;
+                dataGridViewApellido.Columns[0].Width =205;
             }
             catch (Exception ex)
             {
@@ -82,8 +83,8 @@ namespace InstitutoDeIdiomas
                 {
                     DataTable dt = new DataTable();
                     DataGridViewRow row = this.dataGridViewApellido.Rows[e.RowIndex];
-                    String dni = row.Cells[3].Value.ToString();
-                    String tipo = row.Cells[4].Value.ToString();
+                    String dni = row.Cells[1].Value.ToString();
+                    String tipo = row.Cells[2].Value.ToString();
                     _SqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("buscarTodo", _SqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;

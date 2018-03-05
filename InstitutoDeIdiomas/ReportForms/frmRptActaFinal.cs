@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using MaterialSkin.Controls;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,12 +12,18 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas.ReportForms
 {
-    public partial class frmRptActaFinal : Form
+    public partial class frmRptActaFinal : MaterialForm
     {
         DataTable _list;
-        String ano, idioma, ciclo, docente, mes, nivel, aprobados, desaprobados, totalEstudiantes, diaActual, mesActual, anoActual;
+        String ano, idioma, ciclo, docente, mes, nivel, aprobados, desaprobados, totalEstudiantes, diaActual, mesActual, anoActual, numero;
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public frmRptActaFinal(DataTable dt, String _ano, String _idioma, String _ciclo, String _docente, String _mes,
-            String _nivel, String _aprobados, String _desaprobados, String _totalEstudiantes)
+            String _nivel, String _aprobados, String _desaprobados, String _totalEstudiantes, String numero)
         { 
             InitializeComponent();
             _list = dt;
@@ -32,6 +39,7 @@ namespace InstitutoDeIdiomas.ReportForms
             diaActual = DateTime.Now.ToString("dd");
             mesActual = DateTime.Now.ToString("MMMMM");
             anoActual = DateTime.Now.ToString("yyyy");
+            this.numero = numero;
         }
 
         private void frmRptActaFinal_Load(object sender, EventArgs e)
@@ -50,7 +58,8 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalEstudiantes",totalEstudiantes),
                 new Microsoft.Reporting.WinForms.ReportParameter("pDiaActual",diaActual),
                 new Microsoft.Reporting.WinForms.ReportParameter("pMesActual",mesActual),
-                new Microsoft.Reporting.WinForms.ReportParameter("pAnoActual",anoActual)
+                new Microsoft.Reporting.WinForms.ReportParameter("pAnoActual",anoActual),
+                new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero)
            };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);

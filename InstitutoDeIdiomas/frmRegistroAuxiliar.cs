@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmRegistroAuxiliar : Form
+    public partial class frmRegistroAuxiliar : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
@@ -25,6 +27,38 @@ namespace InstitutoDeIdiomas
             cargarAlumnosGrupo(id);
             cargarAsistencia();
             btnFinalizar.Visible = true;
+            crearCuentaregresiva();
+            cargarDias();
+        }
+        public void cargarDias()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                String xx = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    xx = xx + row[0].ToString().ToUpperInvariant() + " - ";
+                }
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                txtDias.Text = xx;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void cargarDatosGrupo(int id)
         {
@@ -91,7 +125,7 @@ namespace InstitutoDeIdiomas
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgvwAlumnos.DataSource = dt;
-                dgvwAlumnos.Columns["Nombre"].Width = 230;
+                dgvwAlumnos.Columns["Nombre"].Width = 245;
                 dgvwAlumnos.Columns["idAlumnoGrupo"].Visible = false;
                 dgvwAlumnos.Columns["Nombre"].ReadOnly = true;
                 if (cmd.Connection.State == ConnectionState.Open)
@@ -151,54 +185,88 @@ namespace InstitutoDeIdiomas
         }
         private void BTNSAVEREGAUX_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("ESTA FINALIZANDO LA SESION DE HOY CON ESTE GRUPO, NO PODRÁ AGREGAR MÁS NOTAS \n ¿DESEAS CONTINUAR?", "ADVERTENCIA", MessageBoxButtons.YesNo)==DialogResult.Yes)
-            {
-                this.Close();
-            }
+           
         }
         private void LIMPIAR_ERRORES() {
             ERRORESREGAUX.SetError(txtCriterio, null);
             ERRORESREGAUX.SetError(cmbTipoNota, null);
         }
 
+        private Boolean verificarFecha()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_fechas_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idgrupo", idGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    String fe = Convert.ToDateTime(row[0]).ToString("dd/MM/yy");
+                    String fech = Convert.ToDateTime(dtpFechaClase.Value).ToString("dd/MM/yy");
+                    if (fe == fech)
+                    {
+                        MessageBox.Show("La asistencia del "+dtpFechaClase.Text+" ya existe.\nPor favor elija otra fecha.", "Asistencia existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return true;
+        }
+
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            int x = verificarAsistencia();
-            if (x == 1)
+            if (verificarFecha())
             {
-                try
+                if (verificarAsistencia() == 1)
                 {
-                    for (int i = 0; i < dgvwAlumnos.RowCount; i++)
+                    try
                     {
-                        String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
-                        String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
-                        SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
-                        if (cmd.Connection.State == ConnectionState.Closed)
+                        for (int i = 0; i < dgvwAlumnos.RowCount; i++)
                         {
-                            cmd.Connection.Open();
+                            String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
+                            String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
+                            SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
+                            if (cmd.Connection.State == ConnectionState.Closed)
+                            {
+                                cmd.Connection.Open();
+                            }
+                            cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
+                            cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
+                            cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteNonQuery();
+                            if (cmd.Connection.State == ConnectionState.Open)
+                            {
+                                cmd.Connection.Close();
+                            }
                         }
-                        cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
-                        cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
-                        cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.ExecuteNonQuery();
-                        if (cmd.Connection.State == ConnectionState.Open)
-                        {
-                            cmd.Connection.Close();
-                        }
+                        dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
+                        MessageBox.Show("ASISTENCIA REGISTRADA");
+                        validarTipoAsistencia();
+                        btnFinalizar.Visible = false;
+                        txtCriterio.Enabled = true;
+                        cmbTipoNota.Enabled = true;
                     }
-                    dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
-                    MessageBox.Show("ASISTENCIA REGISTRADA");
-                    validarTipoAsistencia();
-                    btnFinalizar.Visible = false;
-                    txtCriterio.Enabled = true;
-                    cmbTipoNota.Enabled = true;
-                    btnTerminarClase.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message+"FINASISTENCIA");
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + "FINASISTENCIA");
+                    }
                 }
             }
         }
@@ -272,7 +340,7 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+"FALTA");
+                MessageBox.Show(ex.Message+"validarFaltas");
             }
         }
 
@@ -292,7 +360,7 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+"JUSTIF");
+                MessageBox.Show(ex.Message+"validarJustificaciones");
             }
         }
 
@@ -307,7 +375,6 @@ namespace InstitutoDeIdiomas
                     int idTipoAsistencia = (int)dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value;
                     if (idTipoAsistencia == 3)
                     {
-                        
                         dgvwAlumnos.Rows[i].Visible=false;
                     }
                 }
@@ -334,7 +401,7 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "verificarnota");
+                MessageBox.Show("La nota debe ser en números");
                 return 0;
             }
         }
@@ -568,12 +635,109 @@ namespace InstitutoDeIdiomas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                
             }
         }
 
         private void frmRegistroAuxiliar_Load(object sender, EventArgs e)
         {
+            verificarDia();
+        }
+        public void verificarDia()
+        {
+            try
+            {
+                CultureInfo ci = new CultureInfo("Es-Es");
+                String hoy = ci.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek).ToLower();
+                int x = 0;
+                SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (hoy.Equals(row[0].ToString().ToLower()))
+                    {
+                        x = 1;
+                    }
+                }
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                if (x != 1)
+                {
+                    MessageBox.Show("Hoy " + hoy + " no corresponde clase con este grupo");
+                    this.Dispose();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void dtpFechaClase_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTipoNota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+        TimeSpan time;
+        private void crearCuentaregresiva()
+        {
+            String max = Convert.ToDateTime(txtHoraInicio.Text).ToString("HH:mm:ss");
+            String aumento = "";
+            String hoy = DateTime.Now.DayOfWeek.ToString();
+            if( hoy == "Saturday" || hoy == "Sunday")
+            {
+                aumento = "00:30:00";
+            }
+            else
+            {
+                aumento = "00:10:00";
+            }
+            
+            TimeSpan hora = TimeSpan.Parse(max) + TimeSpan.Parse(aumento) - TimeSpan.Parse(DateTime.Now.ToString("HH:mm:ss"));
+            
+            if (hora.ToString().Substring(0,1) == "-" || hora.ToString()=="00:00:00")
+            {
+                lblCuentaRegresiva.Text = "Terminado";
+                btnFinalizar.Enabled = false;
+            }
+            else
+            {
+                time = TimeSpan.Parse(hora.ToString());
+
+                Timer timer = new Timer();
+                timer.Interval = 1000;
+
+                timer.Tick += (a, b) =>
+                {
+                    time = time.Subtract(new TimeSpan(0, 0, 1));
+                    lblCuentaRegresiva.Text = time.ToString();
+                    if (lblCuentaRegresiva.Text == "00:00:00")
+                    {
+                        timer.Stop();
+                        lblCuentaRegresiva.Text = "Terminado";
+                        btnFinalizar.Enabled = false;
+                        return;
+                    }
+                };
+
+                timer.Start();
+            }
         }
     }
 }

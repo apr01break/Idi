@@ -46,7 +46,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.FOTOALUMNO = new System.Windows.Forms.PictureBox();
             this.TXTPATERNOALU = new System.Windows.Forms.TextBox();
             this.TXTNOMBRESALU = new System.Windows.Forms.TextBox();
             this.TXTDNIALU = new System.Windows.Forms.TextBox();
@@ -88,13 +87,14 @@
             this.ERRORCAMPOSVACIOS = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.BTNGUARDARALU = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNO)).BeginInit();
+            this.FOTOALUMNO = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.PANELFAUSTINO.SuspendLayout();
             this.PANELPARTICULAR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORCAMPOSVACIOS)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNO)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -256,15 +256,6 @@
             this.label17.Size = new System.Drawing.Size(56, 13);
             this.label17.TabIndex = 60;
             this.label17.Text = "CELULAR";
-            // 
-            // FOTOALUMNO
-            // 
-            this.FOTOALUMNO.Location = new System.Drawing.Point(609, 22);
-            this.FOTOALUMNO.Margin = new System.Windows.Forms.Padding(2);
-            this.FOTOALUMNO.Name = "FOTOALUMNO";
-            this.FOTOALUMNO.Size = new System.Drawing.Size(117, 129);
-            this.FOTOALUMNO.TabIndex = 61;
-            this.FOTOALUMNO.TabStop = false;
             // 
             // TXTPATERNOALU
             // 
@@ -696,6 +687,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.BTNGUARDARALU);
             this.panel3.Controls.Add(this.PANELPARTICULAR);
             this.panel3.Controls.Add(this.TIMEPICKERNACIMIENTOALU);
@@ -754,6 +746,15 @@
             this.BTNGUARDARALU.UseVisualStyleBackColor = true;
             this.BTNGUARDARALU.Click += new System.EventHandler(this.BTNGUARDARALU_Click);
             // 
+            // FOTOALUMNO
+            // 
+            this.FOTOALUMNO.Location = new System.Drawing.Point(609, 22);
+            this.FOTOALUMNO.Margin = new System.Windows.Forms.Padding(2);
+            this.FOTOALUMNO.Name = "FOTOALUMNO";
+            this.FOTOALUMNO.Size = new System.Drawing.Size(117, 129);
+            this.FOTOALUMNO.TabIndex = 61;
+            this.FOTOALUMNO.TabStop = false;
+            // 
             // frmRegistrarAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,7 +767,6 @@
             this.Name = "frmRegistrarAlumnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO DE ALUMNOS";
-            ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNO)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -778,6 +778,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ERRORCAMPOSVACIOS)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FOTOALUMNO)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using MaterialSkin.Controls;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas.ReportForms
 {
-    public partial class frmRptListaDePagos : Form
+    public partial class frmRptListaDePagos : MaterialForm
     {
         DataTable tabledata;
         DataTable alumno;

@@ -1,4 +1,5 @@
 ﻿using InstitutoDeIdiomas.Model;
+using MaterialSkin.Controls;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas.ReportForms
 {
-    public partial class frmRptFichaMatricula : Form
+    public partial class frmRptFichaMatricula : MaterialForm
     {
         string _apellidos, _nombres, _dni, _sexo, _fechanacimiento, _edad, _gradoinstruccion, _telefono, _celular,
             _correo, _direccion, _distrito, _provincia, _departamento, _idioma, _nivel, _ciclo, _fecha, _resposable, _numerorecibo,

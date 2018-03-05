@@ -85,6 +85,9 @@
             this.gbMat = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BTNGUARDARPAGO = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.btnNuevoHorario = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,7 +113,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(747, 66);
+            this.tabControl1.Size = new System.Drawing.Size(637, 66);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage2
@@ -121,7 +124,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(739, 40);
+            this.tabPage2.Size = new System.Drawing.Size(629, 40);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BUSCAR POR NOMBRES";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -208,13 +211,13 @@
             this.GRIDVIEWCONSALUPAGO.Name = "GRIDVIEWCONSALUPAGO";
             this.GRIDVIEWCONSALUPAGO.ReadOnly = true;
             this.GRIDVIEWCONSALUPAGO.RowTemplate.Height = 24;
-            this.GRIDVIEWCONSALUPAGO.Size = new System.Drawing.Size(742, 112);
+            this.GRIDVIEWCONSALUPAGO.Size = new System.Drawing.Size(633, 112);
             this.GRIDVIEWCONSALUPAGO.TabIndex = 3;
             this.GRIDVIEWCONSALUPAGO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewNombres_CellClick);
             // 
             // FOTOALUMNOAPAGAR
             // 
-            this.FOTOALUMNOAPAGAR.Location = new System.Drawing.Point(783, 11);
+            this.FOTOALUMNOAPAGAR.Location = new System.Drawing.Point(678, 54);
             this.FOTOALUMNOAPAGAR.Margin = new System.Windows.Forms.Padding(2);
             this.FOTOALUMNOAPAGAR.Name = "FOTOALUMNOAPAGAR";
             this.FOTOALUMNOAPAGAR.Size = new System.Drawing.Size(124, 143);
@@ -225,7 +228,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(780, 160);
+            this.label5.Location = new System.Drawing.Point(810, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
@@ -235,7 +238,7 @@
             // LBLCODIGOALUMN
             // 
             this.LBLCODIGOALUMN.AutoSize = true;
-            this.LBLCODIGOALUMN.Location = new System.Drawing.Point(854, 160);
+            this.LBLCODIGOALUMN.Location = new System.Drawing.Point(884, 67);
             this.LBLCODIGOALUMN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLCODIGOALUMN.Name = "LBLCODIGOALUMN";
             this.LBLCODIGOALUMN.Size = new System.Drawing.Size(70, 13);
@@ -254,21 +257,24 @@
             // 
             // PANELMATRICULA
             // 
+            this.PANELMATRICULA.Controls.Add(this.btnNuevoHorario);
+            this.PANELMATRICULA.Controls.Add(this.cbHorario);
+            this.PANELMATRICULA.Controls.Add(this.label4);
             this.PANELMATRICULA.Controls.Add(this.NUMCICLO);
             this.PANELMATRICULA.Controls.Add(this.label7);
             this.PANELMATRICULA.Controls.Add(this.GBNIVEL);
             this.PANELMATRICULA.Controls.Add(this.GBIDIOMA);
             this.PANELMATRICULA.Controls.Add(this.GBMODALIDADMATRICULA);
             this.PANELMATRICULA.Enabled = false;
-            this.PANELMATRICULA.Location = new System.Drawing.Point(577, 269);
+            this.PANELMATRICULA.Location = new System.Drawing.Point(577, 251);
             this.PANELMATRICULA.Margin = new System.Windows.Forms.Padding(2);
             this.PANELMATRICULA.Name = "PANELMATRICULA";
-            this.PANELMATRICULA.Size = new System.Drawing.Size(401, 237);
+            this.PANELMATRICULA.Size = new System.Drawing.Size(401, 262);
             this.PANELMATRICULA.TabIndex = 9;
             // 
             // NUMCICLO
             // 
-            this.NUMCICLO.Location = new System.Drawing.Point(330, 199);
+            this.NUMCICLO.Location = new System.Drawing.Point(334, 179);
             this.NUMCICLO.Margin = new System.Windows.Forms.Padding(2);
             this.NUMCICLO.Maximum = new decimal(new int[] {
             12,
@@ -293,12 +299,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(224, 203);
+            this.label7.Location = new System.Drawing.Point(263, 184);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 13);
+            this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "INGRESE CICLO";
+            this.label7.Text = "CICLO";
             // 
             // GBNIVEL
             // 
@@ -306,20 +312,20 @@
             this.GBNIVEL.Controls.Add(this.RBINTERMEDIO);
             this.GBNIVEL.Controls.Add(this.RBBASICO);
             this.GBNIVEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GBNIVEL.Location = new System.Drawing.Point(256, 36);
+            this.GBNIVEL.Location = new System.Drawing.Point(256, 28);
             this.GBNIVEL.Margin = new System.Windows.Forms.Padding(2);
             this.GBNIVEL.Name = "GBNIVEL";
             this.GBNIVEL.Padding = new System.Windows.Forms.Padding(2);
-            this.GBNIVEL.Size = new System.Drawing.Size(122, 161);
+            this.GBNIVEL.Size = new System.Drawing.Size(122, 139);
             this.GBNIVEL.TabIndex = 3;
             this.GBNIVEL.TabStop = false;
-            this.GBNIVEL.Text = "SELECCIONE NIVEL";
+            this.GBNIVEL.Text = "NIVEL";
             // 
             // RBAVANZADO
             // 
             this.RBAVANZADO.AutoSize = true;
             this.RBAVANZADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBAVANZADO.Location = new System.Drawing.Point(10, 121);
+            this.RBAVANZADO.Location = new System.Drawing.Point(10, 110);
             this.RBAVANZADO.Margin = new System.Windows.Forms.Padding(2);
             this.RBAVANZADO.Name = "RBAVANZADO";
             this.RBAVANZADO.Size = new System.Drawing.Size(84, 17);
@@ -333,7 +339,7 @@
             // 
             this.RBINTERMEDIO.AutoSize = true;
             this.RBINTERMEDIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBINTERMEDIO.Location = new System.Drawing.Point(10, 76);
+            this.RBINTERMEDIO.Location = new System.Drawing.Point(10, 65);
             this.RBINTERMEDIO.Margin = new System.Windows.Forms.Padding(2);
             this.RBINTERMEDIO.Name = "RBINTERMEDIO";
             this.RBINTERMEDIO.Size = new System.Drawing.Size(93, 17);
@@ -347,7 +353,7 @@
             // 
             this.RBBASICO.AutoSize = true;
             this.RBBASICO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBBASICO.Location = new System.Drawing.Point(10, 36);
+            this.RBBASICO.Location = new System.Drawing.Point(10, 25);
             this.RBBASICO.Margin = new System.Windows.Forms.Padding(2);
             this.RBBASICO.Name = "RBBASICO";
             this.RBBASICO.Size = new System.Drawing.Size(64, 17);
@@ -376,7 +382,7 @@
             this.GBIDIOMA.Size = new System.Drawing.Size(192, 149);
             this.GBIDIOMA.TabIndex = 2;
             this.GBIDIOMA.TabStop = false;
-            this.GBIDIOMA.Text = "SELECCIONE IDIOMA";
+            this.GBIDIOMA.Text = "IDIOMA";
             this.GBIDIOMA.Enter += new System.EventHandler(this.GBIDIOMA_Enter);
             // 
             // RBOTRO
@@ -592,7 +598,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(780, 176);
+            this.label12.Location = new System.Drawing.Point(810, 97);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 13);
@@ -602,7 +608,7 @@
             // LBLTIPOALUMN
             // 
             this.LBLTIPOALUMN.AutoSize = true;
-            this.LBLTIPOALUMN.Location = new System.Drawing.Point(854, 176);
+            this.LBLTIPOALUMN.Location = new System.Drawing.Point(884, 97);
             this.LBLTIPOALUMN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLTIPOALUMN.Name = "LBLTIPOALUMN";
             this.LBLTIPOALUMN.Size = new System.Drawing.Size(70, 13);
@@ -631,7 +637,7 @@
             // 
             this.CBPAGARMATRICULA.AutoSize = true;
             this.CBPAGARMATRICULA.Enabled = false;
-            this.CBPAGARMATRICULA.Location = new System.Drawing.Point(706, 224);
+            this.CBPAGARMATRICULA.Location = new System.Drawing.Point(706, 203);
             this.CBPAGARMATRICULA.Margin = new System.Windows.Forms.Padding(2);
             this.CBPAGARMATRICULA.Name = "CBPAGARMATRICULA";
             this.CBPAGARMATRICULA.Size = new System.Drawing.Size(201, 17);
@@ -696,7 +702,7 @@
             // btnAgregarSaldo
             // 
             this.btnAgregarSaldo.Enabled = false;
-            this.btnAgregarSaldo.Location = new System.Drawing.Point(658, 10);
+            this.btnAgregarSaldo.Location = new System.Drawing.Point(548, 10);
             this.btnAgregarSaldo.Name = "btnAgregarSaldo";
             this.btnAgregarSaldo.Size = new System.Drawing.Size(96, 23);
             this.btnAgregarSaldo.TabIndex = 30;
@@ -708,7 +714,7 @@
             // 
             this.chboxCambiarTipoAlumno.AutoSize = true;
             this.chboxCambiarTipoAlumno.Enabled = false;
-            this.chboxCambiarTipoAlumno.Location = new System.Drawing.Point(783, 197);
+            this.chboxCambiarTipoAlumno.Location = new System.Drawing.Point(819, 148);
             this.chboxCambiarTipoAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.chboxCambiarTipoAlumno.Name = "chboxCambiarTipoAlumno";
             this.chboxCambiarTipoAlumno.Size = new System.Drawing.Size(136, 17);
@@ -750,7 +756,7 @@
             this.gbMat.Controls.Add(this.rbMatriculaNormal);
             this.gbMat.Controls.Add(this.rbTupa2018);
             this.gbMat.Enabled = false;
-            this.gbMat.Location = new System.Drawing.Point(656, 246);
+            this.gbMat.Location = new System.Drawing.Point(656, 223);
             this.gbMat.Name = "gbMat";
             this.gbMat.Size = new System.Drawing.Size(245, 23);
             this.gbMat.TabIndex = 32;
@@ -758,6 +764,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BTNGUARDARPAGO);
             this.panel1.Controls.Add(this.gbMat);
             this.panel1.Controls.Add(this.label1);
@@ -803,6 +810,36 @@
             this.BTNGUARDARPAGO.Text = "GUARDAR PAGO";
             this.BTNGUARDARPAGO.UseVisualStyleBackColor = true;
             this.BTNGUARDARPAGO.Click += new System.EventHandler(this.BTNGUARDARPAGO_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 239);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "HORARIO";
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(81, 235);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(225, 21);
+            this.cbHorario.TabIndex = 8;
+            // 
+            // btnNuevoHorario
+            // 
+            this.btnNuevoHorario.Location = new System.Drawing.Point(312, 234);
+            this.btnNuevoHorario.Name = "btnNuevoHorario";
+            this.btnNuevoHorario.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoHorario.TabIndex = 9;
+            this.btnNuevoHorario.Text = "Nuevo Horario";
+            this.btnNuevoHorario.UseVisualStyleBackColor = true;
+            this.btnNuevoHorario.Click += new System.EventHandler(this.btnNuevoHorario_Click);
             // 
             // frmCrearPago
             // 
@@ -901,5 +938,8 @@
         private System.Windows.Forms.RadioButton rbTupa2018;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialRaisedButton BTNGUARDARPAGO;
+        private System.Windows.Forms.ComboBox cbHorario;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnNuevoHorario;
     }
 }

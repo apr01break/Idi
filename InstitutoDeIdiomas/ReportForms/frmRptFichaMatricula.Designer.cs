@@ -34,23 +34,23 @@
             // 
             // FICHAMATRICULARPT
             // 
-            this.FICHAMATRICULARPT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FICHAMATRICULARPT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FICHAMATRICULARPT.LocalReport.ReportEmbeddedResource = "InstitutoDeIdiomas.Reportes.rptFichaDeMatricula.rdlc";
-            this.FICHAMATRICULARPT.Location = new System.Drawing.Point(0, 0);
-            this.FICHAMATRICULARPT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FICHAMATRICULARPT.Location = new System.Drawing.Point(0, 64);
+            this.FICHAMATRICULARPT.Margin = new System.Windows.Forms.Padding(2);
             this.FICHAMATRICULARPT.Name = "FICHAMATRICULARPT";
             this.FICHAMATRICULARPT.ServerReport.BearerToken = null;
-            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(828, 534);
+            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(740, 591);
             this.FICHAMATRICULARPT.TabIndex = 0;
             // 
             // frmRptFichaMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 534);
+            this.ClientSize = new System.Drawing.Size(740, 655);
             this.Controls.Add(this.FICHAMATRICULARPT);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRptFichaMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REPORTE DE FICHA DE MATRICULA";

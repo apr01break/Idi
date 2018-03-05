@@ -30,6 +30,7 @@ namespace InstitutoDeIdiomas
             GRIDVIEWTIPOSPAGOS.RowHeadersVisible = false;
             this.GRIDVIEWTIPOSPAGOS.AlternatingRowsDefaultCellStyle.BackColor =
     Color.PowderBlue;
+            listarHorarios();
         }
         private void CBLISTBOX_CheckedChanged(object sender, EventArgs e)
         {
@@ -455,6 +456,7 @@ namespace InstitutoDeIdiomas
                     }
                 }
             }
+            int idhorario = (int)((DataRowView)cbHorario.SelectedItem)["id"];
             try
             {
                 SqlCommand cmd = new SqlCommand("crear_detalle_matricula", _SqlConnection);
@@ -470,6 +472,7 @@ namespace InstitutoDeIdiomas
                 cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
                 cmd.Parameters.Add(new SqlParameter("@monto", monto));
                 cmd.Parameters.Add(new SqlParameter("@numero_recibo", TXTNUMERORECIBO.Text.Trim().ToString()));
+                cmd.Parameters.Add(new SqlParameter("@idhorario", idhorario));
                 cmd.ExecuteNonQuery();
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
@@ -657,9 +660,9 @@ namespace InstitutoDeIdiomas
                 dt.Clear();
                 da.Fill(dt);
                 GRIDVIEWCONSALUPAGO.DataSource = dt;
-                GRIDVIEWCONSALUPAGO.Columns[0].Width = 150;
-                GRIDVIEWCONSALUPAGO.Columns[1].Width = 150;
-                GRIDVIEWCONSALUPAGO.Columns[4].Width = 200;
+                GRIDVIEWCONSALUPAGO.Columns[0].Width = 300;
+                GRIDVIEWCONSALUPAGO.Columns[2].Width = 150;
+                //GRIDVIEWCONSALUPAGO.Columns[4].Width = 200;
                 this.GRIDVIEWCONSALUPAGO.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             }
             catch (Exception ex)
@@ -747,7 +750,7 @@ namespace InstitutoDeIdiomas
             if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWCONSALUPAGO.RowCount - 1)
             {
                 DataGridViewRow row = this.GRIDVIEWCONSALUPAGO.Rows[e.RowIndex];
-                String dni = row.Cells[3].Value.ToString();
+                String dni = row.Cells["DNI"].Value.ToString();
                 CBPAGARMATRICULA.Enabled = true;
                 try
                 {
@@ -1126,6 +1129,39 @@ namespace InstitutoDeIdiomas
         private void RBAVANZADO_CheckedChanged(object sender, EventArgs e)
         {
             CALCULAR_MONTO_A_PAGAR();
+        }
+        public void listarHorarios()
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand("listar_horarios_referencia", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                cbHorario.DisplayMember = "descripcion";
+                cbHorario.DataSource = dt;
+                cbHorario.ValueMember = "id";
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNuevoHorario_Click(object sender, EventArgs e)
+        {
+            new frmAgregarHorarioReferencia(this).Show();
         }
     }
 }

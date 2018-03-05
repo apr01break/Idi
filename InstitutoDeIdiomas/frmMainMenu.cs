@@ -16,7 +16,7 @@ namespace InstitutoDeIdiomas
     {
         String idCodigo;
         String nombreUsuario;
-        public frmMainMenu(String id, String nombre)
+        public frmMainMenu(String id, String nombre, String tipoTrabajador)
         {
             InitializeComponent();            
             txtUser.Text = nombre;
@@ -25,6 +25,16 @@ namespace InstitutoDeIdiomas
             TXTCODUSER.Text = id;
             idCodigo = id;
             nombreUsuario = nombre;
+            verificarTrabajador(tipoTrabajador);
+        }
+
+        private void verificarTrabajador(String tipoTrabajador)
+        {
+            if(tipoTrabajador == "SECRETARIA PRINCIPAL" || tipoTrabajador =="ADMINISTRADOR")
+            {
+                lblCorregirPago.Visible = true;
+                btnCorregirPago.Visible = true;
+            }
         }
 
         private void REGISTRARMENU_Click(object sender, EventArgs e)
@@ -171,33 +181,25 @@ namespace InstitutoDeIdiomas
         {
             panelAlumno.Visible = true;
         }
-
         
-        
-        
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             new frmRegistrarAlumnos(idCodigo).Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             new frmConsultarAlumno(idCodigo).Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             new frmActualizarAlumno().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
             new frmRecordAcademico().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
         
 
@@ -210,62 +212,52 @@ namespace InstitutoDeIdiomas
         private void btnRegistrarPago_Click(object sender, EventArgs e)
         {
             new frmCrearPago(idCodigo).Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnConsultaEspecificaPago_Click_1(object sender, EventArgs e)
         {
             new frmConsultarPago().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnConsultaGeneralPago_Click_1(object sender, EventArgs e)
         {
             new frmConsultarDeudores().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnCorregirPago_Click_1(object sender, EventArgs e)
         {
             new frmCorregirPago().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnCrearGrupo_Click_1(object sender, EventArgs e)
         {
             new frmCrearGrupo().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnGruposEmpezados_Click_1(object sender, EventArgs e)
         {
             new frmVerGrupoAgregarAlumno(2).Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnAsignarAlumnosGrupo_Click_1(object sender, EventArgs e)
         {
             new frmVerGrupoAgregarAlumno(1).Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
         {
             new frmRegistrar().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnFichaMatricula_Click(object sender, EventArgs e)
         {
             new frmGenerarFichaMatricula().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
         
 
         private void btnNuevoUsuario_Click_3(object sender, EventArgs e)
         {
             new frmRegistrar().Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -276,6 +268,26 @@ namespace InstitutoDeIdiomas
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAsistenciaGrupoReportes_Click(object sender, EventArgs e)
+        {
+            new frmAsistenciasPorGrupo().Show();
+        }
+
+        private void btnAsistenciaAlumnoReportes_Click(object sender, EventArgs e)
+        {
+            new frmAsistenciaPorAlumno().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmPermisoProfesorAsistenciaLibre().Show();
+        }
+
+        private void btnPagosReporte_Click(object sender, EventArgs e)
+        {
+            new frmConsultarDeudores().Show();
         }
     }
 }

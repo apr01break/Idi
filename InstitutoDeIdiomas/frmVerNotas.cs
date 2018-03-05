@@ -1,4 +1,5 @@
 ﻿using InstitutoDeIdiomas.ReportForms;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace InstitutoDeIdiomas
 {
-    public partial class frmVerNotas : Form
+    public partial class frmVerNotas : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
@@ -610,6 +611,7 @@ namespace InstitutoDeIdiomas
         private void cmbTipoNota_TextChanged(object sender, EventArgs e)
         {
             cargarNotasTabla(cmbTipoNota.SelectedItem.ToString());
+            label1.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void btnConcluirGrupo_Click(object sender, EventArgs e)
@@ -728,7 +730,7 @@ namespace InstitutoDeIdiomas
             }
             int total = aprobados + desaprobados;
             using (frmRptActaFinal frm = new frmRptActaFinal(dt, anho, txtIdioma.Text, txtCiclo.Text,
-                txtDocente.Text, mes, txtNivel.Text, aprobados.ToString(), desaprobados.ToString(), total.ToString()))
+                txtDocente.Text, mes, txtNivel.Text, aprobados.ToString(), desaprobados.ToString(), total.ToString(),txtNumero.Text))
             {
                 frm.ShowDialog();
             }
@@ -750,6 +752,11 @@ namespace InstitutoDeIdiomas
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void frmVerNotas_Load(object sender, EventArgs e)

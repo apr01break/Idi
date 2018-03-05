@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbRecibo = new System.Windows.Forms.RadioButton();
             this.dgvwPagos = new System.Windows.Forms.DataGridView();
             this.txtRecibo = new System.Windows.Forms.TextBox();
             this.txtNuevoRecibo = new System.Windows.Forms.TextBox();
             this.btnCambiar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbRecibo = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwPagos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -56,6 +56,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
+            // 
+            // rbNombre
+            // 
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNombre.Location = new System.Drawing.Point(170, 26);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(144, 20);
+            this.rbNombre.TabIndex = 3;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Nombre del alumno";
+            this.rbNombre.UseVisualStyleBackColor = true;
+            // 
+            // rbRecibo
+            // 
+            this.rbRecibo.AutoSize = true;
+            this.rbRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRecibo.Location = new System.Drawing.Point(29, 26);
+            this.rbRecibo.Name = "rbRecibo";
+            this.rbRecibo.Size = new System.Drawing.Size(129, 20);
+            this.rbRecibo.TabIndex = 2;
+            this.rbRecibo.TabStop = true;
+            this.rbRecibo.Text = "N° recibo                ";
+            this.rbRecibo.UseVisualStyleBackColor = true;
             // 
             // dgvwPagos
             // 
@@ -103,7 +127,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.label2);
@@ -119,15 +144,24 @@
             this.panel1.Size = new System.Drawing.Size(723, 435);
             this.panel1.TabIndex = 9;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
-            this.label1.Location = new System.Drawing.Point(465, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Actual N° recibo ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
+            this.label3.Location = new System.Drawing.Point(55, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Escriba aquí";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(154, 83);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(389, 21);
+            this.txtBuscar.TabIndex = 11;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // label2
             // 
@@ -139,48 +173,15 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Nuevo N° recibo";
             // 
-            // rbRecibo
+            // label1
             // 
-            this.rbRecibo.AutoSize = true;
-            this.rbRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRecibo.Location = new System.Drawing.Point(29, 26);
-            this.rbRecibo.Name = "rbRecibo";
-            this.rbRecibo.Size = new System.Drawing.Size(129, 20);
-            this.rbRecibo.TabIndex = 2;
-            this.rbRecibo.TabStop = true;
-            this.rbRecibo.Text = "N° recibo                ";
-            this.rbRecibo.UseVisualStyleBackColor = true;
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNombre.Location = new System.Drawing.Point(170, 26);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(144, 20);
-            this.rbNombre.TabIndex = 3;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "Nombre del alumno";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(154, 83);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(389, 21);
-            this.txtBuscar.TabIndex = 11;
-            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
-            this.label3.Location = new System.Drawing.Point(55, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Escriba aquí";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
+            this.label1.Location = new System.Drawing.Point(465, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Actual N° recibo ";
             // 
             // frmCorregirPago
             // 

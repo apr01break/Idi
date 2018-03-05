@@ -69,6 +69,7 @@ namespace InstitutoDeIdiomas
 
 
                 GRIDVIEWALUMNNOM.DataSource = dt;
+                GRIDVIEWALUMNNOM.Columns[0].Width = 250;
             }
             catch (Exception ex)
             {
@@ -87,7 +88,7 @@ namespace InstitutoDeIdiomas
         private void GRIDVIEWALUMNNOM_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWALUMNNOM.RowCount) {
                 DataGridViewRow row = this.GRIDVIEWALUMNNOM.Rows[e.RowIndex];
-                String dni = row.Cells[3].Value.ToString();
+                String dni = row.Cells[1].Value.ToString();
                 try {
                     DataTable dt = new DataTable();                    
                     SqlCommand comando = new SqlCommand("buscar_foto", _SqlConnection);

@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearGrupo));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.cbAno = new System.Windows.Forms.ComboBox();
+            this.cbMes = new System.Windows.Forms.ComboBox();
+            this.cbNumero = new System.Windows.Forms.ComboBox();
+            this.btnCrearGrupo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,7 +55,6 @@
             this.clbHorario = new System.Windows.Forms.CheckedListBox();
             this.dtmHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.numCiclo = new System.Windows.Forms.NumericUpDown();
-            this.btnCrearGrupo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCiclo)).BeginInit();
@@ -61,8 +63,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbAno);
+            this.panel1.Controls.Add(this.cbMes);
+            this.panel1.Controls.Add(this.cbNumero);
             this.panel1.Controls.Add(this.btnCrearGrupo);
-            this.panel1.Controls.Add(this.txtNumero);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -82,20 +87,79 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 294);
+            this.panel1.Size = new System.Drawing.Size(445, 294);
             this.panel1.TabIndex = 63;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // txtNumero
+            // cbAno
             // 
-            this.txtNumero.Location = new System.Drawing.Point(111, 18);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(63, 20);
-            this.txtNumero.TabIndex = 80;
+            this.cbAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAno.FormattingEnabled = true;
+            this.cbAno.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.cbAno.Location = new System.Drawing.Point(159, 18);
+            this.cbAno.Name = "cbAno";
+            this.cbAno.Size = new System.Drawing.Size(52, 21);
+            this.cbAno.TabIndex = 85;
+            // 
+            // cbMes
+            // 
+            this.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMes.FormattingEnabled = true;
+            this.cbMes.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cbMes.Location = new System.Drawing.Point(113, 18);
+            this.cbMes.Name = "cbMes";
+            this.cbMes.Size = new System.Drawing.Size(40, 21);
+            this.cbMes.TabIndex = 84;
+            // 
+            // cbNumero
+            // 
+            this.cbNumero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNumero.FormattingEnabled = true;
+            this.cbNumero.Location = new System.Drawing.Point(62, 18);
+            this.cbNumero.Name = "cbNumero";
+            this.cbNumero.Size = new System.Drawing.Size(45, 21);
+            this.cbNumero.TabIndex = 83;
+            // 
+            // btnCrearGrupo
+            // 
+            this.btnCrearGrupo.Depth = 0;
+            this.btnCrearGrupo.Location = new System.Drawing.Point(301, 240);
+            this.btnCrearGrupo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCrearGrupo.Name = "btnCrearGrupo";
+            this.btnCrearGrupo.Primary = true;
+            this.btnCrearGrupo.Size = new System.Drawing.Size(121, 34);
+            this.btnCrearGrupo.TabIndex = 81;
+            this.btnCrearGrupo.Text = "CREAR GRUPO";
+            this.btnCrearGrupo.UseVisualStyleBackColor = true;
+            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(302, 61);
+            this.label11.Location = new System.Drawing.Point(326, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 13);
             this.label11.TabIndex = 79;
@@ -104,7 +168,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(190, 61);
+            this.label10.Location = new System.Drawing.Point(219, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 78;
@@ -115,14 +179,14 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(16, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 77;
-            this.label9.Text = "Número de grupo";
+            this.label9.Text = "Número";
             // 
             // dtFechaFinal
             // 
             this.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaFinal.Location = new System.Drawing.Point(205, 163);
+            this.dtFechaFinal.Location = new System.Drawing.Point(221, 163);
             this.dtFechaFinal.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaFinal.Name = "dtFechaFinal";
             this.dtFechaFinal.Size = new System.Drawing.Size(201, 20);
@@ -131,7 +195,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 145);
+            this.label2.Location = new System.Drawing.Point(216, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
@@ -142,7 +206,7 @@
             // 
             this.cmbSalon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSalon.FormattingEnabled = true;
-            this.cmbSalon.Location = new System.Drawing.Point(348, 58);
+            this.cmbSalon.Location = new System.Drawing.Point(372, 58);
             this.cmbSalon.Name = "cmbSalon";
             this.cmbSalon.Size = new System.Drawing.Size(50, 21);
             this.cmbSalon.TabIndex = 74;
@@ -151,7 +215,7 @@
             // 
             this.cmbProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesor.FormattingEnabled = true;
-            this.cmbProfesor.Location = new System.Drawing.Point(205, 206);
+            this.cmbProfesor.Location = new System.Drawing.Point(221, 206);
             this.cmbProfesor.Name = "cmbProfesor";
             this.cmbProfesor.Size = new System.Drawing.Size(201, 21);
             this.cmbProfesor.TabIndex = 73;
@@ -168,7 +232,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(219, 21);
+            this.label7.Location = new System.Drawing.Point(243, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 71;
@@ -187,7 +251,7 @@
             // 
             this.cmbIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdioma.FormattingEnabled = true;
-            this.cmbIdioma.Location = new System.Drawing.Point(277, 18);
+            this.cmbIdioma.Location = new System.Drawing.Point(301, 18);
             this.cmbIdioma.Name = "cmbIdioma";
             this.cmbIdioma.Size = new System.Drawing.Size(121, 21);
             this.cmbIdioma.TabIndex = 69;
@@ -195,7 +259,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(202, 190);
+            this.label6.Location = new System.Drawing.Point(218, 190);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
@@ -205,7 +269,7 @@
             // dtFechaInicio
             // 
             this.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaInicio.Location = new System.Drawing.Point(205, 116);
+            this.dtFechaInicio.Location = new System.Drawing.Point(221, 116);
             this.dtFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(201, 20);
@@ -214,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 98);
+            this.label4.Location = new System.Drawing.Point(216, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
@@ -228,7 +292,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.clbHorario);
             this.groupBox1.Controls.Add(this.dtmHoraInicio);
-            this.groupBox1.Location = new System.Drawing.Point(17, 88);
+            this.groupBox1.Location = new System.Drawing.Point(24, 88);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -290,7 +354,7 @@
             // 
             // numCiclo
             // 
-            this.numCiclo.Location = new System.Drawing.Point(227, 59);
+            this.numCiclo.Location = new System.Drawing.Point(256, 59);
             this.numCiclo.Margin = new System.Windows.Forms.Padding(2);
             this.numCiclo.Maximum = new decimal(new int[] {
             12,
@@ -311,24 +375,11 @@
             0,
             0});
             // 
-            // btnCrearGrupo
-            // 
-            this.btnCrearGrupo.Depth = 0;
-            this.btnCrearGrupo.Location = new System.Drawing.Point(243, 239);
-            this.btnCrearGrupo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCrearGrupo.Name = "btnCrearGrupo";
-            this.btnCrearGrupo.Primary = true;
-            this.btnCrearGrupo.Size = new System.Drawing.Size(121, 34);
-            this.btnCrearGrupo.TabIndex = 81;
-            this.btnCrearGrupo.Text = "CREAR GRUPO";
-            this.btnCrearGrupo.UseVisualStyleBackColor = true;
-            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click);
-            // 
             // frmCrearGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 357);
+            this.ClientSize = new System.Drawing.Size(445, 357);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -350,7 +401,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -373,5 +423,8 @@
         private System.Windows.Forms.DateTimePicker dtmHoraInicio;
         private System.Windows.Forms.NumericUpDown numCiclo;
         private MaterialSkin.Controls.MaterialRaisedButton btnCrearGrupo;
+        private System.Windows.Forms.ComboBox cbNumero;
+        private System.Windows.Forms.ComboBox cbAno;
+        private System.Windows.Forms.ComboBox cbMes;
     }
 }
