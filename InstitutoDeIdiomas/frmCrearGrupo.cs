@@ -274,7 +274,7 @@ namespace InstitutoDeIdiomas
                     cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
                     cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
                     cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
-                    cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text+"-"+cbMes+"-"+cbAno));
+                    cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text+"-"+cbMes.Text+"-"+cbAno.Text));
                     cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -297,7 +297,6 @@ namespace InstitutoDeIdiomas
 
         private void frmCrearGrupo_Load(object sender, EventArgs e)
         {
-
         }
 
         

@@ -48,6 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 590);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
             this.Name = "frmRptAsistenciaGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REPORTE DE ASISTENCIAS DE GRUPO";

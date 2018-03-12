@@ -40,17 +40,18 @@
             this.FICHAMATRICULARPT.Margin = new System.Windows.Forms.Padding(2);
             this.FICHAMATRICULARPT.Name = "FICHAMATRICULARPT";
             this.FICHAMATRICULARPT.ServerReport.BearerToken = null;
-            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(740, 591);
+            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(724, 635);
             this.FICHAMATRICULARPT.TabIndex = 0;
             // 
             // frmRptFichaMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 655);
+            this.ClientSize = new System.Drawing.Size(724, 699);
             this.Controls.Add(this.FICHAMATRICULARPT);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmRptFichaMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REPORTE DE FICHA DE MATRICULA";

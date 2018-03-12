@@ -35,6 +35,11 @@ namespace InstitutoDeIdiomas
                 lblCorregirPago.Visible = true;
                 btnCorregirPago.Visible = true;
             }
+            if(tipoTrabajador == "ADMINISTRADOR")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+            }
         }
 
         private void REGISTRARMENU_Click(object sender, EventArgs e)
@@ -288,6 +293,36 @@ namespace InstitutoDeIdiomas
         private void btnPagosReporte_Click(object sender, EventArgs e)
         {
             new frmConsultarDeudores().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new frmJustificarInasistencia().Show();
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            if (panelConfiguracion.Visible)
+            {
+                panelConfiguracion.Visible = false;
+                btnConfiguracion.BackColor = SystemColors.Control;
+            }
+            else
+            {
+                panelConfiguracion.Visible = true;
+                btnConfiguracion.BackColor = Color.Khaki;
+            }
+        }
+
+        private void btnCambiarClave_Click(object sender, EventArgs e)
+        {
+            panelConfiguracion.Visible = false;
+            new frmCambiarClave(idCodigo).Show();
+        }
+
+        private void btnActualizarUsuario_Click(object sender, EventArgs e)
+        {
+            new frmActualizarUsuario().Show();
         }
     }
 }

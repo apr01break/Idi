@@ -169,8 +169,10 @@ namespace InstitutoDeIdiomas
                 _SqlConnection.Close();
             }
             dgvwAsistencia.DataSource = dt;
-            dgvwAsistencia.Columns[1].HeaderText = "ASISTENCIA";
-            dgvwAsistencia.Columns[0].HeaderText = "FECHA";
+            dgvwAsistencia.Columns[0].Visible = false ;
+            dgvwAsistencia.Columns[1].Visible = false;
+            dgvwAsistencia.Columns[3].HeaderText = "ASISTENCIA";
+            dgvwAsistencia.Columns[2].HeaderText = "FECHA";
             //ReportDataSource rds = new ReportDataSource("dsAsistenciaAlumno", dt);
             //Microsoft.Reporting.WinForms.ReportParameter[] para = new Microsoft.Reporting.WinForms.ReportParameter[]
             //{
@@ -192,6 +194,10 @@ namespace InstitutoDeIdiomas
                     numcarnet = row.Cells[0].Value.ToString();
                     nombre = row.Cells[2].Value.ToString();
                     listaIdioma();
+                    cmbGrupos.Items.Clear();
+                    dgvwAsistencia.DataSource = null;
+                    dgvwAsistencia.Columns.Clear();
+                    dgvwAsistencia.Rows.Clear();
                 }
             }
             catch (Exception ex)

@@ -29,8 +29,6 @@ namespace InstitutoDeIdiomas
         private Label label6;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private TextBox TXTOBSERVACION;
         private ErrorProvider errorProvider1;
         private IContainer components;
         private Panel panel1;
@@ -64,8 +62,6 @@ namespace InstitutoDeIdiomas
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TXTOBSERVACION = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -134,7 +130,7 @@ namespace InstitutoDeIdiomas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(290, 559);
+            this.label3.Location = new System.Drawing.Point(290, 433);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 13);
             this.label3.TabIndex = 6;
@@ -143,7 +139,7 @@ namespace InstitutoDeIdiomas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 559);
+            this.label4.Location = new System.Drawing.Point(445, 433);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 7;
@@ -152,7 +148,7 @@ namespace InstitutoDeIdiomas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 558);
+            this.label5.Location = new System.Drawing.Point(8, 432);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 9;
@@ -161,7 +157,7 @@ namespace InstitutoDeIdiomas
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 559);
+            this.label6.Location = new System.Drawing.Point(91, 433);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 10;
@@ -185,27 +181,6 @@ namespace InstitutoDeIdiomas
             this.label8.TabIndex = 12;
             this.label8.Text = "CODIGO";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 415);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(547, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "ESCRIBE UNA OBSERVACION PARA LA MATRICULA QUE ESTAS POR GENERAR (menos de 240 car" +
-    "acteres)";
-            // 
-            // TXTOBSERVACION
-            // 
-            this.TXTOBSERVACION.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTOBSERVACION.Enabled = false;
-            this.TXTOBSERVACION.Location = new System.Drawing.Point(11, 435);
-            this.TXTOBSERVACION.Multiline = true;
-            this.TXTOBSERVACION.Name = "TXTOBSERVACION";
-            this.TXTOBSERVACION.Size = new System.Drawing.Size(831, 98);
-            this.TXTOBSERVACION.TabIndex = 15;
-            this.TXTOBSERVACION.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXTOBSERVACION_KeyUp);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -223,9 +198,7 @@ namespace InstitutoDeIdiomas
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BTNGENERAR);
-            this.panel1.Controls.Add(this.TXTOBSERVACION);
             this.panel1.Controls.Add(this.TXTBUSCALUMN);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -240,13 +213,13 @@ namespace InstitutoDeIdiomas
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 609);
+            this.panel1.Size = new System.Drawing.Size(874, 492);
             this.panel1.TabIndex = 16;
             // 
             // BTNGENERAR
             // 
             this.BTNGENERAR.Depth = 0;
-            this.BTNGENERAR.Location = new System.Drawing.Point(588, 560);
+            this.BTNGENERAR.Location = new System.Drawing.Point(588, 434);
             this.BTNGENERAR.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTNGENERAR.Name = "BTNGENERAR";
             this.BTNGENERAR.Primary = true;
@@ -258,7 +231,7 @@ namespace InstitutoDeIdiomas
             // 
             // frmGenerarFichaMatricula
             // 
-            this.ClientSize = new System.Drawing.Size(874, 673);
+            this.ClientSize = new System.Drawing.Size(874, 556);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -384,10 +357,9 @@ namespace InstitutoDeIdiomas
                 DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
                 String codigo = row.Cells[0].Value.ToString();
                 label4.Text = codigo;
-                TXTOBSERVACION.Enabled = true;
             }
         }
-        string dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov,observaciones;
+        string dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov,observaciones="";
 
         private void TXTOBSERVACION_KeyUp(object sender, KeyEventArgs e)
         {
@@ -395,14 +367,7 @@ namespace InstitutoDeIdiomas
         }
         private bool validar() {
             bool ok = true;
-            if (TXTOBSERVACION.Text.Length >= 240)
-            {
-                errorProvider1.SetError(TXTOBSERVACION, "EL TEXTO DEBE TENER MENOS DE 240 CARACTERES");
-                ok = false;
-            }
-            else {
-                errorProvider1.SetError(TXTOBSERVACION, null);
-            }
+            
             if (label4.Text == "XXXXXXX") {
                 errorProvider1.SetError(label2, "SELECCIONA UNA DE LAS MATRICULAS DEL CUADRO INFERIOR");
                 ok = false;
@@ -415,22 +380,16 @@ namespace InstitutoDeIdiomas
         string idioma, nivel, ciclo, modalidad, fechamat, monto, recibo, encargado,personaencargo;
         DataTable studentpic;
         string codigoAlumno;
+        String horarioRef;
         private void BTNGENERAR_Click(object sender, EventArgs e)
         {          
-            if (TXTOBSERVACION.Text.ToString().Trim() != "")
-            {
-                observaciones = TXTOBSERVACION.Text.ToString().Trim();
-            }
-            else {
-                observaciones = "-";
-            }
+            
 
             string idalumno = label6.Text;
             string idmatricula = label4.Text;
             //------------------------------
             if (validar())
             {
-                TXTOBSERVACION.Enabled = false;
                 try
                 {
                     DataTable dt = new DataTable();
@@ -537,12 +496,13 @@ namespace InstitutoDeIdiomas
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
-                cargar_reporte(dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov, idioma, nivel, modalidad, ciclo, fechamat, monto, personaencargo, recibo,studentpic,observaciones,codigoAlumno);
+                horarioRef = dataGridView2.Rows[0].Cells[4].Value.ToString();
+                cargar_reporte(dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov, idioma, nivel, modalidad, ciclo, fechamat, monto, personaencargo, recibo,studentpic,observaciones,codigoAlumno,horarioRef);
             }
            
         }
-        private void cargar_reporte(string dni, string nom, string ape, string sex, string eda, string grad,string tlf, string cel,string email,string naci,string dep,string dire,string dist,string prov,string idioma,string nivel,string modalidad,string ciclo,string fecha,string monto,string responsable,string recibo,DataTable dt,string obs,string codAl) {
-            using (frmRptFichaMatricula frm = new frmRptFichaMatricula(ape, nom, dni, sex, naci, eda, grad, tlf, cel, email, dire, dist, prov, dep, idioma, nivel, ciclo, fecha, responsable, recibo, monto, modalidad,dt,obs,codAl)) {
+        private void cargar_reporte(string dni, string nom, string ape, string sex, string eda, string grad,string tlf, string cel,string email,string naci,string dep,string dire,string dist,string prov,string idioma,string nivel,string modalidad,string ciclo,string fecha,string monto,string responsable,string recibo,DataTable dt,string obs,string codAl,string horarioRef) {
+            using (frmRptFichaMatricula frm = new frmRptFichaMatricula(ape, nom, dni, sex, naci, eda, grad, tlf, cel, email, dire, dist, prov, dep, idioma, nivel, ciclo, fecha, responsable, recibo, monto, modalidad,dt,obs,codAl,horarioRef)) {
                 frm.ShowDialog();                
             }
         }

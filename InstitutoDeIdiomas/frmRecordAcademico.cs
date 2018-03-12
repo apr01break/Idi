@@ -39,7 +39,8 @@ namespace InstitutoDeIdiomas
                 da.Fill(dt);
                 dgvwLista.DataSource = dt;
                 dgvwLista.Columns["APELLIDOS Y NOMBRES"].Width = 270;
-                dgvwLista.Columns["numerocarnet"].Visible = false;
+                //dgvwLista.Columns["N° carnet"].Width = 70;
+                dgvwLista.Columns["DNI"].Visible = false;
             }
             catch (Exception ex)
             {

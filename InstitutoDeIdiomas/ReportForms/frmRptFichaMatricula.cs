@@ -17,11 +17,11 @@ namespace InstitutoDeIdiomas.ReportForms
     {
         string _apellidos, _nombres, _dni, _sexo, _fechanacimiento, _edad, _gradoinstruccion, _telefono, _celular,
             _correo, _direccion, _distrito, _provincia, _departamento, _idioma, _nivel, _ciclo, _fecha, _resposable, _numerorecibo,
-            _monto, _modalidad, _observaciones,_codigoAlumno;
+            _monto, _modalidad, _observaciones,_codigoAlumno,_horarioRef;
         DataTable dtfoto;
         public frmRptFichaMatricula(string apellidos, string nombres, string dni, string sexo, string fechanacimiento, string edad, string gradoinstruccion,
             string telefono, string celular, string correo, string direccion, string distrito, string provincia, string departamento, string idioma,
-            string nivel, string ciclo, string fecha, string responsable, string numerorecibo, string monto, string modalidad,DataTable dtalupic, string observaciones, string codigoAlumno)
+            string nivel, string ciclo, string fecha, string responsable, string numerorecibo, string monto, string modalidad,DataTable dtalupic, string observaciones, string codigoAlumno, string horarioRef)
         {
             InitializeComponent();
             _apellidos = apellidos;
@@ -49,6 +49,7 @@ namespace InstitutoDeIdiomas.ReportForms
             dtfoto = dtalupic;
             _observaciones = observaciones;
             _codigoAlumno = codigoAlumno;
+            _horarioRef = horarioRef;
         }
 
         private void frmRptFichaMatricula_Load(object sender, EventArgs e)
@@ -78,8 +79,8 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pNumeroRecibo",_numerorecibo),
                 new Microsoft.Reporting.WinForms.ReportParameter("pMonto",_monto),
                 new Microsoft.Reporting.WinForms.ReportParameter("pModalidad",_modalidad),
-                new Microsoft.Reporting.WinForms.ReportParameter("pObservaciones",_observaciones),
-                new Microsoft.Reporting.WinForms.ReportParameter("pCodigoAlumno",_codigoAlumno)
+                new Microsoft.Reporting.WinForms.ReportParameter("pCodigoAlumno",_codigoAlumno),
+                new Microsoft.Reporting.WinForms.ReportParameter("pHorarioRef",_horarioRef)
             };            
             this.FICHAMATRICULARPT.LocalReport.SetParameters(para);
             this.FICHAMATRICULARPT.LocalReport.DataSources.Add(rds);

@@ -706,7 +706,7 @@ namespace InstitutoDeIdiomas
             }
             else
             {
-                aumento = "00:10:00";
+                aumento = "00:20:00";
             }
             
             TimeSpan hora = TimeSpan.Parse(max) + TimeSpan.Parse(aumento) - TimeSpan.Parse(DateTime.Now.ToString("HH:mm:ss"));

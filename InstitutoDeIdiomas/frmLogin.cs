@@ -54,29 +54,36 @@ namespace InstitutoDeIdiomas
                     if (dt.Rows.Count == 1)
                     {
                         this.Hide();
-                        String tipoTrabajador = dt.Rows[0][3].ToString(); ;
-                        if (dt.Rows[0][3].ToString() == "ADMINISTRADOR")
+                        String tipoTrabajador = dt.Rows[0][3].ToString();
+                        if (dt.Rows[0][4].ToString() == "1034")
+                        {
+                            String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
+                            String id = dt.Rows[0][4].ToString();
+                            new frmMainMenuDocentes(id, nombre, tipoTrabajador).Show();
+                            this.Hide();
+                        }
+                        else if (dt.Rows[0][3].ToString() == "ADMINISTRADOR")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
                             new frmMainMenu(id, nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
-                        if (dt.Rows[0][3].ToString() == "SECRETARIO")
+                        else if (dt.Rows[0][3].ToString() == "SECRETARIO")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
                             new frmMainMenu(id, nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
-                        if (dt.Rows[0][3].ToString() == "SECRETARIA PRINCIPAL")
+                        else if (dt.Rows[0][3].ToString() == "SECRETARIA PRINCIPAL")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
                             new frmMainMenu(id, nombre, tipoTrabajador).Show();
                             this.Hide();
                         }
-                        if (dt.Rows[0][3].ToString() == "PROFESOR")
+                        else if (dt.Rows[0][3].ToString() == "PROFESOR")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();

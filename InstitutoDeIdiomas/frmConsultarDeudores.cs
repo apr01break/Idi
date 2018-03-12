@@ -89,6 +89,7 @@ namespace InstitutoDeIdiomas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -300,7 +301,7 @@ namespace InstitutoDeIdiomas
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.RowCount)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 String dni = row.Cells[1].Value.ToString();

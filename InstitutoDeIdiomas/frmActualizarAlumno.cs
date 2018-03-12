@@ -408,6 +408,7 @@ namespace InstitutoDeIdiomas
             this.GVALUMNOS.Margin = new System.Windows.Forms.Padding(2);
             this.GVALUMNOS.Name = "GVALUMNOS";
             this.GVALUMNOS.ReadOnly = true;
+            this.GVALUMNOS.RowHeadersVisible = false;
             this.GVALUMNOS.RowTemplate.Height = 24;
             this.GVALUMNOS.Size = new System.Drawing.Size(400, 336);
             this.GVALUMNOS.TabIndex = 73;
@@ -488,7 +489,7 @@ namespace InstitutoDeIdiomas
             if (e.RowIndex >= 0 && e.RowIndex < GVALUMNOS.RowCount )
             {
                 DataGridViewRow row = this.GVALUMNOS.Rows[e.RowIndex];
-                String dni = row.Cells[1].Value.ToString();               
+                String dni = row.Cells["DNI"].Value.ToString();               
                 try {
                     DataTable dt = new DataTable();
                     SqlCommand comando = new SqlCommand("buscarPersona", _SqlConnection);
