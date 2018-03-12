@@ -463,7 +463,7 @@
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>6.31416cm</Top>
+            <Top>5.04416cm</Top>
             <Left>1.05516cm</Left>
             <Height>3.90229cm</Height>
             <Width>24.78702cm</Width>
@@ -635,7 +635,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>NUMERO            :</Value>
+                    <Value>N° GRUPO          :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>

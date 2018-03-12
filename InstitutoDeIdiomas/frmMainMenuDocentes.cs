@@ -25,6 +25,15 @@ namespace InstitutoDeIdiomas
             TXTBIENBUSER.Text = nombre;
             TXTBIENBUSER.SelectionAlignment = HorizontalAlignment.Center;
             lblClave.Text = CrearPassword(10);
+
+            if (id == "1034")
+            {
+                panelAsistencia.Visible = true;
+            }
+            else
+            {
+                panelDocentes.Visible = true;
+            }
         }
         
         private void btnRegistroAuxiliar_Click(object sender, EventArgs e)
@@ -95,6 +104,62 @@ namespace InstitutoDeIdiomas
         {
             frmSeleccionarGrupo selectGrupo = new frmSeleccionarGrupo(id, 1);
             selectGrupo.Show();
+        }
+
+        private void btnPermisoAsistencia_Click(object sender, EventArgs e)
+        {
+            new frmPermisoProfesorAsistenciaLibre().Show();
+        }
+
+        private void btnJustificarInasistencia_Click(object sender, EventArgs e)
+        {
+            new frmJustificarInasistencia().Show();
+        }
+
+        private void btnCambiarClave_Click(object sender, EventArgs e)
+        {
+            new frmCambiarClave(id).Show();
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            if (panelConfiguracion.Visible)
+            {
+                panelConfiguracion.Visible = false;
+                btnConfiguracion.BackColor = SystemColors.Control;
+            }
+            else
+            {
+                panelConfiguracion.Visible = true;
+                btnConfiguracion.BackColor = Color.Khaki;
+            }
+
+        }
+
+        private void frmMainMenuDocentes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelConfiguracion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelDocentes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelAsistencia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCambiarClave_Click_1(object sender, EventArgs e)
+        {
+            panelConfiguracion.Visible = false;
+            new frmCambiarClave(id).Show();
         }
     }
 }

@@ -661,7 +661,7 @@ namespace InstitutoDeIdiomas
                 da.Fill(dt);
                 GRIDVIEWCONSALUPAGO.DataSource = dt;
                 GRIDVIEWCONSALUPAGO.Columns[0].Width = 300;
-                GRIDVIEWCONSALUPAGO.Columns[2].Width = 150;
+                GRIDVIEWCONSALUPAGO.Columns[2].Width = 100;
                 //GRIDVIEWCONSALUPAGO.Columns[4].Width = 200;
                 this.GRIDVIEWCONSALUPAGO.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             }

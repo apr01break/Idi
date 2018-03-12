@@ -78,7 +78,7 @@
             // 
             // txtHorario2
             // 
-            this.txtHorario2.Location = new System.Drawing.Point(764, 64);
+            this.txtHorario2.Location = new System.Drawing.Point(766, 67);
             this.txtHorario2.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario2.Name = "txtHorario2";
             this.txtHorario2.ReadOnly = true;

@@ -79,18 +79,18 @@ namespace InstitutoDeIdiomas
         {
             if (e.RowIndex >= 0 && e.RowIndex < dataGridViewApellido.RowCount)
             {
-                try
-                {
+                //try
+                //{
                     DataTable dt = new DataTable();
                     DataGridViewRow row = this.dataGridViewApellido.Rows[e.RowIndex];
-                    String dni = row.Cells[1].Value.ToString();
-                    String tipo = row.Cells[2].Value.ToString();
+                    String dni = row.Cells["DNI"].Value.ToString();
+                    String tipo = row.Cells["Tipo de Alumno"].Value.ToString();
                     _SqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("buscarTodo", _SqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@dni", dni));
                     cmd.Parameters.Add(new SqlParameter("@tipoalu", tipo));
-
+                    
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                     da.Fill(dt);
@@ -168,16 +168,16 @@ namespace InstitutoDeIdiomas
                             txtColeUni.Visible = false;
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
 
-                finally
-                {
-                    _SqlConnection.Close();
-                }
+                //finally
+                //{
+                //    _SqlConnection.Close();
+                //}
             }
 
         }

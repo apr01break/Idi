@@ -25,7 +25,7 @@ namespace InstitutoDeIdiomas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.")]
+        [global::System.Configuration.DefaultSettingValueAttribute("LAPTOP-7SS0QCS2\\SQLEXPRESS")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));

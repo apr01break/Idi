@@ -86,7 +86,6 @@
     <Compile Include="BotonCircular.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="ControlAlumno.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +142,12 @@
     <Compile Include="frmActualizarAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarUsuario.Designer.cs">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarHorarioReferencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +171,12 @@
     </Compile>
     <Compile Include="frmAsistenciasPorGrupo.Designer.cs">
       <DependentUpon>frmAsistenciasPorGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarClave.Designer.cs">
+      <DependentUpon>frmCambiarClave.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCambiarFechas.cs">
       <SubType>Form</SubType>
@@ -208,6 +219,12 @@
     </Compile>
     <Compile Include="frmGenerarFichaMatricula.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJustificarInasistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJustificarInasistencia.Designer.cs">
+      <DependentUpon>frmJustificarInasistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -364,6 +381,9 @@
     <EmbeddedResource Include="frmActualizarAlumno.resx">
       <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarUsuario.resx">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarHorarioReferencia.resx">
       <DependentUpon>frmAgregarHorarioReferencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistenciasPorGrupo.resx">
       <DependentUpon>frmAsistenciasPorGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarClave.resx">
+      <DependentUpon>frmCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarFechas.resx">
       <DependentUpon>frmCambiarFechas.cs</DependentUpon>
@@ -399,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarFichaMatricula.resx">
       <DependentUpon>frmGenerarFichaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJustificarInasistencia.resx">
+      <DependentUpon>frmJustificarInasistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

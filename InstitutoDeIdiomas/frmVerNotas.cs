@@ -34,6 +34,39 @@ namespace InstitutoDeIdiomas
             listarNotasSpeaking(id);
             listarNotasUseOfEnglish(id);
             listarNotasWriting(id);
+            cargarDias();
+        }
+        public void cargarDias()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", codigoGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                String xx = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    xx = xx + row[0].ToString().ToUpperInvariant() + " - ";
+                }
+                xx=xx.Trim();
+                xx = xx.Remove(xx.Length - 1);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                txtDias.Text = xx;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void cargarAlumnosBase(int idGrupo)

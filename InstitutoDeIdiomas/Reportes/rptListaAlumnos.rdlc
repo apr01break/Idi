@@ -72,7 +72,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>4.51924cm</Top>
+            <Top>3.88424cm</Top>
             <Left>3.55974cm</Left>
             <Height>0.83495cm</Height>
             <Width>12.42063cm</Width>
@@ -104,7 +104,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.8262cm</Top>
+            <Top>5.8737cm</Top>
             <Left>2.77229cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -149,7 +149,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>7.60259cm</Top>
+            <Top>6.65009cm</Top>
             <Left>2.77229cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -181,8 +181,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.8262cm</Top>
-            <Left>10.67043cm</Left>
+            <Top>5.8737cm</Top>
+            <Left>11.30543cm</Left>
             <Height>0.6cm</Height>
             <Width>1.89209cm</Width>
             <ZIndex>3</ZIndex>
@@ -213,7 +213,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.8262cm</Top>
+            <Top>5.8737cm</Top>
             <Left>6.19014cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -245,7 +245,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>7.60259cm</Top>
+            <Top>6.65009cm</Top>
             <Left>6.19014cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -277,8 +277,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.8262cm</Top>
-            <Left>12.73891cm</Left>
+            <Top>5.8737cm</Top>
+            <Left>13.37391cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>6</ZIndex>
@@ -309,7 +309,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.37898cm</Top>
+            <Top>7.42648cm</Top>
             <Left>2.77229cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -341,7 +341,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>8.37898cm</Top>
+            <Top>7.42648cm</Top>
             <Left>6.19014cm</Left>
             <Height>0.6cm</Height>
             <Width>9.79023cm</Width>
@@ -373,8 +373,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>7.56731cm</Top>
-            <Left>10.67043cm</Left>
+            <Top>6.61481cm</Top>
+            <Left>11.30543cm</Left>
             <Height>0.6cm</Height>
             <Width>1.89209cm</Width>
             <ZIndex>9</ZIndex>
@@ -405,8 +405,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>7.56731cm</Top>
-            <Left>12.73891cm</Left>
+            <Top>6.61481cm</Top>
+            <Left>13.37391cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>10</ZIndex>
@@ -437,7 +437,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>9.15537cm</Top>
+            <Top>8.20287cm</Top>
             <Left>2.77229cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -469,10 +469,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>9.15537cm</Top>
+            <Top>8.20287cm</Top>
             <Left>6.20747cm</Left>
             <Height>0.6cm</Height>
-            <Width>1.19535cm</Width>
+            <Width>2.05966cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -501,10 +501,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>9.15537cm</Top>
-            <Left>7.90553cm</Left>
+            <Top>8.20287cm</Top>
+            <Left>8.73456cm</Left>
             <Height>0.6cm</Height>
-            <Width>1.34968cm</Width>
+            <Width>1.95822cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>
@@ -533,8 +533,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>9.15537cm</Top>
-            <Left>7.4381cm</Left>
+            <Top>8.20287cm</Top>
+            <Left>8.26713cm</Left>
             <Height>0.6cm</Height>
             <Width>0.43215cm</Width>
             <ZIndex>14</ZIndex>
@@ -787,7 +787,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetListaAlumnos</DataSetName>
-            <Top>10.69226cm</Top>
+            <Top>9.42226cm</Top>
             <Left>3.36591cm</Left>
             <Height>1.2cm</Height>
             <Width>11.86889cm</Width>
@@ -816,7 +816,7 @@
                     <Value>JOSE FAUSTINO SANCHEZ CARRION”</Value>
                     <Style>
                       <FontFamily>Monotype Corsiva</FontFamily>
-                      <FontSize>15pt</FontSize>
+                      <FontSize>13pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -852,7 +852,7 @@
                     <Value>INSTITUTO DE IDIOMAS</Value>
                     <Style>
                       <FontFamily>TImes New Roman</FontFamily>
-                      <FontSize>20pt</FontSize>
+                      <FontSize>15pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -865,7 +865,7 @@
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>2.91064cm</Top>
             <Left>6.19014cm</Left>
-            <Height>0.97042cm</Height>
+            <Height>0.63669cm</Height>
             <Width>9.53792cm</Width>
             <ZIndex>17</ZIndex>
             <Style>
@@ -882,7 +882,7 @@
             <Source>Embedded</Source>
             <Value>logo</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>1.56303cm</Top>
+            <Top>1.24694cm</Top>
             <Left>2.98993cm</Left>
             <Height>2.14164cm</Height>
             <Width>2.26382cm</Width>
@@ -903,7 +903,7 @@
                     <Value>UNIVERSIDAD NACIONAL</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -935,7 +935,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>NUMERO            :</Value>
+                    <Value>N° GRUPO         :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -945,7 +945,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.04981cm</Top>
+            <Top>5.09731cm</Top>
             <Left>2.77229cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
@@ -977,7 +977,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.04981cm</Top>
+            <Top>5.09731cm</Top>
             <Left>6.20747cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>

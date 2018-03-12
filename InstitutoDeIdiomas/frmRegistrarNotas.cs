@@ -197,6 +197,7 @@ namespace InstitutoDeIdiomas
                     columna.HeaderText = cmbTipoNota.Text;
                     dgvwAlumnos.Columns.Add(columna);
                     dgvwAlumnos.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgvwAlumnos.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dgvwAlumnos.Columns[3].Width = 120;
                     if (cmbTipoNota.Text == "READING")
                     {
@@ -237,7 +238,7 @@ namespace InstitutoDeIdiomas
                 for (int i = 0; i < dgvwAlumnos.RowCount; i++)
                 {
                     String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells[2].Value.ToString();
-                    if (idTipoAsistencia == "FALTA")
+                    if (idTipoAsistencia == "F")
                     {
                         dgvwAlumnos.Rows[i].Cells[3].Value = "0";
                         dgvwAlumnos.Rows[i].Cells[3].ReadOnly = true;
@@ -257,7 +258,7 @@ namespace InstitutoDeIdiomas
                 for (int i = 0; i < dgvwAlumnos.RowCount; i++)
                 {
                     String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells[2].Value.ToString();
-                    if (idTipoAsistencia == "JUSTIFICACION")
+                    if (idTipoAsistencia == "J")
                     {
                         dgvwAlumnos.Rows[i].Cells[3].Value = "-1";
                         dgvwAlumnos.Rows[i].Cells[3].ReadOnly = true;
@@ -277,7 +278,7 @@ namespace InstitutoDeIdiomas
                 cmbTipoNota.Enabled = true;
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("listar_asistencias_grupo", _SqlConnection);
+                    SqlCommand cmd = new SqlCommand("listar_asistencias_grupo_fecha", _SqlConnection);
                     if (cmd.Connection.State == ConnectionState.Closed)
                     {
                         cmd.Connection.Open();
@@ -294,6 +295,15 @@ namespace InstitutoDeIdiomas
                     dgvwAlumnos.Columns[1].Width = 250;
                     dgvwAlumnos.Columns[1].ReadOnly = true;
                     dgvwAlumnos.Columns[2].ReadOnly = true;
+                    foreach (DataGridViewColumn column in dgvwAlumnos.Columns)
+                    {
+                        if (column.HeaderText != "Alumno")
+                        {
+                            column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        }
+                        column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    }
                     if (cmd.Connection.State == ConnectionState.Open)
                     {
                         cmd.Connection.Close();

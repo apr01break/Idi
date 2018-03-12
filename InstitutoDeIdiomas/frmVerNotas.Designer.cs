@@ -63,6 +63,8 @@ namespace InstitutoDeIdiomas
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDias = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
@@ -346,6 +348,8 @@ namespace InstitutoDeIdiomas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtDias);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dgvwNotas);
             this.panel1.Controls.Add(this.txtNumero);
@@ -386,6 +390,23 @@ namespace InstitutoDeIdiomas
             this.label1.TabIndex = 78;
             this.label1.Text = "";
             this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(226, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 80;
+            this.label2.Text = "DÍAS";
+            // 
+            // txtDias
+            // 
+            this.txtDias.Location = new System.Drawing.Point(274, 16);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.ReadOnly = true;
+            this.txtDias.Size = new System.Drawing.Size(206, 20);
+            this.txtDias.TabIndex = 79;
             // 
             // frmVerNotas
             // 
@@ -451,5 +472,7 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDias;
     }
 }
