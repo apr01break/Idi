@@ -1147,6 +1147,7 @@ namespace InstitutoDeIdiomas
                 cbHorario.DisplayMember = "descripcion";
                 cbHorario.DataSource = dt;
                 cbHorario.ValueMember = "id";
+                cbHorario.SelectedIndex = cbHorario.FindStringExact("Ninguno");
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();

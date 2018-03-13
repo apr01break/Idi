@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvwGrupo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegistrarAsistencias = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRegistroAuxiliar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRegistrarNotas = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnRegistrarAsistencias = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwGrupo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,16 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // btnRegistrarAsistencias
+            // 
+            this.btnRegistrarAsistencias.Depth = 0;
+            resources.ApplyResources(this.btnRegistrarAsistencias, "btnRegistrarAsistencias");
+            this.btnRegistrarAsistencias.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRegistrarAsistencias.Name = "btnRegistrarAsistencias";
+            this.btnRegistrarAsistencias.Primary = true;
+            this.btnRegistrarAsistencias.UseVisualStyleBackColor = true;
+            this.btnRegistrarAsistencias.Click += new System.EventHandler(this.btnRegistrarAsistencias_Click);
+            // 
             // btnRegistroAuxiliar
             // 
             this.btnRegistroAuxiliar.Depth = 0;
@@ -102,16 +112,6 @@
             this.btnRegistrarNotas.UseVisualStyleBackColor = true;
             this.btnRegistrarNotas.Click += new System.EventHandler(this.btnRegistrarNotas_Click);
             // 
-            // btnRegistrarAsistencias
-            // 
-            this.btnRegistrarAsistencias.Depth = 0;
-            resources.ApplyResources(this.btnRegistrarAsistencias, "btnRegistrarAsistencias");
-            this.btnRegistrarAsistencias.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRegistrarAsistencias.Name = "btnRegistrarAsistencias";
-            this.btnRegistrarAsistencias.Primary = true;
-            this.btnRegistrarAsistencias.UseVisualStyleBackColor = true;
-            this.btnRegistrarAsistencias.Click += new System.EventHandler(this.btnRegistrarAsistencias_Click);
-            // 
             // frmSeleccionarGrupo
             // 
             resources.ApplyResources(this, "$this");
@@ -119,6 +119,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "frmSeleccionarGrupo";
+            this.Load += new System.EventHandler(this.frmSeleccionarGrupo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwGrupo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
