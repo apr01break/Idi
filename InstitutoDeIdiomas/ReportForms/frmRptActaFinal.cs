@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace InstitutoDeIdiomas.ReportForms
             diaActual = DateTime.Now.ToString("dd");
             mesActual = DateTime.Now.ToString("MMMMM");
             anoActual = DateTime.Now.ToString("yyyy");
-            this.numero = numero;
+            this.numero = Path.GetFileNameWithoutExtension(numero).Remove(4, 3);
         }
 
         private void frmRptActaFinal_Load(object sender, EventArgs e)

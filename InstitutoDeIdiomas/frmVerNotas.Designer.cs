@@ -62,9 +62,12 @@ namespace InstitutoDeIdiomas
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.txtFin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
@@ -172,7 +175,7 @@ namespace InstitutoDeIdiomas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 71);
+            this.label4.Location = new System.Drawing.Point(214, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
@@ -194,7 +197,7 @@ namespace InstitutoDeIdiomas
             this.dgvwNotas.AllowUserToAddRows = false;
             this.dgvwNotas.AllowUserToResizeRows = false;
             this.dgvwNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvwNotas.Location = new System.Drawing.Point(14, 212);
+            this.dgvwNotas.Location = new System.Drawing.Point(14, 239);
             this.dgvwNotas.Name = "dgvwNotas";
             this.dgvwNotas.ReadOnly = true;
             this.dgvwNotas.RowHeadersVisible = false;
@@ -212,7 +215,7 @@ namespace InstitutoDeIdiomas
             "SPEAKING",
             "USE OF ENGLISH",
             "RESULTADOS HASTA AHORA"});
-            this.cmbTipoNota.Location = new System.Drawing.Point(235, 126);
+            this.cmbTipoNota.Location = new System.Drawing.Point(235, 153);
             this.cmbTipoNota.Name = "cmbTipoNota";
             this.cmbTipoNota.Size = new System.Drawing.Size(229, 21);
             this.cmbTipoNota.TabIndex = 61;
@@ -221,7 +224,7 @@ namespace InstitutoDeIdiomas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 129);
+            this.label5.Location = new System.Drawing.Point(18, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 13);
             this.label5.TabIndex = 63;
@@ -278,28 +281,38 @@ namespace InstitutoDeIdiomas
             // 
             // btnConcluirGrupo
             // 
-            this.btnConcluirGrupo.Location = new System.Drawing.Point(581, 16);
+            this.btnConcluirGrupo.BackColor = System.Drawing.Color.Olive;
+            this.btnConcluirGrupo.FlatAppearance.BorderSize = 0;
+            this.btnConcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConcluirGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConcluirGrupo.ForeColor = System.Drawing.Color.White;
+            this.btnConcluirGrupo.Location = new System.Drawing.Point(581, 20);
             this.btnConcluirGrupo.Name = "btnConcluirGrupo";
             this.btnConcluirGrupo.Size = new System.Drawing.Size(196, 44);
             this.btnConcluirGrupo.TabIndex = 70;
             this.btnConcluirGrupo.Text = "CONCLUIR GRUPO";
-            this.btnConcluirGrupo.UseVisualStyleBackColor = true;
+            this.btnConcluirGrupo.UseVisualStyleBackColor = false;
             this.btnConcluirGrupo.Click += new System.EventHandler(this.btnConcluirGrupo_Click);
             // 
             // btnRelacionAlumno
             // 
-            this.btnRelacionAlumno.Location = new System.Drawing.Point(581, 116);
+            this.btnRelacionAlumno.BackColor = System.Drawing.Color.Purple;
+            this.btnRelacionAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRelacionAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelacionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelacionAlumno.ForeColor = System.Drawing.Color.White;
+            this.btnRelacionAlumno.Location = new System.Drawing.Point(581, 143);
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
             this.btnRelacionAlumno.Size = new System.Drawing.Size(196, 44);
             this.btnRelacionAlumno.TabIndex = 71;
             this.btnRelacionAlumno.Text = "ACTA FINAL NOTAS";
-            this.btnRelacionAlumno.UseVisualStyleBackColor = true;
+            this.btnRelacionAlumno.UseVisualStyleBackColor = false;
             this.btnRelacionAlumno.Click += new System.EventHandler(this.btnRelacionAlumno_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(215, 98);
+            this.label8.Location = new System.Drawing.Point(7, 125);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
@@ -308,7 +321,7 @@ namespace InstitutoDeIdiomas
             // 
             // txtDocente
             // 
-            this.txtDocente.Location = new System.Drawing.Point(274, 95);
+            this.txtDocente.Location = new System.Drawing.Point(72, 121);
             this.txtDocente.Margin = new System.Windows.Forms.Padding(2);
             this.txtDocente.Name = "txtDocente";
             this.txtDocente.ReadOnly = true;
@@ -317,12 +330,17 @@ namespace InstitutoDeIdiomas
             // 
             // btnRelacionAlumnos
             // 
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(581, 66);
+            this.btnRelacionAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRelacionAlumnos.FlatAppearance.BorderSize = 0;
+            this.btnRelacionAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelacionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelacionAlumnos.ForeColor = System.Drawing.Color.White;
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(581, 82);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
             this.btnRelacionAlumnos.Size = new System.Drawing.Size(196, 44);
             this.btnRelacionAlumnos.TabIndex = 75;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
-            this.btnRelacionAlumnos.UseVisualStyleBackColor = true;
+            this.btnRelacionAlumnos.UseVisualStyleBackColor = false;
             this.btnRelacionAlumnos.Click += new System.EventHandler(this.btnRelacionAlumnos_Click);
             // 
             // txtNumero
@@ -340,14 +358,17 @@ namespace InstitutoDeIdiomas
             this.label9.Location = new System.Drawing.Point(16, 19);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 76;
-            this.label9.Text = "NUMERO";
+            this.label9.Text = "GRUPO";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtFin);
+            this.panel1.Controls.Add(this.txtInicio);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtDias);
             this.panel1.Controls.Add(this.label1);
@@ -376,25 +397,13 @@ namespace InstitutoDeIdiomas
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 626);
+            this.panel1.Size = new System.Drawing.Size(822, 644);
             this.panel1.TabIndex = 78;
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(21, 162);
-            this.label1.Name = "label1";
-            this.label1.ReadOnly = true;
-            this.label1.Size = new System.Drawing.Size(558, 34);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "";
-            this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 20);
+            this.label2.Location = new System.Drawing.Point(236, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 80;
@@ -408,11 +417,46 @@ namespace InstitutoDeIdiomas
             this.txtDias.Size = new System.Drawing.Size(206, 20);
             this.txtDias.TabIndex = 79;
             // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(21, 189);
+            this.label1.Name = "label1";
+            this.label1.ReadOnly = true;
+            this.label1.Size = new System.Drawing.Size(558, 34);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "";
+            this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(210, 98);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "INICIO-FIN";
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(274, 95);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(63, 20);
+            this.txtInicio.TabIndex = 82;
+            // 
+            // txtFin
+            // 
+            this.txtFin.Location = new System.Drawing.Point(349, 95);
+            this.txtFin.Name = "txtFin";
+            this.txtFin.Size = new System.Drawing.Size(63, 20);
+            this.txtFin.TabIndex = 83;
+            // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 690);
+            this.ClientSize = new System.Drawing.Size(822, 708);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvwBase);
             this.Controls.Add(this.dgvwUseOfEnglish);
@@ -474,5 +518,8 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.RichTextBox label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDias;
+        private System.Windows.Forms.TextBox txtFin;
+        private System.Windows.Forms.TextBox txtInicio;
+        private System.Windows.Forms.Label label12;
     }
 }

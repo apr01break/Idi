@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace InstitutoDeIdiomas.ReportForms
             this.docente = docente;
             this.mes = mes;
             this.nivel = nivel;
-            this.numero = numero;
+            this.numero = Path.GetFileNameWithoutExtension(numero).Remove(4, 3);
         }
 
         private void frmRptAsistenciaGrupo_Load(object sender, EventArgs e)
