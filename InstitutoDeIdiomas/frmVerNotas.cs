@@ -149,6 +149,8 @@ namespace InstitutoDeIdiomas
                 txtHorario2.Text = row2[6].ToString();
                 anho = Convert.ToDateTime(row2[7]).ToString("yyyy");
                 mes = Convert.ToDateTime(row2[7]).ToString("MMMMM").ToUpper();
+                txtInicio.Text = row2[7].ToString();
+                txtFin.Text = row2[9].ToString();
                 txtDocente.Text = row2[8].ToString();
                 txtNumero.Text = row2[10].ToString();
                 if (cmd.Connection.State == ConnectionState.Open)
