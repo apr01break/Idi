@@ -130,6 +130,7 @@ namespace InstitutoDeIdiomas
             panelReportes.Visible = false;
             panelUsuario.Visible = false;
             panelAlumno.Visible = false;
+            panelGruposPasados.Visible = false;
         }
 
         private void btnAlumnos_Click(object sender, EventArgs e)
@@ -185,6 +186,10 @@ namespace InstitutoDeIdiomas
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             panelAlumno.Visible = true;
+            if (idCodigo == "5" || idCodigo == "25" || idCodigo == "3")
+            {
+                btnGruposPasados.Visible = true;
+            }
         }
         
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -323,6 +328,41 @@ namespace InstitutoDeIdiomas
         private void btnActualizarUsuario_Click(object sender, EventArgs e)
         {
             new frmActualizarUsuario().Show();
+        }
+
+        private void btnGruposPasados_Click(object sender, EventArgs e)
+        {
+            sidePanel.Height = btnGruposPasados.Height;
+            sidePanel.Top = btnGruposPasados.Top;
+            ocultarPaneles();
+            panelGruposPasados.Visible = true;
+            txtMain.Text = "GRUPOS PASADOS";
+            txtMain.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrearGrupoPasado_Click(object sender, EventArgs e)
+        {
+            new frmCrearGrupo().Show();
+        }
+
+        private void btnAgregarAlumnoGrupoPasado_Click(object sender, EventArgs e)
+        {
+            new frmVerGrupoAgregarAlumno(3).Show();
+        }
+
+        private void btnAgregarAsistenciaNotaPasada_Click(object sender, EventArgs e)
+        {
+            new frmSeleccionarGrupo(idCodigo,0).Show();
+        }
+
+        private void btnVerNotasPasadas_Click(object sender, EventArgs e)
+        {
+            new frmVerGrupoAgregarAlumno(4).Show();
         }
     }
 }

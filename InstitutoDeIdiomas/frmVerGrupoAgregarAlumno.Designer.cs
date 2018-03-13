@@ -93,6 +93,7 @@
             this.Name = "frmVerGrupoAgregarAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SELECCIONAR GRUPO";
+            this.Load += new System.EventHandler(this.frmVerGrupoAgregarAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupo)).EndInit();
             this.ResumeLayout(false);
 

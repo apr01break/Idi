@@ -16,7 +16,7 @@ namespace InstitutoDeIdiomas
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
-        int id;
+        int id, num;
         public frmVerGrupoAgregarAlumno(int numero)
         {
             InitializeComponent();
@@ -30,10 +30,16 @@ namespace InstitutoDeIdiomas
             {
                 btnAgregarAlumno.Visible = true;
                 cargarGrupos("listar_grupo");
-            }else if (num == 2)
+            }
+            else if (num == 2 || num == 4)
             {
                 btnVerNotas.Visible = true;
                 cargarGrupos("listar_ver_notas_grupo");
+            }
+            else if (num == 3)
+            {
+                btnAgregarAlumno.Visible = true;
+                cargarGrupos("listar_grupos_pasados");
             }
         }
 
@@ -57,18 +63,24 @@ namespace InstitutoDeIdiomas
                     DataRow row = dt.Rows[i];
                     if (!DBNull.Value.Equals(row["HORA INICIO"]))
                     {
-                        String datime = Convert.ToDateTime(row["HORA INICIO"]).ToString("HH:mm tt");
+                        String datime = Convert.ToDateTime(row["HORA INICIO"]).ToString("HH:mm");
                         row["HORA INICIO"] = datime;
                     }
                     if (!DBNull.Value.Equals(row["HORA FINAL"]))
                     {
-                        String datime = Convert.ToDateTime(row["HORA FINAL"]).ToString("HH:mm tt");
+                        String datime = Convert.ToDateTime(row["HORA FINAL"]).ToString("HH:mm");
                         row["HORA FINAL"] = datime;
                     }
                 }
                 dataGridViewGrupo.Columns["idGrupo"].Visible = false;
                 dataGridViewGrupo.Columns["CICLO"].Width = 62;
                 dataGridViewGrupo.Columns["SALON"].Width = 62;
+
+
+                dataGridViewGrupo.Rows[0].Visible = false;
+                dataGridViewGrupo.CurrentCell = null;
+                dataGridViewGrupo.Rows[1].Visible = false;
+
                 dataGridViewGrupo.Columns["HORA INICIO"].Width = 72;
                 dataGridViewGrupo.Columns["HORA FINAL"].Width = 72;
                 dataGridViewGrupo.Columns["PROFESOR"].Width = 232;
@@ -80,6 +92,37 @@ namespace InstitutoDeIdiomas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void evaluarGrupos()
+        {
+            CurrencyManager cm = (CurrencyManager)BindingContext[dataGridViewGrupo.DataSource];
+            cm.SuspendBinding();
+            for (int i = 0; i < dataGridViewGrupo.RowCount; i++)
+            {
+                int idGrupo = (int)dataGridViewGrupo.Rows[i].Cells["idGrupo"].Value;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("buscar_asistencia", _SqlConnection);
+                    if (cmd.Connection.State == ConnectionState.Closed)
+                    {
+                        cmd.Connection.Open();
+                    }
+                    cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    if (dt.Rows.Count != 0)
+                    {
+                        dataGridViewGrupo.Rows[i].Visible = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         
@@ -114,6 +157,11 @@ namespace InstitutoDeIdiomas
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void frmVerGrupoAgregarAlumno_Load(object sender, EventArgs e)
+        {
+            if (num == 3) evaluarGrupos();
         }
     }
 }
