@@ -49,6 +49,7 @@
             this.dataGridViewGrupo.Size = new System.Drawing.Size(803, 421);
             this.dataGridViewGrupo.TabIndex = 5;
             this.dataGridViewGrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupo_CellClick);
+            this.dataGridViewGrupo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupo_CellDoubleClick);
             // 
             // btnAgregarAlumno
             // 

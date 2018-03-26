@@ -17,7 +17,9 @@ namespace InstitutoDeIdiomas
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
-        public frmCrearGrupo()
+        string idUsuario;
+        string nombProc;
+        public frmCrearGrupo(string idUsuario)
         {
             
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace InstitutoDeIdiomas
             dtmHoraInicio.CustomFormat = "HH:mm" ;
             dtmHoraFinal.CustomFormat = "HH:mm";
             listarNumeros();
+            this.idUsuario = idUsuario;
+            
         }
         public void listarNumeros()
         {
@@ -39,7 +43,6 @@ namespace InstitutoDeIdiomas
             {
                 cbNumero.Items.Add(i.ToString().PadLeft(3, '0'));
             }
-            
         }
 
         public void listaIdioma()
@@ -247,51 +250,108 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupo_Click(object sender, EventArgs e)
         {
-            if (cbNumero.Text.Trim() == "" || cbMes.Text == "" || cbAno.Text == "") 
+            if (cbNumero.Text.Trim() == "" || cbAno.Text == "") 
             {
                 MessageBox.Show("Elige un número de grupo");
             }
             else
             {
-                try
+                if (idUsuario == "xd")
                 {
-
-                    int idioma = (int)((DataRowView)cmbIdioma.SelectedItem)["idIdioma"];
-                    int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
-                    int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
-                    int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
-
-                    SqlCommand cmd = new SqlCommand("insert_grupo", _SqlConnection);
-                    if (cmd.Connection.State == ConnectionState.Closed)
-                    {
-                        cmd.Connection.Open();
-                    }
-                    cmd.Parameters.Add(new SqlParameter("@idtrabajador", profesor));
-                    cmd.Parameters.Add(new SqlParameter("@horaInicio", dtmHoraInicio.Value));
-                    cmd.Parameters.Add(new SqlParameter("@horaFinal", dtmHoraFinal.Value));
-                    cmd.Parameters.Add(new SqlParameter("@fechaInicio", dtFechaInicio.Value));
-                    cmd.Parameters.Add(new SqlParameter("@fechaFinal", dtFechaFinal.Value));
-                    cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
-                    cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
-                    cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
-                    cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text+"-"+cbMes.Text+"-"+cbAno.Text));
-                    cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-
-                    GuardarDias();
-                    if (cmd.Connection.State == ConnectionState.Open)
-                    {
-                        cmd.Connection.Close();
-                    }
-                    MessageBox.Show("GRUPO CREADO SATISFACTORIAMENTE");
-                    this.Dispose();
-                    this.Close();
+                    crearGrupo();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    crearGrupoEncargado();
                 }
+                
+            }
+        }
+
+        private void crearGrupoEncargado()
+        {
+            try
+            {
+
+                int idioma = (int)((DataRowView)cmbIdioma.SelectedItem)["idIdioma"];
+                int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
+                int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
+                int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
+
+                SqlCommand cmd = new SqlCommand("insert_grupo_encargado", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idtrabajador", profesor));
+                cmd.Parameters.Add(new SqlParameter("@horaInicio", dtmHoraInicio.Value));
+                cmd.Parameters.Add(new SqlParameter("@horaFinal", dtmHoraFinal.Value));
+                cmd.Parameters.Add(new SqlParameter("@fechaInicio", dtFechaInicio.Value));
+                cmd.Parameters.Add(new SqlParameter("@fechaFinal", dtFechaFinal.Value));
+                cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
+                cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
+                cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
+                cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text + "-" + cbAno.Text));
+                cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
+                GuardarDias();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                MessageBox.Show("GRUPO CREADO SATISFACTORIAMENTE");
+                this.Dispose();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void crearGrupo()
+        {
+            try
+            {
+
+                int idioma = (int)((DataRowView)cmbIdioma.SelectedItem)["idIdioma"];
+                int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
+                int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
+                int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
+
+                SqlCommand cmd = new SqlCommand("insert_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idtrabajador", profesor));
+                cmd.Parameters.Add(new SqlParameter("@horaInicio", dtmHoraInicio.Value));
+                cmd.Parameters.Add(new SqlParameter("@horaFinal", dtmHoraFinal.Value));
+                cmd.Parameters.Add(new SqlParameter("@fechaInicio", dtFechaInicio.Value));
+                cmd.Parameters.Add(new SqlParameter("@fechaFinal", dtFechaFinal.Value));
+                cmd.Parameters.Add(new SqlParameter("@idIdioma", idioma));
+                cmd.Parameters.Add(new SqlParameter("@idNivel", nivel));
+                cmd.Parameters.Add(new SqlParameter("@ciclo", numCiclo.Value));
+                cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text +"-" + cbAno.Text));
+                cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
+                GuardarDias();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                MessageBox.Show("GRUPO CREADO SATISFACTORIAMENTE");
+                this.Dispose();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

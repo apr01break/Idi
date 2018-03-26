@@ -61,12 +61,17 @@
             this.btnFinWriting = new System.Windows.Forms.Button();
             this.btnFinListening = new System.Windows.Forms.Button();
             this.btnFinUseOfEnglish = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtTituloTema = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtTituloTema);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtDias);
             this.panel2.Controls.Add(this.cbFechas);
@@ -223,14 +228,19 @@
             // 
             // btnAgregarCriterio
             // 
+            this.btnAgregarCriterio.BackColor = System.Drawing.Color.Maroon;
             this.btnAgregarCriterio.Enabled = false;
+            this.btnAgregarCriterio.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCriterio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCriterio.ForeColor = System.Drawing.Color.White;
             this.btnAgregarCriterio.Location = new System.Drawing.Point(468, 180);
             this.btnAgregarCriterio.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarCriterio.Name = "btnAgregarCriterio";
-            this.btnAgregarCriterio.Size = new System.Drawing.Size(115, 32);
+            this.btnAgregarCriterio.Size = new System.Drawing.Size(126, 32);
             this.btnAgregarCriterio.TabIndex = 21;
             this.btnAgregarCriterio.Text = "AÑADIR CRITERIO";
-            this.btnAgregarCriterio.UseVisualStyleBackColor = true;
+            this.btnAgregarCriterio.UseVisualStyleBackColor = false;
             this.btnAgregarCriterio.Click += new System.EventHandler(this.btnAgregarCriterio_Click);
             // 
             // label4
@@ -245,6 +255,7 @@
             // 
             // cmbTipoNota
             // 
+            this.cmbTipoNota.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cmbTipoNota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoNota.Enabled = false;
             this.cmbTipoNota.FormattingEnabled = true;
@@ -382,63 +393,110 @@
             // 
             // btnFinSpeaking
             // 
+            this.btnFinSpeaking.BackColor = System.Drawing.Color.Green;
+            this.btnFinSpeaking.FlatAppearance.BorderSize = 0;
+            this.btnFinSpeaking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinSpeaking.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinSpeaking.ForeColor = System.Drawing.Color.White;
             this.btnFinSpeaking.Location = new System.Drawing.Point(19, 560);
             this.btnFinSpeaking.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinSpeaking.Name = "btnFinSpeaking";
             this.btnFinSpeaking.Size = new System.Drawing.Size(532, 48);
             this.btnFinSpeaking.TabIndex = 28;
             this.btnFinSpeaking.Text = "GUARDAR NOTAS SPEAKING";
-            this.btnFinSpeaking.UseVisualStyleBackColor = true;
+            this.btnFinSpeaking.UseVisualStyleBackColor = false;
             this.btnFinSpeaking.Visible = false;
             this.btnFinSpeaking.Click += new System.EventHandler(this.btnFinSpeaking_Click);
             // 
             // btnFinReading
             // 
+            this.btnFinReading.BackColor = System.Drawing.Color.Green;
+            this.btnFinReading.FlatAppearance.BorderSize = 0;
+            this.btnFinReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinReading.ForeColor = System.Drawing.Color.White;
             this.btnFinReading.Location = new System.Drawing.Point(19, 560);
             this.btnFinReading.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinReading.Name = "btnFinReading";
             this.btnFinReading.Size = new System.Drawing.Size(532, 48);
             this.btnFinReading.TabIndex = 29;
             this.btnFinReading.Text = "GUARDAR NOTAS READING";
-            this.btnFinReading.UseVisualStyleBackColor = true;
+            this.btnFinReading.UseVisualStyleBackColor = false;
             this.btnFinReading.Visible = false;
             this.btnFinReading.Click += new System.EventHandler(this.btnFinReading_Click);
             // 
             // btnFinWriting
             // 
+            this.btnFinWriting.BackColor = System.Drawing.Color.Green;
+            this.btnFinWriting.FlatAppearance.BorderSize = 0;
+            this.btnFinWriting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinWriting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinWriting.ForeColor = System.Drawing.Color.White;
             this.btnFinWriting.Location = new System.Drawing.Point(19, 560);
             this.btnFinWriting.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinWriting.Name = "btnFinWriting";
             this.btnFinWriting.Size = new System.Drawing.Size(532, 48);
             this.btnFinWriting.TabIndex = 30;
             this.btnFinWriting.Text = "GUARDAR NOTAS WRITING";
-            this.btnFinWriting.UseVisualStyleBackColor = true;
+            this.btnFinWriting.UseVisualStyleBackColor = false;
             this.btnFinWriting.Visible = false;
             this.btnFinWriting.Click += new System.EventHandler(this.btnFinWriting_Click);
             // 
             // btnFinListening
             // 
+            this.btnFinListening.BackColor = System.Drawing.Color.Green;
+            this.btnFinListening.FlatAppearance.BorderSize = 0;
+            this.btnFinListening.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinListening.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinListening.ForeColor = System.Drawing.Color.White;
             this.btnFinListening.Location = new System.Drawing.Point(19, 560);
             this.btnFinListening.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinListening.Name = "btnFinListening";
             this.btnFinListening.Size = new System.Drawing.Size(532, 48);
             this.btnFinListening.TabIndex = 31;
             this.btnFinListening.Text = "GUARDAR NOTAS LISTENING";
-            this.btnFinListening.UseVisualStyleBackColor = true;
+            this.btnFinListening.UseVisualStyleBackColor = false;
             this.btnFinListening.Visible = false;
             this.btnFinListening.Click += new System.EventHandler(this.btnFinListening_Click);
             // 
             // btnFinUseOfEnglish
             // 
+            this.btnFinUseOfEnglish.BackColor = System.Drawing.Color.Green;
+            this.btnFinUseOfEnglish.FlatAppearance.BorderSize = 0;
+            this.btnFinUseOfEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinUseOfEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinUseOfEnglish.ForeColor = System.Drawing.Color.White;
             this.btnFinUseOfEnglish.Location = new System.Drawing.Point(19, 560);
             this.btnFinUseOfEnglish.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinUseOfEnglish.Name = "btnFinUseOfEnglish";
             this.btnFinUseOfEnglish.Size = new System.Drawing.Size(532, 48);
             this.btnFinUseOfEnglish.TabIndex = 32;
             this.btnFinUseOfEnglish.Text = "GUARDAR NOTAS USE OF ENGLISH";
-            this.btnFinUseOfEnglish.UseVisualStyleBackColor = true;
+            this.btnFinUseOfEnglish.UseVisualStyleBackColor = false;
             this.btnFinUseOfEnglish.Visible = false;
             this.btnFinUseOfEnglish.Click += new System.EventHandler(this.btnFinUseOfEnglish_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(562, 297);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 20);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Tema de clase";
+            // 
+            // txtTituloTema
+            // 
+            this.txtTituloTema.BackColor = System.Drawing.Color.White;
+            this.txtTituloTema.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTituloTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloTema.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtTituloTema.Location = new System.Drawing.Point(564, 329);
+            this.txtTituloTema.Name = "txtTituloTema";
+            this.txtTituloTema.Size = new System.Drawing.Size(225, 67);
+            this.txtTituloTema.TabIndex = 74;
+            this.txtTituloTema.Text = "";
             // 
             // frmRegistrarNotas
             // 
@@ -450,6 +508,7 @@
             this.Name = "frmRegistrarNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRAR NOTAS";
+            this.Load += new System.EventHandler(this.frmRegistrarNotas_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwAlumnos)).EndInit();
@@ -492,5 +551,7 @@
         private System.Windows.Forms.ComboBox cbFechas;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDias;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RichTextBox txtTituloTema;
     }
 }

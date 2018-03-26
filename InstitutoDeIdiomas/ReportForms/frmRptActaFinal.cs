@@ -40,7 +40,7 @@ namespace InstitutoDeIdiomas.ReportForms
             diaActual = DateTime.Now.ToString("dd");
             mesActual = DateTime.Now.ToString("MMMMM");
             anoActual = DateTime.Now.ToString("yyyy");
-            this.numero = Path.GetFileNameWithoutExtension(numero).Remove(4, 3);
+            this.numero = numero;
         }
 
         private void frmRptActaFinal_Load(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -228,46 +229,82 @@ namespace InstitutoDeIdiomas
             }
             return true;
         }
+        public void guardarTema()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("crear_tema", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                cmd.Parameters.Add(new SqlParameter("@titulo", txtTituloTema.Text));
+                cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                txtTituloTema.ReadOnly = true;
+                txtTituloTema.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                txtTituloTema.BackColor = Color.White;
+                txtTituloTema.ForeColor = Color.DarkRed;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (verificarFecha())
+            if (txtTituloTema.Text.Trim() != "")
             {
-                if (verificarAsistencia() == 1)
+                if (verificarFecha())
                 {
-                    try
+                    if (verificarAsistencia() == 1)
                     {
-                        for (int i = 0; i < dgvwAlumnos.RowCount; i++)
+                        try
                         {
-                            String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
-                            String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
-                            SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
-                            if (cmd.Connection.State == ConnectionState.Closed)
+                            for (int i = 0; i < dgvwAlumnos.RowCount; i++)
                             {
-                                cmd.Connection.Open();
+                                String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
+                                String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
+                                SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
+                                if (cmd.Connection.State == ConnectionState.Closed)
+                                {
+                                    cmd.Connection.Open();
+                                }
+                                cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
+                                cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
+                                cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.ExecuteNonQuery();
+                                if (cmd.Connection.State == ConnectionState.Open)
+                                {
+                                    cmd.Connection.Close();
+                                }
                             }
-                            cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
-                            cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
-                            cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.ExecuteNonQuery();
-                            if (cmd.Connection.State == ConnectionState.Open)
-                            {
-                                cmd.Connection.Close();
-                            }
+                            dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
+                            MessageBox.Show("ASISTENCIA REGISTRADA");
+                            validarTipoAsistencia();
+                            btnFinalizar.Visible = false;
+                            txtCriterio.Enabled = true;
+                            cmbTipoNota.Enabled = true;
+                            guardarTema();
                         }
-                        dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
-                        MessageBox.Show("ASISTENCIA REGISTRADA");
-                        validarTipoAsistencia();
-                        btnFinalizar.Visible = false;
-                        txtCriterio.Enabled = true;
-                        cmbTipoNota.Enabled = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + "FINASISTENCIA");
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + "FINASISTENCIA");
+                        }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Escriba el tema de clase");
             }
         }
 
@@ -641,6 +678,8 @@ namespace InstitutoDeIdiomas
 
         private void frmRegistroAuxiliar_Load(object sender, EventArgs e)
         {
+
+            this.ActiveControl = txtTituloTema;
             verificarDia();
         }
         public void verificarDia()
@@ -649,6 +688,9 @@ namespace InstitutoDeIdiomas
             {
                 CultureInfo ci = new CultureInfo("Es-Es");
                 String hoy = ci.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek).ToLower();
+                Regex reg = new Regex("[^a-zA-Z0-9 ]");
+                string txtNormalizado = hoy.Normalize(NormalizationForm.FormD);
+                hoy = reg.Replace(txtNormalizado, "");
                 int x = 0;
                 SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)

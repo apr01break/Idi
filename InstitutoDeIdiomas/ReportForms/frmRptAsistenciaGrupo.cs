@@ -27,7 +27,7 @@ namespace InstitutoDeIdiomas.ReportForms
             this.docente = docente;
             this.mes = mes;
             this.nivel = nivel;
-            this.numero = Path.GetFileNameWithoutExtension(numero).Remove(4, 3);
+            this.numero = numero;
         }
 
         private void frmRptAsistenciaGrupo_Load(object sender, EventArgs e)

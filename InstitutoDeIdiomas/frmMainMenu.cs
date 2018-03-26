@@ -66,15 +66,11 @@ namespace InstitutoDeIdiomas
         {
             //new Form1().Show();
         }
-
-        private void crearGrupo_Click(object sender, EventArgs e)
-        {
-            new frmCrearGrupo().Show();
-        }
+        
 
         private void agregarAlumnosAGrupo_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(1).Show();
+            new frmVerGrupoAgregarAlumno(1,idCodigo).Show();
         }
 
         private void cREARToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -86,7 +82,7 @@ namespace InstitutoDeIdiomas
 
         private void verGrupo_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(2).Show();
+            new frmVerGrupoAgregarAlumno(2,idCodigo).Show();
         }
 
         private void FICHAMATRICULATOOL_Click(object sender, EventArgs e)
@@ -190,6 +186,7 @@ namespace InstitutoDeIdiomas
             {
                 btnGruposPasados.Visible = true;
             }
+
         }
         
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -241,17 +238,17 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupo_Click_1(object sender, EventArgs e)
         {
-            new frmCrearGrupo().Show();
+            new frmCrearGrupo("xd").Show();
         }
 
         private void btnGruposEmpezados_Click_1(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(2).Show();
+            new frmVerGrupoAgregarAlumno(2,idCodigo).Show();
         }
 
         private void btnAsignarAlumnosGrupo_Click_1(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(1).Show();
+            new frmVerGrupoAgregarAlumno(1,idCodigo).Show();
         }
 
         private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
@@ -347,22 +344,43 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupoPasado_Click(object sender, EventArgs e)
         {
-            new frmCrearGrupo().Show();
+            new frmCrearGrupo(idCodigo).Show();
         }
 
         private void btnAgregarAlumnoGrupoPasado_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(3).Show();
+            new frmVerGrupoAgregarAlumno(3,idCodigo).Show();
         }
 
         private void btnAgregarAsistenciaNotaPasada_Click(object sender, EventArgs e)
         {
-            new frmSeleccionarGrupo(idCodigo,0).Show();
+            new frmSeleccionarGrupo(idCodigo,2).Show();
         }
 
         private void btnVerNotasPasadas_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(4).Show();
+            new frmVerGrupoAgregarAlumno(4,idCodigo).Show();
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCorregirPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

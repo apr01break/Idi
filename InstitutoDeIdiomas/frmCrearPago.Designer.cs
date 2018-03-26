@@ -44,6 +44,9 @@
             this.LBLCODIGOALUMN = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PANELMATRICULA = new System.Windows.Forms.Panel();
+            this.btnNuevoHorario = new System.Windows.Forms.Button();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.NUMCICLO = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.GBNIVEL = new System.Windows.Forms.GroupBox();
@@ -85,9 +88,6 @@
             this.gbMat = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BTNGUARDARPAGO = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
-            this.btnNuevoHorario = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -157,7 +157,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(739, 40);
+            this.tabPage1.Size = new System.Drawing.Size(629, 40);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BUSCAR POR DNI";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -271,6 +271,36 @@
             this.PANELMATRICULA.Name = "PANELMATRICULA";
             this.PANELMATRICULA.Size = new System.Drawing.Size(401, 262);
             this.PANELMATRICULA.TabIndex = 9;
+            // 
+            // btnNuevoHorario
+            // 
+            this.btnNuevoHorario.Location = new System.Drawing.Point(312, 234);
+            this.btnNuevoHorario.Name = "btnNuevoHorario";
+            this.btnNuevoHorario.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoHorario.TabIndex = 9;
+            this.btnNuevoHorario.Text = "Nuevo Horario";
+            this.btnNuevoHorario.UseVisualStyleBackColor = true;
+            this.btnNuevoHorario.Click += new System.EventHandler(this.btnNuevoHorario_Click);
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(81, 235);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(225, 21);
+            this.cbHorario.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 239);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "HORARIO";
             // 
             // NUMCICLO
             // 
@@ -701,13 +731,18 @@
             // 
             // btnAgregarSaldo
             // 
+            this.btnAgregarSaldo.BackColor = System.Drawing.Color.Navy;
             this.btnAgregarSaldo.Enabled = false;
-            this.btnAgregarSaldo.Location = new System.Drawing.Point(548, 10);
+            this.btnAgregarSaldo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarSaldo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarSaldo.Location = new System.Drawing.Point(539, 10);
             this.btnAgregarSaldo.Name = "btnAgregarSaldo";
-            this.btnAgregarSaldo.Size = new System.Drawing.Size(96, 23);
+            this.btnAgregarSaldo.Size = new System.Drawing.Size(109, 22);
             this.btnAgregarSaldo.TabIndex = 30;
             this.btnAgregarSaldo.Text = "Agregar Saldo";
-            this.btnAgregarSaldo.UseVisualStyleBackColor = true;
+            this.btnAgregarSaldo.UseVisualStyleBackColor = false;
             this.btnAgregarSaldo.Click += new System.EventHandler(this.btnAgregarSaldo_Click);
             // 
             // chboxCambiarTipoAlumno
@@ -810,36 +845,6 @@
             this.BTNGUARDARPAGO.Text = "GUARDAR PAGO";
             this.BTNGUARDARPAGO.UseVisualStyleBackColor = true;
             this.BTNGUARDARPAGO.Click += new System.EventHandler(this.BTNGUARDARPAGO_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 239);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "HORARIO";
-            // 
-            // cbHorario
-            // 
-            this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(81, 235);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(225, 21);
-            this.cbHorario.TabIndex = 8;
-            // 
-            // btnNuevoHorario
-            // 
-            this.btnNuevoHorario.Location = new System.Drawing.Point(312, 234);
-            this.btnNuevoHorario.Name = "btnNuevoHorario";
-            this.btnNuevoHorario.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevoHorario.TabIndex = 9;
-            this.btnNuevoHorario.Text = "Nuevo Horario";
-            this.btnNuevoHorario.UseVisualStyleBackColor = true;
-            this.btnNuevoHorario.Click += new System.EventHandler(this.btnNuevoHorario_Click);
             // 
             // frmCrearPago
             // 

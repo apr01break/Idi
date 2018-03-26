@@ -271,6 +271,37 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        public void buscarTema(string fech)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("buscar_tema", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idgrupo", idGrupo));
+                cmd.Parameters.Add(new SqlParameter("@fecha", fech));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    string titulo = dt.Rows[0][0].ToString();
+                    txtTituloTema.Text = titulo;
+                }
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void cbFechas_TextChanged(object sender, EventArgs e)
         {
             if (cbFechas.Text != "")
@@ -308,7 +339,7 @@ namespace InstitutoDeIdiomas
                     {
                         cmd.Connection.Close();
                     }
-
+                    buscarTema(fech);
                 }
                 catch (Exception ex)
                 {
@@ -569,6 +600,10 @@ namespace InstitutoDeIdiomas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void frmRegistrarNotas_Load(object sender, EventArgs e)
+        {
         }
     }
 }

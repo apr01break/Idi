@@ -72,6 +72,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -148,11 +149,23 @@
     <Compile Include="frmActualizarUsuario.Designer.cs">
       <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarAlumnoExtemporaneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarAlumnoExtemporaneo.Designer.cs">
+      <DependentUpon>frmAgregarAlumnoExtemporaneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarHorarioReferencia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAgregarHorarioReferencia.Designer.cs">
       <DependentUpon>frmAgregarHorarioReferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarNotasExtemporaneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarNotasExtemporaneo.Designer.cs">
+      <DependentUpon>frmAgregarNotasExtemporaneo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAgregarSaldo.cs">
       <SubType>Form</SubType>
@@ -384,8 +397,14 @@
     <EmbeddedResource Include="frmActualizarUsuario.resx">
       <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarAlumnoExtemporaneo.resx">
+      <DependentUpon>frmAgregarAlumnoExtemporaneo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarHorarioReferencia.resx">
       <DependentUpon>frmAgregarHorarioReferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarNotasExtemporaneo.resx">
+      <DependentUpon>frmAgregarNotasExtemporaneo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarSaldo.resx">
       <DependentUpon>frmAgregarSaldo.cs</DependentUpon>
@@ -599,7 +618,7 @@
     <None Include="Properties\DataSources\InstitutoDeIdiomas.Model.Foto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

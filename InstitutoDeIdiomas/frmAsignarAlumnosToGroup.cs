@@ -75,12 +75,12 @@ namespace InstitutoDeIdiomas
                 DataRow row2 = dt.Rows[0];
                 if (!DBNull.Value.Equals(row2["horaInicio"]))
                 {
-                    String datime = Convert.ToDateTime(row2["horaInicio"]).ToString("HH:mm tt");
+                    String datime = Convert.ToDateTime(row2["horaInicio"]).ToString("HH:mm");
                     row2["horaInicio"] = datime;
                 }
                 if (!DBNull.Value.Equals(row2["horaFinal"]))
                 {
-                    String datime = Convert.ToDateTime(row2["horaFinal"]).ToString("HH:mm tt");
+                    String datime = Convert.ToDateTime(row2["horaFinal"]).ToString("HH:mm");
                     row2["horaFinal"] = datime;
                 }
                 txtIdioma.Text = row2[1].ToString();
@@ -197,7 +197,6 @@ namespace InstitutoDeIdiomas
                     {
                         cmd.Connection.Close();
                     }
-                    MessageBox.Show("EL ALUMNO FUE ASIGNADO CORRECTAMENTE");
                     cargarAlumnoGrupo(id);
                 }
                 else if (v == 1)

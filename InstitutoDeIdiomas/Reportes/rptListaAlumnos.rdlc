@@ -61,7 +61,7 @@
                     <Value>RELACIÓN DE ALUMNOS</Value>
                     <Style>
                       <FontFamily>GARAmond</FontFamily>
-                      <FontSize>17pt</FontSize>
+                      <FontSize>15pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -72,10 +72,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>3.88424cm</Top>
-            <Left>3.55974cm</Left>
+            <Top>7.14426cm</Top>
+            <Left>1.57237cm</Left>
             <Height>0.83495cm</Height>
-            <Width>12.42063cm</Width>
+            <Width>15.06033cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -104,8 +104,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.8737cm</Top>
-            <Left>2.77229cm</Left>
+            <Top>4.0387cm</Top>
+            <Left>2.47212cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>1</ZIndex>
@@ -149,8 +149,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>6.65009cm</Top>
-            <Left>2.77229cm</Left>
+            <Top>4.81509cm</Top>
+            <Left>2.47212cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>2</ZIndex>
@@ -181,8 +181,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.8737cm</Top>
-            <Left>11.30543cm</Left>
+            <Top>4.0387cm</Top>
+            <Left>11.32276cm</Left>
             <Height>0.6cm</Height>
             <Width>1.89209cm</Width>
             <ZIndex>3</ZIndex>
@@ -213,8 +213,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.8737cm</Top>
-            <Left>6.19014cm</Left>
+            <Top>4.0387cm</Top>
+            <Left>5.88997cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>4</ZIndex>
@@ -245,8 +245,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>6.65009cm</Top>
-            <Left>6.19014cm</Left>
+            <Top>4.81509cm</Top>
+            <Left>5.88997cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>5</ZIndex>
@@ -277,8 +277,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.8737cm</Top>
-            <Left>13.37391cm</Left>
+            <Top>4.0387cm</Top>
+            <Left>13.39124cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>6</ZIndex>
@@ -309,8 +309,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>7.42648cm</Top>
-            <Left>2.77229cm</Left>
+            <Top>5.59148cm</Top>
+            <Left>2.47212cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>7</ZIndex>
@@ -341,8 +341,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>7.42648cm</Top>
-            <Left>6.19014cm</Left>
+            <Top>5.59148cm</Top>
+            <Left>5.88997cm</Left>
             <Height>0.6cm</Height>
             <Width>9.79023cm</Width>
             <ZIndex>8</ZIndex>
@@ -373,8 +373,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.61481cm</Top>
-            <Left>11.30543cm</Left>
+            <Top>4.77981cm</Top>
+            <Left>11.32276cm</Left>
             <Height>0.6cm</Height>
             <Width>1.89209cm</Width>
             <ZIndex>9</ZIndex>
@@ -405,8 +405,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>6.61481cm</Top>
-            <Left>13.37391cm</Left>
+            <Top>4.77981cm</Top>
+            <Left>13.39124cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>10</ZIndex>
@@ -437,8 +437,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.20287cm</Top>
-            <Left>2.77229cm</Left>
+            <Top>6.36787cm</Top>
+            <Left>2.47212cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
             <ZIndex>11</ZIndex>
@@ -469,10 +469,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.20287cm</Top>
-            <Left>6.20747cm</Left>
+            <Top>6.36787cm</Top>
+            <Left>5.9073cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.05966cm</Width>
+            <Width>1.24827cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -501,8 +501,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.20287cm</Top>
-            <Left>8.73456cm</Left>
+            <Top>6.36787cm</Top>
+            <Left>7.623cm</Left>
             <Height>0.6cm</Height>
             <Width>1.95822cm</Width>
             <ZIndex>13</ZIndex>
@@ -533,8 +533,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.20287cm</Top>
-            <Left>8.26713cm</Left>
+            <Top>6.36787cm</Top>
+            <Left>7.19085cm</Left>
             <Height>0.6cm</Height>
             <Width>0.43215cm</Width>
             <ZIndex>14</ZIndex>
@@ -787,7 +787,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetListaAlumnos</DataSetName>
-            <Top>9.42226cm</Top>
+            <Top>8.15226cm</Top>
             <Left>3.36591cm</Left>
             <Height>1.2cm</Height>
             <Width>11.86889cm</Width>
@@ -798,50 +798,6 @@
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>"</Value>
-                    <Style>
-                      <FontFamily>Monotype Corsiva</FontFamily>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>JOSE FAUSTINO SANCHEZ CARRION”</Value>
-                    <Style>
-                      <FontFamily>Monotype Corsiva</FontFamily>
-                      <FontSize>13pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>2.02333cm</Top>
-            <Left>6.19014cm</Left>
-            <Height>0.67938cm</Height>
-            <Width>9.53792cm</Width>
-            <ZIndex>16</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox4">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -863,11 +819,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.91064cm</Top>
-            <Left>6.19014cm</Left>
+            <Top>2.02333cm</Top>
+            <Left>5.71421cm</Left>
             <Height>0.63669cm</Height>
             <Width>9.53792cm</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -882,11 +838,11 @@
             <Source>Embedded</Source>
             <Value>logo</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>1.24694cm</Top>
-            <Left>2.98993cm</Left>
-            <Height>2.14164cm</Height>
-            <Width>2.26382cm</Width>
-            <ZIndex>18</ZIndex>
+            <Top>1.06234cm</Top>
+            <Left>1.57237cm</Left>
+            <Height>1.79768cm</Height>
+            <Width>1.8934cm</Width>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -900,10 +856,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>UNIVERSIDAD NACIONAL</Value>
+                    <Value>UNIVERSIDAD NACIONAL JOSÉ FAUSTINO SÁNCHEZ CARRIÓN</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>13pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -914,10 +870,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.24694cm</Top>
-            <Left>6.19014cm</Left>
+            <Left>3.50105cm</Left>
             <Height>0.6cm</Height>
-            <Width>9.53792cm</Width>
-            <ZIndex>19</ZIndex>
+            <Width>13.13165cm</Width>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -945,11 +901,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.09731cm</Top>
-            <Left>2.77229cm</Left>
+            <Top>3.26231cm</Top>
+            <Left>2.47212cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -977,11 +933,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.09731cm</Top>
-            <Left>6.20747cm</Left>
+            <Top>3.26231cm</Top>
+            <Left>5.9073cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24146cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -993,10 +949,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>25.476cm</Height>
+        <Height>9.54808cm</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>18.47083cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

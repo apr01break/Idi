@@ -32,7 +32,6 @@ namespace InstitutoDeIdiomas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerNotas));
-            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.txtHorario2 = new System.Windows.Forms.TextBox();
             this.txtSalon = new System.Windows.Forms.TextBox();
@@ -62,13 +61,15 @@ namespace InstitutoDeIdiomas
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAgregarExtemporaneo = new System.Windows.Forms.Button();
+            this.txtFin = new System.Windows.Forms.TextBox();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.txtFin = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEliminarAlumno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwListening)).BeginInit();
@@ -77,12 +78,13 @@ namespace InstitutoDeIdiomas
             ((System.ComponentModel.ISupportInitialize)(this.dgvwWriting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwUseOfEnglish)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 71);
+            this.label11.Location = new System.Drawing.Point(323, 71);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(13, 13);
             this.label11.TabIndex = 58;
@@ -90,11 +92,11 @@ namespace InstitutoDeIdiomas
             // 
             // txtHorario2
             // 
-            this.txtHorario2.Location = new System.Drawing.Point(343, 68);
+            this.txtHorario2.Location = new System.Drawing.Point(337, 68);
             this.txtHorario2.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario2.Name = "txtHorario2";
             this.txtHorario2.ReadOnly = true;
-            this.txtHorario2.Size = new System.Drawing.Size(53, 20);
+            this.txtHorario2.Size = new System.Drawing.Size(48, 20);
             this.txtHorario2.TabIndex = 57;
             // 
             // txtSalon
@@ -122,7 +124,7 @@ namespace InstitutoDeIdiomas
             this.txtHorario.Margin = new System.Windows.Forms.Padding(2);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.ReadOnly = true;
-            this.txtHorario.Size = new System.Drawing.Size(53, 20);
+            this.txtHorario.Size = new System.Drawing.Size(48, 20);
             this.txtHorario.TabIndex = 54;
             // 
             // txtCiclo
@@ -201,8 +203,9 @@ namespace InstitutoDeIdiomas
             this.dgvwNotas.Name = "dgvwNotas";
             this.dgvwNotas.ReadOnly = true;
             this.dgvwNotas.RowHeadersVisible = false;
-            this.dgvwNotas.Size = new System.Drawing.Size(794, 392);
+            this.dgvwNotas.Size = new System.Drawing.Size(794, 381);
             this.dgvwNotas.TabIndex = 60;
+            this.dgvwNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwNotas_CellClick);
             // 
             // cmbTipoNota
             // 
@@ -286,9 +289,9 @@ namespace InstitutoDeIdiomas
             this.btnConcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConcluirGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConcluirGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnConcluirGrupo.Location = new System.Drawing.Point(581, 20);
+            this.btnConcluirGrupo.Location = new System.Drawing.Point(619, 16);
             this.btnConcluirGrupo.Name = "btnConcluirGrupo";
-            this.btnConcluirGrupo.Size = new System.Drawing.Size(196, 44);
+            this.btnConcluirGrupo.Size = new System.Drawing.Size(181, 44);
             this.btnConcluirGrupo.TabIndex = 70;
             this.btnConcluirGrupo.Text = "CONCLUIR GRUPO";
             this.btnConcluirGrupo.UseVisualStyleBackColor = false;
@@ -301,9 +304,9 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumno.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumno.Location = new System.Drawing.Point(581, 143);
+            this.btnRelacionAlumno.Location = new System.Drawing.Point(619, 125);
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
-            this.btnRelacionAlumno.Size = new System.Drawing.Size(196, 44);
+            this.btnRelacionAlumno.Size = new System.Drawing.Size(181, 44);
             this.btnRelacionAlumno.TabIndex = 71;
             this.btnRelacionAlumno.Text = "ACTA FINAL NOTAS";
             this.btnRelacionAlumno.UseVisualStyleBackColor = false;
@@ -335,9 +338,9 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumnos.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(581, 82);
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(619, 70);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
-            this.btnRelacionAlumnos.Size = new System.Drawing.Size(196, 44);
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(181, 44);
             this.btnRelacionAlumnos.TabIndex = 75;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
             this.btnRelacionAlumnos.UseVisualStyleBackColor = false;
@@ -366,6 +369,8 @@ namespace InstitutoDeIdiomas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnEliminarAlumno);
+            this.panel1.Controls.Add(this.btnAgregarExtemporaneo);
             this.panel1.Controls.Add(this.txtFin);
             this.panel1.Controls.Add(this.txtInicio);
             this.panel1.Controls.Add(this.label12);
@@ -397,8 +402,48 @@ namespace InstitutoDeIdiomas
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 644);
+            this.panel1.Size = new System.Drawing.Size(822, 662);
             this.panel1.TabIndex = 78;
+            // 
+            // btnAgregarExtemporaneo
+            // 
+            this.btnAgregarExtemporaneo.BackColor = System.Drawing.Color.Teal;
+            this.btnAgregarExtemporaneo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarExtemporaneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarExtemporaneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarExtemporaneo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarExtemporaneo.Location = new System.Drawing.Point(619, 179);
+            this.btnAgregarExtemporaneo.Name = "btnAgregarExtemporaneo";
+            this.btnAgregarExtemporaneo.Size = new System.Drawing.Size(181, 44);
+            this.btnAgregarExtemporaneo.TabIndex = 84;
+            this.btnAgregarExtemporaneo.Text = "AGREGAR ALUMNOS EXTEMPORANEOS";
+            this.btnAgregarExtemporaneo.UseVisualStyleBackColor = false;
+            this.btnAgregarExtemporaneo.Click += new System.EventHandler(this.btnAgregarExtemporaneo_Click);
+            // 
+            // txtFin
+            // 
+            this.txtFin.Location = new System.Drawing.Point(349, 95);
+            this.txtFin.Name = "txtFin";
+            this.txtFin.ReadOnly = true;
+            this.txtFin.Size = new System.Drawing.Size(66, 20);
+            this.txtFin.TabIndex = 83;
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(274, 95);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.ReadOnly = true;
+            this.txtInicio.Size = new System.Drawing.Size(66, 20);
+            this.txtInicio.TabIndex = 82;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(210, 98);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "INICIO-FIN";
             // 
             // label2
             // 
@@ -419,44 +464,38 @@ namespace InstitutoDeIdiomas
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(21, 189);
             this.label1.Name = "label1";
             this.label1.ReadOnly = true;
-            this.label1.Size = new System.Drawing.Size(558, 34);
+            this.label1.Size = new System.Drawing.Size(592, 34);
             this.label1.TabIndex = 78;
             this.label1.Text = "";
             this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // label12
+            // btnEliminarAlumno
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(210, 98);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 13);
-            this.label12.TabIndex = 81;
-            this.label12.Text = "INICIO-FIN";
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(274, 95);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(63, 20);
-            this.txtInicio.TabIndex = 82;
-            // 
-            // txtFin
-            // 
-            this.txtFin.Location = new System.Drawing.Point(349, 95);
-            this.txtFin.Name = "txtFin";
-            this.txtFin.Size = new System.Drawing.Size(63, 20);
-            this.txtFin.TabIndex = 83;
+            this.btnEliminarAlumno.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarAlumno.Enabled = false;
+            this.btnEliminarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnEliminarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAlumno.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarAlumno.Location = new System.Drawing.Point(689, 628);
+            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
+            this.btnEliminarAlumno.Size = new System.Drawing.Size(119, 23);
+            this.btnEliminarAlumno.TabIndex = 85;
+            this.btnEliminarAlumno.Text = "Eliminar Alumno";
+            this.btnEliminarAlumno.UseVisualStyleBackColor = false;
+            this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
             // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 708);
+            this.ClientSize = new System.Drawing.Size(822, 726);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvwBase);
             this.Controls.Add(this.dgvwUseOfEnglish);
@@ -470,7 +509,6 @@ namespace InstitutoDeIdiomas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VER NOTAS";
             this.Load += new System.EventHandler(this.frmVerNotas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwListening)).EndInit();
@@ -480,6 +518,7 @@ namespace InstitutoDeIdiomas
             ((System.ComponentModel.ISupportInitialize)(this.dgvwUseOfEnglish)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,5 +560,7 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.TextBox txtFin;
         private System.Windows.Forms.TextBox txtInicio;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAgregarExtemporaneo;
+        private System.Windows.Forms.Button btnEliminarAlumno;
     }
 }
