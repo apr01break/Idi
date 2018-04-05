@@ -24,7 +24,7 @@ namespace InstitutoDeIdiomas
             TXTCODUSER.Text = id;
             TXTBIENBUSER.Text = nombre;
             TXTBIENBUSER.SelectionAlignment = HorizontalAlignment.Center;
-            lblClave.Text = CrearPassword(10);
+            //lblClave.Text = CrearPassword(10);
 
             if (id == "1034")
             {

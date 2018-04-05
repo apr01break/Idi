@@ -275,6 +275,7 @@ namespace InstitutoDeIdiomas
         {
             try
             {
+                txtTituloTema.Text = "";
                 SqlCommand cmd = new SqlCommand("buscar_tema", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
                 {

@@ -44,7 +44,7 @@
             this.lblClave = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelDocentes = new System.Windows.Forms.Panel();
-            this.btnRegistrarAsistencia = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRegistrarAsistenciaLibre = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistroAuxiliar = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistrarNotas = new InstitutoDeIdiomas.BotonCircular();
             this.panelAsistencia = new System.Windows.Forms.Panel();
@@ -218,29 +218,30 @@
             // panelDocentes
             // 
             this.panelDocentes.Controls.Add(this.label6);
-            this.panelDocentes.Controls.Add(this.btnRegistrarAsistencia);
+            this.panelDocentes.Controls.Add(this.btnRegistrarAsistenciaLibre);
             this.panelDocentes.Controls.Add(this.btnRegistroAuxiliar);
             this.panelDocentes.Controls.Add(this.btnRegistrarNotas);
             this.panelDocentes.Controls.Add(this.label2);
             this.panelDocentes.Controls.Add(this.label4);
-            this.panelDocentes.Location = new System.Drawing.Point(232, 169);
+            this.panelDocentes.Location = new System.Drawing.Point(232, 168);
             this.panelDocentes.Name = "panelDocentes";
             this.panelDocentes.Size = new System.Drawing.Size(627, 220);
             this.panelDocentes.TabIndex = 51;
+            this.panelDocentes.Visible = false;
             this.panelDocentes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDocentes_Paint);
             // 
-            // btnRegistrarAsistencia
+            // btnRegistrarAsistenciaLibre
             // 
-            this.btnRegistrarAsistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRegistrarAsistencia.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarAsistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarAsistencia.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAsistencia.Image")));
-            this.btnRegistrarAsistencia.Location = new System.Drawing.Point(452, 45);
-            this.btnRegistrarAsistencia.Name = "btnRegistrarAsistencia";
-            this.btnRegistrarAsistencia.Size = new System.Drawing.Size(120, 120);
-            this.btnRegistrarAsistencia.TabIndex = 49;
-            this.btnRegistrarAsistencia.UseVisualStyleBackColor = false;
-            this.btnRegistrarAsistencia.Click += new System.EventHandler(this.btnRegistrarAsistencia_Click);
+            this.btnRegistrarAsistenciaLibre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarAsistenciaLibre.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarAsistenciaLibre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarAsistenciaLibre.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAsistenciaLibre.Image")));
+            this.btnRegistrarAsistenciaLibre.Location = new System.Drawing.Point(452, 45);
+            this.btnRegistrarAsistenciaLibre.Name = "btnRegistrarAsistenciaLibre";
+            this.btnRegistrarAsistenciaLibre.Size = new System.Drawing.Size(120, 120);
+            this.btnRegistrarAsistenciaLibre.TabIndex = 49;
+            this.btnRegistrarAsistenciaLibre.UseVisualStyleBackColor = false;
+            this.btnRegistrarAsistenciaLibre.Click += new System.EventHandler(this.btnRegistrarAsistencia_Click);
             // 
             // btnRegistroAuxiliar
             // 
@@ -274,7 +275,7 @@
             this.panelAsistencia.Controls.Add(this.btnJustificarInasistencia);
             this.panelAsistencia.Controls.Add(this.btnPermisoAsistencia);
             this.panelAsistencia.Controls.Add(this.label7);
-            this.panelAsistencia.Location = new System.Drawing.Point(232, 169);
+            this.panelAsistencia.Location = new System.Drawing.Point(232, 168);
             this.panelAsistencia.Name = "panelAsistencia";
             this.panelAsistencia.Size = new System.Drawing.Size(627, 220);
             this.panelAsistencia.TabIndex = 20;
@@ -431,8 +432,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TXTCODUSER);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panelAsistencia);
             this.Controls.Add(this.panelDocentes);
+            this.Controls.Add(this.panelAsistencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -473,7 +474,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label lblClave;
-        private BotonCircular btnRegistrarAsistencia;
+        private BotonCircular btnRegistrarAsistenciaLibre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelDocentes;
         private System.Windows.Forms.Panel panelAsistencia;

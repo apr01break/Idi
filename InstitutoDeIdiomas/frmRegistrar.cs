@@ -88,7 +88,7 @@ namespace InstitutoDeIdiomas
                 var SEXRADIOBUTTONCHOSEN = panel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
                 var TRABRBCHOSEN = GBROLTRABAJADOR.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
                 USERSEXCHOSEN = SEXRADIOBUTTONCHOSEN.Text;
-                ROLTRABAJADORCHOSEN = TRABRBCHOSEN.Text;               
+                ROLTRABAJADORCHOSEN = TRABRBCHOSEN.Text;
                 try
                 {
                     _SqlConnection.Open();
@@ -122,6 +122,7 @@ namespace InstitutoDeIdiomas
                     //se extraen los bytes del buffer para asignarlos como valor para el parametro
                     cmd.Parameters["@foto"].Value = ms.GetBuffer();
                     cmd.ExecuteNonQuery();
+                    crearRolesUsuario(TXTDNI.Text.Trim());
                     LIMPIAR_DATA_REGISTRO();
                     MessageBox.Show("REGISTRO GUARDADO");
                     cmd.Parameters.Clear();
@@ -133,8 +134,59 @@ namespace InstitutoDeIdiomas
                 finally {
                     _SqlConnection.Close();
                 }
-            }     
-          
+            } 
+        }
+
+        public DataTable listarRoles()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_roles", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public void crearRolesUsuario(string dni)
+        {
+            DataTable dtRoles = new DataTable();
+            dtRoles = listarRoles();
+            foreach (DataRow row in dtRoles.Rows)
+            {
+                try
+                {
+                    _SqlConnection.Open();
+                    SqlCommand cmd = new SqlCommand("insert_usuario", _SqlConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@dni", dni));
+                    cmd.Parameters.Add(new SqlParameter("@idRol", row[0].ToString()));
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    _SqlConnection.Close();
+                }
+            }
         }
         //METODO QUE VALIDA QUE NO HAYA INFORMACIÓN EN BLANCO
         private bool VALIDAR_NO_VACIOS() {
@@ -165,7 +217,7 @@ namespace InstitutoDeIdiomas
                 ok = false;
                 ERRORTXTVACIO.SetError(BTNFOTOUSUARIO, "INGRESA LA FOTO DEL TRABAJADOR");
             }
-            if (RBADMINISTRADOR.Checked == false && RBPROFESOR.Checked == false && RBSECRETARIO.Checked == false) {
+            if (RBADMINISTRADOR.Checked == false && RBPROFESOR.Checked == false && RBSECRETARIO.Checked == false && RBACADEMICA.Checked==false && RBSECPRINCIPAL.Checked==false) {
                 ok = false;
                 ERRORTXTVACIO.SetError(GBROLTRABAJADOR, "SELECCIONA EL ROL");
             }

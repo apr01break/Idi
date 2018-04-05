@@ -50,41 +50,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Consultar = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnConsultarAlumno = new InstitutoDeIdiomas.BotonCircular();
-            this.btnActualizarAlumno = new InstitutoDeIdiomas.BotonCircular();
-            this.btnRegistrarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.label4 = new System.Windows.Forms.Label();
             this.panelPago = new System.Windows.Forms.Panel();
             this.lblCorregirPago = new System.Windows.Forms.Label();
-            this.btnCorregirPago = new InstitutoDeIdiomas.BotonCircular();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnConsultaGeneralPago = new InstitutoDeIdiomas.BotonCircular();
-            this.btnRegistrarPago = new InstitutoDeIdiomas.BotonCircular();
-            this.btnConsultaEspecificaPago = new InstitutoDeIdiomas.BotonCircular();
             this.panelGrupos = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnAsignarAlumnosGrupo = new InstitutoDeIdiomas.BotonCircular();
-            this.btnCrearGrupo = new InstitutoDeIdiomas.BotonCircular();
-            this.btnGruposEmpezados = new InstitutoDeIdiomas.BotonCircular();
             this.panelReportes = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnPagosReporte = new InstitutoDeIdiomas.BotonCircular();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnAsistenciaAlumnoReportes = new InstitutoDeIdiomas.BotonCircular();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnAsistenciaGrupoReportes = new InstitutoDeIdiomas.BotonCircular();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnFichaMatricula = new InstitutoDeIdiomas.BotonCircular();
-            this.btnRecordAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.panelUsuario = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
             this.txtMain = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -97,13 +81,31 @@
             this.btnCambiarClave = new System.Windows.Forms.Button();
             this.panelGruposPasados = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnVerNotasPasadas = new InstitutoDeIdiomas.BotonCircular();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.btnAsignarRoles = new InstitutoDeIdiomas.BotonCircular();
+            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnPagosReporte = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsistenciaAlumnoReportes = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsistenciaGrupoReportes = new InstitutoDeIdiomas.BotonCircular();
+            this.btnFichaMatricula = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRecordAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsignarAlumnosGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnCrearGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnGruposEmpezados = new InstitutoDeIdiomas.BotonCircular();
+            this.btnVerNotasPasadas = new InstitutoDeIdiomas.BotonCircular();
             this.btnAgregarAsistenciaNotaPasada = new InstitutoDeIdiomas.BotonCircular();
             this.btnCrearGrupoPasado = new InstitutoDeIdiomas.BotonCircular();
             this.btnAgregarAlumnoGrupoPasado = new InstitutoDeIdiomas.BotonCircular();
+            this.btnCorregirPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConsultaGeneralPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRegistrarPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConsultaEspecificaPago = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConsultarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnActualizarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRegistrarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -174,7 +176,6 @@
             this.btnGruposPasados.Text = "   Grupos pasados ";
             this.btnGruposPasados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGruposPasados.UseVisualStyleBackColor = true;
-            this.btnGruposPasados.Visible = false;
             this.btnGruposPasados.Click += new System.EventHandler(this.btnGruposPasados_Click);
             // 
             // pictureBox2
@@ -390,45 +391,6 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Nuevo alumno";
             // 
-            // btnConsultarAlumno
-            // 
-            this.btnConsultarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnConsultarAlumno.FlatAppearance.BorderSize = 0;
-            this.btnConsultarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarAlumno.Image")));
-            this.btnConsultarAlumno.Location = new System.Drawing.Point(171, 189);
-            this.btnConsultarAlumno.Name = "btnConsultarAlumno";
-            this.btnConsultarAlumno.Size = new System.Drawing.Size(90, 90);
-            this.btnConsultarAlumno.TabIndex = 14;
-            this.btnConsultarAlumno.UseVisualStyleBackColor = false;
-            this.btnConsultarAlumno.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnActualizarAlumno
-            // 
-            this.btnActualizarAlumno.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnActualizarAlumno.FlatAppearance.BorderSize = 0;
-            this.btnActualizarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarAlumno.Image")));
-            this.btnActualizarAlumno.Location = new System.Drawing.Point(435, 44);
-            this.btnActualizarAlumno.Name = "btnActualizarAlumno";
-            this.btnActualizarAlumno.Size = new System.Drawing.Size(90, 90);
-            this.btnActualizarAlumno.TabIndex = 13;
-            this.btnActualizarAlumno.UseVisualStyleBackColor = false;
-            this.btnActualizarAlumno.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnRegistrarAlumno
-            // 
-            this.btnRegistrarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRegistrarAlumno.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAlumno.Image")));
-            this.btnRegistrarAlumno.Location = new System.Drawing.Point(171, 44);
-            this.btnRegistrarAlumno.Name = "btnRegistrarAlumno";
-            this.btnRegistrarAlumno.Size = new System.Drawing.Size(90, 90);
-            this.btnRegistrarAlumno.TabIndex = 12;
-            this.btnRegistrarAlumno.UseVisualStyleBackColor = false;
-            this.btnRegistrarAlumno.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -466,22 +428,7 @@
             this.lblCorregirPago.Size = new System.Drawing.Size(99, 17);
             this.lblCorregirPago.TabIndex = 45;
             this.lblCorregirPago.Text = "Corregir Pago";
-            this.lblCorregirPago.Visible = false;
             this.lblCorregirPago.Click += new System.EventHandler(this.lblCorregirPago_Click);
-            // 
-            // btnCorregirPago
-            // 
-            this.btnCorregirPago.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnCorregirPago.FlatAppearance.BorderSize = 0;
-            this.btnCorregirPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorregirPago.Image = ((System.Drawing.Image)(resources.GetObject("btnCorregirPago.Image")));
-            this.btnCorregirPago.Location = new System.Drawing.Point(435, 189);
-            this.btnCorregirPago.Name = "btnCorregirPago";
-            this.btnCorregirPago.Size = new System.Drawing.Size(90, 90);
-            this.btnCorregirPago.TabIndex = 44;
-            this.btnCorregirPago.UseVisualStyleBackColor = false;
-            this.btnCorregirPago.Visible = false;
-            this.btnCorregirPago.Click += new System.EventHandler(this.btnCorregirPago_Click_1);
             // 
             // label9
             // 
@@ -515,45 +462,6 @@
             this.label11.TabIndex = 41;
             this.label11.Text = "Nuevo Pago";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // btnConsultaGeneralPago
-            // 
-            this.btnConsultaGeneralPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnConsultaGeneralPago.FlatAppearance.BorderSize = 0;
-            this.btnConsultaGeneralPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultaGeneralPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaGeneralPago.Image")));
-            this.btnConsultaGeneralPago.Location = new System.Drawing.Point(171, 189);
-            this.btnConsultaGeneralPago.Name = "btnConsultaGeneralPago";
-            this.btnConsultaGeneralPago.Size = new System.Drawing.Size(90, 90);
-            this.btnConsultaGeneralPago.TabIndex = 40;
-            this.btnConsultaGeneralPago.UseVisualStyleBackColor = false;
-            this.btnConsultaGeneralPago.Click += new System.EventHandler(this.btnConsultaGeneralPago_Click_1);
-            // 
-            // btnRegistrarPago
-            // 
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarPago.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPago.Image")));
-            this.btnRegistrarPago.Location = new System.Drawing.Point(171, 44);
-            this.btnRegistrarPago.Name = "btnRegistrarPago";
-            this.btnRegistrarPago.Size = new System.Drawing.Size(90, 90);
-            this.btnRegistrarPago.TabIndex = 39;
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
-            // 
-            // btnConsultaEspecificaPago
-            // 
-            this.btnConsultaEspecificaPago.BackColor = System.Drawing.Color.Teal;
-            this.btnConsultaEspecificaPago.FlatAppearance.BorderSize = 0;
-            this.btnConsultaEspecificaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultaEspecificaPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaEspecificaPago.Image")));
-            this.btnConsultaEspecificaPago.Location = new System.Drawing.Point(435, 44);
-            this.btnConsultaEspecificaPago.Name = "btnConsultaEspecificaPago";
-            this.btnConsultaEspecificaPago.Size = new System.Drawing.Size(90, 90);
-            this.btnConsultaEspecificaPago.TabIndex = 38;
-            this.btnConsultaEspecificaPago.UseVisualStyleBackColor = false;
-            this.btnConsultaEspecificaPago.Click += new System.EventHandler(this.btnConsultaEspecificaPago_Click_1);
             // 
             // panelGrupos
             // 
@@ -600,45 +508,6 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "Nuevo Grupo";
             // 
-            // btnAsignarAlumnosGrupo
-            // 
-            this.btnAsignarAlumnosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAsignarAlumnosGrupo.FlatAppearance.BorderSize = 0;
-            this.btnAsignarAlumnosGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignarAlumnosGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarAlumnosGrupo.Image")));
-            this.btnAsignarAlumnosGrupo.Location = new System.Drawing.Point(171, 189);
-            this.btnAsignarAlumnosGrupo.Name = "btnAsignarAlumnosGrupo";
-            this.btnAsignarAlumnosGrupo.Size = new System.Drawing.Size(90, 90);
-            this.btnAsignarAlumnosGrupo.TabIndex = 35;
-            this.btnAsignarAlumnosGrupo.UseVisualStyleBackColor = false;
-            this.btnAsignarAlumnosGrupo.Click += new System.EventHandler(this.btnAsignarAlumnosGrupo_Click_1);
-            // 
-            // btnCrearGrupo
-            // 
-            this.btnCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrearGrupo.FlatAppearance.BorderSize = 0;
-            this.btnCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupo.Image")));
-            this.btnCrearGrupo.Location = new System.Drawing.Point(171, 44);
-            this.btnCrearGrupo.Name = "btnCrearGrupo";
-            this.btnCrearGrupo.Size = new System.Drawing.Size(90, 90);
-            this.btnCrearGrupo.TabIndex = 34;
-            this.btnCrearGrupo.UseVisualStyleBackColor = false;
-            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click_1);
-            // 
-            // btnGruposEmpezados
-            // 
-            this.btnGruposEmpezados.BackColor = System.Drawing.Color.Teal;
-            this.btnGruposEmpezados.FlatAppearance.BorderSize = 0;
-            this.btnGruposEmpezados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruposEmpezados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposEmpezados.Image")));
-            this.btnGruposEmpezados.Location = new System.Drawing.Point(435, 44);
-            this.btnGruposEmpezados.Name = "btnGruposEmpezados";
-            this.btnGruposEmpezados.Size = new System.Drawing.Size(90, 90);
-            this.btnGruposEmpezados.TabIndex = 33;
-            this.btnGruposEmpezados.UseVisualStyleBackColor = false;
-            this.btnGruposEmpezados.Click += new System.EventHandler(this.btnGruposEmpezados_Click_1);
-            // 
             // panelReportes
             // 
             this.panelReportes.BackColor = System.Drawing.Color.Transparent;
@@ -668,19 +537,6 @@
             this.label14.TabIndex = 46;
             this.label14.Text = "Reporte de pagos";
             // 
-            // btnPagosReporte
-            // 
-            this.btnPagosReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnPagosReporte.FlatAppearance.BorderSize = 0;
-            this.btnPagosReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagosReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnPagosReporte.Image")));
-            this.btnPagosReporte.Location = new System.Drawing.Point(304, 44);
-            this.btnPagosReporte.Name = "btnPagosReporte";
-            this.btnPagosReporte.Size = new System.Drawing.Size(90, 90);
-            this.btnPagosReporte.TabIndex = 45;
-            this.btnPagosReporte.UseVisualStyleBackColor = false;
-            this.btnPagosReporte.Click += new System.EventHandler(this.btnPagosReporte_Click);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -690,19 +546,6 @@
             this.label17.Size = new System.Drawing.Size(156, 17);
             this.label17.TabIndex = 44;
             this.label17.Text = "Asistencias por alumno";
-            // 
-            // btnAsistenciaAlumnoReportes
-            // 
-            this.btnAsistenciaAlumnoReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAsistenciaAlumnoReportes.FlatAppearance.BorderSize = 0;
-            this.btnAsistenciaAlumnoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsistenciaAlumnoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaAlumnoReportes.Image")));
-            this.btnAsistenciaAlumnoReportes.Location = new System.Drawing.Point(304, 189);
-            this.btnAsistenciaAlumnoReportes.Name = "btnAsistenciaAlumnoReportes";
-            this.btnAsistenciaAlumnoReportes.Size = new System.Drawing.Size(90, 90);
-            this.btnAsistenciaAlumnoReportes.TabIndex = 43;
-            this.btnAsistenciaAlumnoReportes.UseVisualStyleBackColor = false;
-            this.btnAsistenciaAlumnoReportes.Click += new System.EventHandler(this.btnAsistenciaAlumnoReportes_Click);
             // 
             // label16
             // 
@@ -714,19 +557,6 @@
             this.label16.TabIndex = 42;
             this.label16.Text = "Asistencias por grupo";
             // 
-            // btnAsistenciaGrupoReportes
-            // 
-            this.btnAsistenciaGrupoReportes.BackColor = System.Drawing.Color.Teal;
-            this.btnAsistenciaGrupoReportes.FlatAppearance.BorderSize = 0;
-            this.btnAsistenciaGrupoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsistenciaGrupoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaGrupoReportes.Image")));
-            this.btnAsistenciaGrupoReportes.Location = new System.Drawing.Point(97, 189);
-            this.btnAsistenciaGrupoReportes.Name = "btnAsistenciaGrupoReportes";
-            this.btnAsistenciaGrupoReportes.Size = new System.Drawing.Size(90, 90);
-            this.btnAsistenciaGrupoReportes.TabIndex = 41;
-            this.btnAsistenciaGrupoReportes.UseVisualStyleBackColor = false;
-            this.btnAsistenciaGrupoReportes.Click += new System.EventHandler(this.btnAsistenciaGrupoReportes_Click);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -737,36 +567,11 @@
             this.label15.TabIndex = 40;
             this.label15.Text = "Ficha de matrícula";
             // 
-            // btnFichaMatricula
-            // 
-            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
-            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFichaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMatricula.Image")));
-            this.btnFichaMatricula.Location = new System.Drawing.Point(97, 44);
-            this.btnFichaMatricula.Name = "btnFichaMatricula";
-            this.btnFichaMatricula.Size = new System.Drawing.Size(90, 90);
-            this.btnFichaMatricula.TabIndex = 39;
-            this.btnFichaMatricula.UseVisualStyleBackColor = false;
-            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
-            // 
-            // btnRecordAlumno
-            // 
-            this.btnRecordAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRecordAlumno.FlatAppearance.BorderSize = 0;
-            this.btnRecordAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordAlumno.ForeColor = System.Drawing.Color.Red;
-            this.btnRecordAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRecordAlumno.Image")));
-            this.btnRecordAlumno.Location = new System.Drawing.Point(493, 44);
-            this.btnRecordAlumno.Name = "btnRecordAlumno";
-            this.btnRecordAlumno.Size = new System.Drawing.Size(90, 90);
-            this.btnRecordAlumno.TabIndex = 15;
-            this.btnRecordAlumno.UseVisualStyleBackColor = false;
-            this.btnRecordAlumno.Click += new System.EventHandler(this.btnRecord_Click);
-            // 
             // panelUsuario
             // 
             this.panelUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.panelUsuario.Controls.Add(this.label23);
+            this.panelUsuario.Controls.Add(this.btnAsignarRoles);
             this.panelUsuario.Controls.Add(this.label18);
             this.panelUsuario.Controls.Add(this.btnActualizarUsuario);
             this.panelUsuario.Controls.Add(this.label13);
@@ -776,6 +581,16 @@
             this.panelUsuario.Size = new System.Drawing.Size(685, 312);
             this.panelUsuario.TabIndex = 43;
             this.panelUsuario.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(172, 285);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 17);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Asignar Roles";
             // 
             // label18
             // 
@@ -787,19 +602,6 @@
             this.label18.TabIndex = 43;
             this.label18.Text = "Actualizar datos de usuario";
             // 
-            // btnActualizarUsuario
-            // 
-            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
-            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
-            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
-            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
-            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnActualizarUsuario.TabIndex = 42;
-            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
-            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -809,19 +611,6 @@
             this.label13.Size = new System.Drawing.Size(101, 17);
             this.label13.TabIndex = 41;
             this.label13.Text = "Nuevo usuario";
-            // 
-            // btnNuevoUsuario
-            // 
-            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
-            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnNuevoUsuario.TabIndex = 40;
-            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
-            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
             // 
             // txtMain
             // 
@@ -973,19 +762,6 @@
             this.label19.TabIndex = 53;
             this.label19.Text = "Ver notas";
             // 
-            // btnVerNotasPasadas
-            // 
-            this.btnVerNotasPasadas.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnVerNotasPasadas.FlatAppearance.BorderSize = 0;
-            this.btnVerNotasPasadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerNotasPasadas.Image = ((System.Drawing.Image)(resources.GetObject("btnVerNotasPasadas.Image")));
-            this.btnVerNotasPasadas.Location = new System.Drawing.Point(435, 189);
-            this.btnVerNotasPasadas.Name = "btnVerNotasPasadas";
-            this.btnVerNotasPasadas.Size = new System.Drawing.Size(90, 90);
-            this.btnVerNotasPasadas.TabIndex = 52;
-            this.btnVerNotasPasadas.UseVisualStyleBackColor = false;
-            this.btnVerNotasPasadas.Click += new System.EventHandler(this.btnVerNotasPasadas_Click);
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1016,6 +792,187 @@
             this.label22.TabIndex = 49;
             this.label22.Text = "Nuevo grupo";
             // 
+            // btnAsignarRoles
+            // 
+            this.btnAsignarRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAsignarRoles.FlatAppearance.BorderSize = 0;
+            this.btnAsignarRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarRoles.Image")));
+            this.btnAsignarRoles.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarRoles.Name = "btnAsignarRoles";
+            this.btnAsignarRoles.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarRoles.TabIndex = 44;
+            this.btnAsignarRoles.UseVisualStyleBackColor = false;
+            this.btnAsignarRoles.Visible = false;
+            this.btnAsignarRoles.Click += new System.EventHandler(this.btnAsignarRoles_Click);
+            this.btnAsignarRoles.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarRoles_Layout);
+            // 
+            // btnActualizarUsuario
+            // 
+            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
+            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
+            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
+            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
+            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnActualizarUsuario.TabIndex = 42;
+            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
+            this.btnActualizarUsuario.Visible = false;
+            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
+            this.btnActualizarUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarUsuario_Layout);
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnNuevoUsuario.TabIndex = 40;
+            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnNuevoUsuario.Visible = false;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
+            this.btnNuevoUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnNuevoUsuario_Layout);
+            // 
+            // btnPagosReporte
+            // 
+            this.btnPagosReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnPagosReporte.FlatAppearance.BorderSize = 0;
+            this.btnPagosReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagosReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnPagosReporte.Image")));
+            this.btnPagosReporte.Location = new System.Drawing.Point(304, 44);
+            this.btnPagosReporte.Name = "btnPagosReporte";
+            this.btnPagosReporte.Size = new System.Drawing.Size(90, 90);
+            this.btnPagosReporte.TabIndex = 45;
+            this.btnPagosReporte.UseVisualStyleBackColor = false;
+            this.btnPagosReporte.Visible = false;
+            this.btnPagosReporte.Click += new System.EventHandler(this.btnPagosReporte_Click);
+            this.btnPagosReporte.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnPagosReporte_Layout);
+            // 
+            // btnAsistenciaAlumnoReportes
+            // 
+            this.btnAsistenciaAlumnoReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAsistenciaAlumnoReportes.FlatAppearance.BorderSize = 0;
+            this.btnAsistenciaAlumnoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistenciaAlumnoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaAlumnoReportes.Image")));
+            this.btnAsistenciaAlumnoReportes.Location = new System.Drawing.Point(304, 189);
+            this.btnAsistenciaAlumnoReportes.Name = "btnAsistenciaAlumnoReportes";
+            this.btnAsistenciaAlumnoReportes.Size = new System.Drawing.Size(90, 90);
+            this.btnAsistenciaAlumnoReportes.TabIndex = 43;
+            this.btnAsistenciaAlumnoReportes.UseVisualStyleBackColor = false;
+            this.btnAsistenciaAlumnoReportes.Visible = false;
+            this.btnAsistenciaAlumnoReportes.Click += new System.EventHandler(this.btnAsistenciaAlumnoReportes_Click);
+            this.btnAsistenciaAlumnoReportes.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsistenciaAlumnoReportes_Layout);
+            // 
+            // btnAsistenciaGrupoReportes
+            // 
+            this.btnAsistenciaGrupoReportes.BackColor = System.Drawing.Color.Teal;
+            this.btnAsistenciaGrupoReportes.FlatAppearance.BorderSize = 0;
+            this.btnAsistenciaGrupoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistenciaGrupoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaGrupoReportes.Image")));
+            this.btnAsistenciaGrupoReportes.Location = new System.Drawing.Point(97, 189);
+            this.btnAsistenciaGrupoReportes.Name = "btnAsistenciaGrupoReportes";
+            this.btnAsistenciaGrupoReportes.Size = new System.Drawing.Size(90, 90);
+            this.btnAsistenciaGrupoReportes.TabIndex = 41;
+            this.btnAsistenciaGrupoReportes.UseVisualStyleBackColor = false;
+            this.btnAsistenciaGrupoReportes.Visible = false;
+            this.btnAsistenciaGrupoReportes.Click += new System.EventHandler(this.btnAsistenciaGrupoReportes_Click);
+            this.btnAsistenciaGrupoReportes.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsistenciaGrupoReportes_Layout);
+            // 
+            // btnFichaMatricula
+            // 
+            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
+            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFichaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMatricula.Image")));
+            this.btnFichaMatricula.Location = new System.Drawing.Point(97, 44);
+            this.btnFichaMatricula.Name = "btnFichaMatricula";
+            this.btnFichaMatricula.Size = new System.Drawing.Size(90, 90);
+            this.btnFichaMatricula.TabIndex = 39;
+            this.btnFichaMatricula.UseVisualStyleBackColor = false;
+            this.btnFichaMatricula.Visible = false;
+            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
+            this.btnFichaMatricula.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnFichaMatricula_Layout);
+            // 
+            // btnRecordAlumno
+            // 
+            this.btnRecordAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRecordAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRecordAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordAlumno.ForeColor = System.Drawing.Color.Red;
+            this.btnRecordAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRecordAlumno.Image")));
+            this.btnRecordAlumno.Location = new System.Drawing.Point(493, 44);
+            this.btnRecordAlumno.Name = "btnRecordAlumno";
+            this.btnRecordAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnRecordAlumno.TabIndex = 15;
+            this.btnRecordAlumno.UseVisualStyleBackColor = false;
+            this.btnRecordAlumno.Visible = false;
+            this.btnRecordAlumno.Click += new System.EventHandler(this.btnRecord_Click);
+            this.btnRecordAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRecordAlumno_Layout);
+            // 
+            // btnAsignarAlumnosGrupo
+            // 
+            this.btnAsignarAlumnosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAsignarAlumnosGrupo.FlatAppearance.BorderSize = 0;
+            this.btnAsignarAlumnosGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarAlumnosGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarAlumnosGrupo.Image")));
+            this.btnAsignarAlumnosGrupo.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarAlumnosGrupo.Name = "btnAsignarAlumnosGrupo";
+            this.btnAsignarAlumnosGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarAlumnosGrupo.TabIndex = 35;
+            this.btnAsignarAlumnosGrupo.UseVisualStyleBackColor = false;
+            this.btnAsignarAlumnosGrupo.Visible = false;
+            this.btnAsignarAlumnosGrupo.Click += new System.EventHandler(this.btnAsignarAlumnosGrupo_Click_1);
+            this.btnAsignarAlumnosGrupo.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarAlumnosGrupo_Layout);
+            // 
+            // btnCrearGrupo
+            // 
+            this.btnCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCrearGrupo.FlatAppearance.BorderSize = 0;
+            this.btnCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupo.Image")));
+            this.btnCrearGrupo.Location = new System.Drawing.Point(171, 44);
+            this.btnCrearGrupo.Name = "btnCrearGrupo";
+            this.btnCrearGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnCrearGrupo.TabIndex = 34;
+            this.btnCrearGrupo.UseVisualStyleBackColor = false;
+            this.btnCrearGrupo.Visible = false;
+            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click_1);
+            this.btnCrearGrupo.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCrearGrupo_Layout);
+            // 
+            // btnGruposEmpezados
+            // 
+            this.btnGruposEmpezados.BackColor = System.Drawing.Color.Teal;
+            this.btnGruposEmpezados.FlatAppearance.BorderSize = 0;
+            this.btnGruposEmpezados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposEmpezados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposEmpezados.Image")));
+            this.btnGruposEmpezados.Location = new System.Drawing.Point(435, 44);
+            this.btnGruposEmpezados.Name = "btnGruposEmpezados";
+            this.btnGruposEmpezados.Size = new System.Drawing.Size(90, 90);
+            this.btnGruposEmpezados.TabIndex = 33;
+            this.btnGruposEmpezados.UseVisualStyleBackColor = false;
+            this.btnGruposEmpezados.Visible = false;
+            this.btnGruposEmpezados.Click += new System.EventHandler(this.btnGruposEmpezados_Click_1);
+            this.btnGruposEmpezados.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnGruposEmpezados_Layout);
+            // 
+            // btnVerNotasPasadas
+            // 
+            this.btnVerNotasPasadas.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnVerNotasPasadas.FlatAppearance.BorderSize = 0;
+            this.btnVerNotasPasadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerNotasPasadas.Image = ((System.Drawing.Image)(resources.GetObject("btnVerNotasPasadas.Image")));
+            this.btnVerNotasPasadas.Location = new System.Drawing.Point(435, 189);
+            this.btnVerNotasPasadas.Name = "btnVerNotasPasadas";
+            this.btnVerNotasPasadas.Size = new System.Drawing.Size(90, 90);
+            this.btnVerNotasPasadas.TabIndex = 52;
+            this.btnVerNotasPasadas.UseVisualStyleBackColor = false;
+            this.btnVerNotasPasadas.Visible = false;
+            this.btnVerNotasPasadas.Click += new System.EventHandler(this.btnVerNotasPasadas_Click);
+            this.btnVerNotasPasadas.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnVerNotasPasadas_Layout);
+            // 
             // btnAgregarAsistenciaNotaPasada
             // 
             this.btnAgregarAsistenciaNotaPasada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -1027,7 +984,9 @@
             this.btnAgregarAsistenciaNotaPasada.Size = new System.Drawing.Size(90, 90);
             this.btnAgregarAsistenciaNotaPasada.TabIndex = 48;
             this.btnAgregarAsistenciaNotaPasada.UseVisualStyleBackColor = false;
+            this.btnAgregarAsistenciaNotaPasada.Visible = false;
             this.btnAgregarAsistenciaNotaPasada.Click += new System.EventHandler(this.btnAgregarAsistenciaNotaPasada_Click);
+            this.btnAgregarAsistenciaNotaPasada.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAgregarAsistenciaNotaPasada_Layout);
             // 
             // btnCrearGrupoPasado
             // 
@@ -1040,7 +999,9 @@
             this.btnCrearGrupoPasado.Size = new System.Drawing.Size(90, 90);
             this.btnCrearGrupoPasado.TabIndex = 47;
             this.btnCrearGrupoPasado.UseVisualStyleBackColor = false;
+            this.btnCrearGrupoPasado.Visible = false;
             this.btnCrearGrupoPasado.Click += new System.EventHandler(this.btnCrearGrupoPasado_Click);
+            this.btnCrearGrupoPasado.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCrearGrupoPasado_Layout);
             // 
             // btnAgregarAlumnoGrupoPasado
             // 
@@ -1054,6 +1015,112 @@
             this.btnAgregarAlumnoGrupoPasado.TabIndex = 46;
             this.btnAgregarAlumnoGrupoPasado.UseVisualStyleBackColor = false;
             this.btnAgregarAlumnoGrupoPasado.Click += new System.EventHandler(this.btnAgregarAlumnoGrupoPasado_Click);
+            this.btnAgregarAlumnoGrupoPasado.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAgregarAlumnoGrupoPasado_Layout);
+            // 
+            // btnCorregirPago
+            // 
+            this.btnCorregirPago.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnCorregirPago.FlatAppearance.BorderSize = 0;
+            this.btnCorregirPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorregirPago.Image = ((System.Drawing.Image)(resources.GetObject("btnCorregirPago.Image")));
+            this.btnCorregirPago.Location = new System.Drawing.Point(435, 189);
+            this.btnCorregirPago.Name = "btnCorregirPago";
+            this.btnCorregirPago.Size = new System.Drawing.Size(90, 90);
+            this.btnCorregirPago.TabIndex = 44;
+            this.btnCorregirPago.UseVisualStyleBackColor = false;
+            this.btnCorregirPago.Visible = false;
+            this.btnCorregirPago.Click += new System.EventHandler(this.btnCorregirPago_Click_1);
+            this.btnCorregirPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCorregirPago_Layout);
+            // 
+            // btnConsultaGeneralPago
+            // 
+            this.btnConsultaGeneralPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConsultaGeneralPago.FlatAppearance.BorderSize = 0;
+            this.btnConsultaGeneralPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaGeneralPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaGeneralPago.Image")));
+            this.btnConsultaGeneralPago.Location = new System.Drawing.Point(171, 189);
+            this.btnConsultaGeneralPago.Name = "btnConsultaGeneralPago";
+            this.btnConsultaGeneralPago.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultaGeneralPago.TabIndex = 40;
+            this.btnConsultaGeneralPago.UseVisualStyleBackColor = false;
+            this.btnConsultaGeneralPago.Visible = false;
+            this.btnConsultaGeneralPago.Click += new System.EventHandler(this.btnConsultaGeneralPago_Click_1);
+            this.btnConsultaGeneralPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultaGeneralPago_Layout);
+            // 
+            // btnRegistrarPago
+            // 
+            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarPago.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPago.Image")));
+            this.btnRegistrarPago.Location = new System.Drawing.Point(171, 44);
+            this.btnRegistrarPago.Name = "btnRegistrarPago";
+            this.btnRegistrarPago.Size = new System.Drawing.Size(90, 90);
+            this.btnRegistrarPago.TabIndex = 39;
+            this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Visible = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
+            this.btnRegistrarPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRegistrarPago_Layout);
+            // 
+            // btnConsultaEspecificaPago
+            // 
+            this.btnConsultaEspecificaPago.BackColor = System.Drawing.Color.Teal;
+            this.btnConsultaEspecificaPago.FlatAppearance.BorderSize = 0;
+            this.btnConsultaEspecificaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaEspecificaPago.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaEspecificaPago.Image")));
+            this.btnConsultaEspecificaPago.Location = new System.Drawing.Point(435, 44);
+            this.btnConsultaEspecificaPago.Name = "btnConsultaEspecificaPago";
+            this.btnConsultaEspecificaPago.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultaEspecificaPago.TabIndex = 38;
+            this.btnConsultaEspecificaPago.UseVisualStyleBackColor = false;
+            this.btnConsultaEspecificaPago.Visible = false;
+            this.btnConsultaEspecificaPago.Click += new System.EventHandler(this.btnConsultaEspecificaPago_Click_1);
+            this.btnConsultaEspecificaPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultaEspecificaPago_Layout);
+            // 
+            // btnConsultarAlumno
+            // 
+            this.btnConsultarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConsultarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnConsultarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarAlumno.Image")));
+            this.btnConsultarAlumno.Location = new System.Drawing.Point(171, 189);
+            this.btnConsultarAlumno.Name = "btnConsultarAlumno";
+            this.btnConsultarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnConsultarAlumno.TabIndex = 14;
+            this.btnConsultarAlumno.UseVisualStyleBackColor = false;
+            this.btnConsultarAlumno.Visible = false;
+            this.btnConsultarAlumno.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.btnConsultarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultarAlumno_Layout);
+            // 
+            // btnActualizarAlumno
+            // 
+            this.btnActualizarAlumno.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnActualizarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnActualizarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarAlumno.Image")));
+            this.btnActualizarAlumno.Location = new System.Drawing.Point(435, 44);
+            this.btnActualizarAlumno.Name = "btnActualizarAlumno";
+            this.btnActualizarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnActualizarAlumno.TabIndex = 13;
+            this.btnActualizarAlumno.UseVisualStyleBackColor = false;
+            this.btnActualizarAlumno.Visible = false;
+            this.btnActualizarAlumno.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnActualizarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarAlumno_Layout);
+            // 
+            // btnRegistrarAlumno
+            // 
+            this.btnRegistrarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegistrarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAlumno.Image")));
+            this.btnRegistrarAlumno.Location = new System.Drawing.Point(171, 44);
+            this.btnRegistrarAlumno.Name = "btnRegistrarAlumno";
+            this.btnRegistrarAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnRegistrarAlumno.TabIndex = 12;
+            this.btnRegistrarAlumno.UseVisualStyleBackColor = false;
+            this.btnRegistrarAlumno.Visible = false;
+            this.btnRegistrarAlumno.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRegistrarAlumno_Layout);
             // 
             // frmMainMenu
             // 
@@ -1072,12 +1139,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TXTCODUSER);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.panelReportes);
             this.Controls.Add(this.panelGrupos);
             this.Controls.Add(this.panelGruposPasados);
             this.Controls.Add(this.panelPago);
             this.Controls.Add(this.panelAlumno);
             this.Controls.Add(this.panelUsuario);
-            this.Controls.Add(this.panelReportes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1184,5 +1251,7 @@
         private BotonCircular btnAgregarAsistenciaNotaPasada;
         private BotonCircular btnCrearGrupoPasado;
         private BotonCircular btnAgregarAlumnoGrupoPasado;
+        private System.Windows.Forms.Label label23;
+        private BotonCircular btnAsignarRoles;
     }
 }

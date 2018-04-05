@@ -347,6 +347,11 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        private void frmAsignarAlumnosToGroup_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtBuscarApellido_KeyUp(object sender, KeyEventArgs e)
         {
             try

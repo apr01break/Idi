@@ -218,7 +218,7 @@ namespace InstitutoDeIdiomas
             int matricula=0;
             int carnet = 0;
             int mensualidad = 0;
-            string tipo = null;
+            //string tipo = null;
             int contenido = Convert.ToInt32(TXTMONTOAPAGAR.Text.ToString());
             if (CBPAGARMATRICULA.CheckState==CheckState.Checked) {
                 matricula = 20;             

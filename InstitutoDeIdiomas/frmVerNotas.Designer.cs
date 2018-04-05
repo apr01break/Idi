@@ -61,6 +61,7 @@ namespace InstitutoDeIdiomas
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.btnAgregarExtemporaneo = new System.Windows.Forms.Button();
             this.txtFin = new System.Windows.Forms.TextBox();
             this.txtInicio = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@ namespace InstitutoDeIdiomas
             this.txtDias = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.RichTextBox();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnEliminarAlumno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwListening)).BeginInit();
@@ -203,7 +203,7 @@ namespace InstitutoDeIdiomas
             this.dgvwNotas.Name = "dgvwNotas";
             this.dgvwNotas.ReadOnly = true;
             this.dgvwNotas.RowHeadersVisible = false;
-            this.dgvwNotas.Size = new System.Drawing.Size(794, 381);
+            this.dgvwNotas.Size = new System.Drawing.Size(865, 381);
             this.dgvwNotas.TabIndex = 60;
             this.dgvwNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwNotas_CellClick);
             // 
@@ -289,9 +289,9 @@ namespace InstitutoDeIdiomas
             this.btnConcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConcluirGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConcluirGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnConcluirGrupo.Location = new System.Drawing.Point(619, 16);
+            this.btnConcluirGrupo.Location = new System.Drawing.Point(673, 16);
             this.btnConcluirGrupo.Name = "btnConcluirGrupo";
-            this.btnConcluirGrupo.Size = new System.Drawing.Size(181, 44);
+            this.btnConcluirGrupo.Size = new System.Drawing.Size(194, 44);
             this.btnConcluirGrupo.TabIndex = 70;
             this.btnConcluirGrupo.Text = "CONCLUIR GRUPO";
             this.btnConcluirGrupo.UseVisualStyleBackColor = false;
@@ -304,9 +304,9 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumno.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumno.Location = new System.Drawing.Point(619, 125);
+            this.btnRelacionAlumno.Location = new System.Drawing.Point(673, 125);
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
-            this.btnRelacionAlumno.Size = new System.Drawing.Size(181, 44);
+            this.btnRelacionAlumno.Size = new System.Drawing.Size(194, 44);
             this.btnRelacionAlumno.TabIndex = 71;
             this.btnRelacionAlumno.Text = "ACTA FINAL NOTAS";
             this.btnRelacionAlumno.UseVisualStyleBackColor = false;
@@ -338,9 +338,9 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumnos.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(619, 70);
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(673, 70);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
-            this.btnRelacionAlumnos.Size = new System.Drawing.Size(181, 44);
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(194, 44);
             this.btnRelacionAlumnos.TabIndex = 75;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
             this.btnRelacionAlumnos.UseVisualStyleBackColor = false;
@@ -402,8 +402,24 @@ namespace InstitutoDeIdiomas
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 662);
+            this.panel1.Size = new System.Drawing.Size(892, 662);
             this.panel1.TabIndex = 78;
+            // 
+            // btnEliminarAlumno
+            // 
+            this.btnEliminarAlumno.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarAlumno.Enabled = false;
+            this.btnEliminarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnEliminarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAlumno.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarAlumno.Location = new System.Drawing.Point(760, 626);
+            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
+            this.btnEliminarAlumno.Size = new System.Drawing.Size(119, 23);
+            this.btnEliminarAlumno.TabIndex = 85;
+            this.btnEliminarAlumno.Text = "Eliminar Alumno";
+            this.btnEliminarAlumno.UseVisualStyleBackColor = false;
+            this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
             // 
             // btnAgregarExtemporaneo
             // 
@@ -412,9 +428,9 @@ namespace InstitutoDeIdiomas
             this.btnAgregarExtemporaneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarExtemporaneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarExtemporaneo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarExtemporaneo.Location = new System.Drawing.Point(619, 179);
+            this.btnAgregarExtemporaneo.Location = new System.Drawing.Point(673, 179);
             this.btnAgregarExtemporaneo.Name = "btnAgregarExtemporaneo";
-            this.btnAgregarExtemporaneo.Size = new System.Drawing.Size(181, 44);
+            this.btnAgregarExtemporaneo.Size = new System.Drawing.Size(194, 44);
             this.btnAgregarExtemporaneo.TabIndex = 84;
             this.btnAgregarExtemporaneo.Text = "AGREGAR ALUMNOS EXTEMPORANEOS";
             this.btnAgregarExtemporaneo.UseVisualStyleBackColor = false;
@@ -466,7 +482,7 @@ namespace InstitutoDeIdiomas
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(21, 189);
             this.label1.Name = "label1";
             this.label1.ReadOnly = true;
@@ -475,27 +491,11 @@ namespace InstitutoDeIdiomas
             this.label1.Text = "";
             this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // btnEliminarAlumno
-            // 
-            this.btnEliminarAlumno.BackColor = System.Drawing.Color.Red;
-            this.btnEliminarAlumno.Enabled = false;
-            this.btnEliminarAlumno.FlatAppearance.BorderSize = 0;
-            this.btnEliminarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAlumno.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarAlumno.Location = new System.Drawing.Point(689, 628);
-            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
-            this.btnEliminarAlumno.Size = new System.Drawing.Size(119, 23);
-            this.btnEliminarAlumno.TabIndex = 85;
-            this.btnEliminarAlumno.Text = "Eliminar Alumno";
-            this.btnEliminarAlumno.UseVisualStyleBackColor = false;
-            this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
-            // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 726);
+            this.ClientSize = new System.Drawing.Size(892, 726);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvwBase);
             this.Controls.Add(this.dgvwUseOfEnglish);

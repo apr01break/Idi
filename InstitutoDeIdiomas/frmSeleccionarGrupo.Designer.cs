@@ -67,6 +67,7 @@
             this.dgvwGrupo.RowHeadersVisible = false;
             this.dgvwGrupo.RowTemplate.Height = 24;
             this.dgvwGrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwGrupo_CellClick);
+            this.dgvwGrupo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwGrupo_CellDoubleClick);
             // 
             // panel1
             // 

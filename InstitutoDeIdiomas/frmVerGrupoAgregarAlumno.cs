@@ -270,7 +270,7 @@ namespace InstitutoDeIdiomas
         private void frmVerGrupoAgregarAlumno_Load(object sender, EventArgs e)
         {
             habilitarBoton(num);
-            if (num == 3) evaluarGrupos();
+            if (num == 3 || num == 1) evaluarGrupos();
 
         }
     }

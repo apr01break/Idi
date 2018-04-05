@@ -20,6 +20,45 @@ namespace InstitutoDeIdiomas
         int idGrupo;
         String ano, idioma, ciclo, docente, mes, nivel, numero;
 
+        private void dgvwListaGrupos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dtMain = new DataTable();
+            try
+            {
+                SqlCommand cmd3 = new SqlCommand("listar_asistencias_grupo", _SqlConnection);
+                if (cmd3.Connection.State == ConnectionState.Closed)
+                {
+                    cmd3.Connection.Open();
+                }
+                cmd3.CommandType = CommandType.StoredProcedure;
+                cmd3.Parameters.Add(new SqlParameter("@idgrupo", idGrupo));
+                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+                da3.Fill(dtMain);
+                if (cmd3.Connection.State == ConnectionState.Closed)
+                {
+                    cmd3.Connection.Close();
+                }
+
+                dtMain.Columns.Add("fa");
+
+                foreach (DataRow row in dtMain.Rows)
+                {
+                    row["fa"] = Convert.ToDateTime(row["fecha"]).ToString("dd/MM/yy");
+                }
+                dtMain.Columns.RemoveAt(3);
+                dtMain.Columns["fa"].ColumnName = "fecha";
+                cargarDatosGrupo();
+
+
+
+                new frmRptAsistenciaGrupo(dtMain, ano, idioma, ciclo, docente, mes, nivel, numero).Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void frmAsistenciasPorGrupo_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtBuscar;

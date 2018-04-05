@@ -197,5 +197,27 @@ namespace InstitutoDeIdiomas
         {
 
         }
+
+        private void dgvwGrupo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnRegistroAuxiliar.Visible)
+            {
+                frmRegistroAuxiliar registroAuxiliar = new frmRegistroAuxiliar(idGrupo);
+                this.Close();
+                registroAuxiliar.Show();
+            }
+            else if (btnRegistrarNotas.Visible)
+            {
+                frmRegistrarNotas frmRegistrarNotas = new frmRegistrarNotas(idGrupo);
+                this.Close();
+                frmRegistrarNotas.Show();
+            }
+            else if (btnRegistrarAsistencias.Visible)
+            {
+                frmRegistrarAsistencia frmRegistrarAsistencia = new frmRegistrarAsistencia(idGrupo);
+                this.Close();
+                frmRegistrarAsistencia.Show();
+            }
+        }
     }
 }

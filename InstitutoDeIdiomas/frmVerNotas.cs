@@ -103,6 +103,7 @@ namespace InstitutoDeIdiomas
                         dgvwNotas.Columns.Add(column);
                         column.Name = dgvwBase.Columns[i].HeaderText.ToString();
                         column.HeaderText = column.Name;
+                        
                         for (int j = 0; j < dgvwBase.RowCount - 1; j++)
                         {
                             if (i == 0)
@@ -113,7 +114,9 @@ namespace InstitutoDeIdiomas
                             dgvwNotas.Rows[j].Cells[i].Value = nota;
                         }
                     }
-                    dgvwNotas.Columns["APELLIDOS Y NOMBRES"].Width = 253;
+            dgvwNotas.Columns["CODIGO ALUMNO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvwNotas.Columns["CODIGO ALUMNO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvwNotas.Columns["APELLIDOS Y NOMBRES"].Width = 253;
              
 
         }
@@ -270,6 +273,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwListening.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwListening.Rows[j].Cells[1].Value.ToString();
@@ -289,6 +294,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwSpeaking.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * (dgvwNotas.RowCount); j++)
                 {
                     String nota = dgvwSpeaking.Rows[j].Cells[1].Value.ToString();
@@ -308,6 +315,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwWriting.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwWriting.Rows[j].Cells[1].Value.ToString();
@@ -327,6 +336,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwReading.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwReading.Rows[j].Cells[1].Value.ToString();
@@ -346,6 +357,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwUseOfEnglish.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwUseOfEnglish.Rows[j].Cells[1].Value.ToString();
@@ -382,6 +395,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Listening";
                 column.Name = "Listening";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwListening.RowCount - 1) / (dgvwNotas.RowCount);
@@ -413,6 +428,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Speaking";
                 column.Name = "Speaking";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwSpeaking.RowCount - 1) / (dgvwNotas.RowCount);
@@ -444,6 +461,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Reading";
                 column.Name = "Reading";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwReading.RowCount - 1) / (dgvwNotas.RowCount);
@@ -475,6 +494,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Writing";
                 column.Name = "Writing";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwWriting.RowCount - 1) / (dgvwNotas.RowCount);
@@ -506,6 +527,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "UseOfEnglish";
                 column.Name = "UseOfEnglish";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwUseOfEnglish.RowCount - 1) / (dgvwNotas.RowCount);

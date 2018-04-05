@@ -51,6 +51,7 @@
             this.dgvwListaGrupos.Size = new System.Drawing.Size(605, 200);
             this.dgvwListaGrupos.TabIndex = 1;
             this.dgvwListaGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwListaGrupos_CellClick);
+            this.dgvwListaGrupos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwListaGrupos_CellDoubleClick);
             // 
             // label1
             // 

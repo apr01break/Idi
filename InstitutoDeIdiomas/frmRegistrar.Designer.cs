@@ -46,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RBMASCULINO = new System.Windows.Forms.RadioButton();
             this.RBFEMENINO = new System.Windows.Forms.RadioButton();
-            this.FOTOUSER = new System.Windows.Forms.PictureBox();
             this.BTNFOTOUSUARIO = new System.Windows.Forms.Button();
             this.CBDEPARTAMENTOS = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,6 +68,8 @@
             this.RBPROFESOR = new System.Windows.Forms.RadioButton();
             this.ERRORTXTVACIO = new System.Windows.Forms.ErrorProvider(this.components);
             this.GBROLTRABAJADOR = new System.Windows.Forms.GroupBox();
+            this.RBSECPRINCIPAL = new System.Windows.Forms.RadioButton();
+            this.RBACADEMICA = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
             this.TXTPROCEDENCIA = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,11 +78,12 @@
             this.TXTPASSWORDUSER = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BTNREGISTRARUSER = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.FOTOUSER = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FOTOUSER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORTXTVACIO)).BeginInit();
             this.GBROLTRABAJADOR.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FOTOUSER)).BeginInit();
             this.SuspendLayout();
             // 
             // TXTPATERNOUSER
@@ -248,15 +250,6 @@
             this.RBFEMENINO.TabStop = true;
             this.RBFEMENINO.Text = "FEMENINO";
             this.RBFEMENINO.UseVisualStyleBackColor = true;
-            // 
-            // FOTOUSER
-            // 
-            this.FOTOUSER.Location = new System.Drawing.Point(643, 25);
-            this.FOTOUSER.Margin = new System.Windows.Forms.Padding(2);
-            this.FOTOUSER.Name = "FOTOUSER";
-            this.FOTOUSER.Size = new System.Drawing.Size(128, 133);
-            this.FOTOUSER.TabIndex = 16;
-            this.FOTOUSER.TabStop = false;
             // 
             // BTNFOTOUSUARIO
             // 
@@ -479,6 +472,8 @@
             // 
             // GBROLTRABAJADOR
             // 
+            this.GBROLTRABAJADOR.Controls.Add(this.RBSECPRINCIPAL);
+            this.GBROLTRABAJADOR.Controls.Add(this.RBACADEMICA);
             this.GBROLTRABAJADOR.Controls.Add(this.RBPROFESOR);
             this.GBROLTRABAJADOR.Controls.Add(this.RBADMINISTRADOR);
             this.GBROLTRABAJADOR.Controls.Add(this.RBSECRETARIO);
@@ -486,10 +481,32 @@
             this.GBROLTRABAJADOR.Margin = new System.Windows.Forms.Padding(2);
             this.GBROLTRABAJADOR.Name = "GBROLTRABAJADOR";
             this.GBROLTRABAJADOR.Padding = new System.Windows.Forms.Padding(2);
-            this.GBROLTRABAJADOR.Size = new System.Drawing.Size(396, 65);
+            this.GBROLTRABAJADOR.Size = new System.Drawing.Size(396, 98);
             this.GBROLTRABAJADOR.TabIndex = 41;
             this.GBROLTRABAJADOR.TabStop = false;
             this.GBROLTRABAJADOR.Text = "ROL DEL TRABAJADOR";
+            // 
+            // RBSECPRINCIPAL
+            // 
+            this.RBSECPRINCIPAL.AutoSize = true;
+            this.RBSECPRINCIPAL.Location = new System.Drawing.Point(152, 64);
+            this.RBSECPRINCIPAL.Name = "RBSECPRINCIPAL";
+            this.RBSECPRINCIPAL.Size = new System.Drawing.Size(152, 17);
+            this.RBSECPRINCIPAL.TabIndex = 41;
+            this.RBSECPRINCIPAL.TabStop = true;
+            this.RBSECPRINCIPAL.Text = "SECRETARIA PRINCIPAL";
+            this.RBSECPRINCIPAL.UseVisualStyleBackColor = true;
+            // 
+            // RBACADEMICA
+            // 
+            this.RBACADEMICA.AutoSize = true;
+            this.RBACADEMICA.Location = new System.Drawing.Point(45, 64);
+            this.RBACADEMICA.Name = "RBACADEMICA";
+            this.RBACADEMICA.Size = new System.Drawing.Size(87, 17);
+            this.RBACADEMICA.TabIndex = 40;
+            this.RBACADEMICA.TabStop = true;
+            this.RBACADEMICA.Text = "ACADEMICA";
+            this.RBACADEMICA.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -548,6 +565,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.BTNREGISTRARUSER);
             this.panel2.Controls.Add(this.TXTPASSWORDUSER);
             this.panel2.Controls.Add(this.label8);
@@ -607,6 +625,15 @@
             this.BTNREGISTRARUSER.UseVisualStyleBackColor = true;
             this.BTNREGISTRARUSER.Click += new System.EventHandler(this.BTNREGISTRARUSER_Click);
             // 
+            // FOTOUSER
+            // 
+            this.FOTOUSER.Location = new System.Drawing.Point(643, 25);
+            this.FOTOUSER.Margin = new System.Windows.Forms.Padding(2);
+            this.FOTOUSER.Name = "FOTOUSER";
+            this.FOTOUSER.Size = new System.Drawing.Size(128, 133);
+            this.FOTOUSER.TabIndex = 16;
+            this.FOTOUSER.TabStop = false;
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -621,12 +648,12 @@
             this.Text = "REGISTRO DE USUARIO";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FOTOUSER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORTXTVACIO)).EndInit();
             this.GBROLTRABAJADOR.ResumeLayout(false);
             this.GBROLTRABAJADOR.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FOTOUSER)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -680,5 +707,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialRaisedButton BTNREGISTRARUSER;
+        private System.Windows.Forms.RadioButton RBSECPRINCIPAL;
+        private System.Windows.Forms.RadioButton RBACADEMICA;
     }
 }

@@ -225,7 +225,7 @@ namespace InstitutoDeIdiomas
                 }
                 return 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Tienes que completar todos los campos de asistencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
@@ -484,7 +484,7 @@ namespace InstitutoDeIdiomas
                 }
                 return 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("La nota debe ser en números");
                 return 0;
@@ -726,6 +726,10 @@ namespace InstitutoDeIdiomas
 
         private void frmRegistrarAsistencia_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i <= dgvwAlumnos.RowCount - 1; i++)
+            {
+                dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value = 1;
+            }
             this.ActiveControl = txtTituloTema;
         }
     }

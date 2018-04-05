@@ -18,7 +18,7 @@ namespace InstitutoDeIdiomas
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
         string idUsuario;
-        string nombProc;
+        //string nombProc;
         public frmCrearGrupo(string idUsuario)
         {
             
