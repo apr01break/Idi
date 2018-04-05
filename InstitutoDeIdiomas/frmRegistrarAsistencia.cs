@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -65,6 +66,9 @@ namespace InstitutoDeIdiomas
             try
             {
                 string dia = Convert.ToDateTime(dtpFechaClase.Value.ToString()).ToString("dddd");
+                Regex reg = new Regex("[^a-zA-Z0-9 ]");
+                string txtNormalizado = dia.Normalize(NormalizationForm.FormD);
+                dia = reg.Replace(txtNormalizado, "");
                 int x = 0;
                 SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
@@ -221,7 +225,7 @@ namespace InstitutoDeIdiomas
                 }
                 return 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Tienes que completar todos los campos de asistencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
@@ -270,49 +274,85 @@ namespace InstitutoDeIdiomas
             return true;
         }
 
+        public void guardarTema()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("crear_tema", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                cmd.Parameters.Add(new SqlParameter("@titulo", txtTituloTema.Text));
+                cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                txtTituloTema.ReadOnly = true;
+                txtTituloTema.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                txtTituloTema.BackColor = Color.White;
+                txtTituloTema.ForeColor = Color.DarkRed;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnFinalizarAsistencia_Click(object sender, EventArgs e)
         {
-
-            if (verificarDia())
+            if (txtTituloTema.Text.Trim() != "")
             {
-                if (verificarFecha())
+                if (verificarDia())
                 {
-                    if (verificarAsistencia() == 1)
+                    if (verificarFecha())
                     {
-                        try
+                        if (verificarAsistencia() == 1)
                         {
-                            for (int i = 0; i < dgvwAlumnos.RowCount; i++)
+                            try
                             {
-                                String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
-                                String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
-                                SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
-                                if (cmd.Connection.State == ConnectionState.Closed)
+                                for (int i = 0; i < dgvwAlumnos.RowCount; i++)
                                 {
-                                    cmd.Connection.Open();
+                                    String idAlumnoGrupo = dgvwAlumnos.Rows[i].Cells["idAlumnoGrupo"].Value.ToString();
+                                    String idTipoAsistencia = dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value.ToString();
+                                    SqlCommand cmd = new SqlCommand("insertar_asistencia", _SqlConnection);
+                                    if (cmd.Connection.State == ConnectionState.Closed)
+                                    {
+                                        cmd.Connection.Open();
+                                    }
+                                    cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
+                                    cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
+                                    cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.ExecuteNonQuery();
+                                    if (cmd.Connection.State == ConnectionState.Open)
+                                    {
+                                        cmd.Connection.Close();
+                                    }
                                 }
-                                cmd.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
-                                cmd.Parameters.Add(new SqlParameter("@idTipoAsistencia", idTipoAsistencia));
-                                cmd.Parameters.Add(new SqlParameter("@fecha", dtpFechaClase.Value));
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.ExecuteNonQuery();
-                                if (cmd.Connection.State == ConnectionState.Open)
-                                {
-                                    cmd.Connection.Close();
-                                }
+                                dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
+                                MessageBox.Show("ASISTENCIA REGISTRADA");
+                                validarTipoAsistencia();
+                                btnFinalizarAsistencia.Visible = false;
+                                txtCriterio.Enabled = true;
+                                cmbTipoNota.Enabled = true;
+                                guardarTema();
                             }
-                            dgvwAlumnos.Columns["ASISTENCIA"].ReadOnly = true;
-                            MessageBox.Show("ASISTENCIA REGISTRADA");
-                            validarTipoAsistencia();
-                            btnFinalizarAsistencia.Visible = false;
-                            txtCriterio.Enabled = true;
-                            cmbTipoNota.Enabled = true;
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message + "FINASISTENCIA");
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message + "FINASISTENCIA");
+                            }
                         }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Escriba el tema de la clase");
             }
         }
 
@@ -444,7 +484,7 @@ namespace InstitutoDeIdiomas
                 }
                 return 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("La nota debe ser en números");
                 return 0;
@@ -686,7 +726,11 @@ namespace InstitutoDeIdiomas
 
         private void frmRegistrarAsistencia_Load(object sender, EventArgs e)
         {
-            
+            for (int i = 0; i <= dgvwAlumnos.RowCount - 1; i++)
+            {
+                dgvwAlumnos.Rows[i].Cells["ASISTENCIA"].Value = 1;
+            }
+            this.ActiveControl = txtTituloTema;
         }
     }
 }

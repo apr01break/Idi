@@ -17,27 +17,27 @@ namespace InstitutoDeIdiomas
         int idGrupo;
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
-        public frmSeleccionarGrupo(String idtrabajador, int opcion)
+        public frmSeleccionarGrupo(String idUsuario, int opcion)
         {
             InitializeComponent();
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
             
-            cargarNombre(idtrabajador);
+            cargarNombre(idUsuario);
             if (opcion == 0) btnRegistroAuxiliar.Visible = true;
             else if (opcion == 1) btnRegistrarNotas.Visible = true;
             else if (opcion == 2) btnRegistrarAsistencias.Visible = true;
-            if(idtrabajador=="5"|| idtrabajador == "25")
+            if(idUsuario == "5"|| idUsuario == "25" || idUsuario=="3")
             {
-                cargarGruposEncargado(idtrabajador);
+                cargarGruposEncargado(idUsuario);
             }
             else
             {
-                cargarGrupos(idtrabajador);
+                cargarGrupos(idUsuario);
             }
         }
 
 
-        public void cargarNombre(String id)
+        public void cargarNombre(String idUsuario)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace InstitutoDeIdiomas
                 {
                     cmd.Connection.Open();
                 }
-                cmd.Parameters.Add(new SqlParameter("@idusuario", id));
+                cmd.Parameters.Add(new SqlParameter("@idusuario", idUsuario));
                 cmd.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -109,7 +109,7 @@ namespace InstitutoDeIdiomas
                 MessageBox.Show(ex.Message);
             }
         }
-        public void cargarGruposEncargado(String id)
+        public void cargarGruposEncargado(String idUsuario)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace InstitutoDeIdiomas
                 {
                     cmd.Connection.Open();
                 }
-                cmd.Parameters.Add(new SqlParameter("@idusuario", id));
+                cmd.Parameters.Add(new SqlParameter("@idusuario", idUsuario));
                 cmd.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -196,6 +196,28 @@ namespace InstitutoDeIdiomas
         private void frmSeleccionarGrupo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvwGrupo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnRegistroAuxiliar.Visible)
+            {
+                frmRegistroAuxiliar registroAuxiliar = new frmRegistroAuxiliar(idGrupo);
+                this.Close();
+                registroAuxiliar.Show();
+            }
+            else if (btnRegistrarNotas.Visible)
+            {
+                frmRegistrarNotas frmRegistrarNotas = new frmRegistrarNotas(idGrupo);
+                this.Close();
+                frmRegistrarNotas.Show();
+            }
+            else if (btnRegistrarAsistencias.Visible)
+            {
+                frmRegistrarAsistencia frmRegistrarAsistencia = new frmRegistrarAsistencia(idGrupo);
+                this.Close();
+                frmRegistrarAsistencia.Show();
+            }
         }
     }
 }

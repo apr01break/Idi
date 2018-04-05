@@ -89,9 +89,9 @@ namespace InstitutoDeIdiomas
             dgvwLista.Columns[1].ReadOnly = true;
             dgvwLista.Columns[2].Visible = false;
             if (cmd.Connection.State == ConnectionState.Open)
-                {
-                    cmd.Connection.Close();
-                }
+            {
+                cmd.Connection.Close();
+            }
             DataGridViewCheckBoxColumn c = new DataGridViewCheckBoxColumn();
             dgvwLista.Columns.Add(c);
             c.HeaderCell.Value = "Permiso";

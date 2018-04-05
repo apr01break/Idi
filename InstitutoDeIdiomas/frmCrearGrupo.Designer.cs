@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearGrupo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbAno = new System.Windows.Forms.ComboBox();
-            this.cbMes = new System.Windows.Forms.ComboBox();
             this.cbNumero = new System.Windows.Forms.ComboBox();
             this.btnCrearGrupo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,7 +64,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbAno);
-            this.panel1.Controls.Add(this.cbMes);
             this.panel1.Controls.Add(this.cbNumero);
             this.panel1.Controls.Add(this.btnCrearGrupo);
             this.panel1.Controls.Add(this.label11);
@@ -107,32 +105,10 @@
             "2024",
             "2025",
             "2026"});
-            this.cbAno.Location = new System.Drawing.Point(159, 18);
+            this.cbAno.Location = new System.Drawing.Point(122, 18);
             this.cbAno.Name = "cbAno";
-            this.cbAno.Size = new System.Drawing.Size(52, 21);
+            this.cbAno.Size = new System.Drawing.Size(66, 21);
             this.cbAno.TabIndex = 85;
-            // 
-            // cbMes
-            // 
-            this.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMes.FormattingEnabled = true;
-            this.cbMes.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.cbMes.Location = new System.Drawing.Point(113, 18);
-            this.cbMes.Name = "cbMes";
-            this.cbMes.Size = new System.Drawing.Size(40, 21);
-            this.cbMes.TabIndex = 84;
             // 
             // cbNumero
             // 
@@ -140,7 +116,7 @@
             this.cbNumero.FormattingEnabled = true;
             this.cbNumero.Location = new System.Drawing.Point(62, 18);
             this.cbNumero.Name = "cbNumero";
-            this.cbNumero.Size = new System.Drawing.Size(45, 21);
+            this.cbNumero.Size = new System.Drawing.Size(54, 21);
             this.cbNumero.TabIndex = 83;
             // 
             // btnCrearGrupo
@@ -425,6 +401,5 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnCrearGrupo;
         private System.Windows.Forms.ComboBox cbNumero;
         private System.Windows.Forms.ComboBox cbAno;
-        private System.Windows.Forms.ComboBox cbMes;
     }
 }

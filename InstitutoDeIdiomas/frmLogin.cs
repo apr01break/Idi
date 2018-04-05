@@ -55,7 +55,7 @@ namespace InstitutoDeIdiomas
                     {
                         this.Hide();
                         String tipoTrabajador = dt.Rows[0][3].ToString();
-                        if (dt.Rows[0][4].ToString() == "1034")
+                        if (dt.Rows[0][3].ToString() == "ACADEMICA")
                         {
                             String nombre = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1] + " " + dt.Rows[0][2];
                             String id = dt.Rows[0][4].ToString();
@@ -178,7 +178,6 @@ namespace InstitutoDeIdiomas
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

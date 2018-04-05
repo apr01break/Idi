@@ -32,8 +32,9 @@ namespace InstitutoDeIdiomas
         private Panel panel1;
         private MaterialRaisedButton btnGenerarReportePagos;
         String idpago;
+        string usuario;
       
-        public frmConsultarDeudores()
+        public frmConsultarDeudores(string idUsuario)
         {
             InitializeComponent();
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
@@ -44,6 +45,32 @@ namespace InstitutoDeIdiomas
     Color.PowderBlue;
             this.dataGridView2.AlternatingRowsDefaultCellStyle.BackColor =
     Color.PowderBlue;
+            buscarUsuario(idUsuario);
+        }
+        private void buscarUsuario(string idUsuario)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("buscar_usuario_porid", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+                usuario = dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void InitializeComponent()
@@ -436,7 +463,7 @@ namespace InstitutoDeIdiomas
                     }
                 }
                 dtCloned.Columns.RemoveAt(3);
-                using (frmRptListaDePagos frm = new frmRptListaDePagos(dtCloned, dtalumno, dtResumen))
+                using (frmRptListaDePagos frm = new frmRptListaDePagos(dtCloned, dtalumno, dtResumen,usuario))
                 {
                     frm.ShowDialog();
                 }

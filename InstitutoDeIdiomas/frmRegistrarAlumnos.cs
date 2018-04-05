@@ -1503,6 +1503,7 @@ namespace InstitutoDeIdiomas
                         cmd.Connection.Close();
                     }
                 } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
                 }
             }
             return ok;

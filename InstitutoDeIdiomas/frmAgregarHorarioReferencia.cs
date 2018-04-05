@@ -22,6 +22,8 @@ namespace InstitutoDeIdiomas
             InitializeComponent();
             this.frmCrearPago = frmCrearPago;
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
+            dtmHoraInicio.CustomFormat = "HH:mm";
+            dtmHoraFinal.CustomFormat = "HH:mm";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

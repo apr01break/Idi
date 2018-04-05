@@ -28,7 +28,7 @@ namespace InstitutoDeIdiomas.ReportForms
             this.salon = salon;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
-            this.numero = Path.GetFileNameWithoutExtension(numero).Remove(4, 3);
+            this.numero = numero;
         }
 
         private void frmRptRelacionAlumnos_Load(object sender, EventArgs e)

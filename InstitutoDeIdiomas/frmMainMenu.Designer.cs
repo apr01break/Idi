@@ -32,6 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TXTCODUSER = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnGruposPasados = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.RichTextBox();
             this.sidePanel = new System.Windows.Forms.Panel();
@@ -65,6 +66,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panelUsuario = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtMain = new System.Windows.Forms.RichTextBox();
@@ -77,12 +79,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCambiarClave = new System.Windows.Forms.Button();
-            this.btnGruposPasados = new System.Windows.Forms.Button();
             this.panelGruposPasados = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.btnAsignarRoles = new InstitutoDeIdiomas.BotonCircular();
+            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnPagosReporte = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsistenciaAlumnoReportes = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsistenciaGrupoReportes = new InstitutoDeIdiomas.BotonCircular();
+            this.btnFichaMatricula = new InstitutoDeIdiomas.BotonCircular();
+            this.btnRecordAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsignarAlumnosGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnCrearGrupo = new InstitutoDeIdiomas.BotonCircular();
+            this.btnGruposEmpezados = new InstitutoDeIdiomas.BotonCircular();
             this.btnVerNotasPasadas = new InstitutoDeIdiomas.BotonCircular();
             this.btnAgregarAsistenciaNotaPasada = new InstitutoDeIdiomas.BotonCircular();
             this.btnCrearGrupoPasado = new InstitutoDeIdiomas.BotonCircular();
@@ -94,16 +106,6 @@
             this.btnConsultarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.btnActualizarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistrarAlumno = new InstitutoDeIdiomas.BotonCircular();
-            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
-            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
-            this.btnPagosReporte = new InstitutoDeIdiomas.BotonCircular();
-            this.btnAsistenciaAlumnoReportes = new InstitutoDeIdiomas.BotonCircular();
-            this.btnAsistenciaGrupoReportes = new InstitutoDeIdiomas.BotonCircular();
-            this.btnFichaMatricula = new InstitutoDeIdiomas.BotonCircular();
-            this.btnRecordAlumno = new InstitutoDeIdiomas.BotonCircular();
-            this.btnAsignarAlumnosGrupo = new InstitutoDeIdiomas.BotonCircular();
-            this.btnCrearGrupo = new InstitutoDeIdiomas.BotonCircular();
-            this.btnGruposEmpezados = new InstitutoDeIdiomas.BotonCircular();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -123,7 +125,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(789, 527);
+            this.label3.Location = new System.Drawing.Point(789, 508);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 2;
@@ -135,7 +137,7 @@
             this.TXTCODUSER.AutoSize = true;
             this.TXTCODUSER.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTCODUSER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.TXTCODUSER.Location = new System.Drawing.Point(843, 527);
+            this.TXTCODUSER.Location = new System.Drawing.Point(843, 508);
             this.TXTCODUSER.Name = "TXTCODUSER";
             this.TXTCODUSER.Size = new System.Drawing.Size(47, 15);
             this.TXTCODUSER.TabIndex = 3;
@@ -156,8 +158,25 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 556);
+            this.panel2.Size = new System.Drawing.Size(200, 537);
             this.panel2.TabIndex = 15;
+            // 
+            // btnGruposPasados
+            // 
+            this.btnGruposPasados.FlatAppearance.BorderSize = 0;
+            this.btnGruposPasados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposPasados.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGruposPasados.ForeColor = System.Drawing.Color.White;
+            this.btnGruposPasados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposPasados.Image")));
+            this.btnGruposPasados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGruposPasados.Location = new System.Drawing.Point(10, 485);
+            this.btnGruposPasados.Name = "btnGruposPasados";
+            this.btnGruposPasados.Size = new System.Drawing.Size(190, 63);
+            this.btnGruposPasados.TabIndex = 21;
+            this.btnGruposPasados.Text = "   Grupos pasados ";
+            this.btnGruposPasados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGruposPasados.UseVisualStyleBackColor = true;
+            this.btnGruposPasados.Click += new System.EventHandler(this.btnGruposPasados_Click);
             // 
             // pictureBox2
             // 
@@ -173,6 +192,7 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.White;
             this.txtUser.Location = new System.Drawing.Point(22, 105);
             this.txtUser.Name = "txtUser";
@@ -193,7 +213,7 @@
             // 
             this.btnAlumnos.FlatAppearance.BorderSize = 0;
             this.btnAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlumnos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlumnos.ForeColor = System.Drawing.Color.White;
             this.btnAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnAlumnos.Image")));
             this.btnAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +230,7 @@
             // 
             this.btnPagos.FlatAppearance.BorderSize = 0;
             this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.ForeColor = System.Drawing.Color.White;
             this.btnPagos.Image = ((System.Drawing.Image)(resources.GetObject("btnPagos.Image")));
             this.btnPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +247,7 @@
             // 
             this.btnReportes.FlatAppearance.BorderSize = 0;
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,7 +264,7 @@
             // 
             this.btnGrupos.FlatAppearance.BorderSize = 0;
             this.btnGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrupos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrupos.ForeColor = System.Drawing.Color.White;
             this.btnGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupos.Image")));
             this.btnGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,7 +281,7 @@
             // 
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,22 +317,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(121, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 19;
             this.label5.Text = "Idiomas";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(112, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(90, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Instituto de";
             // 
@@ -335,7 +355,7 @@
             this.panelAlumno.Controls.Add(this.btnConsultarAlumno);
             this.panelAlumno.Controls.Add(this.btnActualizarAlumno);
             this.panelAlumno.Controls.Add(this.btnRegistrarAlumno);
-            this.panelAlumno.Location = new System.Drawing.Point(206, 149);
+            this.panelAlumno.Location = new System.Drawing.Point(206, 159);
             this.panelAlumno.Name = "panelAlumno";
             this.panelAlumno.Size = new System.Drawing.Size(685, 312);
             this.panelAlumno.TabIndex = 18;
@@ -344,40 +364,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(425, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 19;
             this.label2.Text = "Actualizar datos";
             // 
             // Consultar
             // 
             this.Consultar.AutoSize = true;
-            this.Consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Consultar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Consultar.Location = new System.Drawing.Point(183, 285);
             this.Consultar.Name = "Consultar";
-            this.Consultar.Size = new System.Drawing.Size(64, 16);
+            this.Consultar.Size = new System.Drawing.Size(70, 17);
             this.Consultar.TabIndex = 17;
             this.Consultar.Text = "Consultar";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(186, 140);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(164, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.Size = new System.Drawing.Size(105, 17);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Registrar";
+            this.label6.Text = "Nuevo alumno";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(473, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 16);
+            this.label4.Size = new System.Drawing.Size(134, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "Record Académico";
             // 
@@ -392,7 +412,7 @@
             this.panelPago.Controls.Add(this.btnConsultaGeneralPago);
             this.panelPago.Controls.Add(this.btnRegistrarPago);
             this.panelPago.Controls.Add(this.btnConsultaEspecificaPago);
-            this.panelPago.Location = new System.Drawing.Point(206, 149);
+            this.panelPago.Location = new System.Drawing.Point(206, 159);
             this.panelPago.Name = "panelPago";
             this.panelPago.Size = new System.Drawing.Size(685, 312);
             this.panelPago.TabIndex = 19;
@@ -402,43 +422,46 @@
             // lblCorregirPago
             // 
             this.lblCorregirPago.AutoSize = true;
-            this.lblCorregirPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorregirPago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorregirPago.Location = new System.Drawing.Point(434, 285);
             this.lblCorregirPago.Name = "lblCorregirPago";
-            this.lblCorregirPago.Size = new System.Drawing.Size(92, 16);
+            this.lblCorregirPago.Size = new System.Drawing.Size(99, 17);
             this.lblCorregirPago.TabIndex = 45;
             this.lblCorregirPago.Text = "Corregir Pago";
-            this.lblCorregirPago.Visible = false;
+            this.lblCorregirPago.Click += new System.EventHandler(this.lblCorregirPago_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(417, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 16);
+            this.label9.Size = new System.Drawing.Size(134, 17);
             this.label9.TabIndex = 43;
             this.label9.Text = "Consulta Específica";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(158, 285);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 16);
+            this.label10.Size = new System.Drawing.Size(121, 17);
             this.label10.TabIndex = 42;
             this.label10.Text = "Consulta General";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(186, 140);
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(173, 140);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.Size = new System.Drawing.Size(90, 17);
             this.label11.TabIndex = 41;
-            this.label11.Text = "Registrar";
+            this.label11.Text = "Nuevo Pago";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panelGrupos
             // 
@@ -449,7 +472,7 @@
             this.panelGrupos.Controls.Add(this.btnAsignarAlumnosGrupo);
             this.panelGrupos.Controls.Add(this.btnCrearGrupo);
             this.panelGrupos.Controls.Add(this.btnGruposEmpezados);
-            this.panelGrupos.Location = new System.Drawing.Point(206, 149);
+            this.panelGrupos.Location = new System.Drawing.Point(206, 159);
             this.panelGrupos.Name = "panelGrupos";
             this.panelGrupos.Size = new System.Drawing.Size(685, 312);
             this.panelGrupos.TabIndex = 42;
@@ -458,32 +481,32 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(413, 140);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.Size = new System.Drawing.Size(133, 17);
             this.label7.TabIndex = 38;
             this.label7.Text = "Grupos Empezados";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(133, 285);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 16);
+            this.label8.Size = new System.Drawing.Size(170, 17);
             this.label8.TabIndex = 37;
             this.label8.Text = "Asignar alumnos a grupo";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(195, 140);
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(169, 140);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 16);
+            this.label12.Size = new System.Drawing.Size(96, 17);
             this.label12.TabIndex = 36;
-            this.label12.Text = "Crear";
+            this.label12.Text = "Nuevo Grupo";
             // 
             // panelReportes
             // 
@@ -498,7 +521,7 @@
             this.panelReportes.Controls.Add(this.label4);
             this.panelReportes.Controls.Add(this.btnFichaMatricula);
             this.panelReportes.Controls.Add(this.btnRecordAlumno);
-            this.panelReportes.Location = new System.Drawing.Point(206, 149);
+            this.panelReportes.Location = new System.Drawing.Point(206, 159);
             this.panelReportes.Name = "panelReportes";
             this.panelReportes.Size = new System.Drawing.Size(685, 312);
             this.panelReportes.TabIndex = 39;
@@ -507,80 +530,94 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(287, 140);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 16);
+            this.label14.Size = new System.Drawing.Size(125, 17);
             this.label14.TabIndex = 46;
             this.label14.Text = "Reporte de pagos";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(277, 285);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(147, 16);
+            this.label17.Size = new System.Drawing.Size(156, 17);
             this.label17.TabIndex = 44;
             this.label17.Text = "Asistencias por alumno";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(73, 285);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(138, 16);
+            this.label16.Size = new System.Drawing.Size(145, 17);
             this.label16.TabIndex = 42;
             this.label16.Text = "Asistencias por grupo";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(79, 140);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 16);
+            this.label15.Size = new System.Drawing.Size(129, 17);
             this.label15.TabIndex = 40;
             this.label15.Text = "Ficha de matrícula";
             // 
             // panelUsuario
             // 
             this.panelUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.panelUsuario.Controls.Add(this.label23);
+            this.panelUsuario.Controls.Add(this.btnAsignarRoles);
             this.panelUsuario.Controls.Add(this.label18);
             this.panelUsuario.Controls.Add(this.btnActualizarUsuario);
             this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.btnNuevoUsuario);
-            this.panelUsuario.Location = new System.Drawing.Point(206, 149);
+            this.panelUsuario.Location = new System.Drawing.Point(206, 159);
             this.panelUsuario.Name = "panelUsuario";
             this.panelUsuario.Size = new System.Drawing.Size(685, 312);
             this.panelUsuario.TabIndex = 43;
             this.panelUsuario.Visible = false;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(172, 285);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 17);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Asignar Roles";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(391, 140);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(169, 16);
+            this.label18.Size = new System.Drawing.Size(184, 17);
             this.label18.TabIndex = 43;
-            this.label18.Text = "Actualizar datos de alumno";
+            this.label18.Text = "Actualizar datos de usuario";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(168, 140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 16);
+            this.label13.Size = new System.Drawing.Size(101, 17);
             this.label13.TabIndex = 41;
             this.label13.Text = "Nuevo usuario";
             // 
             // txtMain
             // 
             this.txtMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMain.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.txtMain.Location = new System.Drawing.Point(209, 135);
+            this.txtMain.Location = new System.Drawing.Point(209, 138);
             this.txtMain.Name = "txtMain";
             this.txtMain.ReadOnly = true;
             this.txtMain.Size = new System.Drawing.Size(682, 37);
@@ -699,24 +736,6 @@
             this.btnCambiarClave.UseVisualStyleBackColor = true;
             this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click);
             // 
-            // btnGruposPasados
-            // 
-            this.btnGruposPasados.FlatAppearance.BorderSize = 0;
-            this.btnGruposPasados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruposPasados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGruposPasados.ForeColor = System.Drawing.Color.White;
-            this.btnGruposPasados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposPasados.Image")));
-            this.btnGruposPasados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGruposPasados.Location = new System.Drawing.Point(10, 485);
-            this.btnGruposPasados.Name = "btnGruposPasados";
-            this.btnGruposPasados.Size = new System.Drawing.Size(190, 63);
-            this.btnGruposPasados.TabIndex = 21;
-            this.btnGruposPasados.Text = "    Grupos pasados ";
-            this.btnGruposPasados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGruposPasados.UseVisualStyleBackColor = true;
-            this.btnGruposPasados.Visible = false;
-            this.btnGruposPasados.Click += new System.EventHandler(this.btnGruposPasados_Click);
-            // 
             // panelGruposPasados
             // 
             this.panelGruposPasados.Controls.Add(this.label19);
@@ -727,7 +746,7 @@
             this.panelGruposPasados.Controls.Add(this.btnAgregarAsistenciaNotaPasada);
             this.panelGruposPasados.Controls.Add(this.btnCrearGrupoPasado);
             this.panelGruposPasados.Controls.Add(this.btnAgregarAlumnoGrupoPasado);
-            this.panelGruposPasados.Location = new System.Drawing.Point(206, 149);
+            this.panelGruposPasados.Location = new System.Drawing.Point(206, 159);
             this.panelGruposPasados.Name = "panelGruposPasados";
             this.panelGruposPasados.Size = new System.Drawing.Size(685, 312);
             this.panelGruposPasados.TabIndex = 46;
@@ -736,43 +755,208 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(440, 269);
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(447, 285);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 16);
+            this.label19.Size = new System.Drawing.Size(69, 17);
             this.label19.TabIndex = 53;
             this.label19.Text = "Ver notas";
-            this.label19.Visible = false;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(397, 124);
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(404, 140);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(160, 16);
+            this.label20.Size = new System.Drawing.Size(175, 17);
             this.label20.TabIndex = 51;
             this.label20.Text = "Agregar alumnos a grupo";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(127, 269);
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(134, 285);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(168, 16);
+            this.label21.Size = new System.Drawing.Size(177, 17);
             this.label21.TabIndex = 50;
             this.label21.Text = "Agregar Asistencia y notas";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(169, 124);
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(171, 140);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 16);
+            this.label22.Size = new System.Drawing.Size(94, 17);
             this.label22.TabIndex = 49;
-            this.label22.Text = "Crear Grupo";
+            this.label22.Text = "Nuevo grupo";
+            // 
+            // btnAsignarRoles
+            // 
+            this.btnAsignarRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAsignarRoles.FlatAppearance.BorderSize = 0;
+            this.btnAsignarRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarRoles.Image")));
+            this.btnAsignarRoles.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarRoles.Name = "btnAsignarRoles";
+            this.btnAsignarRoles.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarRoles.TabIndex = 44;
+            this.btnAsignarRoles.UseVisualStyleBackColor = false;
+            this.btnAsignarRoles.Visible = false;
+            this.btnAsignarRoles.Click += new System.EventHandler(this.btnAsignarRoles_Click);
+            this.btnAsignarRoles.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarRoles_Layout);
+            // 
+            // btnActualizarUsuario
+            // 
+            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
+            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
+            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
+            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
+            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnActualizarUsuario.TabIndex = 42;
+            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
+            this.btnActualizarUsuario.Visible = false;
+            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
+            this.btnActualizarUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarUsuario_Layout);
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnNuevoUsuario.TabIndex = 40;
+            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnNuevoUsuario.Visible = false;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
+            this.btnNuevoUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnNuevoUsuario_Layout);
+            // 
+            // btnPagosReporte
+            // 
+            this.btnPagosReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnPagosReporte.FlatAppearance.BorderSize = 0;
+            this.btnPagosReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagosReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnPagosReporte.Image")));
+            this.btnPagosReporte.Location = new System.Drawing.Point(304, 44);
+            this.btnPagosReporte.Name = "btnPagosReporte";
+            this.btnPagosReporte.Size = new System.Drawing.Size(90, 90);
+            this.btnPagosReporte.TabIndex = 45;
+            this.btnPagosReporte.UseVisualStyleBackColor = false;
+            this.btnPagosReporte.Visible = false;
+            this.btnPagosReporte.Click += new System.EventHandler(this.btnPagosReporte_Click);
+            this.btnPagosReporte.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnPagosReporte_Layout);
+            // 
+            // btnAsistenciaAlumnoReportes
+            // 
+            this.btnAsistenciaAlumnoReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAsistenciaAlumnoReportes.FlatAppearance.BorderSize = 0;
+            this.btnAsistenciaAlumnoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistenciaAlumnoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaAlumnoReportes.Image")));
+            this.btnAsistenciaAlumnoReportes.Location = new System.Drawing.Point(304, 189);
+            this.btnAsistenciaAlumnoReportes.Name = "btnAsistenciaAlumnoReportes";
+            this.btnAsistenciaAlumnoReportes.Size = new System.Drawing.Size(90, 90);
+            this.btnAsistenciaAlumnoReportes.TabIndex = 43;
+            this.btnAsistenciaAlumnoReportes.UseVisualStyleBackColor = false;
+            this.btnAsistenciaAlumnoReportes.Visible = false;
+            this.btnAsistenciaAlumnoReportes.Click += new System.EventHandler(this.btnAsistenciaAlumnoReportes_Click);
+            this.btnAsistenciaAlumnoReportes.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsistenciaAlumnoReportes_Layout);
+            // 
+            // btnAsistenciaGrupoReportes
+            // 
+            this.btnAsistenciaGrupoReportes.BackColor = System.Drawing.Color.Teal;
+            this.btnAsistenciaGrupoReportes.FlatAppearance.BorderSize = 0;
+            this.btnAsistenciaGrupoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistenciaGrupoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaGrupoReportes.Image")));
+            this.btnAsistenciaGrupoReportes.Location = new System.Drawing.Point(97, 189);
+            this.btnAsistenciaGrupoReportes.Name = "btnAsistenciaGrupoReportes";
+            this.btnAsistenciaGrupoReportes.Size = new System.Drawing.Size(90, 90);
+            this.btnAsistenciaGrupoReportes.TabIndex = 41;
+            this.btnAsistenciaGrupoReportes.UseVisualStyleBackColor = false;
+            this.btnAsistenciaGrupoReportes.Visible = false;
+            this.btnAsistenciaGrupoReportes.Click += new System.EventHandler(this.btnAsistenciaGrupoReportes_Click);
+            this.btnAsistenciaGrupoReportes.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsistenciaGrupoReportes_Layout);
+            // 
+            // btnFichaMatricula
+            // 
+            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
+            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFichaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMatricula.Image")));
+            this.btnFichaMatricula.Location = new System.Drawing.Point(97, 44);
+            this.btnFichaMatricula.Name = "btnFichaMatricula";
+            this.btnFichaMatricula.Size = new System.Drawing.Size(90, 90);
+            this.btnFichaMatricula.TabIndex = 39;
+            this.btnFichaMatricula.UseVisualStyleBackColor = false;
+            this.btnFichaMatricula.Visible = false;
+            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
+            this.btnFichaMatricula.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnFichaMatricula_Layout);
+            // 
+            // btnRecordAlumno
+            // 
+            this.btnRecordAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRecordAlumno.FlatAppearance.BorderSize = 0;
+            this.btnRecordAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordAlumno.ForeColor = System.Drawing.Color.Red;
+            this.btnRecordAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRecordAlumno.Image")));
+            this.btnRecordAlumno.Location = new System.Drawing.Point(493, 44);
+            this.btnRecordAlumno.Name = "btnRecordAlumno";
+            this.btnRecordAlumno.Size = new System.Drawing.Size(90, 90);
+            this.btnRecordAlumno.TabIndex = 15;
+            this.btnRecordAlumno.UseVisualStyleBackColor = false;
+            this.btnRecordAlumno.Visible = false;
+            this.btnRecordAlumno.Click += new System.EventHandler(this.btnRecord_Click);
+            this.btnRecordAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRecordAlumno_Layout);
+            // 
+            // btnAsignarAlumnosGrupo
+            // 
+            this.btnAsignarAlumnosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAsignarAlumnosGrupo.FlatAppearance.BorderSize = 0;
+            this.btnAsignarAlumnosGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarAlumnosGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarAlumnosGrupo.Image")));
+            this.btnAsignarAlumnosGrupo.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarAlumnosGrupo.Name = "btnAsignarAlumnosGrupo";
+            this.btnAsignarAlumnosGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarAlumnosGrupo.TabIndex = 35;
+            this.btnAsignarAlumnosGrupo.UseVisualStyleBackColor = false;
+            this.btnAsignarAlumnosGrupo.Visible = false;
+            this.btnAsignarAlumnosGrupo.Click += new System.EventHandler(this.btnAsignarAlumnosGrupo_Click_1);
+            this.btnAsignarAlumnosGrupo.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarAlumnosGrupo_Layout);
+            // 
+            // btnCrearGrupo
+            // 
+            this.btnCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCrearGrupo.FlatAppearance.BorderSize = 0;
+            this.btnCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupo.Image")));
+            this.btnCrearGrupo.Location = new System.Drawing.Point(171, 44);
+            this.btnCrearGrupo.Name = "btnCrearGrupo";
+            this.btnCrearGrupo.Size = new System.Drawing.Size(90, 90);
+            this.btnCrearGrupo.TabIndex = 34;
+            this.btnCrearGrupo.UseVisualStyleBackColor = false;
+            this.btnCrearGrupo.Visible = false;
+            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click_1);
+            this.btnCrearGrupo.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCrearGrupo_Layout);
+            // 
+            // btnGruposEmpezados
+            // 
+            this.btnGruposEmpezados.BackColor = System.Drawing.Color.Teal;
+            this.btnGruposEmpezados.FlatAppearance.BorderSize = 0;
+            this.btnGruposEmpezados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposEmpezados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposEmpezados.Image")));
+            this.btnGruposEmpezados.Location = new System.Drawing.Point(435, 44);
+            this.btnGruposEmpezados.Name = "btnGruposEmpezados";
+            this.btnGruposEmpezados.Size = new System.Drawing.Size(90, 90);
+            this.btnGruposEmpezados.TabIndex = 33;
+            this.btnGruposEmpezados.UseVisualStyleBackColor = false;
+            this.btnGruposEmpezados.Visible = false;
+            this.btnGruposEmpezados.Click += new System.EventHandler(this.btnGruposEmpezados_Click_1);
+            this.btnGruposEmpezados.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnGruposEmpezados_Layout);
             // 
             // btnVerNotasPasadas
             // 
@@ -780,12 +964,14 @@
             this.btnVerNotasPasadas.FlatAppearance.BorderSize = 0;
             this.btnVerNotasPasadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerNotasPasadas.Image = ((System.Drawing.Image)(resources.GetObject("btnVerNotasPasadas.Image")));
-            this.btnVerNotasPasadas.Location = new System.Drawing.Point(426, 173);
+            this.btnVerNotasPasadas.Location = new System.Drawing.Point(435, 189);
             this.btnVerNotasPasadas.Name = "btnVerNotasPasadas";
             this.btnVerNotasPasadas.Size = new System.Drawing.Size(90, 90);
             this.btnVerNotasPasadas.TabIndex = 52;
             this.btnVerNotasPasadas.UseVisualStyleBackColor = false;
+            this.btnVerNotasPasadas.Visible = false;
             this.btnVerNotasPasadas.Click += new System.EventHandler(this.btnVerNotasPasadas_Click);
+            this.btnVerNotasPasadas.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnVerNotasPasadas_Layout);
             // 
             // btnAgregarAsistenciaNotaPasada
             // 
@@ -793,12 +979,14 @@
             this.btnAgregarAsistenciaNotaPasada.FlatAppearance.BorderSize = 0;
             this.btnAgregarAsistenciaNotaPasada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarAsistenciaNotaPasada.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAsistenciaNotaPasada.Image")));
-            this.btnAgregarAsistenciaNotaPasada.Location = new System.Drawing.Point(162, 173);
+            this.btnAgregarAsistenciaNotaPasada.Location = new System.Drawing.Point(171, 189);
             this.btnAgregarAsistenciaNotaPasada.Name = "btnAgregarAsistenciaNotaPasada";
             this.btnAgregarAsistenciaNotaPasada.Size = new System.Drawing.Size(90, 90);
             this.btnAgregarAsistenciaNotaPasada.TabIndex = 48;
             this.btnAgregarAsistenciaNotaPasada.UseVisualStyleBackColor = false;
+            this.btnAgregarAsistenciaNotaPasada.Visible = false;
             this.btnAgregarAsistenciaNotaPasada.Click += new System.EventHandler(this.btnAgregarAsistenciaNotaPasada_Click);
+            this.btnAgregarAsistenciaNotaPasada.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAgregarAsistenciaNotaPasada_Layout);
             // 
             // btnCrearGrupoPasado
             // 
@@ -806,12 +994,14 @@
             this.btnCrearGrupoPasado.FlatAppearance.BorderSize = 0;
             this.btnCrearGrupoPasado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearGrupoPasado.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupoPasado.Image")));
-            this.btnCrearGrupoPasado.Location = new System.Drawing.Point(162, 28);
+            this.btnCrearGrupoPasado.Location = new System.Drawing.Point(171, 44);
             this.btnCrearGrupoPasado.Name = "btnCrearGrupoPasado";
             this.btnCrearGrupoPasado.Size = new System.Drawing.Size(90, 90);
             this.btnCrearGrupoPasado.TabIndex = 47;
             this.btnCrearGrupoPasado.UseVisualStyleBackColor = false;
+            this.btnCrearGrupoPasado.Visible = false;
             this.btnCrearGrupoPasado.Click += new System.EventHandler(this.btnCrearGrupoPasado_Click);
+            this.btnCrearGrupoPasado.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCrearGrupoPasado_Layout);
             // 
             // btnAgregarAlumnoGrupoPasado
             // 
@@ -819,12 +1009,13 @@
             this.btnAgregarAlumnoGrupoPasado.FlatAppearance.BorderSize = 0;
             this.btnAgregarAlumnoGrupoPasado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarAlumnoGrupoPasado.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAlumnoGrupoPasado.Image")));
-            this.btnAgregarAlumnoGrupoPasado.Location = new System.Drawing.Point(426, 28);
+            this.btnAgregarAlumnoGrupoPasado.Location = new System.Drawing.Point(435, 44);
             this.btnAgregarAlumnoGrupoPasado.Name = "btnAgregarAlumnoGrupoPasado";
             this.btnAgregarAlumnoGrupoPasado.Size = new System.Drawing.Size(90, 90);
             this.btnAgregarAlumnoGrupoPasado.TabIndex = 46;
             this.btnAgregarAlumnoGrupoPasado.UseVisualStyleBackColor = false;
             this.btnAgregarAlumnoGrupoPasado.Click += new System.EventHandler(this.btnAgregarAlumnoGrupoPasado_Click);
+            this.btnAgregarAlumnoGrupoPasado.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAgregarAlumnoGrupoPasado_Layout);
             // 
             // btnCorregirPago
             // 
@@ -839,6 +1030,7 @@
             this.btnCorregirPago.UseVisualStyleBackColor = false;
             this.btnCorregirPago.Visible = false;
             this.btnCorregirPago.Click += new System.EventHandler(this.btnCorregirPago_Click_1);
+            this.btnCorregirPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnCorregirPago_Layout);
             // 
             // btnConsultaGeneralPago
             // 
@@ -851,7 +1043,9 @@
             this.btnConsultaGeneralPago.Size = new System.Drawing.Size(90, 90);
             this.btnConsultaGeneralPago.TabIndex = 40;
             this.btnConsultaGeneralPago.UseVisualStyleBackColor = false;
+            this.btnConsultaGeneralPago.Visible = false;
             this.btnConsultaGeneralPago.Click += new System.EventHandler(this.btnConsultaGeneralPago_Click_1);
+            this.btnConsultaGeneralPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultaGeneralPago_Layout);
             // 
             // btnRegistrarPago
             // 
@@ -864,7 +1058,9 @@
             this.btnRegistrarPago.Size = new System.Drawing.Size(90, 90);
             this.btnRegistrarPago.TabIndex = 39;
             this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Visible = false;
             this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
+            this.btnRegistrarPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRegistrarPago_Layout);
             // 
             // btnConsultaEspecificaPago
             // 
@@ -877,7 +1073,9 @@
             this.btnConsultaEspecificaPago.Size = new System.Drawing.Size(90, 90);
             this.btnConsultaEspecificaPago.TabIndex = 38;
             this.btnConsultaEspecificaPago.UseVisualStyleBackColor = false;
+            this.btnConsultaEspecificaPago.Visible = false;
             this.btnConsultaEspecificaPago.Click += new System.EventHandler(this.btnConsultaEspecificaPago_Click_1);
+            this.btnConsultaEspecificaPago.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultaEspecificaPago_Layout);
             // 
             // btnConsultarAlumno
             // 
@@ -890,7 +1088,9 @@
             this.btnConsultarAlumno.Size = new System.Drawing.Size(90, 90);
             this.btnConsultarAlumno.TabIndex = 14;
             this.btnConsultarAlumno.UseVisualStyleBackColor = false;
+            this.btnConsultarAlumno.Visible = false;
             this.btnConsultarAlumno.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.btnConsultarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnConsultarAlumno_Layout);
             // 
             // btnActualizarAlumno
             // 
@@ -903,7 +1103,9 @@
             this.btnActualizarAlumno.Size = new System.Drawing.Size(90, 90);
             this.btnActualizarAlumno.TabIndex = 13;
             this.btnActualizarAlumno.UseVisualStyleBackColor = false;
+            this.btnActualizarAlumno.Visible = false;
             this.btnActualizarAlumno.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnActualizarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarAlumno_Layout);
             // 
             // btnRegistrarAlumno
             // 
@@ -916,146 +1118,16 @@
             this.btnRegistrarAlumno.Size = new System.Drawing.Size(90, 90);
             this.btnRegistrarAlumno.TabIndex = 12;
             this.btnRegistrarAlumno.UseVisualStyleBackColor = false;
+            this.btnRegistrarAlumno.Visible = false;
             this.btnRegistrarAlumno.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnActualizarUsuario
-            // 
-            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
-            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
-            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
-            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
-            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnActualizarUsuario.TabIndex = 42;
-            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
-            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
-            // 
-            // btnNuevoUsuario
-            // 
-            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
-            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnNuevoUsuario.TabIndex = 40;
-            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
-            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
-            // 
-            // btnPagosReporte
-            // 
-            this.btnPagosReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnPagosReporte.FlatAppearance.BorderSize = 0;
-            this.btnPagosReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagosReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnPagosReporte.Image")));
-            this.btnPagosReporte.Location = new System.Drawing.Point(304, 44);
-            this.btnPagosReporte.Name = "btnPagosReporte";
-            this.btnPagosReporte.Size = new System.Drawing.Size(90, 90);
-            this.btnPagosReporte.TabIndex = 45;
-            this.btnPagosReporte.UseVisualStyleBackColor = false;
-            this.btnPagosReporte.Click += new System.EventHandler(this.btnPagosReporte_Click);
-            // 
-            // btnAsistenciaAlumnoReportes
-            // 
-            this.btnAsistenciaAlumnoReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAsistenciaAlumnoReportes.FlatAppearance.BorderSize = 0;
-            this.btnAsistenciaAlumnoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsistenciaAlumnoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaAlumnoReportes.Image")));
-            this.btnAsistenciaAlumnoReportes.Location = new System.Drawing.Point(304, 189);
-            this.btnAsistenciaAlumnoReportes.Name = "btnAsistenciaAlumnoReportes";
-            this.btnAsistenciaAlumnoReportes.Size = new System.Drawing.Size(90, 90);
-            this.btnAsistenciaAlumnoReportes.TabIndex = 43;
-            this.btnAsistenciaAlumnoReportes.UseVisualStyleBackColor = false;
-            this.btnAsistenciaAlumnoReportes.Click += new System.EventHandler(this.btnAsistenciaAlumnoReportes_Click);
-            // 
-            // btnAsistenciaGrupoReportes
-            // 
-            this.btnAsistenciaGrupoReportes.BackColor = System.Drawing.Color.Teal;
-            this.btnAsistenciaGrupoReportes.FlatAppearance.BorderSize = 0;
-            this.btnAsistenciaGrupoReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsistenciaGrupoReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAsistenciaGrupoReportes.Image")));
-            this.btnAsistenciaGrupoReportes.Location = new System.Drawing.Point(97, 189);
-            this.btnAsistenciaGrupoReportes.Name = "btnAsistenciaGrupoReportes";
-            this.btnAsistenciaGrupoReportes.Size = new System.Drawing.Size(90, 90);
-            this.btnAsistenciaGrupoReportes.TabIndex = 41;
-            this.btnAsistenciaGrupoReportes.UseVisualStyleBackColor = false;
-            this.btnAsistenciaGrupoReportes.Click += new System.EventHandler(this.btnAsistenciaGrupoReportes_Click);
-            // 
-            // btnFichaMatricula
-            // 
-            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
-            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFichaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMatricula.Image")));
-            this.btnFichaMatricula.Location = new System.Drawing.Point(97, 44);
-            this.btnFichaMatricula.Name = "btnFichaMatricula";
-            this.btnFichaMatricula.Size = new System.Drawing.Size(90, 90);
-            this.btnFichaMatricula.TabIndex = 39;
-            this.btnFichaMatricula.UseVisualStyleBackColor = false;
-            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
-            // 
-            // btnRecordAlumno
-            // 
-            this.btnRecordAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRecordAlumno.FlatAppearance.BorderSize = 0;
-            this.btnRecordAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordAlumno.ForeColor = System.Drawing.Color.Red;
-            this.btnRecordAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnRecordAlumno.Image")));
-            this.btnRecordAlumno.Location = new System.Drawing.Point(493, 44);
-            this.btnRecordAlumno.Name = "btnRecordAlumno";
-            this.btnRecordAlumno.Size = new System.Drawing.Size(90, 90);
-            this.btnRecordAlumno.TabIndex = 15;
-            this.btnRecordAlumno.UseVisualStyleBackColor = false;
-            this.btnRecordAlumno.Click += new System.EventHandler(this.btnRecord_Click);
-            // 
-            // btnAsignarAlumnosGrupo
-            // 
-            this.btnAsignarAlumnosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAsignarAlumnosGrupo.FlatAppearance.BorderSize = 0;
-            this.btnAsignarAlumnosGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignarAlumnosGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarAlumnosGrupo.Image")));
-            this.btnAsignarAlumnosGrupo.Location = new System.Drawing.Point(171, 189);
-            this.btnAsignarAlumnosGrupo.Name = "btnAsignarAlumnosGrupo";
-            this.btnAsignarAlumnosGrupo.Size = new System.Drawing.Size(90, 90);
-            this.btnAsignarAlumnosGrupo.TabIndex = 35;
-            this.btnAsignarAlumnosGrupo.UseVisualStyleBackColor = false;
-            this.btnAsignarAlumnosGrupo.Click += new System.EventHandler(this.btnAsignarAlumnosGrupo_Click_1);
-            // 
-            // btnCrearGrupo
-            // 
-            this.btnCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCrearGrupo.FlatAppearance.BorderSize = 0;
-            this.btnCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearGrupo.Image")));
-            this.btnCrearGrupo.Location = new System.Drawing.Point(171, 44);
-            this.btnCrearGrupo.Name = "btnCrearGrupo";
-            this.btnCrearGrupo.Size = new System.Drawing.Size(90, 90);
-            this.btnCrearGrupo.TabIndex = 34;
-            this.btnCrearGrupo.UseVisualStyleBackColor = false;
-            this.btnCrearGrupo.Click += new System.EventHandler(this.btnCrearGrupo_Click_1);
-            // 
-            // btnGruposEmpezados
-            // 
-            this.btnGruposEmpezados.BackColor = System.Drawing.Color.Teal;
-            this.btnGruposEmpezados.FlatAppearance.BorderSize = 0;
-            this.btnGruposEmpezados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruposEmpezados.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposEmpezados.Image")));
-            this.btnGruposEmpezados.Location = new System.Drawing.Point(435, 44);
-            this.btnGruposEmpezados.Name = "btnGruposEmpezados";
-            this.btnGruposEmpezados.Size = new System.Drawing.Size(90, 90);
-            this.btnGruposEmpezados.TabIndex = 33;
-            this.btnGruposEmpezados.UseVisualStyleBackColor = false;
-            this.btnGruposEmpezados.Click += new System.EventHandler(this.btnGruposEmpezados_Click_1);
+            this.btnRegistrarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRegistrarAlumno_Layout);
             // 
             // frmMainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(896, 556);
+            this.ClientSize = new System.Drawing.Size(896, 537);
             this.Controls.Add(this.txtMain);
-            this.Controls.Add(this.panelGruposPasados);
             this.Controls.Add(this.panelConfiguracion);
             this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.button2);
@@ -1067,11 +1139,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TXTCODUSER);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.panelReportes);
+            this.Controls.Add(this.panelGrupos);
+            this.Controls.Add(this.panelGruposPasados);
             this.Controls.Add(this.panelPago);
             this.Controls.Add(this.panelAlumno);
             this.Controls.Add(this.panelUsuario);
-            this.Controls.Add(this.panelReportes);
-            this.Controls.Add(this.panelGrupos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1178,5 +1251,7 @@
         private BotonCircular btnAgregarAsistenciaNotaPasada;
         private BotonCircular btnCrearGrupoPasado;
         private BotonCircular btnAgregarAlumnoGrupoPasado;
+        private System.Windows.Forms.Label label23;
+        private BotonCircular btnAsignarRoles;
     }
 }

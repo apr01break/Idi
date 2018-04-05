@@ -17,12 +17,14 @@ namespace InstitutoDeIdiomas.ReportForms
         DataTable tabledata;
         DataTable alumno;
         DataTable dtResumen;
-        public frmRptListaDePagos(DataTable dt,DataTable dtal, DataTable dtResumen)
+        string usuario;
+        public frmRptListaDePagos(DataTable dt,DataTable dtal, DataTable dtResumen, string usuario)
         {
             InitializeComponent();
             tabledata = dt;
             alumno = dtal;
             this.dtResumen = dtResumen;
+            this.usuario = usuario;
         }
 
         private void frmRptListaDePagos_Load(object sender, EventArgs e)
@@ -37,7 +39,11 @@ namespace InstitutoDeIdiomas.ReportForms
             ReportDataSource rds = new ReportDataSource("dsListado",tabledata);
             ReportDataSource rds1 = new ReportDataSource("dsAlumno", alumno);
             ReportDataSource rds2 = new ReportDataSource("dsResumen", dtResumen);
-            
+            Microsoft.Reporting.WinForms.ReportParameter[] para = new Microsoft.Reporting.WinForms.ReportParameter[]
+            {
+                new Microsoft.Reporting.WinForms.ReportParameter("pUsuario",usuario)
+            };
+            this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.LocalReport.DataSources.Add(rds1);
             this.reportViewer1.LocalReport.DataSources.Add(rds2);

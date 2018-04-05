@@ -455,6 +455,7 @@
             this.Name = "frmAsignarAlumnosToGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASIGNAR ALUMNOS A GRUPO";
+            this.Load += new System.EventHandler(this.frmAsignarAlumnosToGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumnoGrupo)).EndInit();
             this.panel1.ResumeLayout(false);

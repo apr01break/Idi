@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,16 +17,21 @@ namespace InstitutoDeIdiomas
     {
         String idCodigo;
         String nombreUsuario;
+        List<string> listaRoles = new List<string>();
+        MsSqlConnection configurarConexion = new MsSqlConnection();
+        public static SqlConnection _SqlConnection = new SqlConnection();
         public frmMainMenu(String id, String nombre, String tipoTrabajador)
         {
-            InitializeComponent();            
+            _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
+            idCodigo = id;
+            listarRoles();
+            InitializeComponent();
             txtUser.Text = nombre;
             txtUser.SelectionAlignment = HorizontalAlignment.Center;
             txtMain.SelectionAlignment = HorizontalAlignment.Center;
             TXTCODUSER.Text = id;
-            idCodigo = id;
             nombreUsuario = nombre;
-            verificarTrabajador(tipoTrabajador);
+            //verificarTrabajador(tipoTrabajador);
         }
 
         private void verificarTrabajador(String tipoTrabajador)
@@ -35,7 +41,7 @@ namespace InstitutoDeIdiomas
                 lblCorregirPago.Visible = true;
                 btnCorregirPago.Visible = true;
             }
-            if(tipoTrabajador == "ADMINISTRADOR")
+            if(idCodigo=="3")
             {
                 button1.Visible = true;
                 button2.Visible = true;
@@ -66,15 +72,11 @@ namespace InstitutoDeIdiomas
         {
             //new Form1().Show();
         }
-
-        private void crearGrupo_Click(object sender, EventArgs e)
-        {
-            new frmCrearGrupo().Show();
-        }
+        
 
         private void agregarAlumnosAGrupo_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(1).Show();
+            new frmVerGrupoAgregarAlumno(1,idCodigo).Show();
         }
 
         private void cREARToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -86,7 +88,7 @@ namespace InstitutoDeIdiomas
 
         private void verGrupo_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(2).Show();
+            new frmVerGrupoAgregarAlumno(2,idCodigo).Show();
         }
 
         private void FICHAMATRICULATOOL_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@ namespace InstitutoDeIdiomas
 
         private void DEUDORESCONSMENU_Click(object sender, EventArgs e)
         {
-            new frmConsultarDeudores().Show();
+            new frmConsultarDeudores(idCodigo).Show();
         }
 
         private void REPORTEMENUTOOL_Click(object sender, EventArgs e)
@@ -186,9 +188,50 @@ namespace InstitutoDeIdiomas
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             panelAlumno.Visible = true;
-            if (idCodigo == "5" || idCodigo == "25" || idCodigo == "3")
+            //if (idCodigo == "5" || idCodigo == "25" || idCodigo == "3" || idCodigo=="4")
+            //{
+            //    btnGruposPasados.Visible = true;
+            //}
+            
+        }
+
+        public void listarRoles()
+        {
+            try
             {
-                btnGruposPasados.Visible = true;
+                DataTable dt = new DataTable();
+                _SqlConnection.Open();
+                SqlCommand cmd = new SqlCommand("listar_roles_activos_usuario", _SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", idCodigo));
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt.Clear();
+                da.Fill(dt);
+                _SqlConnection.Close();
+                foreach(DataRow row in dt.Rows)
+                {
+                    listaRoles.Add(row[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public Boolean verificarRol(string nombre)
+        {
+            try
+            {
+                foreach (string item in listaRoles)
+                {
+                    if (item == nombre) return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
         
@@ -231,7 +274,7 @@ namespace InstitutoDeIdiomas
 
         private void btnConsultaGeneralPago_Click_1(object sender, EventArgs e)
         {
-            new frmConsultarDeudores().Show();
+            new frmConsultarDeudores(idCodigo).Show();
         }
 
         private void btnCorregirPago_Click_1(object sender, EventArgs e)
@@ -241,17 +284,17 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupo_Click_1(object sender, EventArgs e)
         {
-            new frmCrearGrupo().Show();
+            new frmCrearGrupo("xd").Show();
         }
 
         private void btnGruposEmpezados_Click_1(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(2).Show();
+            new frmVerGrupoAgregarAlumno(2,idCodigo).Show();
         }
 
         private void btnAsignarAlumnosGrupo_Click_1(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(1).Show();
+            new frmVerGrupoAgregarAlumno(1,idCodigo).Show();
         }
 
         private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
@@ -297,7 +340,7 @@ namespace InstitutoDeIdiomas
 
         private void btnPagosReporte_Click(object sender, EventArgs e)
         {
-            new frmConsultarDeudores().Show();
+            new frmConsultarDeudores(idCodigo).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -347,22 +390,201 @@ namespace InstitutoDeIdiomas
 
         private void btnCrearGrupoPasado_Click(object sender, EventArgs e)
         {
-            new frmCrearGrupo().Show();
+            new frmCrearGrupo(idCodigo).Show();
         }
 
         private void btnAgregarAlumnoGrupoPasado_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(3).Show();
+            new frmVerGrupoAgregarAlumno(3,idCodigo).Show();
         }
 
         private void btnAgregarAsistenciaNotaPasada_Click(object sender, EventArgs e)
         {
-            new frmSeleccionarGrupo(idCodigo,0).Show();
+            new frmSeleccionarGrupo(idCodigo,2).Show();
         }
 
         private void btnVerNotasPasadas_Click(object sender, EventArgs e)
         {
-            new frmVerGrupoAgregarAlumno(4).Show();
+            new frmVerGrupoAgregarAlumno(4,idCodigo).Show();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCorregirPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrearGrupoPasado_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "CrearGrupoPasado";
+            if (verificarRol(nombre)) btnCrearGrupoPasado.Visible = true;
+            else btnCrearGrupoPasado.Visible = false;
+        }
+
+        private void btnAgregarAlumnoGrupoPasado_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AgregarAlumnoGrupoPasado";
+            if (verificarRol(nombre)) btnAgregarAlumnoGrupoPasado.Visible = true;
+            else btnAgregarAlumnoGrupoPasado.Visible = false;
+        }
+
+        private void btnAgregarAsistenciaNotaPasada_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AgregarAsistenciaNotaPasada";
+            if (verificarRol(nombre)) btnAgregarAsistenciaNotaPasada.Visible = true;
+            else btnAgregarAsistenciaNotaPasada.Visible = false;
+        }
+
+        private void btnVerNotasPasadas_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "VerNotasPasadas";
+            if (verificarRol(nombre)) btnVerNotasPasadas.Visible = true;
+            else btnVerNotasPasadas.Visible = false;
+        }
+
+        private void btnRegistrarPago_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "RegistrarPago";
+            if (verificarRol(nombre)) btnRegistrarPago.Visible = true;
+            else btnRegistrarPago.Visible = false;
+        }
+
+        private void btnConsultaEspecificaPago_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "ConsultaEspecificaPago";
+            if (verificarRol(nombre)) btnConsultaEspecificaPago.Visible = true;
+            else btnConsultaEspecificaPago.Visible = false;
+        }
+
+        private void btnConsultaGeneralPago_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "ConsultaGeneralPago";
+            if (verificarRol(nombre)) btnConsultaGeneralPago.Visible = true;
+            else btnConsultaGeneralPago.Visible = false;
+        }
+
+        private void btnCorregirPago_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "CorregirPago";
+            if (verificarRol(nombre)) btnCorregirPago.Visible = true;
+            else btnCorregirPago.Visible = false;
+        }
+
+        private void btnRegistrarAlumno_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "RegistrarAlumno";
+            if (verificarRol(nombre)) btnRegistrarAlumno.Visible = true;
+            else btnRegistrarAlumno.Visible = false;
+        }
+
+        private void btnActualizarAlumno_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "ActualizarAlumno";
+            if (verificarRol(nombre)) btnActualizarAlumno.Visible = true;
+            else btnActualizarAlumno.Visible = false;
+        }
+
+        private void btnConsultarAlumno_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "ConsultarAlumno";
+            if (verificarRol(nombre)) btnConsultarAlumno.Visible = true;
+            else btnConsultarAlumno.Visible = false;
+        }
+
+        private void btnNuevoUsuario_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "NuevoUsuario";
+            if (verificarRol(nombre)) btnNuevoUsuario.Visible = true;
+            else btnNuevoUsuario.Visible = false;
+        }
+
+        private void btnActualizarUsuario_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "ActualizarUsuario";
+            if (verificarRol(nombre)) btnActualizarUsuario.Visible = true;
+            else btnActualizarUsuario.Visible = false;
+        }
+
+        private void btnFichaMatricula_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "FichaMatricula";
+            if (verificarRol(nombre)) btnFichaMatricula.Visible = true;
+            else btnFichaMatricula.Visible = false;
+        }
+
+        private void btnPagosReporte_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "PagosReporte";
+            if (verificarRol(nombre)) btnPagosReporte.Visible = true;
+            else btnPagosReporte.Visible = false;
+        }
+
+        private void btnRecordAlumno_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "RecordAlumno";
+            if (verificarRol(nombre)) btnRecordAlumno.Visible = true;
+            else btnRecordAlumno.Visible = false;
+        }
+
+        private void btnAsistenciaGrupoReportes_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AsistenciaGrupoReportes";
+            if (verificarRol(nombre)) btnAsistenciaGrupoReportes.Visible = true;
+            else btnAsistenciaGrupoReportes.Visible = false;
+        }
+
+        private void btnAsistenciaAlumnoReportes_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AsistenciaAlumnoReportes";
+            if (verificarRol(nombre)) btnAsistenciaAlumnoReportes.Visible = true;
+            else btnAsistenciaAlumnoReportes.Visible = false;
+        }
+
+        private void btnCrearGrupo_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "CrearGrupo";
+            if (verificarRol(nombre)) btnCrearGrupo.Visible = true;
+            else btnCrearGrupo.Visible = false;
+        }
+
+        private void btnGruposEmpezados_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "GruposEmpezados";
+            if (verificarRol(nombre)) btnGruposEmpezados.Visible = true;
+            else btnGruposEmpezados.Visible = false;
+        }
+
+        private void btnAsignarAlumnosGrupo_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AsignarAlumnosGrupo";
+            if (verificarRol(nombre)) btnAsignarAlumnosGrupo.Visible = true;
+            else btnAsignarAlumnosGrupo.Visible = false;
+        }
+
+        private void btnAsignarRoles_Click(object sender, EventArgs e)
+        {
+            new frmAsignarRoles().Show();
+        }
+
+        private void btnAsignarRoles_Layout(object sender, LayoutEventArgs e)
+        {
+            string nombre = "AsignarRoles";
+            if (verificarRol(nombre)) btnAsignarRoles.Visible = true;
+            else btnAsignarRoles.Visible = false;
         }
     }
 }

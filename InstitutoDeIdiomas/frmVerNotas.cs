@@ -20,6 +20,8 @@ namespace InstitutoDeIdiomas
         int codigoGrupo;
         String anho, mes;
         DataTable dtListaAlumno = new DataTable();
+        string nroCarnet;
+        string nombreAlumno;
         public frmVerNotas(int id)
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace InstitutoDeIdiomas
                     xx = xx + row[0].ToString().ToUpperInvariant() + " - ";
                 }
                 xx=xx.Trim();
-                xx = xx.Remove(xx.Length - 1);
+                if(xx!="") xx = xx.Remove(xx.Length - 1);
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
@@ -65,9 +67,9 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"cargarDias");
             }
-        }
+}
 
         public void cargarAlumnosBase(int idGrupo)
         {
@@ -101,6 +103,7 @@ namespace InstitutoDeIdiomas
                         dgvwNotas.Columns.Add(column);
                         column.Name = dgvwBase.Columns[i].HeaderText.ToString();
                         column.HeaderText = column.Name;
+                        
                         for (int j = 0; j < dgvwBase.RowCount - 1; j++)
                         {
                             if (i == 0)
@@ -111,7 +114,9 @@ namespace InstitutoDeIdiomas
                             dgvwNotas.Rows[j].Cells[i].Value = nota;
                         }
                     }
-                    dgvwNotas.Columns["APELLIDOS Y NOMBRES"].Width = 253;
+            dgvwNotas.Columns["CODIGO ALUMNO"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvwNotas.Columns["CODIGO ALUMNO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvwNotas.Columns["APELLIDOS Y NOMBRES"].Width = 253;
              
 
         }
@@ -133,12 +138,12 @@ namespace InstitutoDeIdiomas
                 DataRow row2 = dt.Rows[0];
                 if (!DBNull.Value.Equals(row2["horaInicio"]))
                 {
-                    String datime = Convert.ToDateTime(row2["horaInicio"]).ToString("HH:mm tt");
+                    String datime = Convert.ToDateTime(row2["horaInicio"]).ToString("HH:mm");
                     row2["horaInicio"] = datime;
                 }
                 if (!DBNull.Value.Equals(row2["horaFinal"]))
                 {
-                    String datime = Convert.ToDateTime(row2["horaFinal"]).ToString("HH:mm tt");
+                    String datime = Convert.ToDateTime(row2["horaFinal"]).ToString("HH:mm");
                     row2["horaFinal"] = datime;
                 }
                 txtIdioma.Text = row2[1].ToString();
@@ -268,6 +273,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwListening.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwListening.Rows[j].Cells[1].Value.ToString();
@@ -287,6 +294,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwSpeaking.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * (dgvwNotas.RowCount); j++)
                 {
                     String nota = dgvwSpeaking.Rows[j].Cells[1].Value.ToString();
@@ -306,6 +315,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwWriting.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwWriting.Rows[j].Cells[1].Value.ToString();
@@ -325,6 +336,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwReading.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwReading.Rows[j].Cells[1].Value.ToString();
@@ -344,6 +357,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.Name = dgvwUseOfEnglish.Rows[x].Cells[0].Value.ToString();
                 column.HeaderText = column.Name;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int j = x; j < (i - 1) * dgvwNotas.RowCount; j++)
                 {
                     String nota = dgvwUseOfEnglish.Rows[j].Cells[1].Value.ToString();
@@ -367,7 +382,7 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"cargarResultados");
             }
 
         }
@@ -380,6 +395,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Listening";
                 column.Name = "Listening";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwListening.RowCount - 1) / (dgvwNotas.RowCount);
@@ -411,6 +428,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Speaking";
                 column.Name = "Speaking";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwSpeaking.RowCount - 1) / (dgvwNotas.RowCount);
@@ -442,6 +461,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Reading";
                 column.Name = "Reading";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwReading.RowCount - 1) / (dgvwNotas.RowCount);
@@ -473,6 +494,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "Writing";
                 column.Name = "Writing";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwWriting.RowCount - 1) / (dgvwNotas.RowCount);
@@ -504,6 +527,8 @@ namespace InstitutoDeIdiomas
                 dgvwNotas.Columns.Add(column);
                 column.HeaderText = "UseOfEnglish";
                 column.Name = "UseOfEnglish";
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 for (int i = 0; i < dgvwNotas.RowCount; i++)
                 {
                     Double numeroDeNotas = (dgvwUseOfEnglish.RowCount - 1) / (dgvwNotas.RowCount);
@@ -633,7 +658,7 @@ namespace InstitutoDeIdiomas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"cargarNotasTabla");
             }
 
         }
@@ -792,6 +817,102 @@ namespace InstitutoDeIdiomas
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarExtemporaneo_Click(object sender, EventArgs e)
+        {
+            DateTime ultimoDia = Convert.ToDateTime(txtInicio.Text).AddDays(21);
+            int result = DateTime.Compare(ultimoDia, DateTime.Now);
+            if (result >= 0)
+                new frmAgregarAlumnoExtemporaneo(codigoGrupo, this).ShowDialog();
+            else
+                MessageBox.Show("Solo se pueden agregar alumnos hasta 3 semanas después de iniciado el grupo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnEliminarAlumno_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("EL ALUMNO "+nombreAlumno+" SERÁ ELIMINADO DEL GRUPO, LOS REGISTROS DE SUS ASISTENCIAS Y NOTAS TAMBIÉN SERÁN BORRADAS \n ¿DESEAS CONTINUAR?", "ADVERTENCIA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                //buscar idallumnogrupo y borrarlo
+                string idAlumnoGrupo = buscarAlumnoGrupo(nroCarnet);
+                eliminarAsistenciaNotas(idAlumnoGrupo);
+                nroCarnet = "";
+                MessageBox.Show("Alumno eliminado exitosamente");
+                dgvwNotas.DataSource = null;
+                dgvwNotas.Columns.Clear();
+                dgvwNotas.Rows.Clear();
+                cargarAlumnosBase(codigoGrupo);
+                cargarAlumnoTabla();
+
+                listarNotasListening(codigoGrupo);
+                listarNotasReading(codigoGrupo);
+                listarNotasSpeaking(codigoGrupo);
+                listarNotasUseOfEnglish(codigoGrupo);
+                listarNotasWriting(codigoGrupo);
+            }
+        }
+        public void eliminarAsistenciaNotas(string idAlumnoGrupo)
+        {
+            SqlCommand comando = new SqlCommand("eliminar_asistencia_y_notas", _SqlConnection);
+            comando.CommandType = CommandType.StoredProcedure;
+            if (comando.Connection.State == ConnectionState.Closed)
+            {
+                comando.Connection.Open();
+            }
+            comando.Parameters.Add(new SqlParameter("@idAlumnoGrupo", idAlumnoGrupo));
+            comando.ExecuteNonQuery();
+            if (comando.Connection.State == ConnectionState.Open)
+            {
+                comando.Connection.Close();
+            }
+        }
+        
+
+        public string buscarAlumnoGrupo(string nrocar)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("buscar_idalumnogrupo_carnet", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@nroCarnet", nroCarnet));
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", codigoGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                string idAlumnoGrupo = dt.Rows[0][0].ToString();
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                return idAlumnoGrupo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return "";
+            }
+        }
+
+        private void dgvwNotas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvwNotas.RowCount)
+            {
+                try
+                {
+                    DataGridViewRow row = dgvwNotas.Rows[e.RowIndex];
+                    nroCarnet = row.Cells[0].Value.ToString();
+                    nombreAlumno = row.Cells[1].Value.ToString();
+                    btnEliminarAlumno.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void frmVerNotas_Load(object sender, EventArgs e)
