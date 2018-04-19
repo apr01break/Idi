@@ -12,13 +12,15 @@
   <xs:element name="dsAsistenciaGrupo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAsistenciaGrupo" msprop:Generator_UserDSName="dsAsistenciaGrupo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Alumno" msprop:Generator_ColumnVarNameInTable="columnAlumno" msprop:Generator_ColumnPropNameInRow="Alumno" msprop:Generator_ColumnPropNameInTable="AlumnoColumn" msprop:Generator_UserColumnName="Alumno" type="xs:string" minOccurs="0" />
               <xs:element name="Asistencia" msprop:Generator_ColumnVarNameInTable="columnAsistencia" msprop:Generator_ColumnPropNameInRow="Asistencia" msprop:Generator_ColumnPropNameInTable="AsistenciaColumn" msprop:Generator_UserColumnName="Asistencia" type="xs:string" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
               <xs:element name="numerocarnet" msprop:Generator_ColumnVarNameInTable="columnnumerocarnet" msprop:Generator_ColumnPropNameInRow="numerocarnet" msprop:Generator_ColumnPropNameInTable="numerocarnetColumn" msprop:Generator_UserColumnName="numerocarnet" type="xs:string" minOccurs="0" />
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" minOccurs="0" />
+              <xs:element name="porcentaje" msprop:Generator_ColumnVarNameInTable="columnporcentaje" msprop:Generator_ColumnPropNameInRow="porcentaje" msprop:Generator_ColumnPropNameInTable="porcentajeColumn" msprop:Generator_UserColumnName="porcentaje" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

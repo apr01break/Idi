@@ -76,8 +76,8 @@ namespace InstitutoDeIdiomas
         }
         public void cargarFechasClase()
         {
-            try
-            {
+            //try
+            //{
                 SqlCommand cmd = new SqlCommand("listar_fechas_grupo", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
                 {
@@ -129,11 +129,11 @@ namespace InstitutoDeIdiomas
                 {
                     cmd.Connection.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
         public void cargarListening(string fecha)
         {
@@ -291,20 +291,7 @@ namespace InstitutoDeIdiomas
             }
 
         }
-        public void agregarTextBoxes(int numero)
-        {
-            List<Label> labelList = new List<Label>();
-            int d = 90;
-            for (int i = 0; i < numero; i++)
-            {
-                Label newLbl = new Label() { Text = "Polleco"+i };
-                newLbl.Location = new Point(400,d);
-                labelList.Add(newLbl);
-                this.Controls.Add(newLbl);
-                d = d + 50;
-            }
-            
-        }
+        
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
         {

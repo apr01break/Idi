@@ -61,6 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panelReportes = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -72,9 +73,6 @@
             this.txtMain = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.panelConfiguracion = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -84,9 +82,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.btnAsignarRoles = new InstitutoDeIdiomas.BotonCircular();
-            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
-            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnReporteGrupos = new InstitutoDeIdiomas.BotonCircular();
             this.btnPagosReporte = new InstitutoDeIdiomas.BotonCircular();
             this.btnAsistenciaAlumnoReportes = new InstitutoDeIdiomas.BotonCircular();
             this.btnAsistenciaGrupoReportes = new InstitutoDeIdiomas.BotonCircular();
@@ -106,6 +105,9 @@
             this.btnConsultarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.btnActualizarAlumno = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistrarAlumno = new InstitutoDeIdiomas.BotonCircular();
+            this.btnAsignarRoles = new InstitutoDeIdiomas.BotonCircular();
+            this.btnActualizarUsuario = new InstitutoDeIdiomas.BotonCircular();
+            this.btnNuevoUsuario = new InstitutoDeIdiomas.BotonCircular();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -511,6 +513,8 @@
             // panelReportes
             // 
             this.panelReportes.BackColor = System.Drawing.Color.Transparent;
+            this.panelReportes.Controls.Add(this.label24);
+            this.panelReportes.Controls.Add(this.btnReporteGrupos);
             this.panelReportes.Controls.Add(this.label14);
             this.panelReportes.Controls.Add(this.btnPagosReporte);
             this.panelReportes.Controls.Add(this.label17);
@@ -526,6 +530,16 @@
             this.panelReportes.Size = new System.Drawing.Size(685, 312);
             this.panelReportes.TabIndex = 39;
             this.panelReportes.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(479, 285);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(128, 17);
+            this.label24.TabIndex = 48;
+            this.label24.Text = "Reporte de grupos";
             // 
             // label14
             // 
@@ -627,7 +641,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(474, 60);
+            this.button1.Location = new System.Drawing.Point(474, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 46);
             this.button1.TabIndex = 48;
@@ -639,7 +653,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(474, 14);
+            this.button2.Location = new System.Drawing.Point(474, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 45);
             this.button2.TabIndex = 49;
@@ -647,42 +661,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
-            this.btnConfiguracion.Location = new System.Drawing.Point(728, 31);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(35, 35);
-            this.btnConfiguracion.TabIndex = 50;
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(837, 31);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
-            this.btnCerrar.TabIndex = 45;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(782, 31);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinimizar.TabIndex = 44;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // panelConfiguracion
             // 
@@ -792,50 +770,54 @@
             this.label22.TabIndex = 49;
             this.label22.Text = "Nuevo grupo";
             // 
-            // btnAsignarRoles
+            // btnConfiguracion
             // 
-            this.btnAsignarRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAsignarRoles.FlatAppearance.BorderSize = 0;
-            this.btnAsignarRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignarRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarRoles.Image")));
-            this.btnAsignarRoles.Location = new System.Drawing.Point(171, 189);
-            this.btnAsignarRoles.Name = "btnAsignarRoles";
-            this.btnAsignarRoles.Size = new System.Drawing.Size(90, 90);
-            this.btnAsignarRoles.TabIndex = 44;
-            this.btnAsignarRoles.UseVisualStyleBackColor = false;
-            this.btnAsignarRoles.Visible = false;
-            this.btnAsignarRoles.Click += new System.EventHandler(this.btnAsignarRoles_Click);
-            this.btnAsignarRoles.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarRoles_Layout);
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
+            this.btnConfiguracion.Location = new System.Drawing.Point(728, 31);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(35, 35);
+            this.btnConfiguracion.TabIndex = 50;
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
-            // btnActualizarUsuario
+            // btnCerrar
             // 
-            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
-            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
-            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
-            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
-            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnActualizarUsuario.TabIndex = 42;
-            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
-            this.btnActualizarUsuario.Visible = false;
-            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
-            this.btnActualizarUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarUsuario_Layout);
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(837, 31);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrar.TabIndex = 45;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnNuevoUsuario
+            // btnMinimizar
             // 
-            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
-            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
-            this.btnNuevoUsuario.TabIndex = 40;
-            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
-            this.btnNuevoUsuario.Visible = false;
-            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
-            this.btnNuevoUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnNuevoUsuario_Layout);
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(782, 31);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimizar.TabIndex = 44;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnReporteGrupos
+            // 
+            this.btnReporteGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnReporteGrupos.FlatAppearance.BorderSize = 0;
+            this.btnReporteGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteGrupos.Image")));
+            this.btnReporteGrupos.Location = new System.Drawing.Point(493, 189);
+            this.btnReporteGrupos.Name = "btnReporteGrupos";
+            this.btnReporteGrupos.Size = new System.Drawing.Size(90, 90);
+            this.btnReporteGrupos.TabIndex = 47;
+            this.btnReporteGrupos.UseVisualStyleBackColor = false;
+            this.btnReporteGrupos.Click += new System.EventHandler(this.btnReporteGrupos_Click);
             // 
             // btnPagosReporte
             // 
@@ -1122,6 +1104,51 @@
             this.btnRegistrarAlumno.Click += new System.EventHandler(this.btnRegistrar_Click);
             this.btnRegistrarAlumno.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnRegistrarAlumno_Layout);
             // 
+            // btnAsignarRoles
+            // 
+            this.btnAsignarRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAsignarRoles.FlatAppearance.BorderSize = 0;
+            this.btnAsignarRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarRoles.Image")));
+            this.btnAsignarRoles.Location = new System.Drawing.Point(171, 189);
+            this.btnAsignarRoles.Name = "btnAsignarRoles";
+            this.btnAsignarRoles.Size = new System.Drawing.Size(90, 90);
+            this.btnAsignarRoles.TabIndex = 44;
+            this.btnAsignarRoles.UseVisualStyleBackColor = false;
+            this.btnAsignarRoles.Visible = false;
+            this.btnAsignarRoles.Click += new System.EventHandler(this.btnAsignarRoles_Click);
+            this.btnAsignarRoles.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnAsignarRoles_Layout);
+            // 
+            // btnActualizarUsuario
+            // 
+            this.btnActualizarUsuario.BackColor = System.Drawing.Color.Purple;
+            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
+            this.btnActualizarUsuario.Location = new System.Drawing.Point(435, 44);
+            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
+            this.btnActualizarUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnActualizarUsuario.TabIndex = 42;
+            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
+            this.btnActualizarUsuario.Visible = false;
+            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
+            this.btnActualizarUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnActualizarUsuario_Layout);
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoUsuario.Image")));
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(171, 44);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(90, 90);
+            this.btnNuevoUsuario.TabIndex = 40;
+            this.btnNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnNuevoUsuario.Visible = false;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_3);
+            this.btnNuevoUsuario.Layout += new System.Windows.Forms.LayoutEventHandler(this.btnNuevoUsuario_Layout);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1139,12 +1166,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TXTCODUSER);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panelReportes);
             this.Controls.Add(this.panelGrupos);
             this.Controls.Add(this.panelGruposPasados);
             this.Controls.Add(this.panelPago);
             this.Controls.Add(this.panelAlumno);
             this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panelReportes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1152,6 +1179,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMainMenu_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmMainMenu_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmMainMenu_MouseUp);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -1253,5 +1283,7 @@
         private BotonCircular btnAgregarAlumnoGrupoPasado;
         private System.Windows.Forms.Label label23;
         private BotonCircular btnAsignarRoles;
+        private System.Windows.Forms.Label label24;
+        private BotonCircular btnReporteGrupos;
     }
 }

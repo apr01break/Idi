@@ -26,7 +26,8 @@ namespace InstitutoDeIdiomas
             if (opcion == 0) btnRegistroAuxiliar.Visible = true;
             else if (opcion == 1) btnRegistrarNotas.Visible = true;
             else if (opcion == 2) btnRegistrarAsistencias.Visible = true;
-            if(idUsuario == "5"|| idUsuario == "25" || idUsuario=="3")
+            else if (opcion == 3) btnVerAsistenciasNotas.Visible = true;
+            if (idUsuario == "5"|| idUsuario == "25" || idUsuario=="3")
             {
                 cargarGruposEncargado(idUsuario);
             }
@@ -218,6 +219,17 @@ namespace InstitutoDeIdiomas
                 this.Close();
                 frmRegistrarAsistencia.Show();
             }
+            else if (btnVerAsistenciasNotas.Visible)
+            {
+                frmVerNotasAsistenciasDocente frmVerNotasAsistenciasDocente = new frmVerNotasAsistenciasDocente(idGrupo);
+                this.Close();
+                frmVerNotasAsistenciasDocente.Show();
+            }
+        }
+
+        private void btnVerAsistenciasNotas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

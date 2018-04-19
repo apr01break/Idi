@@ -37,6 +37,7 @@
             this.btnRegistrarAsistencias = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRegistroAuxiliar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRegistrarNotas = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnVerAsistenciasNotas = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwGrupo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnVerAsistenciasNotas);
             this.panel1.Controls.Add(this.btnRegistrarAsistencias);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dgvwGrupo);
@@ -113,6 +115,16 @@
             this.btnRegistrarNotas.UseVisualStyleBackColor = true;
             this.btnRegistrarNotas.Click += new System.EventHandler(this.btnRegistrarNotas_Click);
             // 
+            // btnVerAsistenciasNotas
+            // 
+            this.btnVerAsistenciasNotas.Depth = 0;
+            resources.ApplyResources(this.btnVerAsistenciasNotas, "btnVerAsistenciasNotas");
+            this.btnVerAsistenciasNotas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnVerAsistenciasNotas.Name = "btnVerAsistenciasNotas";
+            this.btnVerAsistenciasNotas.Primary = true;
+            this.btnVerAsistenciasNotas.UseVisualStyleBackColor = true;
+            this.btnVerAsistenciasNotas.Click += new System.EventHandler(this.btnVerAsistenciasNotas_Click);
+            // 
             // frmSeleccionarGrupo
             // 
             resources.ApplyResources(this, "$this");
@@ -137,5 +149,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnRegistroAuxiliar;
         private MaterialSkin.Controls.MaterialRaisedButton btnRegistrarNotas;
         private MaterialSkin.Controls.MaterialRaisedButton btnRegistrarAsistencias;
+        private MaterialSkin.Controls.MaterialRaisedButton btnVerAsistenciasNotas;
     }
 }

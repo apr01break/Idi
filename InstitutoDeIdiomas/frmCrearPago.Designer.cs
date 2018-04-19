@@ -88,6 +88,7 @@
             this.gbMat = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BTNGUARDARPAGO = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.chAdministrativo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -257,6 +258,7 @@
             // 
             // PANELMATRICULA
             // 
+            this.PANELMATRICULA.Controls.Add(this.chAdministrativo);
             this.PANELMATRICULA.Controls.Add(this.btnNuevoHorario);
             this.PANELMATRICULA.Controls.Add(this.cbHorario);
             this.PANELMATRICULA.Controls.Add(this.label4);
@@ -846,6 +848,18 @@
             this.BTNGUARDARPAGO.UseVisualStyleBackColor = true;
             this.BTNGUARDARPAGO.Click += new System.EventHandler(this.BTNGUARDARPAGO_Click);
             // 
+            // chAdministrativo
+            // 
+            this.chAdministrativo.AutoSize = true;
+            this.chAdministrativo.Enabled = false;
+            this.chAdministrativo.Location = new System.Drawing.Point(266, 212);
+            this.chAdministrativo.Name = "chAdministrativo";
+            this.chAdministrativo.Size = new System.Drawing.Size(118, 17);
+            this.chAdministrativo.TabIndex = 10;
+            this.chAdministrativo.Text = "ADMINISTRATIVO";
+            this.chAdministrativo.UseVisualStyleBackColor = true;
+            this.chAdministrativo.CheckedChanged += new System.EventHandler(this.chAdministrativo_CheckedChanged);
+            // 
             // frmCrearPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,5 +960,6 @@
         private System.Windows.Forms.ComboBox cbHorario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnNuevoHorario;
+        private System.Windows.Forms.CheckBox chAdministrativo;
     }
 }

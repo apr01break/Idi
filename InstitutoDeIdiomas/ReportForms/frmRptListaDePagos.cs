@@ -15,16 +15,18 @@ namespace InstitutoDeIdiomas.ReportForms
     public partial class frmRptListaDePagos : MaterialForm
     {
         DataTable tabledata;
+        DataTable dtLeyenda;
         DataTable alumno;
-        DataTable dtResumen;
+        DataTable dtsaldo;
         string usuario;
-        public frmRptListaDePagos(DataTable dt,DataTable dtal, DataTable dtResumen, string usuario)
+        public frmRptListaDePagos(DataTable dt,DataTable dtal, string usuario, DataTable dtLeyenda, DataTable dtSaldo)
         {
             InitializeComponent();
             tabledata = dt;
             alumno = dtal;
-            this.dtResumen = dtResumen;
+            this.dtLeyenda = dtLeyenda;
             this.usuario = usuario;
+            this.dtsaldo = dtSaldo;
         }
 
         private void frmRptListaDePagos_Load(object sender, EventArgs e)
@@ -38,7 +40,8 @@ namespace InstitutoDeIdiomas.ReportForms
             //xd.Rows.Add(r);
             ReportDataSource rds = new ReportDataSource("dsListado",tabledata);
             ReportDataSource rds1 = new ReportDataSource("dsAlumno", alumno);
-            ReportDataSource rds2 = new ReportDataSource("dsResumen", dtResumen);
+            ReportDataSource rds2 = new ReportDataSource("dsLeyenda", dtLeyenda);
+            ReportDataSource rds3 = new ReportDataSource("dsSaldo", dtsaldo);
             Microsoft.Reporting.WinForms.ReportParameter[] para = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("pUsuario",usuario)
@@ -47,6 +50,7 @@ namespace InstitutoDeIdiomas.ReportForms
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.LocalReport.DataSources.Add(rds1);
             this.reportViewer1.LocalReport.DataSources.Add(rds2);
+            this.reportViewer1.LocalReport.DataSources.Add(rds3);
             this.reportViewer1.RefreshReport();
         }
     }

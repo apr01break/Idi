@@ -44,10 +44,13 @@
             this.lblClave = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelDocentes = new System.Windows.Forms.Panel();
+            this.btnGruposACargo = new InstitutoDeIdiomas.BotonCircular();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnRegistrarAsistenciaLibre = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistroAuxiliar = new InstitutoDeIdiomas.BotonCircular();
             this.btnRegistrarNotas = new InstitutoDeIdiomas.BotonCircular();
             this.panelAsistencia = new System.Windows.Forms.Panel();
+            this.btnMenuAdministrativo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnJustificarInasistencia = new InstitutoDeIdiomas.BotonCircular();
             this.btnPermisoAsistencia = new InstitutoDeIdiomas.BotonCircular();
@@ -72,7 +75,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(779, 482);
+            this.label3.Location = new System.Drawing.Point(779, 533);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
@@ -83,7 +86,7 @@
             // 
             this.TXTCODUSER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TXTCODUSER.AutoSize = true;
-            this.TXTCODUSER.Location = new System.Drawing.Point(837, 482);
+            this.TXTCODUSER.Location = new System.Drawing.Point(837, 533);
             this.TXTCODUSER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TXTCODUSER.Name = "TXTCODUSER";
             this.TXTCODUSER.Size = new System.Drawing.Size(35, 13);
@@ -98,7 +101,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 511);
+            this.panel1.Size = new System.Drawing.Size(200, 562);
             this.panel1.TabIndex = 8;
             // 
             // pictureBox2
@@ -180,7 +183,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 171);
+            this.label2.Location = new System.Drawing.Point(138, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 19;
@@ -190,7 +193,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(254, 171);
+            this.label4.Location = new System.Drawing.Point(397, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 20;
@@ -199,7 +202,7 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(229, 482);
+            this.lblClave.Location = new System.Drawing.Point(229, 533);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(61, 13);
             this.lblClave.TabIndex = 48;
@@ -209,7 +212,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(432, 171);
+            this.label6.Location = new System.Drawing.Point(366, 334);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 17);
             this.label6.TabIndex = 50;
@@ -217,18 +220,44 @@
             // 
             // panelDocentes
             // 
+            this.panelDocentes.Controls.Add(this.btnGruposACargo);
+            this.panelDocentes.Controls.Add(this.label9);
             this.panelDocentes.Controls.Add(this.label6);
             this.panelDocentes.Controls.Add(this.btnRegistrarAsistenciaLibre);
             this.panelDocentes.Controls.Add(this.btnRegistroAuxiliar);
             this.panelDocentes.Controls.Add(this.btnRegistrarNotas);
             this.panelDocentes.Controls.Add(this.label2);
             this.panelDocentes.Controls.Add(this.label4);
-            this.panelDocentes.Location = new System.Drawing.Point(232, 168);
+            this.panelDocentes.Location = new System.Drawing.Point(232, 134);
             this.panelDocentes.Name = "panelDocentes";
-            this.panelDocentes.Size = new System.Drawing.Size(627, 220);
+            this.panelDocentes.Size = new System.Drawing.Size(627, 369);
             this.panelDocentes.TabIndex = 51;
             this.panelDocentes.Visible = false;
             this.panelDocentes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDocentes_Paint);
+            // 
+            // btnGruposACargo
+            // 
+            this.btnGruposACargo.BackColor = System.Drawing.Color.Purple;
+            this.btnGruposACargo.FlatAppearance.BorderSize = 0;
+            this.btnGruposACargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposACargo.Image = ((System.Drawing.Image)(resources.GetObject("btnGruposACargo.Image")));
+            this.btnGruposACargo.Location = new System.Drawing.Point(136, 221);
+            this.btnGruposACargo.Name = "btnGruposACargo";
+            this.btnGruposACargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGruposACargo.Size = new System.Drawing.Size(110, 110);
+            this.btnGruposACargo.TabIndex = 51;
+            this.btnGruposACargo.UseVisualStyleBackColor = false;
+            this.btnGruposACargo.Click += new System.EventHandler(this.btnGruposACargo_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(137, 334);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 17);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Grupos a cargo";
             // 
             // btnRegistrarAsistenciaLibre
             // 
@@ -236,9 +265,10 @@
             this.btnRegistrarAsistenciaLibre.FlatAppearance.BorderSize = 0;
             this.btnRegistrarAsistenciaLibre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarAsistenciaLibre.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarAsistenciaLibre.Image")));
-            this.btnRegistrarAsistenciaLibre.Location = new System.Drawing.Point(452, 45);
+            this.btnRegistrarAsistenciaLibre.Location = new System.Drawing.Point(392, 221);
             this.btnRegistrarAsistenciaLibre.Name = "btnRegistrarAsistenciaLibre";
-            this.btnRegistrarAsistenciaLibre.Size = new System.Drawing.Size(120, 120);
+            this.btnRegistrarAsistenciaLibre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRegistrarAsistenciaLibre.Size = new System.Drawing.Size(110, 110);
             this.btnRegistrarAsistenciaLibre.TabIndex = 49;
             this.btnRegistrarAsistenciaLibre.UseVisualStyleBackColor = false;
             this.btnRegistrarAsistenciaLibre.Click += new System.EventHandler(this.btnRegistrarAsistencia_Click);
@@ -249,9 +279,10 @@
             this.btnRegistroAuxiliar.FlatAppearance.BorderSize = 0;
             this.btnRegistroAuxiliar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistroAuxiliar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroAuxiliar.Image")));
-            this.btnRegistroAuxiliar.Location = new System.Drawing.Point(39, 45);
+            this.btnRegistroAuxiliar.Location = new System.Drawing.Point(136, 43);
             this.btnRegistroAuxiliar.Name = "btnRegistroAuxiliar";
-            this.btnRegistroAuxiliar.Size = new System.Drawing.Size(120, 120);
+            this.btnRegistroAuxiliar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRegistroAuxiliar.Size = new System.Drawing.Size(110, 110);
             this.btnRegistroAuxiliar.TabIndex = 6;
             this.btnRegistroAuxiliar.UseVisualStyleBackColor = false;
             this.btnRegistroAuxiliar.Click += new System.EventHandler(this.btnRegistroAuxiliar_Click);
@@ -262,31 +293,48 @@
             this.btnRegistrarNotas.FlatAppearance.BorderSize = 0;
             this.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarNotas.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarNotas.Image")));
-            this.btnRegistrarNotas.Location = new System.Drawing.Point(245, 45);
+            this.btnRegistrarNotas.Location = new System.Drawing.Point(392, 43);
             this.btnRegistrarNotas.Name = "btnRegistrarNotas";
-            this.btnRegistrarNotas.Size = new System.Drawing.Size(120, 120);
+            this.btnRegistrarNotas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRegistrarNotas.Size = new System.Drawing.Size(110, 110);
             this.btnRegistrarNotas.TabIndex = 7;
             this.btnRegistrarNotas.UseVisualStyleBackColor = false;
             this.btnRegistrarNotas.Click += new System.EventHandler(this.btnRegistrarNotas_Click);
             // 
             // panelAsistencia
             // 
+            this.panelAsistencia.Controls.Add(this.btnMenuAdministrativo);
             this.panelAsistencia.Controls.Add(this.label8);
             this.panelAsistencia.Controls.Add(this.btnJustificarInasistencia);
             this.panelAsistencia.Controls.Add(this.btnPermisoAsistencia);
             this.panelAsistencia.Controls.Add(this.label7);
-            this.panelAsistencia.Location = new System.Drawing.Point(232, 168);
+            this.panelAsistencia.Location = new System.Drawing.Point(232, 134);
             this.panelAsistencia.Name = "panelAsistencia";
-            this.panelAsistencia.Size = new System.Drawing.Size(627, 220);
+            this.panelAsistencia.Size = new System.Drawing.Size(627, 369);
             this.panelAsistencia.TabIndex = 20;
             this.panelAsistencia.Visible = false;
             this.panelAsistencia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAsistencia_Paint);
+            // 
+            // btnMenuAdministrativo
+            // 
+            this.btnMenuAdministrativo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnMenuAdministrativo.FlatAppearance.BorderSize = 0;
+            this.btnMenuAdministrativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuAdministrativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuAdministrativo.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnMenuAdministrativo.Location = new System.Drawing.Point(216, 265);
+            this.btnMenuAdministrativo.Name = "btnMenuAdministrativo";
+            this.btnMenuAdministrativo.Size = new System.Drawing.Size(221, 44);
+            this.btnMenuAdministrativo.TabIndex = 25;
+            this.btnMenuAdministrativo.Text = "IR AL MENU ADMINISTRATIVO";
+            this.btnMenuAdministrativo.UseVisualStyleBackColor = false;
+            this.btnMenuAdministrativo.Click += new System.EventHandler(this.btnMenuAdministrativo_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(339, 174);
+            this.label8.Location = new System.Drawing.Point(367, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(146, 17);
             this.label8.TabIndex = 24;
@@ -298,7 +346,7 @@
             this.btnJustificarInasistencia.FlatAppearance.BorderSize = 0;
             this.btnJustificarInasistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJustificarInasistencia.Image = ((System.Drawing.Image)(resources.GetObject("btnJustificarInasistencia.Image")));
-            this.btnJustificarInasistencia.Location = new System.Drawing.Point(354, 45);
+            this.btnJustificarInasistencia.Location = new System.Drawing.Point(382, 45);
             this.btnJustificarInasistencia.Name = "btnJustificarInasistencia";
             this.btnJustificarInasistencia.Size = new System.Drawing.Size(120, 120);
             this.btnJustificarInasistencia.TabIndex = 23;
@@ -421,7 +469,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 511);
+            this.ClientSize = new System.Drawing.Size(896, 562);
             this.Controls.Add(this.panelConfiguracion);
             this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.lblClave);
@@ -487,5 +535,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCambiarClave;
+        private BotonCircular btnGruposACargo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnMenuAdministrativo;
     }
 }

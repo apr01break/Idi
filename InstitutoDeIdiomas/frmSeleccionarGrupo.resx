@@ -148,7 +148,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblNombre.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -178,7 +178,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblNombre.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -208,7 +208,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="dgvwGrupo.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 68</value>
@@ -232,7 +232,40 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;dgvwGrupo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 372</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 41</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.Text" xml:space="preserve">
+    <value>VER ASISTENCIAS Y NOTAS</value>
+  </data>
+  <data name="btnVerAsistenciasNotas.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnVerAsistenciasNotas.Name" xml:space="preserve">
+    <value>btnVerAsistenciasNotas</value>
+  </data>
+  <data name="&gt;&gt;btnVerAsistenciasNotas.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialRaisedButton, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnVerAsistenciasNotas.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnVerAsistenciasNotas.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnRegistrarAsistencias.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -265,7 +298,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnRegistrarAsistencias.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnRegistroAuxiliar.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -295,7 +328,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnRegistroAuxiliar.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnRegistrarNotas.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -328,7 +361,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnRegistrarNotas.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

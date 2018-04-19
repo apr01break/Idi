@@ -69,6 +69,7 @@ namespace InstitutoDeIdiomas
             this.label2 = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.RichTextBox();
+            this.btnVerAsistencias = new System.Windows.Forms.Button();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
@@ -369,6 +370,7 @@ namespace InstitutoDeIdiomas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnVerAsistencias);
             this.panel1.Controls.Add(this.btnEliminarAlumno);
             this.panel1.Controls.Add(this.btnAgregarExtemporaneo);
             this.panel1.Controls.Add(this.txtFin);
@@ -491,6 +493,21 @@ namespace InstitutoDeIdiomas
             this.label1.Text = "";
             this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
+            // btnVerAsistencias
+            // 
+            this.btnVerAsistencias.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnVerAsistencias.FlatAppearance.BorderSize = 0;
+            this.btnVerAsistencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerAsistencias.ForeColor = System.Drawing.Color.White;
+            this.btnVerAsistencias.Location = new System.Drawing.Point(506, 16);
+            this.btnVerAsistencias.Name = "btnVerAsistencias";
+            this.btnVerAsistencias.Size = new System.Drawing.Size(161, 44);
+            this.btnVerAsistencias.TabIndex = 86;
+            this.btnVerAsistencias.Text = "VER ASISTENCIAS";
+            this.btnVerAsistencias.UseVisualStyleBackColor = false;
+            this.btnVerAsistencias.Click += new System.EventHandler(this.btnVerAsistencias_Click);
+            // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,5 +579,6 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgregarExtemporaneo;
         private System.Windows.Forms.Button btnEliminarAlumno;
+        private System.Windows.Forms.Button btnVerAsistencias;
     }
 }

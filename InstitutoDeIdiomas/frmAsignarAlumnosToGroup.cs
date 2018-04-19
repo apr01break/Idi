@@ -20,6 +20,7 @@ namespace InstitutoDeIdiomas
         String codigoGrupo, codigoAlumno;
         int id;
         int idAlumnoGrupo;
+        string dias;
         DataTable dtListaAlumnos = new DataTable();
         public frmAsignarAlumnosToGroup(int id)
         {
@@ -239,11 +240,44 @@ namespace InstitutoDeIdiomas
                 MessageBox.Show(ex.Message);
             }
         }
+        public void cargarDias()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", codigoGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                String xx = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    xx = xx + row[0].ToString().ToUpperInvariant() + " - ";
+                }
+                xx = xx.Trim();
+                if (xx != "") xx = xx.Remove(xx.Length - 1);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                dias= xx;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "cargarDias");
+            }
+        }
 
         private void btnRelacionAlumnos_Click(object sender, EventArgs e)
         {
             try
             {
+                cargarDias();
                 dtListaAlumnos.Columns[0].ColumnName = "codigo";
                 dtListaAlumnos.Columns[1].ColumnName = "nombre";
                 dtListaAlumnos.Columns.Add("numero");
@@ -252,7 +286,7 @@ namespace InstitutoDeIdiomas
                     dtListaAlumnos.Rows[i]["numero"] = i + 1 + "";
                 }
                 using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumnos, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
-                    txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text, txtNumero.Text))
+                    txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text, txtNumero.Text,txtFeInicio.Text,txtFeFin.Text,dias))
                 {
                     frm.ShowDialog();
                 }
@@ -264,11 +298,7 @@ namespace InstitutoDeIdiomas
             }
             
         }
-
-        private void btnCambiarFechas_Click(object sender, EventArgs e)
-        {
-            new frmCambiarFechas(this,txtFeInicio.Text,txtFeFin.Text, id).Show();
-        }
+        
 
         private void dataGridViewAlumnoGrupo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -350,6 +380,11 @@ namespace InstitutoDeIdiomas
         private void frmAsignarAlumnosToGroup_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCambiarDatos_Click(object sender, EventArgs e)
+        {
+            new frmCambiarDatosGrupo(Convert.ToInt32(codigoGrupo),this).Show();
         }
 
         private void txtBuscarApellido_KeyUp(object sender, KeyEventArgs e)

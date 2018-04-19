@@ -52,7 +52,7 @@ namespace InstitutoDeIdiomas
                 dt.Clear();
 
                 da.Fill(dt);
-
+                _SqlConnection.Close();
 
                 dataGridViewApellido.DataSource = dt;
                 dataGridViewApellido.Columns[0].Width =205;
@@ -60,11 +60,6 @@ namespace InstitutoDeIdiomas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-            finally
-            {
-                _SqlConnection.Close();
             }
 
         }
@@ -79,8 +74,8 @@ namespace InstitutoDeIdiomas
         {
             if (e.RowIndex >= 0 && e.RowIndex < dataGridViewApellido.RowCount)
             {
-                //try
-                //{
+                try
+                {
                     DataTable dt = new DataTable();
                     DataGridViewRow row = this.dataGridViewApellido.Rows[e.RowIndex];
                     String dni = row.Cells["DNI"].Value.ToString();
@@ -94,6 +89,7 @@ namespace InstitutoDeIdiomas
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                     da.Fill(dt);
+                    _SqlConnection.Close();
                     dataGridView1.DataSource = dt;
                     DataGridViewRow rowo = dataGridView1.Rows[0];
 
@@ -168,16 +164,11 @@ namespace InstitutoDeIdiomas
                             txtColeUni.Visible = false;
                         }
                     }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message);
-                //}
-
-                //finally
-                //{
-                //    _SqlConnection.Close();
-                //}
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
         }

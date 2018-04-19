@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGuardar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +130,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label1);
@@ -167,6 +169,14 @@
             this.label10.Size = new System.Drawing.Size(2, 308);
             this.label10.TabIndex = 9;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(335, 23);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
             // frmAgregarNotasExtemporaneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +207,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private MaterialSkin.Controls.MaterialRaisedButton btnGuardar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

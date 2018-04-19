@@ -69,7 +69,7 @@ namespace InstitutoDeIdiomas
             {
                 MessageBox.Show(ex.Message+"cargarDias");
             }
-}
+        }
 
         public void cargarAlumnosBase(int idGrupo)
         {
@@ -808,7 +808,7 @@ namespace InstitutoDeIdiomas
                 dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
             }
             using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumno, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
-                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text,txtNumero.Text))
+                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text,txtNumero.Text,txtInicio.Text,txtFin.Text,txtDias.Text))
             {
                 frm.ShowDialog();
             }
@@ -913,6 +913,11 @@ namespace InstitutoDeIdiomas
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnVerAsistencias_Click(object sender, EventArgs e)
+        {
+            new frmVerAsistencia(codigoGrupo).ShowDialog();
         }
 
         private void frmVerNotas_Load(object sender, EventArgs e)

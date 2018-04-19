@@ -33,6 +33,7 @@ namespace InstitutoDeIdiomas
         private MaterialRaisedButton btnGenerarReportePagos;
         String idpago;
         string usuario;
+        DataTable dtLegend = new DataTable();
       
         public frmConsultarDeudores(string idUsuario)
         {
@@ -208,6 +209,7 @@ namespace InstitutoDeIdiomas
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnGenerarReportePagos);
             this.panel1.Controls.Add(this.label7);
@@ -297,7 +299,11 @@ namespace InstitutoDeIdiomas
         }
 
         private void frmConsultarDeudores_Load(object sender, EventArgs e)
-        {       
+        {
+            dtLegend.Columns.Add("idPago");
+            dtLegend.Columns.Add("recibo");
+            dtLegend.Columns.Add("fecha");
+            dtLegend.Columns.Add("simbolo");
         }
 
         private void TXT_SEARCH_KeyUp(object sender, KeyEventArgs e)
@@ -366,6 +372,7 @@ namespace InstitutoDeIdiomas
                     label7.Visible = true;
                     LBLCODIGOALUMN.Visible = true;
                     CARGARLISTADEPAGOS(codigoalum);
+                    //MessageBox.Show(codigoalum);
                 }
                 catch (Exception ex)
                 {
@@ -426,50 +433,87 @@ namespace InstitutoDeIdiomas
                 {
                     MessageBox.Show(ex.Message);
                 }
-                DataTable dtCloned = tabledata.Clone();
-                dtCloned.Columns[2].DataType = typeof(String);
-                foreach (DataRow row in tabledata.Rows)
-                {
-                    dtCloned.ImportRow(row);
-                }
-                DataTable dtResumen = new DataTable();
-                dtResumen.Columns.Add("Wan");
-                dtResumen.Columns.Add("MontoTotal");
-                dtCloned.Columns.Add("Fecha");
-                for (int i = 0; i < dtCloned.Rows.Count; i++)
+                dtLegend.Clear();
+                //List<string> ListaSaldos = new List<string>();
+                string simbolo = "*";
+                tabledata.Columns.Add("simbolo");
+                tabledata.Columns.Add("fecha");
+                foreach (DataRow item in tabledata.Rows)
                 {
                     
-                    if (dtCloned.Rows[i][3] != System.DBNull.Value)
+                    if (item["fech"].ToString() == "")
                     {
-                        string fech = Convert.ToDateTime(dtCloned.Rows[i][3]).ToString("dd/MM/yyyy");
-                        dtCloned.Rows[i][5] = fech;
+                        buscarRecibosLeyenda(item[0].ToString(), simbolo);
+                        item["simbolo"] = simbolo;
+                        simbolo = simbolo + "*";
                     }
-                    
-                    bool xd=false;
-                    for(int j=0; j<dtResumen.Rows.Count; j++)
+                    else
                     {
-                        if (dtCloned.Rows[i][0].ToString().Equals(dtResumen.Rows[j][0].ToString()))
-                        {
-                            dtResumen.Rows[j][1] = Convert.ToDecimal(dtResumen.Rows[j][1])+ Convert.ToDecimal(dtCloned.Rows[i][1]);
-                            xd = true;
-                        }
-                    }
-                    if (xd == false)
-                    {
-                        DataRow dr = dtResumen.NewRow();
-                        dr[0] = dtCloned.Rows[i][1].ToString();
-                        dr[1] = Convert.ToDecimal(dtCloned.Rows[i][2]);
-                        dtResumen.Rows.Add(dr);
+                        string fecha = Convert.ToDateTime(item["fech"]).ToString("dd/MM/yyyy");
+                        item["fecha"] = fecha;
                     }
                 }
-                dtCloned.Columns.RemoveAt(3);
-                using (frmRptListaDePagos frm = new frmRptListaDePagos(dtCloned, dtalumno, dtResumen,usuario))
+                DataTable dtSaldo = buscarSaldo();
+                dtSaldo.Columns["numero_recibo"].ColumnName = "nro_recibo";
+                using (frmRptListaDePagos frm = new frmRptListaDePagos(tabledata, dtalumno,usuario,dtLegend,dtSaldo))
                 {
                     frm.ShowDialog();
                 }
             }
             else {
                 MessageBox.Show("Selecciona un alumno");
+            }
+        }
+
+        public DataTable buscarSaldo()
+        {
+            DataTable dt = new DataTable();
+            SqlCommand comando = new SqlCommand("mostrar_Saldo_alumno", _SqlConnection);
+            comando.CommandType = CommandType.StoredProcedure;
+            if (comando.Connection.State == ConnectionState.Closed)
+            {
+                comando.Connection.Open();
+            }
+            comando.Parameters.Add(new SqlParameter("@numcarnet", LBLCODIGOALUMN.Text));
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(dt);
+            
+            if (comando.Connection.State == ConnectionState.Open)
+            {
+                comando.Connection.Close();
+            }
+            return dt;
+        }
+
+        public void buscarRecibosLeyenda(string idPago,string simbolo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("obtener_recibos_pago_saldo", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@idPago", idPago));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+                //agregar filas a dtLegend
+                dt.Columns.Add("simbolo");
+                foreach (DataRow row in dt.Rows)
+                {
+                    row["simbolo"] = simbolo;
+                    dtLegend.ImportRow(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

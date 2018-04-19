@@ -686,8 +686,8 @@ namespace InstitutoDeIdiomas
             }
             this.ActiveControl = txtTituloTema;
             obtenerFechaServidor();
-            verificarDia();
             crearCuentaregresiva();
+            verificarDia();
         }
         public void obtenerFechaServidor()
         {
