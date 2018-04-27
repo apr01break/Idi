@@ -37,7 +37,7 @@ namespace InstitutoDeIdiomas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SidiPrueba")]
+        [global::System.Configuration.DefaultSettingValueAttribute("CentroDeIdiomas")]
         public string DB {
             get {
                 return ((string)(this["DB"]));

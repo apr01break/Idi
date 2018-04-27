@@ -20,6 +20,9 @@ namespace InstitutoDeIdiomas
         List<string> listaRoles = new List<string>();
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
         public frmMainMenu(String id, String nombre, String tipoTrabajador)
         {
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
@@ -103,7 +106,7 @@ namespace InstitutoDeIdiomas
 
         private void REPORTEMENUTOOL_Click(object sender, EventArgs e)
         {
-            new frmRptReporte().Show();
+            
         }
 
         private void ACTUALIZAROPTIONMENU_Click(object sender, EventArgs e)
@@ -254,8 +257,6 @@ namespace InstitutoDeIdiomas
         {
             new frmRecordAcademico().Show();
         }
-        
-
 
         private void panelPago_Paint(object sender, PaintEventArgs e)
         {
@@ -306,7 +307,6 @@ namespace InstitutoDeIdiomas
         {
             new frmGenerarFichaMatricula().Show();
         }
-        
 
         private void btnNuevoUsuario_Click_3(object sender, EventArgs e)
         {
@@ -585,6 +585,48 @@ namespace InstitutoDeIdiomas
             string nombre = "AsignarRoles";
             if (verificarRol(nombre)) btnAsignarRoles.Visible = true;
             else btnAsignarRoles.Visible = false;
+        }
+
+        private void btnReporteGrupos_Click(object sender, EventArgs e)
+        {
+            new frmReporteGrupos().Show();
+        }
+
+        private void frmMainMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void frmMainMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+
+        }
+
+        private void frmMainMenu_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new frmEntradaSalida(Convert.ToInt32(idCodigo)).Show();
+        }
+
+        private void btnAsistenciaProfesores_Click(object sender, EventArgs e)
+        {
+            new frmVerAsistenciaDocente().Show();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            new frmEstadisticas().Show();
         }
     }
 }

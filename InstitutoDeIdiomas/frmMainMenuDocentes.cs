@@ -89,7 +89,7 @@ namespace InstitutoDeIdiomas
                 }
                 else
                 {
-                    MessageBox.Show("No tiene permiso.");
+                    MessageBox.Show("No tiene permiso. Solicítelo a la directora académica.");
                 }
             }
             catch (Exception ex)
@@ -160,6 +160,24 @@ namespace InstitutoDeIdiomas
         {
             panelConfiguracion.Visible = false;
             new frmCambiarClave(id).Show();
+        }
+
+        private void btnGruposACargo_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarGrupo selectGrupo = new frmSeleccionarGrupo(id, 3);
+            selectGrupo.Show();
+        }
+
+        private void btnMenuAdministrativo_Click(object sender, EventArgs e)
+        {
+            String nombre = TXTBIENBUSER.Text;
+            String id = TXTCODUSER.Text;
+            new frmMainMenu(id, nombre, "ADMINISTRADOR").Show();
+        }
+
+        private void btnRegEntradaSalida_Click(object sender, EventArgs e)
+        {
+            new frmEntradaSalida(Convert.ToInt32(id)).Show();
         }
     }
 }

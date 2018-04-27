@@ -26,13 +26,16 @@ namespace InstitutoDeIdiomas
             if (opcion == 0) btnRegistroAuxiliar.Visible = true;
             else if (opcion == 1) btnRegistrarNotas.Visible = true;
             else if (opcion == 2) btnRegistrarAsistencias.Visible = true;
-            if(idUsuario == "5"|| idUsuario == "25" || idUsuario=="3")
+            else if (opcion == 3) btnVerAsistenciasNotas.Visible = true;
+            if (idUsuario == "5"|| idUsuario == "25" || idUsuario=="3")
             {
                 cargarGruposEncargado(idUsuario);
             }
             else
             {
-                cargarGrupos(idUsuario);
+                if (opcion == 0) cargarGruposHoy(idUsuario);
+                else cargarGrupos(idUsuario);
+                //cargarGrupos(idUsuario);
             }
         }
 
@@ -65,7 +68,49 @@ namespace InstitutoDeIdiomas
                 MessageBox.Show(ex.Message);
             }
         }
+        public void cargarGruposHoy(String id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_grupo_profesor_hoy", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idusuario", id));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgvwGrupo.DataSource = dt;
 
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow row = dt.Rows[i];
+                    if (!DBNull.Value.Equals(row["HORA DE INICIO"]))
+                    {
+                        String datime = Convert.ToDateTime(row["HORA DE INICIO"]).ToString("HH:mm");
+                        row["HORA DE INICIO"] = datime;
+                    }
+                    if (!DBNull.Value.Equals(row["HORA DE TERMINO"]))
+                    {
+                        String datime = Convert.ToDateTime(row["HORA DE TERMINO"]).ToString("HH:mm");
+                        row["HORA DE TERMINO"] = datime;
+                    }
+                }
+                dgvwGrupo.Columns["idGrupo"].Visible = false;
+
+
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void cargarGrupos(String id)
         {
             try
@@ -218,6 +263,17 @@ namespace InstitutoDeIdiomas
                 this.Close();
                 frmRegistrarAsistencia.Show();
             }
+            else if (btnVerAsistenciasNotas.Visible)
+            {
+                frmVerNotasAsistenciasDocente frmVerNotasAsistenciasDocente = new frmVerNotasAsistenciasDocente(idGrupo);
+                this.Close();
+                frmVerNotasAsistenciasDocente.Show();
+            }
+        }
+
+        private void btnVerAsistenciasNotas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

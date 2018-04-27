@@ -277,7 +277,7 @@ namespace InstitutoDeIdiomas
                 int nivel = (int)((DataRowView)cmbNivel.SelectedItem)["idNivel"];
                 int salon = (int)((DataRowView)cmbSalon.SelectedItem)["idSalon"];
                 int profesor = (int)((DataRowView)cmbProfesor.SelectedItem)["idtrabajador"];
-
+                DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("insert_grupo_encargado", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
                 {
@@ -294,8 +294,8 @@ namespace InstitutoDeIdiomas
                 cmd.Parameters.Add(new SqlParameter("@numero", cbNumero.Text + "-" + cbAno.Text));
                 cmd.Parameters.Add(new SqlParameter("@idSalon", salon));
                 cmd.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
 
                 GuardarDias();
                 if (cmd.Connection.State == ConnectionState.Open)

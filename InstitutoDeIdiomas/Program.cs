@@ -18,5 +18,14 @@ namespace InstitutoDeIdiomas
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }
+        //public static frmLogin Form;
+        //[STAThread]
+        //static void Main()
+        //{
+        //    Application.EnableVisualStyles();
+        //    Application.SetCompatibleTextRenderingDefault(false);
+        //    Form = new frmLogin();
+        //    Application.Run(Form);
+        //}
     }
 }

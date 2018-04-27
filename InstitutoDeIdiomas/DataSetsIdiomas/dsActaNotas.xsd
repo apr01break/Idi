@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsActaNotas" targetNamespace="http://tempuri.org/dsActaNotas.xsd" xmlns:mstns="http://tempuri.org/dsActaNotas.xsd" xmlns="http://tempuri.org/dsActaNotas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsActaNotas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsActaNotas" msprop:Generator_UserDSName="dsActaNotas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtNotas" msprop:Generator_TableClassName="dtNotasDataTable" msprop:Generator_TableVarName="tabledtNotas" msprop:Generator_TablePropName="dtNotas" msprop:Generator_RowDeletingName="dtNotasRowDeleting" msprop:Generator_RowChangingName="dtNotasRowChanging" msprop:Generator_RowEvHandlerName="dtNotasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtNotasRowDeleted" msprop:Generator_UserTableName="dtNotas" msprop:Generator_RowChangedName="dtNotasRowChanged" msprop:Generator_RowEvArgName="dtNotasRowChangeEvent" msprop:Generator_RowClassName="dtNotasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ayuda" msprop:Generator_ColumnVarNameInTable="columnayuda" msprop:Generator_ColumnPropNameInRow="ayuda" msprop:Generator_ColumnPropNameInTable="ayudaColumn" msprop:Generator_UserColumnName="ayuda" type="xs:string" minOccurs="0" />
+              <xs:element name="criterio" msprop:Generator_ColumnVarNameInTable="columncriterio" msprop:Generator_ColumnPropNameInRow="criterio" msprop:Generator_ColumnPropNameInTable="criterioColumn" msprop:Generator_UserColumnName="criterio" type="xs:string" minOccurs="0" />
+              <xs:element name="nota" msprop:Generator_ColumnVarNameInTable="columnnota" msprop:Generator_ColumnPropNameInRow="nota" msprop:Generator_ColumnPropNameInTable="notaColumn" msprop:Generator_UserColumnName="nota" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPromedios" msprop:Generator_TableClassName="dtPromediosDataTable" msprop:Generator_TableVarName="tabledtPromedios" msprop:Generator_RowChangedName="dtPromediosRowChanged" msprop:Generator_TablePropName="dtPromedios" msprop:Generator_RowDeletingName="dtPromediosRowDeleting" msprop:Generator_RowChangingName="dtPromediosRowChanging" msprop:Generator_RowEvHandlerName="dtPromediosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPromediosRowDeleted" msprop:Generator_RowClassName="dtPromediosRow" msprop:Generator_UserTableName="dtPromedios" msprop:Generator_RowEvArgName="dtPromediosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="speaking" msprop:Generator_ColumnVarNameInTable="columnspeaking" msprop:Generator_ColumnPropNameInRow="speaking" msprop:Generator_ColumnPropNameInTable="speakingColumn" msprop:Generator_UserColumnName="speaking" type="xs:string" minOccurs="0" />
+              <xs:element name="reading" msprop:Generator_ColumnVarNameInTable="columnreading" msprop:Generator_ColumnPropNameInRow="reading" msprop:Generator_ColumnPropNameInTable="readingColumn" msprop:Generator_UserColumnName="reading" type="xs:string" minOccurs="0" />
+              <xs:element name="listening" msprop:Generator_ColumnVarNameInTable="columnlistening" msprop:Generator_ColumnPropNameInRow="listening" msprop:Generator_ColumnPropNameInTable="listeningColumn" msprop:Generator_UserColumnName="listening" type="xs:string" minOccurs="0" />
+              <xs:element name="writing" msprop:Generator_ColumnVarNameInTable="columnwriting" msprop:Generator_ColumnPropNameInRow="writing" msprop:Generator_ColumnPropNameInTable="writingColumn" msprop:Generator_UserColumnName="writing" type="xs:string" minOccurs="0" />
+              <xs:element name="useofenglish" msprop:Generator_ColumnVarNameInTable="columnuseofenglish" msprop:Generator_ColumnPropNameInRow="useofenglish" msprop:Generator_ColumnPropNameInTable="useofenglishColumn" msprop:Generator_UserColumnName="useofenglish" type="xs:string" minOccurs="0" />
+              <xs:element name="internacional" msprop:Generator_ColumnVarNameInTable="columninternacional" msprop:Generator_ColumnPropNameInRow="internacional" msprop:Generator_ColumnPropNameInTable="internacionalColumn" msprop:Generator_UserColumnName="internacional" type="xs:string" minOccurs="0" />
+              <xs:element name="nacional" msprop:Generator_ColumnVarNameInTable="columnnacional" msprop:Generator_ColumnPropNameInRow="nacional" msprop:Generator_ColumnPropNameInTable="nacionalColumn" msprop:Generator_UserColumnName="nacional" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

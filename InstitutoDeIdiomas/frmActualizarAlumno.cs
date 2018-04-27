@@ -45,6 +45,8 @@ namespace InstitutoDeIdiomas
         private DataGridView GVALUMNOS;
         private Label label2;
         private TextBox TXTALUSEARCH;
+        private Label label1;
+        private TextBox txtDireccion;
         public static SqlConnection _SqlConnection = new SqlConnection();
         public frmActualizarAlumno()
         {
@@ -86,6 +88,8 @@ namespace InstitutoDeIdiomas
             this.GVALUMNOS = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.TXTALUSEARCH = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALUMNOIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GVALUMNOS)).BeginInit();
@@ -94,6 +98,8 @@ namespace InstitutoDeIdiomas
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtDireccion);
             this.panel1.Controls.Add(this.BTNGUARDAR);
             this.panel1.Controls.Add(this.TXTEDAD);
             this.panel1.Controls.Add(this.label12);
@@ -166,7 +172,7 @@ namespace InstitutoDeIdiomas
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(731, 273);
+            this.label11.Location = new System.Drawing.Point(731, 277);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 13);
@@ -175,7 +181,7 @@ namespace InstitutoDeIdiomas
             // 
             // TXTTELEFONO
             // 
-            this.TXTTELEFONO.Location = new System.Drawing.Point(798, 273);
+            this.TXTTELEFONO.Location = new System.Drawing.Point(798, 274);
             this.TXTTELEFONO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTTELEFONO.Name = "TXTTELEFONO";
             this.TXTTELEFONO.ReadOnly = true;
@@ -184,7 +190,7 @@ namespace InstitutoDeIdiomas
             // 
             // TXTCELULAR
             // 
-            this.TXTCELULAR.Location = new System.Drawing.Point(559, 273);
+            this.TXTCELULAR.Location = new System.Drawing.Point(561, 274);
             this.TXTCELULAR.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCELULAR.Name = "TXTCELULAR";
             this.TXTCELULAR.ReadOnly = true;
@@ -195,7 +201,7 @@ namespace InstitutoDeIdiomas
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(503, 277);
+            this.label10.Location = new System.Drawing.Point(501, 277);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
@@ -204,7 +210,7 @@ namespace InstitutoDeIdiomas
             // 
             // TXTCORREO
             // 
-            this.TXTCORREO.Location = new System.Drawing.Point(560, 250);
+            this.TXTCORREO.Location = new System.Drawing.Point(561, 251);
             this.TXTCORREO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTCORREO.Name = "TXTCORREO";
             this.TXTCORREO.ReadOnly = true;
@@ -434,6 +440,25 @@ namespace InstitutoDeIdiomas
             this.TXTALUSEARCH.TabIndex = 71;
             this.TXTALUSEARCH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXTALUSEARCH_KeyUp);
             // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(561, 225);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
+            this.txtDireccion.Size = new System.Drawing.Size(245, 20);
+            this.txtDireccion.TabIndex = 101;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(491, 228);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "DIRECCION";
+            // 
             // frmActualizarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +553,7 @@ namespace InstitutoDeIdiomas
                         CBSEXO.SelectedIndex = 1;
                     }
                     TXTDNI.Text = dt.Rows[0][11].ToString();
+                    txtDireccion.Text = dt.Rows[0][12].ToString();
                     if (comando.Connection.State == ConnectionState.Open)
                     {
                         comando.Connection.Close();
@@ -555,6 +581,7 @@ namespace InstitutoDeIdiomas
             BTNGUARDAR.Enabled = true;
             BTNFOTO.Enabled = true;
             BTNACTUALIZAR.Enabled = false;
+            txtDireccion.ReadOnly = false;
         }
         private void DESHABILITARCONTROLES() {
             TXTPATERNO.ReadOnly = true;
@@ -569,10 +596,12 @@ namespace InstitutoDeIdiomas
             BTNGUARDAR.Enabled = false;
             BTNFOTO.Enabled = false;
             BTNACTUALIZAR.Enabled = true ;
+            txtDireccion.ReadOnly = true;
         }
         private void BTNGUARDAR_Click(object sender, EventArgs e)
         {            
             try {
+                actualizarUbigeo(LBLIDPERSONA.Text);
                 SqlCommand comando = new SqlCommand("actualizarPersona", _SqlConnection);
                 comando.CommandType = CommandType.StoredProcedure;
                 if (comando.Connection.State == ConnectionState.Closed)
@@ -608,6 +637,22 @@ namespace InstitutoDeIdiomas
                 MessageBox.Show(ex.Message);
             }
         }
+        public void actualizarUbigeo(string idPersona)
+        {
+            SqlCommand comando = new SqlCommand("actualizar_ubigeo", _SqlConnection);
+            comando.CommandType = CommandType.StoredProcedure;
+            if (comando.Connection.State == ConnectionState.Closed)
+            {
+                comando.Connection.Open();
+            }
+            comando.Parameters.Add(new SqlParameter("@idPersona", LBLIDPERSONA.Text.ToString()));
+            comando.Parameters.Add(new SqlParameter("@direccion", txtDireccion.Text));
+            comando.ExecuteNonQuery();
+            if (comando.Connection.State == ConnectionState.Open)
+            {
+                comando.Connection.Close();
+            }
+        }
 
         private void BTNFOTO_Click(object sender, EventArgs e)
         {
@@ -632,6 +677,5 @@ namespace InstitutoDeIdiomas
                 DTNACIMIENTO.Value = DateTime.Today;
             }
         }
-        
     }
 }

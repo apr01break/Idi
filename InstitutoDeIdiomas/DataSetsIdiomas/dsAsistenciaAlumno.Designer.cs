@@ -283,6 +283,8 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             private global::System.Data.DataColumn columnnombreAsistencia;
             
+            private global::System.Data.DataColumn columncom;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -334,6 +336,14 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn comColumn {
+                get {
+                    return this.columncom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +379,12 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string fecha, string nombreAsistencia) {
+            public DataTable1Row AddDataTable1Row(string fecha, string nombreAsistencia, string com) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha,
-                        nombreAsistencia};
+                        nombreAsistencia,
+                        com};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -398,6 +409,7 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             internal void InitVars() {
                 this.columnfecha = base.Columns["fecha"];
                 this.columnnombreAsistencia = base.Columns["nombreAsistencia"];
+                this.columncom = base.Columns["com"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,6 +419,8 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
                 base.Columns.Add(this.columnfecha);
                 this.columnnombreAsistencia = new global::System.Data.DataColumn("nombreAsistencia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombreAsistencia);
+                this.columncom = new global::System.Data.DataColumn("com", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncom);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -581,6 +595,22 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string com {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.comColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'com\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.comColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsfechaNull() {
                 return this.IsNull(this.tableDataTable1.fechaColumn);
             }
@@ -601,6 +631,18 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetnombreAsistenciaNull() {
                 this[this.tableDataTable1.nombreAsistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscomNull() {
+                return this.IsNull(this.tableDataTable1.comColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcomNull() {
+                this[this.tableDataTable1.comColumn] = global::System.Convert.DBNull;
             }
         }
         

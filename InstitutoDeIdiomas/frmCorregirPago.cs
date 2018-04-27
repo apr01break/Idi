@@ -16,7 +16,7 @@ namespace InstitutoDeIdiomas
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
-
+        string idPago;
         public frmCorregirPago()
         {
             InitializeComponent();
@@ -91,6 +91,7 @@ namespace InstitutoDeIdiomas
                 txtRecibo.Text = nroRecibo;
                 txtNuevoRecibo.Focus();
                 btnCambiar.Enabled = true;
+                idPago = row.Cells[0].Value.ToString();
             }
         }
 
@@ -133,6 +134,60 @@ namespace InstitutoDeIdiomas
                     _SqlConnection.Close();
                 }
             }
+        }
+
+        private void btnEliminarPago_Click(object sender, EventArgs e)
+        {
+            if (verificarSaldosPagos(idPago))
+            {
+                if (MessageBox.Show("EL PAGO SERÁ ELIMINADO POR COMPLETO \n ¿DESEAS CONTINUAR?", "ADVERTENCIA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("eliminar_pago_no_saldo", _SqlConnection);
+                        if (cmd.Connection.State == ConnectionState.Closed)
+                        {
+                            cmd.Connection.Open();
+                        }
+                        cmd.Parameters.Add(new SqlParameter("@idPago", idPago));
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                        if (cmd.Connection.State == ConnectionState.Open)
+                        {
+                            cmd.Connection.Close();
+                        }
+                        MessageBox.Show("Eliminado exitosamente");
+                        txtBuscar_KeyUp(null,null);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este pago utiliza el concepto de saldos");
+            }
+        }
+        public Boolean verificarSaldosPagos(string idPago)
+        {
+            SqlCommand cmd = new SqlCommand("verificar_saldo_pago", _SqlConnection);
+            if (cmd.Connection.State == ConnectionState.Closed)
+            {
+                cmd.Connection.Open();
+            }
+            cmd.Parameters.Add(new SqlParameter("@idPago", idPago));
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            if (cmd.Connection.State == ConnectionState.Open)
+            {
+                cmd.Connection.Close();
+            }
+            if (dt.Rows.Count == 0) return true;
+            else return false;
         }
     }
 }

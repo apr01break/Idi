@@ -287,6 +287,10 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             private global::System.Data.DataColumn columnnumerocarnet;
             
+            private global::System.Data.DataColumn columnnumero;
+            
+            private global::System.Data.DataColumn columnporcentaje;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -354,6 +358,22 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn numeroColumn {
+                get {
+                    return this.columnnumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn porcentajeColumn {
+                get {
+                    return this.columnporcentaje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +409,15 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Alumno, string Asistencia, string fecha, string numerocarnet) {
+            public DataTable1Row AddDataTable1Row(string Alumno, string Asistencia, string fecha, string numerocarnet, string numero, string porcentaje) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Alumno,
                         Asistencia,
                         fecha,
-                        numerocarnet};
+                        numerocarnet,
+                        numero,
+                        porcentaje};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -422,6 +444,8 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
                 this.columnAsistencia = base.Columns["Asistencia"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnnumerocarnet = base.Columns["numerocarnet"];
+                this.columnnumero = base.Columns["numero"];
+                this.columnporcentaje = base.Columns["porcentaje"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +459,10 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
                 base.Columns.Add(this.columnfecha);
                 this.columnnumerocarnet = new global::System.Data.DataColumn("numerocarnet", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumerocarnet);
+                this.columnnumero = new global::System.Data.DataColumn("numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero);
+                this.columnporcentaje = new global::System.Data.DataColumn("porcentaje", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnporcentaje);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,6 +669,38 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string numero {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.numeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.numeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string porcentaje {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.porcentajeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'porcentaje\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.porcentajeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAlumnoNull() {
                 return this.IsNull(this.tableDataTable1.AlumnoColumn);
             }
@@ -685,6 +745,30 @@ namespace InstitutoDeIdiomas.DataSetsIdiomas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetnumerocarnetNull() {
                 this[this.tableDataTable1.numerocarnetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsnumeroNull() {
+                return this.IsNull(this.tableDataTable1.numeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetnumeroNull() {
+                this[this.tableDataTable1.numeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsporcentajeNull() {
+                return this.IsNull(this.tableDataTable1.porcentajeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetporcentajeNull() {
+                this[this.tableDataTable1.porcentajeColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -61,6 +61,9 @@ namespace InstitutoDeIdiomas
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnRecordEconomico = new System.Windows.Forms.Button();
+            this.btnVerAsistencias = new System.Windows.Forms.Button();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.btnAgregarExtemporaneo = new System.Windows.Forms.Button();
             this.txtFin = new System.Windows.Forms.TextBox();
@@ -289,9 +292,9 @@ namespace InstitutoDeIdiomas
             this.btnConcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConcluirGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConcluirGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnConcluirGrupo.Location = new System.Drawing.Point(673, 16);
+            this.btnConcluirGrupo.Location = new System.Drawing.Point(688, 16);
             this.btnConcluirGrupo.Name = "btnConcluirGrupo";
-            this.btnConcluirGrupo.Size = new System.Drawing.Size(194, 44);
+            this.btnConcluirGrupo.Size = new System.Drawing.Size(179, 44);
             this.btnConcluirGrupo.TabIndex = 70;
             this.btnConcluirGrupo.Text = "CONCLUIR GRUPO";
             this.btnConcluirGrupo.UseVisualStyleBackColor = false;
@@ -304,11 +307,11 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumno.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumno.Location = new System.Drawing.Point(673, 125);
+            this.btnRelacionAlumno.Location = new System.Drawing.Point(688, 125);
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
-            this.btnRelacionAlumno.Size = new System.Drawing.Size(194, 44);
+            this.btnRelacionAlumno.Size = new System.Drawing.Size(179, 44);
             this.btnRelacionAlumno.TabIndex = 71;
-            this.btnRelacionAlumno.Text = "ACTA FINAL NOTAS";
+            this.btnRelacionAlumno.Text = "ACTA FINAL";
             this.btnRelacionAlumno.UseVisualStyleBackColor = false;
             this.btnRelacionAlumno.Click += new System.EventHandler(this.btnRelacionAlumno_Click);
             // 
@@ -338,9 +341,9 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelacionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelacionAlumnos.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(673, 70);
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(688, 70);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
-            this.btnRelacionAlumnos.Size = new System.Drawing.Size(194, 44);
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(179, 44);
             this.btnRelacionAlumnos.TabIndex = 75;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
             this.btnRelacionAlumnos.UseVisualStyleBackColor = false;
@@ -369,6 +372,9 @@ namespace InstitutoDeIdiomas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRecordEconomico);
+            this.panel1.Controls.Add(this.btnVerAsistencias);
             this.panel1.Controls.Add(this.btnEliminarAlumno);
             this.panel1.Controls.Add(this.btnAgregarExtemporaneo);
             this.panel1.Controls.Add(this.txtFin);
@@ -405,6 +411,51 @@ namespace InstitutoDeIdiomas
             this.panel1.Size = new System.Drawing.Size(892, 662);
             this.panel1.TabIndex = 78;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(510, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 44);
+            this.button1.TabIndex = 88;
+            this.button1.Text = "ACTA DE NOTAS";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnRecordEconomico
+            // 
+            this.btnRecordEconomico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRecordEconomico.FlatAppearance.BorderSize = 0;
+            this.btnRecordEconomico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordEconomico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecordEconomico.ForeColor = System.Drawing.Color.White;
+            this.btnRecordEconomico.Location = new System.Drawing.Point(510, 70);
+            this.btnRecordEconomico.Name = "btnRecordEconomico";
+            this.btnRecordEconomico.Size = new System.Drawing.Size(168, 44);
+            this.btnRecordEconomico.TabIndex = 87;
+            this.btnRecordEconomico.Text = "RECORD ECONOMICO";
+            this.btnRecordEconomico.UseVisualStyleBackColor = false;
+            this.btnRecordEconomico.Click += new System.EventHandler(this.btnRecordEconomico_Click);
+            // 
+            // btnVerAsistencias
+            // 
+            this.btnVerAsistencias.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnVerAsistencias.FlatAppearance.BorderSize = 0;
+            this.btnVerAsistencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerAsistencias.ForeColor = System.Drawing.Color.White;
+            this.btnVerAsistencias.Location = new System.Drawing.Point(510, 16);
+            this.btnVerAsistencias.Name = "btnVerAsistencias";
+            this.btnVerAsistencias.Size = new System.Drawing.Size(168, 44);
+            this.btnVerAsistencias.TabIndex = 86;
+            this.btnVerAsistencias.Text = "VER ASISTENCIAS";
+            this.btnVerAsistencias.UseVisualStyleBackColor = false;
+            this.btnVerAsistencias.Click += new System.EventHandler(this.btnVerAsistencias_Click);
+            // 
             // btnEliminarAlumno
             // 
             this.btnEliminarAlumno.BackColor = System.Drawing.Color.Red;
@@ -428,9 +479,9 @@ namespace InstitutoDeIdiomas
             this.btnAgregarExtemporaneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarExtemporaneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarExtemporaneo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarExtemporaneo.Location = new System.Drawing.Point(673, 179);
+            this.btnAgregarExtemporaneo.Location = new System.Drawing.Point(688, 179);
             this.btnAgregarExtemporaneo.Name = "btnAgregarExtemporaneo";
-            this.btnAgregarExtemporaneo.Size = new System.Drawing.Size(194, 44);
+            this.btnAgregarExtemporaneo.Size = new System.Drawing.Size(179, 44);
             this.btnAgregarExtemporaneo.TabIndex = 84;
             this.btnAgregarExtemporaneo.Text = "AGREGAR ALUMNOS EXTEMPORANEOS";
             this.btnAgregarExtemporaneo.UseVisualStyleBackColor = false;
@@ -562,5 +613,8 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgregarExtemporaneo;
         private System.Windows.Forms.Button btnEliminarAlumno;
+        private System.Windows.Forms.Button btnVerAsistencias;
+        private System.Windows.Forms.Button btnRecordEconomico;
+        private System.Windows.Forms.Button button1;
     }
 }

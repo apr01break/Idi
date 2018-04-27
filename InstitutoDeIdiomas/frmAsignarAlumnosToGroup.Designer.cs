@@ -55,13 +55,13 @@
             this.txtFeInicio = new System.Windows.Forms.TextBox();
             this.txtFeFin = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnCambiarFechas = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnBorrarAlumno = new System.Windows.Forms.Button();
-            this.btnEliminarGrupo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCambiarDatos = new System.Windows.Forms.Button();
+            this.btnEliminarGrupo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumnoGrupo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -132,14 +132,19 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAgregar.Enabled = false;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(778, 187);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(96, 64);
             this.btnAgregar.TabIndex = 39;
             this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label8
@@ -290,12 +295,17 @@
             // 
             // btnRelacionAlumnos
             // 
-            this.btnRelacionAlumnos.Location = new System.Drawing.Point(145, 438);
+            this.btnRelacionAlumnos.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRelacionAlumnos.FlatAppearance.BorderSize = 0;
+            this.btnRelacionAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelacionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelacionAlumnos.ForeColor = System.Drawing.Color.White;
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(158, 438);
             this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
-            this.btnRelacionAlumnos.Size = new System.Drawing.Size(264, 42);
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(251, 42);
             this.btnRelacionAlumnos.TabIndex = 47;
             this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
-            this.btnRelacionAlumnos.UseVisualStyleBackColor = true;
+            this.btnRelacionAlumnos.UseVisualStyleBackColor = false;
             this.btnRelacionAlumnos.Click += new System.EventHandler(this.btnRelacionAlumnos_Click);
             // 
             // txtDocente
@@ -343,16 +353,6 @@
             this.label12.TabIndex = 53;
             this.label12.Text = "INICIO";
             // 
-            // btnCambiarFechas
-            // 
-            this.btnCambiarFechas.Location = new System.Drawing.Point(730, 117);
-            this.btnCambiarFechas.Name = "btnCambiarFechas";
-            this.btnCambiarFechas.Size = new System.Drawing.Size(105, 23);
-            this.btnCambiarFechas.TabIndex = 55;
-            this.btnCambiarFechas.Text = "Cambiar Fechas";
-            this.btnCambiarFechas.UseVisualStyleBackColor = true;
-            this.btnCambiarFechas.Click += new System.EventHandler(this.btnCambiarFechas_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -384,27 +384,23 @@
             // 
             // btnBorrarAlumno
             // 
+            this.btnBorrarAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnBorrarAlumno.Enabled = false;
+            this.btnBorrarAlumno.FlatAppearance.BorderSize = 0;
+            this.btnBorrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarAlumno.ForeColor = System.Drawing.Color.White;
             this.btnBorrarAlumno.Location = new System.Drawing.Point(13, 438);
             this.btnBorrarAlumno.Name = "btnBorrarAlumno";
-            this.btnBorrarAlumno.Size = new System.Drawing.Size(126, 42);
+            this.btnBorrarAlumno.Size = new System.Drawing.Size(139, 42);
             this.btnBorrarAlumno.TabIndex = 59;
             this.btnBorrarAlumno.Text = "BORRAR ALUMNO";
-            this.btnBorrarAlumno.UseVisualStyleBackColor = true;
+            this.btnBorrarAlumno.UseVisualStyleBackColor = false;
             this.btnBorrarAlumno.Click += new System.EventHandler(this.btnBorrarAlumno_Click);
-            // 
-            // btnEliminarGrupo
-            // 
-            this.btnEliminarGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGrupo.Image")));
-            this.btnEliminarGrupo.Location = new System.Drawing.Point(839, 25);
-            this.btnEliminarGrupo.Name = "btnEliminarGrupo";
-            this.btnEliminarGrupo.Size = new System.Drawing.Size(41, 53);
-            this.btnEliminarGrupo.TabIndex = 60;
-            this.btnEliminarGrupo.UseVisualStyleBackColor = true;
-            this.btnEliminarGrupo.Click += new System.EventHandler(this.btnEliminarGrupo_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCambiarDatos);
             this.panel1.Controls.Add(this.btnEliminarGrupo);
             this.panel1.Controls.Add(this.dataGridViewAlumnoGrupo);
             this.panel1.Controls.Add(this.btnBorrarAlumno);
@@ -415,7 +411,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnCambiarFechas);
             this.panel1.Controls.Add(this.txtIdioma);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtNivel);
@@ -442,6 +437,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 499);
             this.panel1.TabIndex = 61;
+            // 
+            // btnCambiarDatos
+            // 
+            this.btnCambiarDatos.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarDatos.Image")));
+            this.btnCambiarDatos.Location = new System.Drawing.Point(834, 28);
+            this.btnCambiarDatos.Name = "btnCambiarDatos";
+            this.btnCambiarDatos.Size = new System.Drawing.Size(40, 42);
+            this.btnCambiarDatos.TabIndex = 61;
+            this.btnCambiarDatos.UseVisualStyleBackColor = true;
+            this.btnCambiarDatos.Click += new System.EventHandler(this.btnCambiarDatos_Click);
+            // 
+            // btnEliminarGrupo
+            // 
+            this.btnEliminarGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGrupo.Image")));
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(834, 85);
+            this.btnEliminarGrupo.Name = "btnEliminarGrupo";
+            this.btnEliminarGrupo.Size = new System.Drawing.Size(41, 53);
+            this.btnEliminarGrupo.TabIndex = 60;
+            this.btnEliminarGrupo.UseVisualStyleBackColor = true;
+            this.btnEliminarGrupo.Click += new System.EventHandler(this.btnEliminarGrupo_Click);
             // 
             // frmAsignarAlumnosToGroup
             // 
@@ -492,12 +507,12 @@
         public System.Windows.Forms.TextBox txtFeInicio;
         public System.Windows.Forms.TextBox txtFeFin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnCambiarFechas;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnBorrarAlumno;
         private System.Windows.Forms.Button btnEliminarGrupo;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCambiarDatos;
     }
 }

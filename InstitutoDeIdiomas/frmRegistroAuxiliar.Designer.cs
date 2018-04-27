@@ -63,13 +63,13 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTituloTema = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCuentaRegresiva = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtTituloTema = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ERRORESREGAUX)).BeginInit();
             this.panel2.SuspendLayout();
@@ -493,6 +493,27 @@
             this.panel2.Size = new System.Drawing.Size(817, 622);
             this.panel2.TabIndex = 36;
             // 
+            // txtTituloTema
+            // 
+            this.txtTituloTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtTituloTema.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTituloTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloTema.Location = new System.Drawing.Point(562, 315);
+            this.txtTituloTema.Name = "txtTituloTema";
+            this.txtTituloTema.Size = new System.Drawing.Size(225, 67);
+            this.txtTituloTema.TabIndex = 74;
+            this.txtTituloTema.Text = "";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(561, 285);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 20);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Tema de clase";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -510,16 +531,6 @@
             this.txtDias.Size = new System.Drawing.Size(183, 20);
             this.txtDias.TabIndex = 40;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(626, 435);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 39;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -533,34 +544,23 @@
             // lblCuentaRegresiva
             // 
             this.lblCuentaRegresiva.AutoSize = true;
-            this.lblCuentaRegresiva.Font = new System.Drawing.Font("Microsoft Office Preview Font", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblCuentaRegresiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblCuentaRegresiva.Location = new System.Drawing.Point(589, 553);
             this.lblCuentaRegresiva.Name = "lblCuentaRegresiva";
-            this.lblCuentaRegresiva.Size = new System.Drawing.Size(170, 26);
+            this.lblCuentaRegresiva.Size = new System.Drawing.Size(168, 24);
             this.lblCuentaRegresiva.TabIndex = 36;
             this.lblCuentaRegresiva.Text = "Cuenta regresiva";
             this.lblCuentaRegresiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // pictureBox1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(561, 285);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 20);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Tema de clase";
-            // 
-            // txtTituloTema
-            // 
-            this.txtTituloTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtTituloTema.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTituloTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTituloTema.Location = new System.Drawing.Point(562, 315);
-            this.txtTituloTema.Name = "txtTituloTema";
-            this.txtTituloTema.Size = new System.Drawing.Size(225, 67);
-            this.txtTituloTema.TabIndex = 74;
-            this.txtTituloTema.Text = "";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(626, 435);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
             // 
             // frmRegistroAuxiliar
             // 

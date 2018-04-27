@@ -16,8 +16,9 @@ namespace InstitutoDeIdiomas.ReportForms
     public partial class frmRptRelacionAlumnos : MaterialForm
     {
         DataTable dt;
-        string idioma, nivel, ciclo, docente, salon, horaInicio, horaFin, numero;
-        public frmRptRelacionAlumnos(DataTable dt, string idioma, string nivel, string ciclo, string docente, string salon, string horaInicio, string horaFin, string numero)
+        string idioma, nivel, ciclo, docente, salon, horaInicio, horaFin, numero, inicio, fin, dias;
+        public frmRptRelacionAlumnos(DataTable dt, string idioma, string nivel, string ciclo, string docente, string salon, string horaInicio, string horaFin, string numero,
+            string inicio, string fin, string dias)
         {
             InitializeComponent();
             this.dt = dt;
@@ -29,6 +30,9 @@ namespace InstitutoDeIdiomas.ReportForms
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
             this.numero = numero;
+            this.inicio = inicio;
+            this.fin = fin;
+            this.dias = dias;
         }
 
         private void frmRptRelacionAlumnos_Load(object sender, EventArgs e)
@@ -43,7 +47,10 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalon",salon),
                 new Microsoft.Reporting.WinForms.ReportParameter("pHoraInicio",horaInicio),
                 new Microsoft.Reporting.WinForms.ReportParameter("pHoraFin",horaFin),
-                new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero)
+                new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero),
+                new Microsoft.Reporting.WinForms.ReportParameter("pInicio",inicio),
+                new Microsoft.Reporting.WinForms.ReportParameter("pFin",fin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDias",dias)
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);

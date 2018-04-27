@@ -172,7 +172,7 @@ namespace InstitutoDeIdiomas
                 try
                 {
                     _SqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("insert_usuario", _SqlConnection);
+                    SqlCommand cmd = new SqlCommand("crear_roles_usuario", _SqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@dni", dni));
                     cmd.Parameters.Add(new SqlParameter("@idRol", row[0].ToString()));

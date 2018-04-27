@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,8 +48,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>C:\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>C:\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -73,6 +82,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRecordAcademico.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetsIdiomas\dsActaNotas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsActaNotas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetsIdiomas\dsAsistenciaAlumno.cs">
       <DependentUpon>dsAsistenciaAlumno.xsd</DependentUpon>
     </Compile>
@@ -127,6 +142,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAsistenciaGrupo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetsIdiomas\dsEstadistica.cs">
+      <DependentUpon>dsEstadistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\dsEstadistica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEstadistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\dsGrupos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGrupos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetsIdiomas\dsImagenesAlumnado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +167,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsListaDePagos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\dsRecordEconomicoGrupo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecordEconomicoGrupo.xsd</DependentUpon>
     </Compile>
     <Compile Include="frmActualizarAlumno.cs">
       <SubType>Form</SubType>
@@ -197,11 +230,11 @@
     <Compile Include="frmCambiarClave.Designer.cs">
       <DependentUpon>frmCambiarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCambiarFechas.cs">
+    <Compile Include="frmCambiarDatosGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambiarFechas.Designer.cs">
-      <DependentUpon>frmCambiarFechas.cs</DependentUpon>
+    <Compile Include="frmCambiarDatosGrupo.Designer.cs">
+      <DependentUpon>frmCambiarDatosGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConsultarAlumno.cs">
       <SubType>Form</SubType>
@@ -236,6 +269,18 @@
     <Compile Include="frmCrearPago.Designer.cs">
       <DependentUpon>frmCrearPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEntradaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntradaSalida.Designer.cs">
+      <DependentUpon>frmEntradaSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadisticas.Designer.cs">
+      <DependentUpon>frmEstadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGenerarFichaMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,12 +307,6 @@
     </Compile>
     <Compile Include="frmMainMenuDocentes.Designer.cs">
       <DependentUpon>frmMainMenuDocentes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPagarMatricula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPagarMatricula.Designer.cs">
-      <DependentUpon>frmPagarMatricula.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPermisoProfesorAsistenciaLibre.cs">
       <SubType>Form</SubType>
@@ -305,12 +344,6 @@
     <Compile Include="frmRegistrarNotas.Designer.cs">
       <DependentUpon>frmRegistrarNotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrarPago.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistrarPago.Designer.cs">
-      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRegistroAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +355,12 @@
     </Compile>
     <Compile Include="frmAsistenciaPorAlumno.Designer.cs">
       <DependentUpon>frmAsistenciaPorAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteGrupos.Designer.cs">
+      <DependentUpon>frmReporteGrupos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarGrupo.cs">
       <SubType>Form</SubType>
@@ -335,11 +374,29 @@
     <Compile Include="frmValidarContraseña.Designer.cs">
       <DependentUpon>frmValidarContraseña.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerAsistencia.Designer.cs">
+      <DependentUpon>frmVerAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerAsistenciaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerAsistenciaDocente.Designer.cs">
+      <DependentUpon>frmVerAsistenciaDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVerGrupoAgregarAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVerGrupoAgregarAlumno.Designer.cs">
       <DependentUpon>frmVerGrupoAgregarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerNotasAsistenciasDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerNotasAsistenciasDocente.Designer.cs">
+      <DependentUpon>frmVerNotasAsistenciasDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerNotas.cs">
       <SubType>Form</SubType>
@@ -362,17 +419,35 @@
     <Compile Include="ReportForms\frmRptActaFinal.Designer.cs">
       <DependentUpon>frmRptActaFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForms\frmRptActaNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptActaNotas.Designer.cs">
+      <DependentUpon>frmRptActaNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForms\frmRptAsistenciaGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportForms\frmRptAsistenciaGrupo.Designer.cs">
       <DependentUpon>frmRptAsistenciaGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForms\frmRptEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptEstadisticas.Designer.cs">
+      <DependentUpon>frmRptEstadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForms\frmRptFichaMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportForms\frmRptFichaMatricula.Designer.cs">
       <DependentUpon>frmRptFichaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\frmRptGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptGrupos.Designer.cs">
+      <DependentUpon>frmRptGrupos.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportForms\frmRptListaDePagos.cs">
       <SubType>Form</SubType>
@@ -386,21 +461,22 @@
     <Compile Include="ReportForms\frmRptRecordAcademico.Designer.cs">
       <DependentUpon>frmRptRecordAcademico.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForms\frmRptRecordEconomicoGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptRecordEconomicoGrupo.Designer.cs">
+      <DependentUpon>frmRptRecordEconomicoGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForms\frmRptRelacionAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportForms\frmRptRelacionAlumnos.Designer.cs">
       <DependentUpon>frmRptRelacionAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportForms\frmRptReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportForms\frmRptReporte.Designer.cs">
-      <DependentUpon>frmRptReporte.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ControlAlumno.resx">
       <DependentUpon>ControlAlumno.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarAlumno.resx">
       <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
@@ -432,8 +508,8 @@
     <EmbeddedResource Include="frmCambiarClave.resx">
       <DependentUpon>frmCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCambiarFechas.resx">
-      <DependentUpon>frmCambiarFechas.cs</DependentUpon>
+    <EmbeddedResource Include="frmCambiarDatosGrupo.resx">
+      <DependentUpon>frmCambiarDatosGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarAlumno.resx">
       <DependentUpon>frmConsultarAlumno.cs</DependentUpon>
@@ -453,6 +529,12 @@
     <EmbeddedResource Include="frmCrearPago.resx">
       <DependentUpon>frmCrearPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEntradaSalida.resx">
+      <DependentUpon>frmEntradaSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadisticas.resx">
+      <DependentUpon>frmEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarFichaMatricula.resx">
       <DependentUpon>frmGenerarFichaMatricula.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,9 +549,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenuDocentes.resx">
       <DependentUpon>frmMainMenuDocentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPagarMatricula.resx">
-      <DependentUpon>frmPagarMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPermisoProfesorAsistenciaLibre.resx">
       <DependentUpon>frmPermisoProfesorAsistenciaLibre.cs</DependentUpon>
@@ -489,14 +568,14 @@
     <EmbeddedResource Include="frmRegistrarNotas.resx">
       <DependentUpon>frmRegistrarNotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarPago.resx">
-      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroAuxiliar.resx">
       <DependentUpon>frmRegistroAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistenciaPorAlumno.resx">
       <DependentUpon>frmAsistenciaPorAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteGrupos.resx">
+      <DependentUpon>frmReporteGrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarGrupo.es.resx">
       <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
@@ -507,8 +586,17 @@
     <EmbeddedResource Include="frmValidarContraseña.resx">
       <DependentUpon>frmValidarContraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVerAsistencia.resx">
+      <DependentUpon>frmVerAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerAsistenciaDocente.resx">
+      <DependentUpon>frmVerAsistenciaDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVerGrupoAgregarAlumno.resx">
       <DependentUpon>frmVerGrupoAgregarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerNotasAsistenciasDocente.resx">
+      <DependentUpon>frmVerNotasAsistenciasDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerNotas.resx">
       <DependentUpon>frmVerNotas.cs</DependentUpon>
@@ -523,21 +611,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\rptAsistenciaAlumno.rdlc" />
+    <EmbeddedResource Include="Reportes\rptActaNotas.rdlc" />
     <EmbeddedResource Include="Reportes\rptAsistenciaGrupo.rdlc" />
+    <EmbeddedResource Include="Reportes\rptEstadistica.rdlc" />
+    <EmbeddedResource Include="Reportes\rptGrupos.rdlc" />
     <EmbeddedResource Include="Reportes\rptListaDePagos.rdlc" />
     <EmbeddedResource Include="Reportes\rptActa.rdlc" />
     <EmbeddedResource Include="Reportes\rptRecordAcademico.rdlc" />
     <EmbeddedResource Include="Reportes\rptListaAlumnos.rdlc" />
     <EmbeddedResource Include="Reportes\rptFichaDeMatricula.rdlc" />
+    <EmbeddedResource Include="Reportes\rptRecordEconomicoGrupo.rdlc" />
     <EmbeddedResource Include="ReportForms\frmRptActaFinal.resx">
       <DependentUpon>frmRptActaFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptActaNotas.resx">
+      <DependentUpon>frmRptActaNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptAsistenciaGrupo.resx">
       <DependentUpon>frmRptAsistenciaGrupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptEstadisticas.resx">
+      <DependentUpon>frmRptEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptFichaMatricula.resx">
       <DependentUpon>frmRptFichaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptGrupos.resx">
+      <DependentUpon>frmRptGrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptListaDePagos.resx">
       <DependentUpon>frmRptListaDePagos.cs</DependentUpon>
@@ -545,11 +645,11 @@
     <EmbeddedResource Include="ReportForms\frmRptRecordAcademico.resx">
       <DependentUpon>frmRptRecordAcademico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptRecordEconomicoGrupo.resx">
+      <DependentUpon>frmRptRecordEconomicoGrupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptRelacionAlumnos.resx">
       <DependentUpon>frmRptRelacionAlumnos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportForms\frmRptReporte.resx">
-      <DependentUpon>frmRptReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetsIdiomas\DataSetActa.xsc">
       <DependentUpon>DataSetActa.xsd</DependentUpon>
@@ -584,6 +684,17 @@
     <None Include="DataSetsIdiomas\DataSetRecordAcademico.xss">
       <DependentUpon>DataSetRecordAcademico.xsd</DependentUpon>
     </None>
+    <None Include="DataSetsIdiomas\dsActaNotas.xsc">
+      <DependentUpon>dsActaNotas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsActaNotas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsActaNotas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsActaNotas.xss">
+      <DependentUpon>dsActaNotas.xsd</DependentUpon>
+    </None>
     <None Include="DataSetsIdiomas\dsAsistenciaAlumno.xsc">
       <DependentUpon>dsAsistenciaAlumno.xsd</DependentUpon>
     </None>
@@ -606,6 +717,28 @@
     <None Include="DataSetsIdiomas\dsAsistenciaGrupo.xss">
       <DependentUpon>dsAsistenciaGrupo.xsd</DependentUpon>
     </None>
+    <None Include="DataSetsIdiomas\dsEstadistica.xsc">
+      <DependentUpon>dsEstadistica.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsEstadistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEstadistica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsEstadistica.xss">
+      <DependentUpon>dsEstadistica.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsGrupos.xsc">
+      <DependentUpon>dsGrupos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsGrupos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGrupos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsGrupos.xss">
+      <DependentUpon>dsGrupos.xsd</DependentUpon>
+    </None>
     <None Include="DataSetsIdiomas\dsImagenesAlumnado.xsc">
       <DependentUpon>dsImagenesAlumnado.xsd</DependentUpon>
     </None>
@@ -627,6 +760,17 @@
     </None>
     <None Include="DataSetsIdiomas\dsListaDePagos.xss">
       <DependentUpon>dsListaDePagos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsRecordEconomicoGrupo.xsc">
+      <DependentUpon>dsRecordEconomicoGrupo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsRecordEconomicoGrupo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecordEconomicoGrupo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsRecordEconomicoGrupo.xss">
+      <DependentUpon>dsRecordEconomicoGrupo.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\InstitutoDeIdiomas.Model.Foto.datasource" />

@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GRIDVIEWALUMNNOM)).BeginInit();
@@ -320,6 +321,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblFecha);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.GRIDVIEWPAGOSCONS);
             this.panel2.Controls.Add(this.label9);
@@ -338,6 +340,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1018, 569);
             this.panel2.TabIndex = 14;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(490, 318);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(56, 13);
+            this.lblFecha.TabIndex = 15;
+            this.lblFecha.Text = "XXXXXXX";
             // 
             // frmConsultarPago
             // 
@@ -394,5 +406,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

@@ -36,6 +36,7 @@
             this.txtNuevoRecibo = new System.Windows.Forms.TextBox();
             this.btnCambiar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarPago = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -129,6 +130,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnEliminarPago);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.label2);
@@ -144,13 +146,27 @@
             this.panel1.Size = new System.Drawing.Size(723, 435);
             this.panel1.TabIndex = 9;
             // 
+            // btnEliminarPago
+            // 
+            this.btnEliminarPago.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEliminarPago.FlatAppearance.BorderSize = 0;
+            this.btnEliminarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarPago.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarPago.Location = new System.Drawing.Point(12, 342);
+            this.btnEliminarPago.Name = "btnEliminarPago";
+            this.btnEliminarPago.Size = new System.Drawing.Size(102, 23);
+            this.btnEliminarPago.TabIndex = 13;
+            this.btnEliminarPago.Text = "ELIMINAR PAGO";
+            this.btnEliminarPago.UseVisualStyleBackColor = false;
+            this.btnEliminarPago.Click += new System.EventHandler(this.btnEliminarPago_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.Location = new System.Drawing.Point(55, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Escriba aquí";
             // 
@@ -176,10 +192,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Office Preview Font", 9.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.Location = new System.Drawing.Point(465, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.Size = new System.Drawing.Size(106, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Actual N° recibo ";
             // 
@@ -217,5 +233,6 @@
         private System.Windows.Forms.RadioButton rbRecibo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnEliminarPago;
     }
 }

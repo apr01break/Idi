@@ -20,6 +20,7 @@ namespace InstitutoDeIdiomas
         MsSqlConnection configurarConexion = new MsSqlConnection();
         DataTable dtSaldos = new DataTable();
         public static SqlConnection _SqlConnection = new SqlConnection();
+        double refe = 0;
         public frmCrearPago(String codigo)
         {
             InitializeComponent();
@@ -211,8 +212,44 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        public Boolean verificarRecibo()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("verificar_recibo_pago", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                DataTable dt = new DataTable();
+                cmd.Parameters.Add(new SqlParameter("@nro_recibo", TXTNUMERORECIBO.Text));
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Numero de recibo ya existente");
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         private void BTNGUARDARPAGO_Click(object sender, EventArgs e)
         {
+            if (!verificarRecibo())
+            {
+                return;
+            }
             if((TXTMONTORECIBO.Text=="" || TXTNUMERORECIBO.Text == "") && chboxSaldo.Checked == false)
             {
                 MessageBox.Show("Revise el pago");
@@ -230,7 +267,8 @@ namespace InstitutoDeIdiomas
                     return;
                 }
                 LIMPIAR_ERRORES();
-                if (VALIDAR_MATRICULA())
+                //pago sin saldo(normal)
+                if (VALIDAR_MATRICULA() )
                 {
                     try
                     {
@@ -253,16 +291,16 @@ namespace InstitutoDeIdiomas
                         }
                         if (CBPAGARMATRICULA.CheckState == CheckState.Checked)
                         {
-                            PAGAR_MATRICULA();
+                            PAGAR_MATRICULA2();
                         }
                         GUARDAR_OTROS_PAGOS2();
 
                     }
-                    catch (Exception ex)
+                        catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    double monto = 0;
+                double monto = 0;
                     foreach (DataRow dr in dtSaldos.Rows)
                     {
                         monto += Convert.ToDouble(dr[2]);
@@ -412,8 +450,7 @@ namespace InstitutoDeIdiomas
             }
             
         }
-
-        private void PAGAR_MATRICULA()
+        private void PAGAR_MATRICULA2()
         {
             var rbmod = GBMODALIDADMATRICULA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             var rbidi = GBIDIOMA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
@@ -422,7 +459,7 @@ namespace InstitutoDeIdiomas
             string idio = rbidi.Text.ToString();
             string niv = rbniv.Text.ToString();
             string cic = NUMCICLO.Value.ToString();
-            int monto = 20;
+            double monto = 20;
             if (rbTupa2018.Checked == true)
             {
                 if (LBLTIPOALUMN.Text == "FAUSTINIANO")
@@ -455,10 +492,92 @@ namespace InstitutoDeIdiomas
                         monto = 140;
                     }
                 }
+                if (chAdministrativo.Checked)
+                {
+                    mod = mod + "-BENEFICIO";
+                    monto = monto * 0.9;
+                }
             }
+
             int idhorario = (int)((DataRowView)cbHorario.SelectedItem)["id"];
             try
             {
+                SqlCommand cmd = new SqlCommand("crear_detalle_matricula2", _SqlConnection);
+            if (cmd.Connection.State == ConnectionState.Closed)
+            {
+                cmd.Connection.Open();
+            }
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@idioma", idio));
+            cmd.Parameters.Add(new SqlParameter("@nivel", niv));
+            cmd.Parameters.Add(new SqlParameter("@modalidad", mod));
+            cmd.Parameters.Add(new SqlParameter("@ciclo", cic));
+            cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
+            cmd.Parameters.Add(new SqlParameter("@monto", monto));
+            cmd.Parameters.Add(new SqlParameter("@idhorario", idhorario));
+            cmd.ExecuteNonQuery();
+            if (cmd.Connection.State == ConnectionState.Open)
+            {
+                cmd.Connection.Close();
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void PAGAR_MATRICULA()
+        {
+            var rbmod = GBMODALIDADMATRICULA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            var rbidi = GBIDIOMA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            var rbniv = GBNIVEL.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            string mod = rbmod.Text.ToString();
+            string idio = rbidi.Text.ToString();
+            string niv = rbniv.Text.ToString();
+            string cic = NUMCICLO.Value.ToString();
+            double monto = 20;
+            if (rbTupa2018.Checked == true)
+            {
+                if (LBLTIPOALUMN.Text == "FAUSTINIANO")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = 100;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = 110;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = 120;
+                    }
+                }
+                else if (LBLTIPOALUMN.Text == "PARTICULAR")
+                {
+                    if (RBBASICO.Checked == true)
+                    {
+                        monto = 120;
+                    }
+                    else if (RBINTERMEDIO.Checked == true)
+                    {
+                        monto = 130;
+                    }
+                    else if (RBAVANZADO.Checked == true)
+                    {
+                        monto = 140;
+                    }
+                }
+                if (chAdministrativo.Checked)
+                {
+                    mod = mod + "-BENEFICIO";
+                    monto = monto * 0.88;
+                }
+            }
+
+            int idhorario = (int)((DataRowView)cbHorario.SelectedItem)["id"];
+            //try
+            //{
                 SqlCommand cmd = new SqlCommand("crear_detalle_matricula", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
                 {
@@ -478,11 +597,11 @@ namespace InstitutoDeIdiomas
                 {
                     cmd.Connection.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
         private void GUARDAR_OTROS_PAGOS()
         {
@@ -546,8 +665,6 @@ namespace InstitutoDeIdiomas
                     {
                         MessageBox.Show(ex.Message);
                     }
-
-
                 }
             }
         }
@@ -563,6 +680,9 @@ namespace InstitutoDeIdiomas
             GRIDVIEWTIPOSPAGOS.Columns.Clear();
             GRIDVIEWTIPOSPAGOS.Rows.Clear();
             TXTMONTORECIBO.Text = "";
+            NUMCICLO.Value = 1;
+            cbHorario.ResetText();
+            cbHorario.SelectedIndex = -1;
 
         }
         private bool VALIDAR_MATRICULA()
@@ -584,6 +704,11 @@ namespace InstitutoDeIdiomas
                 {
                     ok = false;
                     MISSINGDATA.SetError(GBNIVEL, "SELECCIONA UN NIVEL");
+                }
+                if (cbHorario.Text=="")
+                {
+                    ok = false;
+                    MISSINGDATA.SetError(cbHorario, "SELECCIONA UN HORARIO");
                 }
             }
             return ok;
@@ -641,6 +766,7 @@ namespace InstitutoDeIdiomas
             MISSINGDATA.SetError(GBMODALIDADMATRICULA, null);
             MISSINGDATA.SetError(GBIDIOMA, null);
             MISSINGDATA.SetError(GBNIVEL, null);
+            MISSINGDATA.SetError(cbHorario, null);
         }
         private void LISTBOXRAZONES_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -739,6 +865,8 @@ namespace InstitutoDeIdiomas
         //LISTENER PARA LA CONSULTA DE PERSONAS EN EL GRIDVIEW
         private void GridViewNombres_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            LIMPIAR_DATOS();
+            limpiarRadioButtons();
             chboxCambiarTipoAlumno.Checked = false;
 
             dgvwSaldo.DataSource = null;
@@ -956,6 +1084,7 @@ namespace InstitutoDeIdiomas
             {
                 monto = monto + 20;
             }
+            
             if (rbTupa2018.Checked == true)
             {
                 if (LBLTIPOALUMN.Text == "FAUSTINIANO")
@@ -963,14 +1092,17 @@ namespace InstitutoDeIdiomas
                     if (RBBASICO.Checked == true)
                     {
                         monto = monto + 100;
+                        refe = 100;
                     }
                     else if (RBINTERMEDIO.Checked == true)
                     {
                         monto = monto + 110;
+                        refe = 110;
                     }
                     else if (RBAVANZADO.Checked == true)
                     {
                         monto = monto + 120;
+                        refe = 120;
                     }
                 }
                 else if (LBLTIPOALUMN.Text == "PARTICULAR")
@@ -978,15 +1110,23 @@ namespace InstitutoDeIdiomas
                     if (RBBASICO.Checked == true)
                     {
                         monto = monto + 120;
+                        refe = 120;
                     }
                     else if (RBINTERMEDIO.Checked == true)
                     {
                         monto = monto + 130;
+                        refe = 130;
                     }
                     else if (RBAVANZADO.Checked == true)
                     {
                         monto = monto + 140;
+                        refe = 140;
                     }
+                }
+                if (chAdministrativo.Checked)
+                {
+                    double descuento = refe * 0.10;
+                    monto = monto - descuento;
                 }
             }
             TXTMONTO.Text = "" + monto;
@@ -1114,21 +1254,25 @@ namespace InstitutoDeIdiomas
             RBBASICO.Checked = false;
             RBINTERMEDIO.Checked = false;
             RBAVANZADO.Checked = false;
+            chAdministrativo.Enabled = false;
         }
 
         private void RBBASICO_CheckedChanged(object sender, EventArgs e)
         {
             CALCULAR_MONTO_A_PAGAR();
+            chAdministrativo.Enabled = true;
         }
 
         private void RBINTERMEDIO_CheckedChanged(object sender, EventArgs e)
         {
             CALCULAR_MONTO_A_PAGAR();
+            chAdministrativo.Enabled = true;
         }
 
         private void RBAVANZADO_CheckedChanged(object sender, EventArgs e)
         {
             CALCULAR_MONTO_A_PAGAR();
+            chAdministrativo.Enabled = true;
         }
         public void listarHorarios()
         {
@@ -1163,6 +1307,11 @@ namespace InstitutoDeIdiomas
         private void btnNuevoHorario_Click(object sender, EventArgs e)
         {
             new frmAgregarHorarioReferencia(this).Show();
+        }
+
+        private void chAdministrativo_CheckedChanged(object sender, EventArgs e)
+        {
+            CALCULAR_MONTO_A_PAGAR();
         }
     }
 }
