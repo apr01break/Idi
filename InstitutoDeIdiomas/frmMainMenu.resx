@@ -785,6 +785,20 @@
         DB+HBR6bW1n5DyRqZeATKZcfAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnAsistenciaProfesores.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gITETgicC+PYAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGBSURBVHhe
+        7ZtdakJhEENdgMu6axHcgSuzSxK6iNpJEx9abHxpbcmXAyNyjegJ+Dvc3V9wvV63mfPMRYPrm27OZkQP
+        M28zX8Gxg2KZjOB+5hW234Db9ornMXLHD03PUfE8Ru5ER8tJ8TwgR0dLC1A8D8jR0dICFM8DcnS0tADF
+        84AcHS0tQPE8IEdHSwtQPA/I0dHSAhTPA3J0tLQAxfOAHB0tLUDxPCBHR0sLUDwPyNHR0gIUzwNydLS0
+        AMWfyzwwlhb43x5P8rfmZeYRyNy7708NHD8vX+YA1lVuY5MGXLmGmytYVN7b1aUD5w0FYDO7KmcUgPX0
+        qlxawFws/xJY+01QnwTrfgzemAPrfhF6FnoCj+hvAcXzgBwdLS1A8TwgR0dLC1A8D8jR0dICFM8DcnS0
+        tADF84AcHS0tQPE8IEdHSwtQPA/I0dHSAhTPA3J0tLQAxfOAHB0tLUDxPCBHR0sLUDwPyNHREl3A8idO
+        rn3qLBjBdU+evjGi/+T0+d3uHRVlgihndpgfAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnAsignarRoles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

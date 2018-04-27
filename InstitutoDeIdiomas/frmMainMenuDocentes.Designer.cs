@@ -62,6 +62,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCambiarClave = new System.Windows.Forms.Button();
+            this.btnRegEntradaSalida = new InstitutoDeIdiomas.BotonCircular();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -183,7 +184,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(138, 156);
+            this.label2.Location = new System.Drawing.Point(138, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 19;
@@ -193,7 +194,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(397, 156);
+            this.label4.Location = new System.Drawing.Point(397, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 20;
@@ -220,6 +221,7 @@
             // 
             // panelDocentes
             // 
+            this.panelDocentes.Controls.Add(this.btnRegEntradaSalida);
             this.panelDocentes.Controls.Add(this.btnGruposACargo);
             this.panelDocentes.Controls.Add(this.label9);
             this.panelDocentes.Controls.Add(this.label6);
@@ -279,7 +281,7 @@
             this.btnRegistroAuxiliar.FlatAppearance.BorderSize = 0;
             this.btnRegistroAuxiliar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistroAuxiliar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroAuxiliar.Image")));
-            this.btnRegistroAuxiliar.Location = new System.Drawing.Point(136, 43);
+            this.btnRegistroAuxiliar.Location = new System.Drawing.Point(136, 76);
             this.btnRegistroAuxiliar.Name = "btnRegistroAuxiliar";
             this.btnRegistroAuxiliar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRegistroAuxiliar.Size = new System.Drawing.Size(110, 110);
@@ -293,7 +295,7 @@
             this.btnRegistrarNotas.FlatAppearance.BorderSize = 0;
             this.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarNotas.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarNotas.Image")));
-            this.btnRegistrarNotas.Location = new System.Drawing.Point(392, 43);
+            this.btnRegistrarNotas.Location = new System.Drawing.Point(392, 76);
             this.btnRegistrarNotas.Name = "btnRegistrarNotas";
             this.btnRegistrarNotas.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRegistrarNotas.Size = new System.Drawing.Size(110, 110);
@@ -465,6 +467,21 @@
             this.btnCambiarClave.UseVisualStyleBackColor = true;
             this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click_1);
             // 
+            // btnRegEntradaSalida
+            // 
+            this.btnRegEntradaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            this.btnRegEntradaSalida.FlatAppearance.BorderSize = 0;
+            this.btnRegEntradaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegEntradaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegEntradaSalida.ForeColor = System.Drawing.Color.White;
+            this.btnRegEntradaSalida.Location = new System.Drawing.Point(230, 14);
+            this.btnRegEntradaSalida.Name = "btnRegEntradaSalida";
+            this.btnRegEntradaSalida.Size = new System.Drawing.Size(178, 62);
+            this.btnRegEntradaSalida.TabIndex = 55;
+            this.btnRegEntradaSalida.Text = "REGISTRAR ENTRADA/SALIDA";
+            this.btnRegEntradaSalida.UseVisualStyleBackColor = false;
+            this.btnRegEntradaSalida.Click += new System.EventHandler(this.btnRegEntradaSalida_Click);
+            // 
             // frmMainMenuDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,5 +555,6 @@
         private BotonCircular btnGruposACargo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnMenuAdministrativo;
+        private BotonCircular btnRegEntradaSalida;
     }
 }

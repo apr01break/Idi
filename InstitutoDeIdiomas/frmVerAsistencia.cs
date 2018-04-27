@@ -179,28 +179,51 @@ namespace InstitutoDeIdiomas
                 if (dtMain.Rows.Count > 0)
                 {
                     string codigo = dtMain.Rows[0]["numerocarnet"].ToString();
-                    foreach (DataRow row in dtMain.Rows)
+                    double start = 0;
+                    double end;
+                    double asis = 0;
+                    for (int j = 0; j < dtMain.Rows.Count; j++)
                     {
-                        row["fa"] = Convert.ToDateTime(row["fecha"]).ToString("dd/MM");
-                        if (codigo != row["numerocarnet"].ToString())
+                        dtMain.Rows[j]["fa"] = Convert.ToDateTime(dtMain.Rows[j]["fecha"]).ToString("dd/MM");
+                        if (codigo != dtMain.Rows[j]["numerocarnet"].ToString())
                         {
-                            codigo = row["numerocarnet"].ToString();
+                            codigo = dtMain.Rows[j]["numerocarnet"].ToString();
                             i++;
+                            end = j - 1;
+                            double porcentaje = Math.Round(asis / (end - start + 1) * 100, 2);
+                            //MessageBox.Show(porcentaje + "");
+                            for (int w = (int)start; w < (int)end; w++)
+                            {
+                                dtMain.Rows[w]["porcentaje"] = porcentaje;
+                            }
+                            asis = 0;
+                            start = j;
+                            end = 0;
                         }
                         else
                         {
 
                         }
-                        string d = i.ToString().PadLeft(2, '0');
-                        row["numero"] = d;
+                        if (dtMain.Rows[j]["Asistencia"].ToString() == "A" || dtMain.Rows[j]["numerocarnet"].ToString() == "J")
+                        {
+                            asis++;
+                        }
+                        dtMain.Rows[j]["numero"] = i.ToString().PadLeft(2, '0');
+                        if (j == dtMain.Rows.Count - 1)
+                        {
+                            end = j;
+                            double porcentaje = Math.Round(asis / (end - start + 1) * 100, 2);
+                            for (int w = (int)start; w < (int)end; w++)
+                            {
+                                dtMain.Rows[w]["porcentaje"] = porcentaje;
+                            }
+                        }
                     }
                     dtMain.Columns.Remove("fecha");
                     dtMain.Columns["fa"].ColumnName = "fecha";
                     cargarDatosGrupo();
 
-
-                    new frmRptAsistenciaGrupo(dtMain, ano, idioma, ciclo, docente, 
-                        mes, nivel, numero,
+                    new frmRptAsistenciaGrupo(dtMain, ano, idioma, ciclo, docente, mes, nivel, numero,
                         Convert.ToDateTime(inicio).ToString("dd/MM/yy"),
                         Convert.ToDateTime(fin).ToString("dd/MM/yy")).Show();
                 }

@@ -1,6 +1,6 @@
 ﻿namespace InstitutoDeIdiomas.ReportForms
 {
-    partial class frmRptAsistenciaGrupo
+    partial class frmRptEstadisticas
     {
         /// <summary>
         /// Required designer variable.
@@ -34,25 +34,26 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "InstitutoDeIdiomas.Reportes.rptAsistenciaGrupo.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 64);
+            this.reportViewer1.DocumentMapWidth = 98;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "InstitutoDeIdiomas.Reportes.rptEstadistica.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 61);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1194, 633);
+            this.reportViewer1.Size = new System.Drawing.Size(1000, 644);
             this.reportViewer1.TabIndex = 1;
             // 
-            // frmRptAsistenciaGrupo
+            // frmRptEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 697);
+            this.ClientSize = new System.Drawing.Size(1000, 705);
             this.Controls.Add(this.reportViewer1);
             this.MaximizeBox = false;
-            this.Name = "frmRptAsistenciaGrupo";
+            this.Name = "frmRptEstadisticas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REPORTE DE ASISTENCIAS DE GRUPO";
-            this.Load += new System.EventHandler(this.frmRptAsistenciaGrupo_Load);
+            this.Text = "REPORTE DE ESTADISTICAS";
+            this.Load += new System.EventHandler(this.frmRptEstadisticas_Load);
             this.ResumeLayout(false);
 
         }

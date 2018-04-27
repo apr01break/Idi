@@ -212,8 +212,44 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        public Boolean verificarRecibo()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("verificar_recibo_pago", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                DataTable dt = new DataTable();
+                cmd.Parameters.Add(new SqlParameter("@nro_recibo", TXTNUMERORECIBO.Text));
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Numero de recibo ya existente");
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
         private void BTNGUARDARPAGO_Click(object sender, EventArgs e)
         {
+            if (!verificarRecibo())
+            {
+                return;
+            }
             if((TXTMONTORECIBO.Text=="" || TXTNUMERORECIBO.Text == "") && chboxSaldo.Checked == false)
             {
                 MessageBox.Show("Revise el pago");

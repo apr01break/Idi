@@ -106,7 +106,7 @@ namespace InstitutoDeIdiomas
 
         private void REPORTEMENUTOOL_Click(object sender, EventArgs e)
         {
-            new frmRptReporte().Show();
+            
         }
 
         private void ACTUALIZAROPTIONMENU_Click(object sender, EventArgs e)
@@ -612,6 +612,21 @@ namespace InstitutoDeIdiomas
         private void frmMainMenu_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new frmEntradaSalida(Convert.ToInt32(idCodigo)).Show();
+        }
+
+        private void btnAsistenciaProfesores_Click(object sender, EventArgs e)
+        {
+            new frmVerAsistenciaDocente().Show();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            new frmEstadisticas().Show();
         }
     }
 }

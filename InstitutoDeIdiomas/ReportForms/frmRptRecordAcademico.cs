@@ -16,7 +16,7 @@ namespace InstitutoDeIdiomas.ReportForms
     {
         DataTable dt = new DataTable();
         String numcarnet, nombre, idioma;
-        public frmRptRecordAcademico(DataTable dt,String numcarnet,String nombre, String idioma)
+        public frmRptRecordAcademico(DataTable dt, String numcarnet, String nombre, String idioma)
         {
             this.dt = dt;
             this.numcarnet = numcarnet;

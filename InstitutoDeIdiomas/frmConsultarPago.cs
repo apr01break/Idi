@@ -17,6 +17,7 @@ namespace InstitutoDeIdiomas
     {
         public static SqlConnection _SqlConnection = new SqlConnection();
         MsSqlConnection configurarConexion = new MsSqlConnection();
+        string fechaCreacion;
         public frmConsultarPago()
         {
             InitializeComponent();
@@ -130,6 +131,7 @@ namespace InstitutoDeIdiomas
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     GRIDVIEWPAGOSCONS.DataSource = dt;
+                    GRIDVIEWPAGOSCONS.Columns["created_at"].Visible = false;
 
                     if (cmd.Connection.State == ConnectionState.Open)
                     {
@@ -192,6 +194,7 @@ namespace InstitutoDeIdiomas
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     GRIDVIEWPAGOSCONS.DataSource = dt;
+                    GRIDVIEWPAGOSCONS.Columns["created_at"].Visible = false;
                     
                     if (cmd.Connection.State == ConnectionState.Open)
                     {
@@ -209,6 +212,7 @@ namespace InstitutoDeIdiomas
                 DataGridViewRow row = this.GRIDVIEWPAGOSCONS.Rows[e.RowIndex];
                 String numrecibo = row.Cells[0].Value.ToString();
                 int idtrabajador = Convert.ToInt32(row.Cells[2].Value.ToString());
+                lblFecha.Text = row.Cells[3].Value.ToString();
                 try {
                     DataTable dt = new DataTable();
                     SqlCommand comando = new SqlCommand("mostrar_detalle_pagos", _SqlConnection);

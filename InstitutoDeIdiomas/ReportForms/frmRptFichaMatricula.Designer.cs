@@ -40,14 +40,14 @@
             this.FICHAMATRICULARPT.Margin = new System.Windows.Forms.Padding(2);
             this.FICHAMATRICULARPT.Name = "FICHAMATRICULARPT";
             this.FICHAMATRICULARPT.ServerReport.BearerToken = null;
-            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(868, 635);
+            this.FICHAMATRICULARPT.Size = new System.Drawing.Size(1000, 641);
             this.FICHAMATRICULARPT.TabIndex = 0;
             // 
             // frmRptFichaMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 699);
+            this.ClientSize = new System.Drawing.Size(1000, 705);
             this.Controls.Add(this.FICHAMATRICULARPT);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);

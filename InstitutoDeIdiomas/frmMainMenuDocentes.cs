@@ -174,5 +174,10 @@ namespace InstitutoDeIdiomas
             String id = TXTCODUSER.Text;
             new frmMainMenu(id, nombre, "ADMINISTRADOR").Show();
         }
+
+        private void btnRegEntradaSalida_Click(object sender, EventArgs e)
+        {
+            new frmEntradaSalida(Convert.ToInt32(id)).Show();
+        }
     }
 }

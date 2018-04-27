@@ -18,6 +18,8 @@ namespace InstitutoDeIdiomas
         MsSqlConnection configurarConexion = new MsSqlConnection();
         public static SqlConnection _SqlConnection = new SqlConnection();
         int codigoGrupo;
+        DataTable dtListening, dtReading, dtWriting, dtSpeaking, dtUseOfEnglish;
+        DataTable dtPromedios = new DataTable();
         String anho, mes;
         DataTable dtListaAlumno = new DataTable();
         string nroCarnet;
@@ -181,6 +183,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtListening = dt.Copy();
             dgvwListening.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -200,6 +203,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtSpeaking = dt.Copy();
             dgvwSpeaking.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -219,6 +223,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtReading = dt.Copy();
             dgvwReading.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -238,6 +243,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtWriting = dt.Copy();
             dgvwWriting.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -257,6 +263,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtUseOfEnglish = dt.Copy();
             dgvwUseOfEnglish.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -698,6 +705,8 @@ namespace InstitutoDeIdiomas
 
         private void btnRelacionAlumno_Click(object sender, EventArgs e)
         {
+            label1.Text = "RESULTADOS HASTA AHORA";
+            label1.SelectionAlignment = HorizontalAlignment.Center;
             cargarAlumnoTabla();
             cargarResultados();
             corregirNota();
@@ -800,13 +809,17 @@ namespace InstitutoDeIdiomas
 
         private void btnRelacionAlumnos_Click(object sender, EventArgs e)
         {
-            dtListaAlumno.Columns[0].ColumnName = "codigo";
-            dtListaAlumno.Columns[1].ColumnName = "nombre";
-            dtListaAlumno.Columns.Add("numero");
-            for (int i = 0; i < dtListaAlumno.Rows.Count; i++)
+            if (dtListaAlumno.Columns.Count < 3)
             {
-                dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
+                dtListaAlumno.Columns[0].ColumnName = "codigo";
+                dtListaAlumno.Columns[1].ColumnName = "nombre";
+                dtListaAlumno.Columns.Add("numero");
+                for (int i = 0; i < dtListaAlumno.Rows.Count; i++)
+                {
+                    dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
+                }
             }
+            
             using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumno, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
                 txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text,txtNumero.Text,txtInicio.Text,txtFin.Text,txtDias.Text))
             {
@@ -918,6 +931,197 @@ namespace InstitutoDeIdiomas
         private void btnVerAsistencias_Click(object sender, EventArgs e)
         {
             new frmVerAsistencia(codigoGrupo).ShowDialog();
+        }
+
+        private void btnRecordEconomico_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("listar_pagos_grupo", _SqlConnection);
+            if (cmd.Connection.State == ConnectionState.Closed)
+            {
+                cmd.Connection.Open();
+            }
+            cmd.Parameters.Add(new SqlParameter("@idGrupo", codigoGrupo));
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            if (cmd.Connection.State == ConnectionState.Open)
+            {
+                cmd.Connection.Close();
+            }
+            dt.Columns.Add("fecha");
+            foreach (DataRow item in dt.Rows)
+            {
+                item["fecha"] = Convert.ToDateTime(item["fechax"]).ToString("dd/MM/yy");
+            }
+
+            new frmRptRecordEconomicoGrupo(dt,txtIdioma.Text,txtNivel.Text,txtCiclo.Text,
+                txtDocente.Text,txtSalon.Text,txtHorario.Text,txtHorario2.Text,
+                txtNumero.Text,txtInicio.Text,txtFin.Text,txtDias.Text).Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "RESULTADOS HASTA AHORA";
+            label1.SelectionAlignment = HorizontalAlignment.Center;
+            cargarAlumnoTabla();
+            cargarResultados();
+            corregirNota();
+            if (dgvwNotas.ColumnCount != 7)
+            {
+                MessageBox.Show("Es necesario tener notas de todos los criterios");
+                return;
+            }
+            if (dtListening.Columns.Count <3)
+            {
+                alistarListening();
+                alistarReading();
+                alistarSpeaking();
+                alistarUseOfEnglish();
+                alistarWriting();
+                
+                dtPromedios.Columns.Add("listening");
+                dtPromedios.Columns.Add("reading");
+                dtPromedios.Columns.Add("writing");
+                dtPromedios.Columns.Add("speaking");
+                dtPromedios.Columns.Add("useofenglish");
+                for (int i = 0; i < dgvwNotas.RowCount; i++)
+                {
+                    DataRow dn = dtPromedios.NewRow();
+                    dn["listening"] = dgvwNotas.Rows[i].Cells["listening"].Value.ToString();
+                    dn["reading"] = dgvwNotas.Rows[i].Cells["reading"].Value.ToString();
+                    dn["writing"] = dgvwNotas.Rows[i].Cells["writing"].Value.ToString();
+                    dn["speaking"] = dgvwNotas.Rows[i].Cells["speaking"].Value.ToString();
+                    dn["useofenglish"] = dgvwNotas.Rows[i].Cells["useofenglish"].Value.ToString();
+                    dtPromedios.Rows.Add(dn);
+                }
+                dtPromedios.Columns.Add("internacional");
+                dtPromedios.Columns.Add("nacional");
+                foreach (DataRow item in dtPromedios.Rows)
+                {
+                    item["internacional"] = (Convert.ToDecimal(item[0]) + Convert.ToDecimal(item[1])
+                        + Convert.ToDecimal(item[2]) + Convert.ToDecimal(item[3]) + Convert.ToDecimal(item[4])).ToString();
+                    item["nacional"] = Math.Round(Convert.ToDecimal(item["internacional"]) / 4, 0);
+                }
+            }
+            if (dtListaAlumno.Columns.Count < 3)
+            {
+                dtListaAlumno.Columns[0].ColumnName = "codigo";
+                dtListaAlumno.Columns[1].ColumnName = "nombre";
+                dtListaAlumno.Columns.Add("numero");
+                for (int i = 0; i < dtListaAlumno.Rows.Count; i++)
+                {
+                    dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
+                }
+            }
+            new frmRptActaNotas(dtListening,dtReading,dtWriting,dtSpeaking,
+                dtUseOfEnglish,dtListaAlumno,dtPromedios, txtIdioma.Text, txtNivel.Text,txtCiclo.Text,
+                anho,mes,txtDocente.Text,txtNumero.Text,txtInicio.Text,txtFin.Text).ShowDialog();
+        }
+        public void alistarListening()
+        {
+            dtListening.Columns.Add("ayuda");
+            int i = 1;
+            int j = 1;
+            string criterio = dtListening.Rows[0]["criterio"].ToString();
+            foreach (DataRow item in dtListening.Rows)
+            {
+                item["ayuda"] = i;
+
+                if (i == dgvwNotas.Rows.Count) i = 1;
+                else i++;
+
+                if (criterio != item["criterio"].ToString())
+                {
+                    criterio = item["criterio"].ToString();
+                    j++;
+                }
+                item["criterio"] = "L" + j;
+            }
+        }
+        public void alistarReading()
+        {
+            dtReading.Columns.Add("ayuda");
+            int i = 1;
+            int j = 1;
+            string criterio = dtReading.Rows[0]["criterio"].ToString();
+            foreach (DataRow item in dtReading.Rows)
+            {
+                item["ayuda"] = i;
+
+                if (i == dgvwNotas.Rows.Count) i = 1;
+                else i++;
+
+                if (criterio != item["criterio"].ToString())
+                {
+                    criterio = item["criterio"].ToString();
+                    j++;
+                }
+                item["criterio"] = "R" + j;
+            }
+        }
+        public void alistarWriting()
+        {
+            dtWriting.Columns.Add("ayuda");
+            int i = 1;
+            int j = 1;
+            string criterio = dtWriting.Rows[0]["criterio"].ToString();
+            foreach (DataRow item in dtWriting.Rows)
+            {
+                item["ayuda"] = i;
+
+                if (i == dgvwNotas.Rows.Count) i = 1;
+                else i++;
+
+                if (criterio != item["criterio"].ToString())
+                {
+                    criterio = item["criterio"].ToString();
+                    j++;
+                }
+                item["criterio"] = "W" + j;
+            }
+        }
+        public void alistarSpeaking()
+        {
+            dtSpeaking.Columns.Add("ayuda");
+            int i = 1;
+            int j = 1;
+            string criterio = dtSpeaking.Rows[0]["criterio"].ToString();
+            foreach (DataRow item in dtSpeaking.Rows)
+            {
+                item["ayuda"] = i;
+
+                if (i == dgvwNotas.Rows.Count) i = 1;
+                else i++;
+
+                if (criterio != item["criterio"].ToString())
+                {
+                    criterio = item["criterio"].ToString();
+                    j++;
+                }
+                item["criterio"] = "S" + j;
+            }
+        }
+        public void alistarUseOfEnglish()
+        {
+            dtUseOfEnglish.Columns.Add("ayuda");
+            int i = 1;
+            int j = 1;
+            string criterio = dtUseOfEnglish.Rows[0]["criterio"].ToString();
+            foreach (DataRow item in dtUseOfEnglish.Rows)
+            {
+                item["ayuda"] = i;
+
+                if (i == dgvwNotas.Rows.Count) i = 1;
+                else i++;
+
+                if (criterio != item["criterio"].ToString())
+                {
+                    criterio = item["criterio"].ToString();
+                    j++;
+                }
+                item["criterio"] = "U" + j;
+            }
         }
 
         private void frmVerNotas_Load(object sender, EventArgs e)

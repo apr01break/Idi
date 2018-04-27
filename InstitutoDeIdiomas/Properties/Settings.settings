@@ -6,7 +6,7 @@
       <Value Profile="(Default)">192.168.1.51</Value>
     </Setting>
     <Setting Name="DB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">CopiaDB</Value>
+      <Value Profile="(Default)">CentroDeIdiomas</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">administrador</Value>
