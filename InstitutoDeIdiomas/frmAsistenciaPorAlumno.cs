@@ -121,12 +121,10 @@ namespace InstitutoDeIdiomas
                 cmbGrupos.ValueMember = "Value";
                 foreach (DataRow row in dt.Rows)
                 {
-                    string texto = row[1]+" "+row[2]+" "+row[3];
+                    string texto = row[1]+" "+row[2]+" "+row[3]+" "+row[4];
                     cmbGrupos.Items.Add(new { Text = texto, Value = row[0] });
                 }
                 cmbGrupos.Enabled = true;
-
-
             }
             catch (Exception ex)
             {

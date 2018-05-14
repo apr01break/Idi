@@ -44,6 +44,7 @@
             this.lblClave = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelDocentes = new System.Windows.Forms.Panel();
+            this.btnRegEntradaSalida = new InstitutoDeIdiomas.BotonCircular();
             this.btnGruposACargo = new InstitutoDeIdiomas.BotonCircular();
             this.label9 = new System.Windows.Forms.Label();
             this.btnRegistrarAsistenciaLibre = new InstitutoDeIdiomas.BotonCircular();
@@ -62,7 +63,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCambiarClave = new System.Windows.Forms.Button();
-            this.btnRegEntradaSalida = new InstitutoDeIdiomas.BotonCircular();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -236,6 +236,21 @@
             this.panelDocentes.TabIndex = 51;
             this.panelDocentes.Visible = false;
             this.panelDocentes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDocentes_Paint);
+            // 
+            // btnRegEntradaSalida
+            // 
+            this.btnRegEntradaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            this.btnRegEntradaSalida.FlatAppearance.BorderSize = 0;
+            this.btnRegEntradaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegEntradaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegEntradaSalida.ForeColor = System.Drawing.Color.White;
+            this.btnRegEntradaSalida.Location = new System.Drawing.Point(230, 14);
+            this.btnRegEntradaSalida.Name = "btnRegEntradaSalida";
+            this.btnRegEntradaSalida.Size = new System.Drawing.Size(178, 62);
+            this.btnRegEntradaSalida.TabIndex = 55;
+            this.btnRegEntradaSalida.Text = "REGISTRAR ENTRADA/SALIDA";
+            this.btnRegEntradaSalida.UseVisualStyleBackColor = false;
+            this.btnRegEntradaSalida.Click += new System.EventHandler(this.btnRegEntradaSalida_Click);
             // 
             // btnGruposACargo
             // 
@@ -466,21 +481,6 @@
             this.btnCambiarClave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCambiarClave.UseVisualStyleBackColor = true;
             this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click_1);
-            // 
-            // btnRegEntradaSalida
-            // 
-            this.btnRegEntradaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.btnRegEntradaSalida.FlatAppearance.BorderSize = 0;
-            this.btnRegEntradaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegEntradaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegEntradaSalida.ForeColor = System.Drawing.Color.White;
-            this.btnRegEntradaSalida.Location = new System.Drawing.Point(230, 14);
-            this.btnRegEntradaSalida.Name = "btnRegEntradaSalida";
-            this.btnRegEntradaSalida.Size = new System.Drawing.Size(178, 62);
-            this.btnRegEntradaSalida.TabIndex = 55;
-            this.btnRegEntradaSalida.Text = "REGISTRAR ENTRADA/SALIDA";
-            this.btnRegEntradaSalida.UseVisualStyleBackColor = false;
-            this.btnRegEntradaSalida.Click += new System.EventHandler(this.btnRegEntradaSalida_Click);
             // 
             // frmMainMenuDocentes
             // 

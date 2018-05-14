@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtmHoraFinal = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtmHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.cbAno = new System.Windows.Forms.ComboBox();
             this.cbNumero = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -47,10 +51,6 @@
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.numCiclo = new System.Windows.Forms.NumericUpDown();
-            this.dtmHoraFinal = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtmHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCiclo)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(457, 241);
             this.panel1.TabIndex = 0;
+            // 
+            // dtmHoraFinal
+            // 
+            this.dtmHoraFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtmHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtmHoraFinal.Location = new System.Drawing.Point(110, 132);
+            this.dtmHoraFinal.Margin = new System.Windows.Forms.Padding(2);
+            this.dtmHoraFinal.Name = "dtmHoraFinal";
+            this.dtmHoraFinal.ShowUpDown = true;
+            this.dtmHoraFinal.Size = new System.Drawing.Size(86, 20);
+            this.dtmHoraFinal.TabIndex = 108;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 136);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "HORA FINAL";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 108);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "HORA INICIO";
+            // 
+            // dtmHoraInicio
+            // 
+            this.dtmHoraInicio.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtmHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtmHoraInicio.Location = new System.Drawing.Point(110, 104);
+            this.dtmHoraInicio.Margin = new System.Windows.Forms.Padding(2);
+            this.dtmHoraInicio.Name = "dtmHoraInicio";
+            this.dtmHoraInicio.ShowUpDown = true;
+            this.dtmHoraInicio.Size = new System.Drawing.Size(86, 20);
+            this.dtmHoraInicio.TabIndex = 106;
             // 
             // cbAno
             // 
@@ -281,54 +323,13 @@
             0,
             0});
             // 
-            // dtmHoraFinal
-            // 
-            this.dtmHoraFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtmHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtmHoraFinal.Location = new System.Drawing.Point(110, 132);
-            this.dtmHoraFinal.Margin = new System.Windows.Forms.Padding(2);
-            this.dtmHoraFinal.Name = "dtmHoraFinal";
-            this.dtmHoraFinal.ShowUpDown = true;
-            this.dtmHoraFinal.Size = new System.Drawing.Size(86, 20);
-            this.dtmHoraFinal.TabIndex = 108;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 136);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "HORA FINAL";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 108);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 105;
-            this.label3.Text = "HORA INICIO";
-            // 
-            // dtmHoraInicio
-            // 
-            this.dtmHoraInicio.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtmHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtmHoraInicio.Location = new System.Drawing.Point(110, 104);
-            this.dtmHoraInicio.Margin = new System.Windows.Forms.Padding(2);
-            this.dtmHoraInicio.Name = "dtmHoraInicio";
-            this.dtmHoraInicio.ShowUpDown = true;
-            this.dtmHoraInicio.Size = new System.Drawing.Size(86, 20);
-            this.dtmHoraInicio.TabIndex = 106;
-            // 
             // frmCambiarDatosGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 304);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "frmCambiarDatosGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAMBIAR DATOS GRUPO";

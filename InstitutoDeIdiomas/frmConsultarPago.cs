@@ -17,7 +17,7 @@ namespace InstitutoDeIdiomas
     {
         public static SqlConnection _SqlConnection = new SqlConnection();
         MsSqlConnection configurarConexion = new MsSqlConnection();
-        string fechaCreacion;
+        //string fechaCreacion;
         public frmConsultarPago()
         {
             InitializeComponent();

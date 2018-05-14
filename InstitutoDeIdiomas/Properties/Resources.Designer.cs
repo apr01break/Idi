@@ -73,16 +73,6 @@ namespace InstitutoDeIdiomas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap graduate_student_avatar__1_ {
-            get {
-                object obj = ResourceManager.GetObject("graduate-student-avatar (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap idi {
             get {
                 object obj = ResourceManager.GetObject("idi", resourceCulture);

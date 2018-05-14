@@ -589,7 +589,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>N° GRUPO</Value>
+                    <Value>GRUPO</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>

@@ -966,7 +966,8 @@ namespace InstitutoDeIdiomas
                     new frmRptAsistenciaGrupo(dtMain, anho, txtIdioma.Text, txtCiclo.Text,
                     txtDocente.Text, mes, txtNivel.Text, txtNumero.Text,
                     Convert.ToDateTime(txtInicio.Text).ToString("dd/MM/yy"),
-                        Convert.ToDateTime(txtFin.Text).ToString("dd/MM/yy")).Show();
+                        Convert.ToDateTime(txtFin.Text).ToString("dd/MM/yy"),
+                        txtHorario.Text,txtHorario2.Text, txtDias.Text).Show();
                 }
 
 

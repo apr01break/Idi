@@ -356,6 +356,7 @@ namespace InstitutoDeIdiomas
                 limpiarError();
                 DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
                 String codigo = row.Cells[0].Value.ToString();
+                horarioRef = row.Cells[4].Value.ToString();
                 label4.Text = codigo;
             }
         }
@@ -496,7 +497,7 @@ namespace InstitutoDeIdiomas
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
-                horarioRef = dataGridView2.Rows[0].Cells[4].Value.ToString();
+                
                 cargar_reporte(dni, nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov, idioma, nivel, modalidad, ciclo, fechamat, monto, personaencargo, recibo,studentpic,observaciones,codigoAlumno,horarioRef);
             }
            

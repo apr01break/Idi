@@ -61,6 +61,8 @@ namespace InstitutoDeIdiomas
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRecordEconomico = new System.Windows.Forms.Button();
             this.btnVerAsistencias = new System.Windows.Forms.Button();
@@ -73,6 +75,7 @@ namespace InstitutoDeIdiomas
             this.txtDias = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.RichTextBox();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEditarGrupo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwListening)).BeginInit();
@@ -298,6 +301,7 @@ namespace InstitutoDeIdiomas
             this.btnConcluirGrupo.TabIndex = 70;
             this.btnConcluirGrupo.Text = "CONCLUIR GRUPO";
             this.btnConcluirGrupo.UseVisualStyleBackColor = false;
+            this.btnConcluirGrupo.Visible = false;
             this.btnConcluirGrupo.Click += new System.EventHandler(this.btnConcluirGrupo_Click);
             // 
             // btnRelacionAlumno
@@ -318,7 +322,7 @@ namespace InstitutoDeIdiomas
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 125);
+            this.label8.Location = new System.Drawing.Point(11, 125);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
@@ -372,6 +376,9 @@ namespace InstitutoDeIdiomas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnEditarGrupo);
+            this.panel1.Controls.Add(this.lblEstado);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnRecordEconomico);
             this.panel1.Controls.Add(this.btnVerAsistencias);
@@ -410,6 +417,26 @@ namespace InstitutoDeIdiomas
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(892, 662);
             this.panel1.TabIndex = 78;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.ForeColor = System.Drawing.Color.Red;
+            this.lblEstado.Location = new System.Drawing.Point(65, 636);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(39, 13);
+            this.lblEstado.TabIndex = 90;
+            this.lblEstado.Text = "estado";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(18, 636);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "Estado:";
             // 
             // button1
             // 
@@ -485,6 +512,7 @@ namespace InstitutoDeIdiomas
             this.btnAgregarExtemporaneo.TabIndex = 84;
             this.btnAgregarExtemporaneo.Text = "AGREGAR ALUMNOS EXTEMPORANEOS";
             this.btnAgregarExtemporaneo.UseVisualStyleBackColor = false;
+            this.btnAgregarExtemporaneo.Visible = false;
             this.btnAgregarExtemporaneo.Click += new System.EventHandler(this.btnAgregarExtemporaneo_Click);
             // 
             // txtFin
@@ -541,6 +569,16 @@ namespace InstitutoDeIdiomas
             this.label1.TabIndex = 78;
             this.label1.Text = "";
             this.label1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // btnEditarGrupo
+            // 
+            this.btnEditarGrupo.Location = new System.Drawing.Point(405, 42);
+            this.btnEditarGrupo.Name = "btnEditarGrupo";
+            this.btnEditarGrupo.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarGrupo.TabIndex = 91;
+            this.btnEditarGrupo.Text = "EDITAR";
+            this.btnEditarGrupo.UseVisualStyleBackColor = true;
+            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click);
             // 
             // frmVerNotas
             // 
@@ -616,5 +654,8 @@ namespace InstitutoDeIdiomas
         private System.Windows.Forms.Button btnVerAsistencias;
         private System.Windows.Forms.Button btnRecordEconomico;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnEditarGrupo;
     }
 }

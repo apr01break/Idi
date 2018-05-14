@@ -160,6 +160,7 @@ namespace InstitutoDeIdiomas
                 txtFin.Text = row2[9].ToString();
                 txtDocente.Text = row2[8].ToString();
                 txtNumero.Text = row2[10].ToString();
+                lblEstado.Text = row2[11].ToString();
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
@@ -716,38 +717,6 @@ namespace InstitutoDeIdiomas
                 return;
             }
             DataTable dt = new DataTable();
-            //int x = 1;
-            //for (int i = 0; i < dgvwNotas.RowCount; i++)
-            //{
-            //    dt.Rows.Add();
-            //    for (int j = 0; j < dgvwNotas.ColumnCount; j++)
-            //    {
-            //        if (x <= 7)
-            //        {
-            //            dt.Columns.Add();
-            //        }
-            //        dt.Rows[i][j] = dgvwNotas.Rows[i].Cells[j];
-            //        x++;
-            //    }
-            //}
-            //dt.Columns.Add("Codigo");
-            //dt.Columns.Add("Nombres",typeof(System.String));
-            //dt.Columns.Add("Listening",typeof(System.Double));
-            //dt.Columns.Add("Speaking", typeof(System.Double));
-            //dt.Columns.Add("Reading", typeof(System.Double));
-            //dt.Columns.Add("Writing", typeof(System.Double));
-            //dt.Columns.Add("UseOfEnglish", typeof(System.Double));
-            //foreach (DataGridViewRow row in dgvwNotas.Rows)
-            //{
-
-            //    DataRow rw = dt.NewRow();
-            //    for (int i = 0; i < dgvwNotas.ColumnCount; i++)
-            //    {
-            //        rw[i] = row.Cells[i].Value;
-            //    }
-            //    dt.Rows.Add(rw);
-
-            //}
             dt.Columns.Add("numero");
             dt.Columns.Add("codigo");
             dt.Columns.Add("nombre");
@@ -1016,7 +985,7 @@ namespace InstitutoDeIdiomas
             }
             new frmRptActaNotas(dtListening,dtReading,dtWriting,dtSpeaking,
                 dtUseOfEnglish,dtListaAlumno,dtPromedios, txtIdioma.Text, txtNivel.Text,txtCiclo.Text,
-                anho,mes,txtDocente.Text,txtNumero.Text,txtInicio.Text,txtFin.Text).ShowDialog();
+                anho,mes,txtDocente.Text,txtNumero.Text,txtInicio.Text,txtFin.Text,txtHorario.Text,txtHorario2.Text,txtDias.Text).ShowDialog();
         }
         public void alistarListening()
         {
@@ -1039,6 +1008,12 @@ namespace InstitutoDeIdiomas
                 item["criterio"] = "L" + j;
             }
         }
+
+        private void btnEditarGrupo_Click(object sender, EventArgs e)
+        {
+            new frmCambiarDatosGrupo(Convert.ToInt32(codigoGrupo),null, this).Show();
+        }
+
         public void alistarReading()
         {
             dtReading.Columns.Add("ayuda");
@@ -1126,7 +1101,11 @@ namespace InstitutoDeIdiomas
 
         private void frmVerNotas_Load(object sender, EventArgs e)
         {
-
+            if(lblEstado.Text=="EN PROCESO")
+            {
+                btnConcluirGrupo.Visible = true;
+                btnAgregarExtemporaneo.Visible = true;
+            }
 
         }
     }

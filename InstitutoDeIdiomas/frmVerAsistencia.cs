@@ -17,7 +17,7 @@ namespace InstitutoDeIdiomas
     public partial class frmVerAsistencia : MaterialForm
     {
         MsSqlConnection configurarConexion = new MsSqlConnection();
-        String ano, idioma, ciclo, docente, mes, nivel, numero,inicio,fin;
+        String ano, idioma, ciclo, docente, mes, nivel, numero,inicio,fin, horaInicio, horaFin,dias;
         public static SqlConnection _SqlConnection = new SqlConnection();
         int idGrupo;
         public frmVerAsistencia(int idGrupo)
@@ -137,6 +137,8 @@ namespace InstitutoDeIdiomas
                 idioma = row2[1].ToString();
                 nivel = row2[2].ToString();
                 ciclo = row2[3].ToString();
+                horaInicio = row2[5].ToString();
+                horaFin = row2[6].ToString();
                 ano = Convert.ToDateTime(row2[7]).ToString("yyyy");
                 mes = Convert.ToDateTime(row2[7]).ToString("MMMMM").ToUpper();
                 docente = row2[8].ToString();
@@ -151,6 +153,38 @@ namespace InstitutoDeIdiomas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "cargarDatosGrupo");
+            }
+        }
+        public void cargarDias()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("listar_dias_grupo", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.Parameters.Add(new SqlParameter("@idGrupo", idGrupo));
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                String xx = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    xx = xx + row[0].ToString().ToUpperInvariant() + " - ";
+                }
+                xx = xx.Trim();
+                if (xx != "") xx = xx.Remove(xx.Length - 1);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
+                dias = xx;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "cargarDias");
             }
         }
         private void btnReporteAsistencia_Click(object sender, EventArgs e)
@@ -222,10 +256,12 @@ namespace InstitutoDeIdiomas
                     dtMain.Columns.Remove("fecha");
                     dtMain.Columns["fa"].ColumnName = "fecha";
                     cargarDatosGrupo();
-
+                    cargarDias();
                     new frmRptAsistenciaGrupo(dtMain, ano, idioma, ciclo, docente, mes, nivel, numero,
                         Convert.ToDateTime(inicio).ToString("dd/MM/yy"),
-                        Convert.ToDateTime(fin).ToString("dd/MM/yy")).Show();
+                        Convert.ToDateTime(fin).ToString("dd/MM/yy"),
+                        Convert.ToDateTime(horaInicio).ToString("HH:mm"),
+                        Convert.ToDateTime(horaFin).ToString("HH:mm"),dias).Show();
                 }
 
             }

@@ -18,12 +18,14 @@ namespace InstitutoDeIdiomas
         public static SqlConnection _SqlConnection = new SqlConnection();
         int idGrupo;
         frmAsignarAlumnosToGroup frmAsignarAlumnosToGroup;
-        public frmCambiarDatosGrupo(int idGrupo, frmAsignarAlumnosToGroup frmAsignarAlumnosToGroup)
+        frmVerNotas frmVerNotas;
+        public frmCambiarDatosGrupo(int idGrupo, frmAsignarAlumnosToGroup frmAsignarAlumnosToGroup, frmVerNotas frmVerNotas)
         {
             InitializeComponent();
             _SqlConnection.ConnectionString = configurarConexion._ConnectionString;
             this.idGrupo = idGrupo;
             this.frmAsignarAlumnosToGroup = frmAsignarAlumnosToGroup;
+            this.frmVerNotas = frmVerNotas;
         }
         public void cargarDatosGrupo(int idGrupo)
         {
@@ -244,7 +246,8 @@ namespace InstitutoDeIdiomas
                     cmd.Connection.Close();
                 }
                 MessageBox.Show("GRUPO MODIFICADO SATISFACTORIAMENTE");
-                frmAsignarAlumnosToGroup.cargarDatosGrupo(idGrupo);
+                if (frmAsignarAlumnosToGroup != null) frmAsignarAlumnosToGroup.cargarDatosGrupo(idGrupo);
+                else if (frmVerNotas != null) frmVerNotas.cargarDatosGrupo(idGrupo);
                 this.Dispose();
                 this.Close();
             }

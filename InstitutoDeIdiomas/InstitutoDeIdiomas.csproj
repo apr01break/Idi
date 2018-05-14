@@ -218,11 +218,17 @@
     <Compile Include="frmAsignarRoles.Designer.cs">
       <DependentUpon>frmAsignarRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAsistenciasPorGrupo.cs">
+    <Compile Include="frmCrearGrupoExUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAsistenciasPorGrupo.Designer.cs">
-      <DependentUpon>frmAsistenciasPorGrupo.cs</DependentUpon>
+    <Compile Include="frmCrearGrupoExUbicacion.Designer.cs">
+      <DependentUpon>frmCrearGrupoExUbicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarGrupoReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarGrupoReportes.Designer.cs">
+      <DependentUpon>frmSeleccionarGrupoReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCambiarClave.cs">
       <SubType>Form</SubType>
@@ -502,8 +508,11 @@
     <EmbeddedResource Include="frmAsignarRoles.resx">
       <DependentUpon>frmAsignarRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsistenciasPorGrupo.resx">
-      <DependentUpon>frmAsistenciasPorGrupo.cs</DependentUpon>
+    <EmbeddedResource Include="frmCrearGrupoExUbicacion.resx">
+      <DependentUpon>frmCrearGrupoExUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarGrupoReportes.resx">
+      <DependentUpon>frmSeleccionarGrupoReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarClave.resx">
       <DependentUpon>frmCambiarClave.cs</DependentUpon>

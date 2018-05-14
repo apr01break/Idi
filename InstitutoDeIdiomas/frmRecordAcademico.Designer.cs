@@ -160,6 +160,7 @@
             // btnGenerarRecord
             // 
             this.btnGenerarRecord.Depth = 0;
+            this.btnGenerarRecord.Enabled = false;
             this.btnGenerarRecord.Location = new System.Drawing.Point(211, 359);
             this.btnGenerarRecord.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGenerarRecord.Name = "btnGenerarRecord";

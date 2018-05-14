@@ -15,11 +15,11 @@ namespace InstitutoDeIdiomas.ReportForms
     public partial class frmRptActaNotas : MaterialForm
     {
         DataTable dtListening,dtReading,dtWriting,dtSpeaking,dtUseOfEnglish, dtAlumnos, dtPromedios;
-        string idioma, nivel, ciclo, ano, mes, docente, numero, inicio, fin;
+        string idioma, nivel, ciclo, ano, mes, docente, numero, inicio, fin, horaInicio, horaFin, dias;
         public frmRptActaNotas(DataTable dtListening, DataTable dtReading, DataTable dtWriting,
             DataTable dtSpeaking, DataTable dtUseOfEnglish, DataTable dtAlumnos, DataTable dtPromedios,
             string idioma, string nivel, string ciclo, string ano, string mes, string docente,
-            string numero, string inicio, string fin)
+            string numero, string inicio, string fin, string horaInicio, string horaFin, string dias)
         {
             InitializeComponent();
             this.dtListening = dtListening;
@@ -38,6 +38,9 @@ namespace InstitutoDeIdiomas.ReportForms
             this.numero = numero;
             this.inicio = inicio;
             this.fin = fin;
+            this.horaInicio = horaInicio;
+            this.horaFin = horaFin;
+            this.dias = dias;
         }
 
         private void frmRptActaNotas_Load(object sender, EventArgs e)
@@ -60,6 +63,9 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero),
                 new Microsoft.Reporting.WinForms.ReportParameter("pInicio",inicio),
                 new Microsoft.Reporting.WinForms.ReportParameter("pFin",fin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pHoraInicio",horaInicio),
+                new Microsoft.Reporting.WinForms.ReportParameter("pHoraFin",horaFin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDias",dias),
            };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);

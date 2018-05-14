@@ -16,9 +16,9 @@ namespace InstitutoDeIdiomas.ReportForms
     public partial class frmRptAsistenciaGrupo : MaterialForm
     {
         DataTable dt = new DataTable();
-        String ano, idioma, ciclo, docente, mes, nivel, numero,inicio,fin;
+        String ano, idioma, ciclo, docente, mes, nivel, numero,inicio,fin, horaInicio, horaFin, dias;
         public frmRptAsistenciaGrupo(DataTable dt,String ano, String idioma, String ciclo, String docente, String mes, String nivel, String numero,
-            string inicio, String fin)
+            string inicio, String fin, string horaInicio, string horaFin, string dias)
         {
             InitializeComponent();
             this.dt = dt;
@@ -31,6 +31,9 @@ namespace InstitutoDeIdiomas.ReportForms
             this.numero = numero;
             this.inicio = inicio;
             this.fin = fin;
+            this.horaInicio = horaInicio;
+            this.horaFin = horaFin;
+            this.dias = dias;
         }
 
         private void frmRptAsistenciaGrupo_Load(object sender, EventArgs e)
@@ -47,6 +50,9 @@ namespace InstitutoDeIdiomas.ReportForms
                 new Microsoft.Reporting.WinForms.ReportParameter("pNumero",numero),
                 new Microsoft.Reporting.WinForms.ReportParameter("pInicio",inicio),
                 new Microsoft.Reporting.WinForms.ReportParameter("pFin",fin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pHoraInicio",horaInicio),
+                new Microsoft.Reporting.WinForms.ReportParameter("pHoraFin",horaFin),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDias",dias),
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.LocalReport.DataSources.Add(rds);

@@ -354,7 +354,21 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>END: </Value>
+                        <Value>START: </Value>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Parameters!pInicio.Value</Value>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> END: </Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -397,14 +411,28 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>START: </Value>
+                        <Value>SCHEDULE: </Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=Parameters!pInicio.Value</Value>
+                        <Value>=Parameters!pHoraInicio.Value</Value>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> - </Value>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Parameters!pHoraFin.Value</Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -422,6 +450,42 @@
                 <Height>0.49417cm</Height>
                 <Width>6.88454cm</Width>
                 <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Double</Style>
+                  </Border>
+                  <BackgroundColor>LightBlue</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox25">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!pDias.Value</Value>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox6</rd:DefaultName>
+                <Top>0.38488cm</Top>
+                <Left>18.71396cm</Left>
+                <Height>0.49417cm</Height>
+                <Width>6.88454cm</Width>
+                <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
                     <Style>Double</Style>
@@ -954,6 +1018,18 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="pHoraInicio">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pHoraFin">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pDias">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1004,6 +1080,21 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
           <ParameterName>pFin</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pHoraInicio</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pHoraFin</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pDias</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

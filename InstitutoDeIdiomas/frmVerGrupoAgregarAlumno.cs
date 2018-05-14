@@ -49,6 +49,11 @@ namespace InstitutoDeIdiomas
                 btnVerNotas.Visible = true;
                 cargarGruposVerPasados("listar_ver_notas_pasadas");
             }
+            else if(num == 5)
+            {
+                btnVerNotas.Visible = true;
+                cargarGrupos("listar_ver_notas_grupo_concluidos");
+            }
         }
         public void cargarGrupos(String proc)
         {
@@ -267,8 +272,24 @@ namespace InstitutoDeIdiomas
             else new frmVerNotas(id).Show();
         }
 
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewGrupo.Rows)
+            {
+                
+                if (!row.Cells["NUMERO"].Value.ToString().Contains(txtBuscar.Text))
+                {
+                    row.Visible = false;
+                } else if (row.Cells["NUMERO"].Value.ToString().Contains(txtBuscar.Text))
+                {
+                    row.Visible = true;
+                }
+            }
+        }
+
         private void frmVerGrupoAgregarAlumno_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtBuscar;
             habilitarBoton(num);
             if (num == 3 || num == 1) evaluarGrupos();
 

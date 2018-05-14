@@ -177,6 +177,7 @@ namespace InstitutoDeIdiomas
             {
                 cmd.Connection.Open();
             }
+            //MessageBox.Show(idPago);
             cmd.Parameters.Add(new SqlParameter("@idPago", idPago));
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();

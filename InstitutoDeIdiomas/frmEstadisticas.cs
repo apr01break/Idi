@@ -173,6 +173,23 @@ namespace InstitutoDeIdiomas
                 {
                     comando.Connection.Close();
                 }
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (item[2].ToString() == "FACULTAD DE BROMATOLOGIA Y NUTRICION") item[2] = "FBN";
+                    else if (item[2].ToString() == "FACULTAD DE EDUCACION") item[2] = "FE";
+                    else if (item[2].ToString() == "FACULTAD DE DERECHO Y CIENCIAS POLITICAS") item[2] = "FDCP";
+                    else if (item[2].ToString() == "FACULTAD DE MEDICINA HUMANA") item[2] = "FMH";
+                    else if (item[2].ToString() == "FACULTAD DE CIENCIAS EMPRESARIALES") item[2] = "FCE";
+                    else if (item[2].ToString() == "FACULTAD DE CIENCIAS SOCIALES") item[2] = "FCS";
+                    else if (item[2].ToString() == "FACULTAD DE INGENIERIA CIVIL") item[2] = "FIC";
+                    else if (item[2].ToString() == "FACULTAD DE INGENIERIA PESQUERA") item[2] = "FIP";
+                    else if (item[2].ToString() == "FACULTAD DE CIENCIAS") item[2] = "FC";
+                    else if (item[2].ToString() == "FACULTAD DE CIENCIAS ECONOMICAS, CONTABLES Y FINANCIERAS") item[2] = "FCECF";
+                    else if (item[2].ToString() == "FACULTAD DE INGENIERIA INDUSTRIAL, SISTEMAS E INFORMÁTICA") item[2] = "FIISI";
+                    else if (item[2].ToString() == "FACULTAD DE INGENIERIA QUIMICA Y METALURGICA") item[2] = "FIQM";
+                    else if (item[2].ToString() == "FACULTAD DE INGENIERIA AGRARIA INDUSTRIAS ALIMENTARIAS Y AMBIENTAL") item[2] = "FIAIAA";
+
+                }
                 new frmRptEstadisticas(dt, extra, anho).Show();
             }
             catch (Exception ex)

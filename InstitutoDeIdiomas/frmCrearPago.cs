@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using InstitutoDeIdiomas.ReportForms;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,15 @@ namespace InstitutoDeIdiomas
         DataTable dtSaldos = new DataTable();
         public static SqlConnection _SqlConnection = new SqlConnection();
         double refe = 0;
+        string usuario, idalumno, dni, idPago;
+        string nom, ape, sex, eda, grad, tlf, cel, email, naci, dep, dire, dist, prov, observaciones = "";
+        string idioma, nivel, ciclo, modalidad, fechamat, monto, recibo, encargado, personaencargo;
+        DataTable studentpic;
+        string codigoAlumno;
+        String horarioRef;
+        DataTable dtLegend = new DataTable();
+        DataSet resultados = new DataSet();
+
         public frmCrearPago(String codigo)
         {
             InitializeComponent();
@@ -32,6 +42,33 @@ namespace InstitutoDeIdiomas
             this.GRIDVIEWTIPOSPAGOS.AlternatingRowsDefaultCellStyle.BackColor =
     Color.PowderBlue;
             listarHorarios();
+            buscarUsuario(codigo);
+        }
+
+        private void buscarUsuario(string idUsuario)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("buscar_usuario_porid", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+                usuario = dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void CBLISTBOX_CheckedChanged(object sender, EventArgs e)
         {
@@ -246,10 +283,20 @@ namespace InstitutoDeIdiomas
 
         private void BTNGUARDARPAGO_Click(object sender, EventArgs e)
         {
-            if (!verificarRecibo())
+            if (verificarRecibo())
             {
                 return;
             }
+            if(GBMODALIDADMATRICULA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked) != null)
+            {
+                string modalidad = GBMODALIDADMATRICULA.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+                if (modalidad == "EXAMEN DE UBICACION" && (txtNotaUbicacion.Text.Trim() == "" || txtExpedienteUbicacion.Text.Trim() == ""))
+                {
+                    MessageBox.Show("Complete los datos del examen de ubicación.");
+                    return;
+                }
+            }
+            
             if((TXTMONTORECIBO.Text=="" || TXTNUMERORECIBO.Text == "") && chboxSaldo.Checked == false)
             {
                 MessageBox.Show("Revise el pago");
@@ -500,30 +547,58 @@ namespace InstitutoDeIdiomas
             }
 
             int idhorario = (int)((DataRowView)cbHorario.SelectedItem)["id"];
+            DataTable dt = new DataTable();
             try
             {
                 SqlCommand cmd = new SqlCommand("crear_detalle_matricula2", _SqlConnection);
-            if (cmd.Connection.State == ConnectionState.Closed)
-            {
-                cmd.Connection.Open();
-            }
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@idioma", idio));
-            cmd.Parameters.Add(new SqlParameter("@nivel", niv));
-            cmd.Parameters.Add(new SqlParameter("@modalidad", mod));
-            cmd.Parameters.Add(new SqlParameter("@ciclo", cic));
-            cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
-            cmd.Parameters.Add(new SqlParameter("@monto", monto));
-            cmd.Parameters.Add(new SqlParameter("@idhorario", idhorario));
-            cmd.ExecuteNonQuery();
-            if (cmd.Connection.State == ConnectionState.Open)
-            {
-                cmd.Connection.Close();
-            }
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    cmd.Connection.Open();
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idioma", idio));
+                cmd.Parameters.Add(new SqlParameter("@nivel", niv));
+                cmd.Parameters.Add(new SqlParameter("@modalidad", mod));
+                cmd.Parameters.Add(new SqlParameter("@ciclo", cic));
+                cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
+                cmd.Parameters.Add(new SqlParameter("@monto", monto));
+                cmd.Parameters.Add(new SqlParameter("@idhorario", idhorario));
+                //cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (cmd.Connection.State == ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if(mod=="EXAMEN DE UBICACION")
+            {
+                try
+                {
+                    string id = dt.Rows[0][0].ToString();
+                    SqlCommand cmd = new SqlCommand("insert_nota_examen_ubicacion", _SqlConnection);
+                    if (cmd.Connection.State == ConnectionState.Closed)
+                    {
+                        cmd.Connection.Open();
+                    }
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@idPagoMatricula", id));
+                    cmd.Parameters.Add(new SqlParameter("@nroExpediente", txtExpedienteUbicacion.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nota", txtNotaUbicacion.Text));
+                    cmd.ExecuteNonQuery();
+                    if (cmd.Connection.State == ConnectionState.Open)
+                    {
+                        cmd.Connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void PAGAR_MATRICULA()
@@ -576,8 +651,9 @@ namespace InstitutoDeIdiomas
             }
 
             int idhorario = (int)((DataRowView)cbHorario.SelectedItem)["id"];
-            //try
-            //{
+            DataTable dt = new DataTable();
+            try
+            {
                 SqlCommand cmd = new SqlCommand("crear_detalle_matricula", _SqlConnection);
                 if (cmd.Connection.State == ConnectionState.Closed)
                 {
@@ -592,16 +668,42 @@ namespace InstitutoDeIdiomas
                 cmd.Parameters.Add(new SqlParameter("@monto", monto));
                 cmd.Parameters.Add(new SqlParameter("@numero_recibo", TXTNUMERORECIBO.Text.Trim().ToString()));
                 cmd.Parameters.Add(new SqlParameter("@idhorario", idhorario));
-                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (mod == "EXAMEN DE UBICACION")
+            {
+                try
+                {
+                    string id = dt.Rows[0][0].ToString();
+                    SqlCommand cmd = new SqlCommand("insert_nota_examen_ubicacion", _SqlConnection);
+                    if (cmd.Connection.State == ConnectionState.Closed)
+                    {
+                        cmd.Connection.Open();
+                    }
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@idPagoMatricula", id));
+                    cmd.Parameters.Add(new SqlParameter("@nroExpediente", txtExpedienteUbicacion.Text));
+                    cmd.Parameters.Add(new SqlParameter("@nota", txtNotaUbicacion.Text));
+                    cmd.ExecuteNonQuery();
+                    if (cmd.Connection.State == ConnectionState.Open)
+                    {
+                        cmd.Connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void GUARDAR_OTROS_PAGOS()
         {
@@ -611,6 +713,7 @@ namespace InstitutoDeIdiomas
                 if (Convert.ToBoolean(ck.Value))
                 {
                     int idpago = Convert.ToInt32(r.Cells[0].Value.ToString());
+                    String idDetallePAgo = "";
                     try
                     {
                         SqlCommand cmd = new SqlCommand("crear_detalle_pago", _SqlConnection);
@@ -622,7 +725,10 @@ namespace InstitutoDeIdiomas
                         cmd.Parameters.Add(new SqlParameter("@idtipo", idpago));
                         cmd.Parameters.Add(new SqlParameter("@numerorecibo", TXTNUMERORECIBO.Text.Trim().ToString()));
 
-                        cmd.ExecuteNonQuery();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        idDetallePAgo = dt.Rows[0][0].ToString();
                         if (cmd.Connection.State == ConnectionState.Open)
                         {
                             cmd.Connection.Close();
@@ -632,8 +738,30 @@ namespace InstitutoDeIdiomas
                     {
                         MessageBox.Show(ex.Message);
                     }
+                    if (idpago == 29)
+                    {
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("insert_alumno_ex_ubicacion", _SqlConnection);
+                            if (cmd.Connection.State == ConnectionState.Closed)
+                            {
+                                cmd.Connection.Open();
+                            }
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@idDetallePago", idDetallePAgo));
 
-
+                            cmd.ExecuteNonQuery();
+                            if (cmd.Connection.State == ConnectionState.Open)
+                            {
+                                cmd.Connection.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    
                 }
             }
         }
@@ -645,6 +773,7 @@ namespace InstitutoDeIdiomas
                 if (Convert.ToBoolean(ck.Value))
                 {
                     int idpago = Convert.ToInt32(r.Cells[0].Value.ToString());
+                    String idDetallePAgo = "";
                     try
                     {
                         SqlCommand cmd = new SqlCommand("crear_detalle_pago2", _SqlConnection);
@@ -655,7 +784,10 @@ namespace InstitutoDeIdiomas
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@idtipo", idpago));
 
-                        cmd.ExecuteNonQuery();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        idDetallePAgo = dt.Rows[0][0].ToString();
                         if (cmd.Connection.State == ConnectionState.Open)
                         {
                             cmd.Connection.Close();
@@ -664,6 +796,29 @@ namespace InstitutoDeIdiomas
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                    }
+                    if (idpago == 29)
+                    {
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("insert_alumno_ex_ubicacion", _SqlConnection);
+                            if (cmd.Connection.State == ConnectionState.Closed)
+                            {
+                                cmd.Connection.Open();
+                            }
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@idDetallePago", idDetallePAgo));
+
+                            cmd.ExecuteNonQuery();
+                            if (cmd.Connection.State == ConnectionState.Open)
+                            {
+                                cmd.Connection.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
             }
@@ -683,6 +838,8 @@ namespace InstitutoDeIdiomas
             NUMCICLO.Value = 1;
             cbHorario.ResetText();
             cbHorario.SelectedIndex = -1;
+            txtExpedienteUbicacion.Text = "";
+            txtNotaUbicacion.Text = "";
 
         }
         private bool VALIDAR_MATRICULA()
@@ -787,9 +944,18 @@ namespace InstitutoDeIdiomas
                 da.Fill(dt);
                 GRIDVIEWCONSALUPAGO.DataSource = dt;
                 GRIDVIEWCONSALUPAGO.Columns[0].Width = 300;
-                GRIDVIEWCONSALUPAGO.Columns[2].Width = 100;
+                GRIDVIEWCONSALUPAGO.Columns[2].Width = 80;
+                GRIDVIEWCONSALUPAGO.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                GRIDVIEWCONSALUPAGO.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                GRIDVIEWCONSALUPAGO.Columns[1].Width = 80;
+                GRIDVIEWCONSALUPAGO.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                GRIDVIEWCONSALUPAGO.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                GRIDVIEWCONSALUPAGO.Columns[3].Width = 100;
+                GRIDVIEWCONSALUPAGO.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                GRIDVIEWCONSALUPAGO.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 //GRIDVIEWCONSALUPAGO.Columns[4].Width = 200;
                 this.GRIDVIEWCONSALUPAGO.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
             }
             catch (Exception ex)
             {
@@ -810,7 +976,7 @@ namespace InstitutoDeIdiomas
                 _SqlConnection.Open();
                 SqlCommand cmd = new SqlCommand("buscarPorDNI", _SqlConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@dni", TXTINGDNI.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@dni", dni));
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -861,6 +1027,35 @@ namespace InstitutoDeIdiomas
             }
 
         }
+        public void listarPagos(string idalumno)
+        {
+            int cod = Convert.ToInt32(idalumno);
+            DataTable dt = new DataTable();
+            try
+            {
+
+                SqlCommand comando = new SqlCommand("mostrar_relacion", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@cod", cod));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dgvwPagos.DataSource = dt;
+                dgvwPagos.Columns[0].Visible = false;
+                dgvwPagos.Columns[1].Width = 210;
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         //LISTENER PARA LA CONSULTA DE PERSONAS EN EL GRIDVIEW
         private void GridViewNombres_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -878,7 +1073,7 @@ namespace InstitutoDeIdiomas
             if (e.RowIndex >= 0 && e.RowIndex < GRIDVIEWCONSALUPAGO.RowCount - 1)
             {
                 DataGridViewRow row = this.GRIDVIEWCONSALUPAGO.Rows[e.RowIndex];
-                String dni = row.Cells["DNI"].Value.ToString();
+                dni = row.Cells["DNI"].Value.ToString();
                 CBPAGARMATRICULA.Enabled = true;
                 try
                 {
@@ -904,12 +1099,14 @@ namespace InstitutoDeIdiomas
                     }
                     LBLTIPOALUMN.Text = dt.Rows[0][6].ToString();
                     LBLCODIGOALUMN.Text = dt.Rows[0][7].ToString();
+                    idalumno = dt.Rows[0][8].ToString();
                     buscarSaldo();
                     if (comando.Connection.State == ConnectionState.Open)
                     {
                         comando.Connection.Close();
                     }
                     LBLTIPOALUMN_TextChanged(null,null);
+                    listarPagos(dt.Rows[0][8].ToString());
                 }
                 catch (Exception ex)
                 {
@@ -1064,6 +1261,24 @@ namespace InstitutoDeIdiomas
 
         }
 
+        private void RBMATUBICACION_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBMATUBICACION.Checked)
+            {
+                txtExpedienteUbicacion.Enabled = true;
+                txtNotaUbicacion.Enabled = true;
+            }
+        }
+
+        private void RBMATREGULAR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBMATREGULAR.Checked)
+            {
+                txtExpedienteUbicacion.Enabled = false;
+                txtNotaUbicacion.Enabled = false;
+            }
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
 
@@ -1152,7 +1367,7 @@ namespace InstitutoDeIdiomas
 
         private void frmCrearPago_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = TXTINGNOMBRE;
         }
 
         private void btnAgregarSaldo_Click(object sender, EventArgs e)
@@ -1312,6 +1527,270 @@ namespace InstitutoDeIdiomas
         private void chAdministrativo_CheckedChanged(object sender, EventArgs e)
         {
             CALCULAR_MONTO_A_PAGAR();
+        }
+        private DataTable CARGARLISTADEPAGOS(String codalu)
+        {
+            int cod = Convert.ToInt32(codalu);
+            DataTable dt = new DataTable();
+            try
+            {
+
+                SqlCommand comando = new SqlCommand("mostrar_relacion", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@cod", cod));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dgvwPagos.DataSource = dt;
+                dgvwPagos.Columns[0].Visible = false;
+                dgvwPagos.Columns[1].Width = 210;
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        public void buscarRecibosLeyenda(string idPago, string simbolo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("obtener_recibos_pago_saldo", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@idPago", idPago));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+                //agregar filas a dtLegend
+                dt.Columns.Add("simbolo");
+                foreach (DataRow row in dt.Rows)
+                {
+                    row["simbolo"] = simbolo;
+                    dtLegend.ImportRow(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFichaMatricula_Click(object sender, EventArgs e)
+        {
+            //------------------------------
+
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("detalle_alumno_por_id", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@id", idalumno));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dni = dt.Rows[0][0].ToString();
+                nom = dt.Rows[0][1].ToString();
+                ape = dt.Rows[0][2].ToString();
+                sex = dt.Rows[0][3].ToString();
+
+                grad = dt.Rows[0][5].ToString();
+                tlf = dt.Rows[0][6].ToString();
+                cel = dt.Rows[0][7].ToString();
+                email = dt.Rows[0][9].ToString();
+                naci = Convert.ToDateTime(dt.Rows[0][10]).ToString("dd/MM/yy");
+                //eda = dt.Rows[0][4].ToString();
+                eda = (DateTime.Today.AddTicks(-Convert.ToDateTime(dt.Rows[0][10]).Ticks).Year - 1).ToString();
+                dep = dt.Rows[0][11].ToString();
+                dire = dt.Rows[0][12].ToString();
+                dist = dt.Rows[0][13].ToString();
+                prov = dt.Rows[0][14].ToString();
+                codigoAlumno = dt.Rows[0][15].ToString();
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                studentpic = new DataTable();
+                SqlCommand comando = new SqlCommand("buscar_foto_alumno", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@id", idalumno));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(studentpic);
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+ "buscar_foto_alumno");
+            }
+            if(1==1)
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("mostrar_detalle_matricula_por_id", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@id", idPago));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                idioma = dt.Rows[0][0].ToString();
+                nivel = dt.Rows[0][1].ToString();
+                modalidad = dt.Rows[0][2].ToString();
+                ciclo = dt.Rows[0][3].ToString();
+                fechamat = dt.Rows[0][4].ToString();
+                monto = dt.Rows[0][5].ToString();
+                recibo = dt.Rows[0][6].ToString();
+                encargado = dt.Rows[0][7].ToString();
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand comando = new SqlCommand("mostrar_trabajador", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@idtrabajador", encargado));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                personaencargo = dt.Rows[0][0].ToString();
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //horarioRef = dataGridView2.Rows[0].Cells[4].Value.ToString();
+            using (frmRptFichaMatricula frm = new frmRptFichaMatricula(ape, nom, dni, sex, naci, eda, grad, tlf, cel, email, dire, dist, prov, dep, idioma, nivel, ciclo, fechamat, personaencargo, recibo, monto, modalidad, studentpic, observaciones, codigoAlumno, horarioRef))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvwPagos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvwPagos.RowCount)
+            {
+                DataGridViewRow row = this.dgvwPagos.Rows[e.RowIndex];
+                idPago = row.Cells[0].Value.ToString();
+                horarioRef = row.Cells[6].Value.ToString();
+                if (horarioRef == "") btnFichaMatricula.Enabled = false;
+                else btnFichaMatricula.Enabled = true;
+            }
+        }
+
+        public DataTable buscarSaldoReporte()
+        {
+            DataTable dt = new DataTable();
+            SqlCommand comando = new SqlCommand("mostrar_Saldo_alumno", _SqlConnection);
+            comando.CommandType = CommandType.StoredProcedure;
+            if (comando.Connection.State == ConnectionState.Closed)
+            {
+                comando.Connection.Open();
+            }
+            comando.Parameters.Add(new SqlParameter("@numcarnet", LBLCODIGOALUMN.Text));
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(dt);
+
+            if (comando.Connection.State == ConnectionState.Open)
+            {
+                comando.Connection.Close();
+            }
+            return dt;
+        }
+
+        private void btnRecorEconomico_Click(object sender, EventArgs e)
+        {
+            
+            DataTable dtalumno = new DataTable();
+            try
+            {
+                SqlCommand comando = new SqlCommand("small_buscar_pordni", _SqlConnection);
+                comando.CommandType = CommandType.StoredProcedure;
+                if (comando.Connection.State == ConnectionState.Closed)
+                {
+                    comando.Connection.Open();
+                }
+                comando.Parameters.Add(new SqlParameter("@dni", dni));
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dtalumno);
+                idalumno = dtalumno.Rows[0][8].ToString();
+                if (comando.Connection.State == ConnectionState.Open)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            DataTable tabledata = CARGARLISTADEPAGOS(idalumno);
+            dtLegend.Clear();
+            //List<string> ListaSaldos = new List<string>();
+            string simbolo = "*";
+            tabledata.Columns.Add("simbolo");
+            tabledata.Columns.Add("fecha");
+            foreach (DataRow item in tabledata.Rows)
+            {
+
+                if (item["fech"].ToString() == "")
+                {
+                    buscarRecibosLeyenda(item[0].ToString(), simbolo);
+                    item["simbolo"] = simbolo;
+                    simbolo = simbolo + "*";
+                }
+                else
+                {
+                    string fecha = Convert.ToDateTime(item["fech"]).ToString("dd/MM/yyyy");
+                    item["fecha"] = fecha;
+                }
+            }
+            DataTable dtSaldo = buscarSaldoReporte();
+            dtSaldo.Columns["numero_recibo"].ColumnName = "nro_recibo";
+            using (frmRptListaDePagos frm = new frmRptListaDePagos(tabledata, dtalumno, usuario, dtLegend, dtSaldo))
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

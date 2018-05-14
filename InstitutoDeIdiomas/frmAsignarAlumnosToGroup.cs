@@ -384,7 +384,7 @@ namespace InstitutoDeIdiomas
 
         private void btnCambiarDatos_Click(object sender, EventArgs e)
         {
-            new frmCambiarDatosGrupo(Convert.ToInt32(codigoGrupo),this).Show();
+            new frmCambiarDatosGrupo(Convert.ToInt32(codigoGrupo),this,null).Show();
         }
 
         private void txtBuscarApellido_KeyUp(object sender, KeyEventArgs e)

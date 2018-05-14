@@ -37,13 +37,17 @@
             this.btnBuscarPorDni = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TXTINGDNI = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.GRIDVIEWCONSALUPAGO = new System.Windows.Forms.DataGridView();
             this.FOTOALUMNOAPAGAR = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.LBLCODIGOALUMN = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PANELMATRICULA = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtExpedienteUbicacion = new System.Windows.Forms.TextBox();
+            this.txtNotaUbicacion = new System.Windows.Forms.TextBox();
+            this.chAdministrativo = new System.Windows.Forms.CheckBox();
             this.btnNuevoHorario = new System.Windows.Forms.Button();
             this.cbHorario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,8 +91,11 @@
             this.rbTupa2018 = new System.Windows.Forms.RadioButton();
             this.gbMat = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFichaMatricula = new System.Windows.Forms.Button();
+            this.btnRecorEconomico = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvwPagos = new System.Windows.Forms.DataGridView();
             this.BTNGUARDARPAGO = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.chAdministrativo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -104,17 +111,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvwSaldo)).BeginInit();
             this.gbMat.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvwPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(11, 32);
+            this.tabControl1.Location = new System.Drawing.Point(11, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(637, 66);
+            this.tabControl1.Size = new System.Drawing.Size(598, 66);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage2
@@ -125,7 +133,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(629, 40);
+            this.tabPage2.Size = new System.Drawing.Size(590, 40);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BUSCAR POR NOMBRES";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -158,7 +166,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(629, 40);
+            this.tabPage1.Size = new System.Drawing.Size(590, 40);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BUSCAR POR DNI";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -192,33 +200,23 @@
             this.TXTINGDNI.Size = new System.Drawing.Size(290, 20);
             this.TXTINGDNI.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "EMPIEZA BUSCANDO AL ALUMNO QUE DESEAS REGISTRAR SU PAGO";
-            // 
             // GRIDVIEWCONSALUPAGO
             // 
             this.GRIDVIEWCONSALUPAGO.AllowUserToDeleteRows = false;
             this.GRIDVIEWCONSALUPAGO.AllowUserToResizeRows = false;
             this.GRIDVIEWCONSALUPAGO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GRIDVIEWCONSALUPAGO.Location = new System.Drawing.Point(11, 102);
+            this.GRIDVIEWCONSALUPAGO.Location = new System.Drawing.Point(11, 81);
             this.GRIDVIEWCONSALUPAGO.Margin = new System.Windows.Forms.Padding(2);
             this.GRIDVIEWCONSALUPAGO.Name = "GRIDVIEWCONSALUPAGO";
             this.GRIDVIEWCONSALUPAGO.ReadOnly = true;
             this.GRIDVIEWCONSALUPAGO.RowTemplate.Height = 24;
-            this.GRIDVIEWCONSALUPAGO.Size = new System.Drawing.Size(633, 112);
+            this.GRIDVIEWCONSALUPAGO.Size = new System.Drawing.Size(598, 133);
             this.GRIDVIEWCONSALUPAGO.TabIndex = 3;
             this.GRIDVIEWCONSALUPAGO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewNombres_CellClick);
             // 
             // FOTOALUMNOAPAGAR
             // 
-            this.FOTOALUMNOAPAGAR.Location = new System.Drawing.Point(678, 54);
+            this.FOTOALUMNOAPAGAR.Location = new System.Drawing.Point(617, 54);
             this.FOTOALUMNOAPAGAR.Margin = new System.Windows.Forms.Padding(2);
             this.FOTOALUMNOAPAGAR.Name = "FOTOALUMNOAPAGAR";
             this.FOTOALUMNOAPAGAR.Size = new System.Drawing.Size(124, 143);
@@ -229,7 +227,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(810, 67);
+            this.label5.Location = new System.Drawing.Point(748, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
@@ -239,7 +237,7 @@
             // LBLCODIGOALUMN
             // 
             this.LBLCODIGOALUMN.AutoSize = true;
-            this.LBLCODIGOALUMN.Location = new System.Drawing.Point(884, 67);
+            this.LBLCODIGOALUMN.Location = new System.Drawing.Point(806, 67);
             this.LBLCODIGOALUMN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLCODIGOALUMN.Name = "LBLCODIGOALUMN";
             this.LBLCODIGOALUMN.Size = new System.Drawing.Size(70, 13);
@@ -258,6 +256,10 @@
             // 
             // PANELMATRICULA
             // 
+            this.PANELMATRICULA.Controls.Add(this.label15);
+            this.PANELMATRICULA.Controls.Add(this.label11);
+            this.PANELMATRICULA.Controls.Add(this.txtExpedienteUbicacion);
+            this.PANELMATRICULA.Controls.Add(this.txtNotaUbicacion);
             this.PANELMATRICULA.Controls.Add(this.chAdministrativo);
             this.PANELMATRICULA.Controls.Add(this.btnNuevoHorario);
             this.PANELMATRICULA.Controls.Add(this.cbHorario);
@@ -268,15 +270,61 @@
             this.PANELMATRICULA.Controls.Add(this.GBIDIOMA);
             this.PANELMATRICULA.Controls.Add(this.GBMODALIDADMATRICULA);
             this.PANELMATRICULA.Enabled = false;
-            this.PANELMATRICULA.Location = new System.Drawing.Point(577, 251);
+            this.PANELMATRICULA.Location = new System.Drawing.Point(513, 251);
             this.PANELMATRICULA.Margin = new System.Windows.Forms.Padding(2);
             this.PANELMATRICULA.Name = "PANELMATRICULA";
-            this.PANELMATRICULA.Size = new System.Drawing.Size(401, 262);
+            this.PANELMATRICULA.Size = new System.Drawing.Size(369, 262);
             this.PANELMATRICULA.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(87, 80);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Expediente";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Nota";
+            // 
+            // txtExpedienteUbicacion
+            // 
+            this.txtExpedienteUbicacion.Enabled = false;
+            this.txtExpedienteUbicacion.Location = new System.Drawing.Point(153, 77);
+            this.txtExpedienteUbicacion.Name = "txtExpedienteUbicacion";
+            this.txtExpedienteUbicacion.Size = new System.Drawing.Size(55, 20);
+            this.txtExpedienteUbicacion.TabIndex = 11;
+            // 
+            // txtNotaUbicacion
+            // 
+            this.txtNotaUbicacion.Enabled = false;
+            this.txtNotaUbicacion.Location = new System.Drawing.Point(42, 76);
+            this.txtNotaUbicacion.Name = "txtNotaUbicacion";
+            this.txtNotaUbicacion.Size = new System.Drawing.Size(36, 20);
+            this.txtNotaUbicacion.TabIndex = 8;
+            // 
+            // chAdministrativo
+            // 
+            this.chAdministrativo.AutoSize = true;
+            this.chAdministrativo.Enabled = false;
+            this.chAdministrativo.Location = new System.Drawing.Point(237, 212);
+            this.chAdministrativo.Name = "chAdministrativo";
+            this.chAdministrativo.Size = new System.Drawing.Size(118, 17);
+            this.chAdministrativo.TabIndex = 10;
+            this.chAdministrativo.Text = "ADMINISTRATIVO";
+            this.chAdministrativo.UseVisualStyleBackColor = true;
+            this.chAdministrativo.CheckedChanged += new System.EventHandler(this.chAdministrativo_CheckedChanged);
             // 
             // btnNuevoHorario
             // 
-            this.btnNuevoHorario.Location = new System.Drawing.Point(312, 234);
+            this.btnNuevoHorario.Location = new System.Drawing.Point(289, 234);
             this.btnNuevoHorario.Name = "btnNuevoHorario";
             this.btnNuevoHorario.Size = new System.Drawing.Size(75, 23);
             this.btnNuevoHorario.TabIndex = 9;
@@ -288,16 +336,16 @@
             // 
             this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(81, 235);
+            this.cbHorario.Location = new System.Drawing.Point(69, 235);
             this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(225, 21);
+            this.cbHorario.Size = new System.Drawing.Size(215, 21);
             this.cbHorario.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 239);
+            this.label4.Location = new System.Drawing.Point(2, 239);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
@@ -306,7 +354,7 @@
             // 
             // NUMCICLO
             // 
-            this.NUMCICLO.Location = new System.Drawing.Point(334, 179);
+            this.NUMCICLO.Location = new System.Drawing.Point(314, 179);
             this.NUMCICLO.Margin = new System.Windows.Forms.Padding(2);
             this.NUMCICLO.Maximum = new decimal(new int[] {
             12,
@@ -331,7 +379,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(263, 184);
+            this.label7.Location = new System.Drawing.Point(243, 184);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
@@ -344,7 +392,7 @@
             this.GBNIVEL.Controls.Add(this.RBINTERMEDIO);
             this.GBNIVEL.Controls.Add(this.RBBASICO);
             this.GBNIVEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GBNIVEL.Location = new System.Drawing.Point(256, 28);
+            this.GBNIVEL.Location = new System.Drawing.Point(236, 28);
             this.GBNIVEL.Margin = new System.Windows.Forms.Padding(2);
             this.GBNIVEL.Name = "GBNIVEL";
             this.GBNIVEL.Padding = new System.Windows.Forms.Padding(2);
@@ -407,11 +455,11 @@
             this.GBIDIOMA.Controls.Add(this.RBINGLES);
             this.GBIDIOMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBIDIOMA.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GBIDIOMA.Location = new System.Drawing.Point(7, 81);
+            this.GBIDIOMA.Location = new System.Drawing.Point(7, 104);
             this.GBIDIOMA.Margin = new System.Windows.Forms.Padding(2);
             this.GBIDIOMA.Name = "GBIDIOMA";
             this.GBIDIOMA.Padding = new System.Windows.Forms.Padding(2);
-            this.GBIDIOMA.Size = new System.Drawing.Size(192, 149);
+            this.GBIDIOMA.Size = new System.Drawing.Size(192, 126);
             this.GBIDIOMA.TabIndex = 2;
             this.GBIDIOMA.TabStop = false;
             this.GBIDIOMA.Text = "IDIOMA";
@@ -421,7 +469,7 @@
             // 
             this.RBOTRO.AutoSize = true;
             this.RBOTRO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBOTRO.Location = new System.Drawing.Point(101, 121);
+            this.RBOTRO.Location = new System.Drawing.Point(101, 99);
             this.RBOTRO.Margin = new System.Windows.Forms.Padding(2);
             this.RBOTRO.Name = "RBOTRO";
             this.RBOTRO.Size = new System.Drawing.Size(56, 17);
@@ -434,7 +482,7 @@
             // 
             this.RBCHINO.AutoSize = true;
             this.RBCHINO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBCHINO.Location = new System.Drawing.Point(5, 121);
+            this.RBCHINO.Location = new System.Drawing.Point(5, 99);
             this.RBCHINO.Margin = new System.Windows.Forms.Padding(2);
             this.RBCHINO.Name = "RBCHINO";
             this.RBCHINO.Size = new System.Drawing.Size(59, 17);
@@ -447,7 +495,7 @@
             // 
             this.RBQUECHUA.AutoSize = true;
             this.RBQUECHUA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBQUECHUA.Location = new System.Drawing.Point(101, 84);
+            this.RBQUECHUA.Location = new System.Drawing.Point(101, 72);
             this.RBQUECHUA.Margin = new System.Windows.Forms.Padding(2);
             this.RBQUECHUA.Name = "RBQUECHUA";
             this.RBQUECHUA.Size = new System.Drawing.Size(78, 17);
@@ -460,7 +508,7 @@
             // 
             this.RBALEMAN.AutoSize = true;
             this.RBALEMAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBALEMAN.Location = new System.Drawing.Point(5, 84);
+            this.RBALEMAN.Location = new System.Drawing.Point(5, 72);
             this.RBALEMAN.Margin = new System.Windows.Forms.Padding(2);
             this.RBALEMAN.Name = "RBALEMAN";
             this.RBALEMAN.Size = new System.Drawing.Size(69, 17);
@@ -473,7 +521,7 @@
             // 
             this.RBPORTUGUES.AutoSize = true;
             this.RBPORTUGUES.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBPORTUGUES.Location = new System.Drawing.Point(101, 51);
+            this.RBPORTUGUES.Location = new System.Drawing.Point(101, 46);
             this.RBPORTUGUES.Margin = new System.Windows.Forms.Padding(2);
             this.RBPORTUGUES.Name = "RBPORTUGUES";
             this.RBPORTUGUES.Size = new System.Drawing.Size(93, 17);
@@ -486,7 +534,7 @@
             // 
             this.RBFRANCES.AutoSize = true;
             this.RBFRANCES.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBFRANCES.Location = new System.Drawing.Point(5, 51);
+            this.RBFRANCES.Location = new System.Drawing.Point(5, 46);
             this.RBFRANCES.Margin = new System.Windows.Forms.Padding(2);
             this.RBFRANCES.Name = "RBFRANCES";
             this.RBFRANCES.Size = new System.Drawing.Size(75, 17);
@@ -530,7 +578,7 @@
             this.GBMODALIDADMATRICULA.Margin = new System.Windows.Forms.Padding(2);
             this.GBMODALIDADMATRICULA.Name = "GBMODALIDADMATRICULA";
             this.GBMODALIDADMATRICULA.Padding = new System.Windows.Forms.Padding(2);
-            this.GBMODALIDADMATRICULA.Size = new System.Drawing.Size(219, 67);
+            this.GBMODALIDADMATRICULA.Size = new System.Drawing.Size(219, 62);
             this.GBMODALIDADMATRICULA.TabIndex = 1;
             this.GBMODALIDADMATRICULA.TabStop = false;
             this.GBMODALIDADMATRICULA.Text = "MODALIDAD DE MATRICULA";
@@ -547,6 +595,7 @@
             this.RBMATUBICACION.TabStop = true;
             this.RBMATUBICACION.Text = "EXAMEN DE UBICACION";
             this.RBMATUBICACION.UseVisualStyleBackColor = true;
+            this.RBMATUBICACION.CheckedChanged += new System.EventHandler(this.RBMATUBICACION_CheckedChanged);
             // 
             // RBMATREGULAR
             // 
@@ -560,11 +609,12 @@
             this.RBMATREGULAR.TabStop = true;
             this.RBMATREGULAR.Text = "MATRICULA REGULAR";
             this.RBMATREGULAR.UseVisualStyleBackColor = true;
+            this.RBMATREGULAR.CheckedChanged += new System.EventHandler(this.RBMATREGULAR_CheckedChanged);
             // 
             // TXTMONTO
             // 
             this.TXTMONTO.Enabled = false;
-            this.TXTMONTO.Location = new System.Drawing.Point(580, 540);
+            this.TXTMONTO.Location = new System.Drawing.Point(543, 540);
             this.TXTMONTO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTMONTO.Name = "TXTMONTO";
             this.TXTMONTO.ReadOnly = true;
@@ -578,7 +628,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(581, 524);
+            this.label8.Location = new System.Drawing.Point(540, 524);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 13);
@@ -589,7 +639,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(321, 587);
+            this.label9.Location = new System.Drawing.Point(300, 587);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 13);
@@ -599,7 +649,7 @@
             // TXTNUMERORECIBO
             // 
             this.TXTNUMERORECIBO.Enabled = false;
-            this.TXTNUMERORECIBO.Location = new System.Drawing.Point(324, 540);
+            this.TXTNUMERORECIBO.Location = new System.Drawing.Point(303, 540);
             this.TXTNUMERORECIBO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTNUMERORECIBO.Name = "TXTNUMERORECIBO";
             this.TXTNUMERORECIBO.Size = new System.Drawing.Size(207, 20);
@@ -609,7 +659,7 @@
             // 
             this.FECHARECIBO.Enabled = false;
             this.FECHARECIBO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FECHARECIBO.Location = new System.Drawing.Point(579, 602);
+            this.FECHARECIBO.Location = new System.Drawing.Point(543, 602);
             this.FECHARECIBO.Margin = new System.Windows.Forms.Padding(2);
             this.FECHARECIBO.Name = "FECHARECIBO";
             this.FECHARECIBO.ShowUpDown = true;
@@ -619,7 +669,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(577, 586);
+            this.label10.Location = new System.Drawing.Point(539, 586);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 13);
@@ -630,7 +680,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(810, 97);
+            this.label12.Location = new System.Drawing.Point(748, 97);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 13);
@@ -640,7 +690,7 @@
             // LBLTIPOALUMN
             // 
             this.LBLTIPOALUMN.AutoSize = true;
-            this.LBLTIPOALUMN.Location = new System.Drawing.Point(884, 97);
+            this.LBLTIPOALUMN.Location = new System.Drawing.Point(806, 97);
             this.LBLTIPOALUMN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLTIPOALUMN.Name = "LBLTIPOALUMN";
             this.LBLTIPOALUMN.Size = new System.Drawing.Size(70, 13);
@@ -661,7 +711,7 @@
             this.GRIDVIEWTIPOSPAGOS.Margin = new System.Windows.Forms.Padding(2);
             this.GRIDVIEWTIPOSPAGOS.Name = "GRIDVIEWTIPOSPAGOS";
             this.GRIDVIEWTIPOSPAGOS.RowTemplate.Height = 24;
-            this.GRIDVIEWTIPOSPAGOS.Size = new System.Drawing.Size(543, 220);
+            this.GRIDVIEWTIPOSPAGOS.Size = new System.Drawing.Size(498, 220);
             this.GRIDVIEWTIPOSPAGOS.TabIndex = 21;
             this.GRIDVIEWTIPOSPAGOS.CurrentCellDirtyStateChanged += new System.EventHandler(this.GRIDVIEWTIPOSPAGOS_CurrentCellDirtyStateChanged);
             // 
@@ -669,7 +719,7 @@
             // 
             this.CBPAGARMATRICULA.AutoSize = true;
             this.CBPAGARMATRICULA.Enabled = false;
-            this.CBPAGARMATRICULA.Location = new System.Drawing.Point(706, 203);
+            this.CBPAGARMATRICULA.Location = new System.Drawing.Point(645, 203);
             this.CBPAGARMATRICULA.Margin = new System.Windows.Forms.Padding(2);
             this.CBPAGARMATRICULA.Name = "CBPAGARMATRICULA";
             this.CBPAGARMATRICULA.Size = new System.Drawing.Size(201, 17);
@@ -681,7 +731,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(322, 525);
+            this.label13.Location = new System.Drawing.Point(301, 525);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(116, 13);
@@ -691,7 +741,7 @@
             // TXTMONTORECIBO
             // 
             this.TXTMONTORECIBO.Enabled = false;
-            this.TXTMONTORECIBO.Location = new System.Drawing.Point(324, 602);
+            this.TXTMONTORECIBO.Location = new System.Drawing.Point(303, 602);
             this.TXTMONTORECIBO.Margin = new System.Windows.Forms.Padding(2);
             this.TXTMONTORECIBO.Name = "TXTMONTORECIBO";
             this.TXTMONTORECIBO.Size = new System.Drawing.Size(207, 20);
@@ -739,7 +789,7 @@
             this.btnAgregarSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarSaldo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarSaldo.Location = new System.Drawing.Point(539, 10);
+            this.btnAgregarSaldo.Location = new System.Drawing.Point(617, 21);
             this.btnAgregarSaldo.Name = "btnAgregarSaldo";
             this.btnAgregarSaldo.Size = new System.Drawing.Size(109, 22);
             this.btnAgregarSaldo.TabIndex = 30;
@@ -751,7 +801,7 @@
             // 
             this.chboxCambiarTipoAlumno.AutoSize = true;
             this.chboxCambiarTipoAlumno.Enabled = false;
-            this.chboxCambiarTipoAlumno.Location = new System.Drawing.Point(819, 148);
+            this.chboxCambiarTipoAlumno.Location = new System.Drawing.Point(750, 148);
             this.chboxCambiarTipoAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.chboxCambiarTipoAlumno.Name = "chboxCambiarTipoAlumno";
             this.chboxCambiarTipoAlumno.Size = new System.Drawing.Size(136, 17);
@@ -793,7 +843,7 @@
             this.gbMat.Controls.Add(this.rbMatriculaNormal);
             this.gbMat.Controls.Add(this.rbTupa2018);
             this.gbMat.Enabled = false;
-            this.gbMat.Location = new System.Drawing.Point(656, 223);
+            this.gbMat.Location = new System.Drawing.Point(595, 223);
             this.gbMat.Name = "gbMat";
             this.gbMat.Size = new System.Drawing.Size(245, 23);
             this.gbMat.TabIndex = 32;
@@ -801,10 +851,14 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnFichaMatricula);
+            this.panel1.Controls.Add(this.btnRecorEconomico);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.dgvwPagos);
             this.panel1.Controls.Add(this.BTNGUARDARPAGO);
             this.panel1.Controls.Add(this.gbMat);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chboxCambiarTipoAlumno);
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Controls.Add(this.btnAgregarSaldo);
@@ -832,13 +886,67 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(999, 649);
+            this.panel1.Size = new System.Drawing.Size(1335, 649);
             this.panel1.TabIndex = 33;
+            // 
+            // btnFichaMatricula
+            // 
+            this.btnFichaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnFichaMatricula.Enabled = false;
+            this.btnFichaMatricula.FlatAppearance.BorderSize = 0;
+            this.btnFichaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFichaMatricula.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFichaMatricula.Location = new System.Drawing.Point(991, 602);
+            this.btnFichaMatricula.Name = "btnFichaMatricula";
+            this.btnFichaMatricula.Size = new System.Drawing.Size(98, 37);
+            this.btnFichaMatricula.TabIndex = 37;
+            this.btnFichaMatricula.Text = "FICHA DE MATRICULA";
+            this.btnFichaMatricula.UseVisualStyleBackColor = false;
+            this.btnFichaMatricula.Click += new System.EventHandler(this.btnFichaMatricula_Click);
+            // 
+            // btnRecorEconomico
+            // 
+            this.btnRecorEconomico.BackColor = System.Drawing.Color.Green;
+            this.btnRecorEconomico.FlatAppearance.BorderSize = 0;
+            this.btnRecorEconomico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecorEconomico.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRecorEconomico.Location = new System.Drawing.Point(887, 602);
+            this.btnRecorEconomico.Name = "btnRecorEconomico";
+            this.btnRecorEconomico.Size = new System.Drawing.Size(98, 37);
+            this.btnRecorEconomico.TabIndex = 36;
+            this.btnRecorEconomico.Text = "RECORD ECONOMICO";
+            this.btnRecorEconomico.UseVisualStyleBackColor = false;
+            this.btnRecorEconomico.Click += new System.EventHandler(this.btnRecorEconomico_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(884, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 17);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Pagos del alumno";
+            // 
+            // dgvwPagos
+            // 
+            this.dgvwPagos.AllowUserToAddRows = false;
+            this.dgvwPagos.AllowUserToDeleteRows = false;
+            this.dgvwPagos.AllowUserToResizeRows = false;
+            this.dgvwPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvwPagos.Location = new System.Drawing.Point(887, 67);
+            this.dgvwPagos.Name = "dgvwPagos";
+            this.dgvwPagos.ReadOnly = true;
+            this.dgvwPagos.RowHeadersVisible = false;
+            this.dgvwPagos.RowTemplate.Height = 24;
+            this.dgvwPagos.Size = new System.Drawing.Size(438, 532);
+            this.dgvwPagos.TabIndex = 34;
+            this.dgvwPagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwPagos_CellClick);
             // 
             // BTNGUARDARPAGO
             // 
             this.BTNGUARDARPAGO.Depth = 0;
-            this.BTNGUARDARPAGO.Location = new System.Drawing.Point(767, 581);
+            this.BTNGUARDARPAGO.Location = new System.Drawing.Point(698, 586);
             this.BTNGUARDARPAGO.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTNGUARDARPAGO.Name = "BTNGUARDARPAGO";
             this.BTNGUARDARPAGO.Primary = true;
@@ -848,24 +956,12 @@
             this.BTNGUARDARPAGO.UseVisualStyleBackColor = true;
             this.BTNGUARDARPAGO.Click += new System.EventHandler(this.BTNGUARDARPAGO_Click);
             // 
-            // chAdministrativo
-            // 
-            this.chAdministrativo.AutoSize = true;
-            this.chAdministrativo.Enabled = false;
-            this.chAdministrativo.Location = new System.Drawing.Point(266, 212);
-            this.chAdministrativo.Name = "chAdministrativo";
-            this.chAdministrativo.Size = new System.Drawing.Size(118, 17);
-            this.chAdministrativo.TabIndex = 10;
-            this.chAdministrativo.Text = "ADMINISTRATIVO";
-            this.chAdministrativo.UseVisualStyleBackColor = true;
-            this.chAdministrativo.CheckedChanged += new System.EventHandler(this.chAdministrativo_CheckedChanged);
-            // 
             // frmCrearPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(999, 712);
+            this.ClientSize = new System.Drawing.Size(1335, 712);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -896,6 +992,7 @@
             this.gbMat.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvwPagos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -904,7 +1001,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView GRIDVIEWCONSALUPAGO;
         private System.Windows.Forms.PictureBox FOTOALUMNOAPAGAR;
         private System.Windows.Forms.Label label2;
@@ -919,8 +1015,6 @@
         private System.Windows.Forms.RadioButton RBMATUBICACION;
         private System.Windows.Forms.RadioButton RBMATREGULAR;
         private System.Windows.Forms.GroupBox GBIDIOMA;
-        private System.Windows.Forms.RadioButton RBOTRO;
-        private System.Windows.Forms.RadioButton RBCHINO;
         private System.Windows.Forms.RadioButton RBQUECHUA;
         private System.Windows.Forms.RadioButton RBALEMAN;
         private System.Windows.Forms.RadioButton RBPORTUGUES;
@@ -961,5 +1055,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnNuevoHorario;
         private System.Windows.Forms.CheckBox chAdministrativo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvwPagos;
+        private System.Windows.Forms.Button btnRecorEconomico;
+        private System.Windows.Forms.Button btnFichaMatricula;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtExpedienteUbicacion;
+        private System.Windows.Forms.TextBox txtNotaUbicacion;
+        private System.Windows.Forms.RadioButton RBCHINO;
+        private System.Windows.Forms.RadioButton RBOTRO;
     }
 }

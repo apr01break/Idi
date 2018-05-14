@@ -1,6 +1,6 @@
 ﻿namespace InstitutoDeIdiomas
 {
-    partial class frmAsistenciasPorGrupo
+    partial class frmSeleccionarGrupoReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -98,16 +98,16 @@
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
-            // frmAsistenciasPorGrupo
+            // frmSeleccionarGrupoReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 371);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "frmAsistenciasPorGrupo";
+            this.Name = "frmSeleccionarGrupoReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REPORTE ASISTENCIA POR GRUPO";
+            this.Text = "SELECCIONAR GRUPO";
             this.Load += new System.EventHandler(this.frmAsistenciasPorGrupo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwListaGrupos)).EndInit();
             this.panel1.ResumeLayout(false);

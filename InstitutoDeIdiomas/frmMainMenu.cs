@@ -46,8 +46,8 @@ namespace InstitutoDeIdiomas
             }
             if(idCodigo=="3")
             {
-                button1.Visible = true;
-                button2.Visible = true;
+                //button1.Visible = true;
+                //button2.Visible = true;
             }
         }
 
@@ -325,7 +325,7 @@ namespace InstitutoDeIdiomas
 
         private void btnAsistenciaGrupoReportes_Click(object sender, EventArgs e)
         {
-            new frmAsistenciasPorGrupo().Show();
+            new frmSeleccionarGrupoReportes("Reporte asistencia").Show();
         }
 
         private void btnAsistenciaAlumnoReportes_Click(object sender, EventArgs e)
@@ -627,6 +627,68 @@ namespace InstitutoDeIdiomas
         private void button5_Click_1(object sender, EventArgs e)
         {
             new frmEstadisticas().Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("obtener_fecha_hoy", _SqlConnection);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    _SqlConnection.Open();
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                if (cmd.Connection.State == ConnectionState.Closed)
+                {
+                    _SqlConnection.Close();
+                }
+                //lblHoraServidor.Text = dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btnRecordEconomicoGrupo_Click(object sender, EventArgs e)
+        {
+            new frmSeleccionarGrupoReportes("Record económico").Show();
+        }
+
+        private void btnActaNotas_Click(object sender, EventArgs e)
+        {
+            new frmSeleccionarGrupoReportes("Acta de notas").Show();
+        }
+
+        private void btnRelacionAlumnos_Click(object sender, EventArgs e)
+        {
+            new frmSeleccionarGrupoReportes("Relación de alumnos").Show();
+        }
+
+        private void btnActaFinal_Click(object sender, EventArgs e)
+        {
+            new frmSeleccionarGrupoReportes("Acta final").Show();
+        }
+
+        private void btnGruposConcluidos_Click(object sender, EventArgs e)
+        {
+            new frmVerGrupoAgregarAlumno(5, idCodigo).Show();
+        }
+
+        private void btnEstadistica_Click(object sender, EventArgs e)
+        {
+            new frmEstadisticas().Show();
+        }
+
+        private void btnCrearGrupoExamenUbicacion_Click(object sender, EventArgs e)
+        {
+            new frmCrearGrupoExUbicacion().Show();
         }
     }
 }

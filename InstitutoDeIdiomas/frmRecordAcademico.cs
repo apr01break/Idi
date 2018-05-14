@@ -94,6 +94,10 @@ namespace InstitutoDeIdiomas
 
         private void btnGenerarRecord_Click(object sender, EventArgs e)
         {
+            if (cmbIdiomas.Text == "")
+            {
+                MessageBox.Show("Selecciona un idioma"); return;
+            }
             try
             {
                 int idioma = (int)((DataRowView)cmbIdiomas.SelectedItem)["idIdioma"];
@@ -330,6 +334,7 @@ namespace InstitutoDeIdiomas
                     numcarnet = row.Cells[0].Value.ToString();
                     nombre = row.Cells[2].Value.ToString();
                     cmbIdiomas.Enabled = true;
+                    btnGenerarRecord.Enabled = true;
                     listaIdioma();
                 }
             }
